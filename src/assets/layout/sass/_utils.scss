@@ -1,0 +1,38 @@
+/* Typography */
+h1 {
+    font-weight: normal;
+    margin: 0;
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 1em;
+    margin-bottom: 16px;
+    @include border-radius($borderRadius);
+
+    &.card-w-title {
+        padding-bottom: 2em;
+    }
+
+    h1 {
+        margin: .5em 0 .5em 0;
+        border-bottom: 1px solid #d5d5d5;
+        padding: .1em;
+        font-size: 24px;
+
+        &:first-child {
+            margin: 0 0 .5em 0;
+        }
+    }
+}
+
+.p-g {
+    -ms-flex-wrap: wrap;
+}
