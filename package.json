@@ -4,8 +4,8 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/primefaces/sigma-vue.git"
-      },
-      "license": "MIT",
+    },
+    "license": "MIT",
 	"scripts": {
 		"serve": "vue-cli-service serve",
 		"build": "vue-cli-service build",
