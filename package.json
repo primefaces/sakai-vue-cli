@@ -1,7 +1,11 @@
 {
 	"name": "sigma-vue",
 	"version": "1.0.0-SNAPSHOT",
-	"private": true,
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/primefaces/sigma-vue.git"
+      },
+      "license": "MIT",
 	"scripts": {
 		"serve": "vue-cli-service serve",
 		"build": "vue-cli-service build",
