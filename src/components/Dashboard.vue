@@ -67,34 +67,34 @@
 		<Panel header="Tasks" style="height: 100%">
 			<ul class='task-list'>
 				<li>
-					<Checkbox id="task1" name="task" v-model="tasksCheckbox" />
+					<Checkbox name="task" value="reports" v-model="tasksCheckbox" />
 					<span class="task-name">Sales Reports</span>
-					<Button icon="pi pi-check"/>
+					<i class="pi pi-chart-bar" />
 				</li>
 				<li>
-					<Checkbox id="task2" name="task" v-model="tasksCheckbox" />
+					<Checkbox name="task" value="invoices" v-model="tasksCheckbox" />
 					<span class="task-name">Pay Invoices</span>
-					<Button icon="pi pi-check"/>
+					<i class="pi pi-dollar" />
 				</li>
 				<li>
-					<Checkbox id="task3" name="task" v-model="tasksCheckbox" />
+					<Checkbox name="task" value="dinner" v-model="tasksCheckbox" />
 					<span class="task-name">Dinner with Tony</span>
-					<Button icon="pi pi-check"/>
+					<i class="pi pi-user" />
 				</li>
 				<li>
-					<Checkbox id="task4" name="task" v-model="tasksCheckbox" />
+					<Checkbox name="task" value="meeting" v-model="tasksCheckbox" />
 					<span class="task-name">Client Meeting</span>
-					<Button icon="pi pi-check"/>
+					<i class="pi pi-users" />
 				</li>
 				<li>
-					<Checkbox id="task5" name="task" v-model="tasksCheckbox" />
+					<Checkbox name="task" value="theme" v-model="tasksCheckbox" />
 					<span class="task-name">New Theme</span>
-					<Button icon="pi pi-check"/>
+					<i class="pi pi-globe" />
 				</li>
 				<li>
-					<Checkbox id="task6" name="task" v-model="tasksCheckbox" />
+					<Checkbox name="task" value="flight" v-model="tasksCheckbox" />
 					<span class="task-name">Flight Ticket</span>
-					<Button icon="pi pi-check"/>
+					<i class="pi pi-briefcase" />
 				</li>
 			</ul>
 		</Panel>
@@ -116,7 +116,7 @@
 					<InputText type="text" placeholder="Message" />
 				</div>
 				<div class="p-col-12">
-					<Button type="button" label="Send" icon="pi pi-save"/>
+					<Button type="button" label="Send" icon="pi pi-envelope"/>
 				</div>
 			</div>
 		</Panel>

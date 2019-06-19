@@ -5,7 +5,9 @@
 		<div :class="sidebarClass" @click="onSidebarClick">
 			<div class="layout-sidebar-scroll-content" >
 				<div class="layout-logo">
-					<img alt="Logo" :src="logo" />
+                    <router-link to="/">
+                        <img alt="Logo" :src="logo" />
+                    </router-link>
 				</div>
 
 				<AppProfile />
