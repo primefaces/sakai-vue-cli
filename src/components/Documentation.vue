@@ -39,8 +39,8 @@ npm run serve
                     whereas required resources such as SASS structure for the layout are placed inside the <b>src/assets/layout</b> folder.</p>
 
                 <h1>Template</h1>
-                <p>Main layout is the template of the App.vue, it is divided into a couple of child components such as topbar, profile, menu and footer. Here is template of the
-                    App.vue component that implements the logic such as menu state, layout modes and so on.
+                <p>Main layout is the template of the <i>App.vue</i>, it is divided into a couple of child components such as topbar, profile, menu and footer. Here is template of the
+                    <i>App.vue</i> component that implements the logic such as menu state, layout modes and so on.
                 </p>
 
 <pre>
@@ -69,8 +69,8 @@ npm run serve
 </pre>
 
                 <h1>Menu</h1>
-                <p>Menu is a separate component defined in AppMenu.vue file based on PrimeNG MenuModel API. In order to define the menuitems,
-                    navigate to data section of App.vue file and define your own model as a nested structure using the menu property. 
+                <p>Menu is a separate component defined in <i>AppMenu.vue</i> file based on PrimeNG MenuModel API. In order to define the menuitems,
+                    navigate to data section of <i>App.vue</i> file and define your own model as a nested structure using the menu property. 
                     Here is the menu component from the demo application. Notice that menu object is bound to the model property of AppMenu component as shown above.</p>
 
 <pre>
@@ -178,9 +178,8 @@ data() {
                 <p>Sigma uses the free Nova-Light which is a free theme distributed within PrimeVue, however it can be used with any PrimeVue theme as well.</p>
 
                 <h1>SASS Variables</h1>
-                <p>In case you'd like to customize the layout variables, open layout.scss file under src/layout folder. Saving the changes
-                    will be reflected instantly at your browser.
-                </p>
+                <p>In case you'd like to customize the layout variables, open <i>layout.scss</i> file under src/layout folder. Saving the changes
+                    will be reflected instantly at your browser.</p>
 
                 <h3>src/assets/layout.scss</h3>
 <pre>
@@ -236,7 +235,7 @@ $footerBgColor:#ffffff;
 </pre>
 
                 <h1>Menu Modes</h1>
-                <p>Menu has 2 modes, static and overlay. Main layout container element in App.vue is used to define which mode to use by adding specific classes. List
+                <p>Menu has 2 modes, <i>static</i> and <i>overlay</i>. Main layout container element in App.vue is used to define which mode to use by adding specific classes. List
                     below indicates the style classes for each mode.</p>
 
                 <ul>
@@ -260,7 +259,7 @@ $footerBgColor:#ffffff;
 </pre>
 
                 <h1>Grid CSS</h1>
-                <p>Sigma uses PrimeFlex CSS Grid throughout the samples, although any grid library can be used we suggest using PrimeFlex as your layout framework as it is well tested and supported by PrimeReact. Grid CSS is
+                <p>Sigma uses PrimeFlex CSS Grid throughout the samples. Although any grid library can be used, we recommend using PrimeFlex as your layout framework as it is well tested and supported by PrimeVue. PrimeFlex is
                     available at <a href="https://www.npmjs.com/package/primeflex">NPM</a>.</p>
 
                 <h1>Customizing Styles</h1>
