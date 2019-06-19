@@ -54,7 +54,6 @@ import '@fullcalendar/core/main.min.css';
 import '@fullcalendar/daygrid/main.min.css';
 import '@fullcalendar/timegrid/main.min.css';
 import './assets/layout/layout.scss';
-import './App.scss';
 
 import AppSubmenu from './AppSubmenu';
 Vue.directive("appsubmenu", AppSubmenu)

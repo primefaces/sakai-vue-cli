@@ -30,6 +30,7 @@ a {
         color: #ffffff;
         z-index: 999;
         right: 0;
+        @include clearfix();
         @include linear-gradient-left($topbarLeftBgColor,$topbarRightBgColor);
         @include transition(left $transitionDuration);
 
@@ -148,31 +149,6 @@ a {
             cursor: pointer;
         }
     }
-
-    /*.p-scrollpanel {
-        background: transparent;
-        border-radius: 0;
-        border: none;
-
-        .p-scrollpanel-content {
-            overflow: scroll;
-        }
-
-        .p-scrollpanel-bar {
-            background: $scrollPanelBgColor;
-            @include opacity(0.3);
-        }
-
-        .p-scrollpanel-hidden {
-            display: block;
-            visibility: hidden;
-        }
-
-        .layout-sidebar-scroll-content {
-            width: calc(100% + 18px);
-            padding-bottom: 120px;
-        }
-    }*/
 
     .layout-sidebar {
         position: fixed;

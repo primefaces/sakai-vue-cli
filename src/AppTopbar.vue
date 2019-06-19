@@ -1,6 +1,6 @@
 <template>
-	<div class="layout-topbar clearfix">
-		<button class="p-link layout-menu-button" @click="onToggleMenu">
+	<div class="layout-topbar">
+		<button class="p-link layout-menu-button" @click="onMenuToggle">
 			<span class="pi pi-bars"></span>
 		</button>
 		<div class="layout-topbar-icons">
@@ -28,8 +28,8 @@
 <script>
 export default {
     methods: {
-        onToggleMenu(event) {
-            this.$emit('toggle-menu',event);
+        onMenuToggle(event) {
+            this.$emit('menu-toggle', event);
         }
     }
 }

@@ -32,14 +32,14 @@ export default {
 			default: false
 		}
 	},
-	data (){
+	data() {
 		return {
 			activeIndex : null
 		}
 	},
 	methods: {
-		onMenuItemClick(event, item, index){
-			if(item.disabled) {
+		onMenuItemClick(event, item, index) {
+			if (item.disabled) {
 				event.preventDefault();
 				return true;
 			}
