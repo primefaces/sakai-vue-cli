@@ -2,15 +2,6 @@
 	<div class="p-fluid">
 		<div class="p-grid">
 			<div class="p-col-12">
-				<div class="p-messages p-component p-messages-success" style="margin: 0 0 1em 0; display: block">
-					<div class="p-messages-wrapper">
-						<span class="p-messages-icon pi pi-fw pi-2x pi-check"></span>
-						<span class="p-messages-detail">Designer API is a theme engine for the complete PrimeVue UI Suite and includes this demo application
-							to test the commonly used components while designing your theme.
-						</span>
-					</div>
-				</div>
-
 				<div class="card card-w-title">
 					<h1>Form Elements</h1>
 					<div class="p-grid">
