@@ -196,9 +196,9 @@
 
 					<div class="p-col-12 p-md-6">
 						<div class="p-inputgroup">
-                                    <span class="p-inputgroup-addon p-inputgroup-addon-checkbox">
-										<Checkbox v-model="inputGroupValue"/>
-                                    </span>
+                            <span class="p-inputgroup-addon p-inputgroup-addon-checkbox">
+                                <Checkbox v-model="inputGroupValue" :binary="true"/>
+                            </span>
 							<InputText placeholder="Confirm"/>
 						</div>
 					</div>
@@ -227,7 +227,7 @@
 
 							<div class="p-col-12">SelectButton</div>
 							<div class="p-col-12">
-								<SelectButton v-model="selectButtonValue" :options="selectButtonValues" optionLabel="name" />
+								<SelectButton v-model="selectButtonValue" :options="selectButtonValues" optionLabel="name" class="p-buttonset-3" />
 							</div>
 
 							<div class="p-col-12">Button</div>

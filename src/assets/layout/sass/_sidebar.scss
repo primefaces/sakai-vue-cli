@@ -16,7 +16,7 @@
         margin-top: 24px;   
     }
 
-    .profile {
+    .layout-profile {
         text-align: center;
         padding: 20px 0;
 
@@ -25,7 +25,7 @@
             margin: 10px;
         }
 
-        .profile-link {
+        .layout-profile-link {
             cursor: pointer;
             color: $menuitemColor;
             display: inline-block;
@@ -44,21 +44,14 @@
         }
 
         > ul {
-            overflow: hidden;
             background-color: $menuitemActiveBgColor;
             text-align: left;
-            max-height: 0;
-            @include transition-duration($transitionDuration);
-            @include transition-timing-function(cubic-bezier(0.86, 0, 0.07, 1));
-
-            &.profile-expanded {
-                max-height: 500px;
-            }
-
+            margin: 0;
+           
             li {
                 button {
                     width: 100%;
-                    padding: 1em 15px 1em 1em;
+                    padding: 1em;
                     border: 0 none;
                     border-radius: 0;
 
@@ -70,6 +63,7 @@
                         margin-left: .25em;
                         vertical-align: middle;
                     }
+
                     i {
                         vertical-align: middle;
                     }
@@ -84,7 +78,7 @@
         }
     }
 
-    ul {
+    .layout-main-menu {
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -96,7 +90,7 @@
                 color: $menuitemColor;
                 text-decoration: none;
                 font-size: $fontSize;
-                padding: 1em 15px 1em 1em;
+                padding: 1em;
                 display: block;
                 border-top: 1px solid $menuitemBorderColor;
 
@@ -112,19 +106,15 @@
 
                 .menuitem-toggle-icon {
                     float: right;
+                    margin-top: 2px;
                 }
 
                 &:hover {
                     color: $menuitemHoverColor;
                 }
 
-                &.active-route {
-                    background-color: $menuitemActiveBgColor;
-                    color: $menuitemActiveColor;
-
-                    .menuitem-toggle-icon {
-                        @include icon-override("\e933");
-                    }
+                &.router-link-active {
+                    color: $menuitemActiveRouteColor;
                 }
             }
 
@@ -140,6 +130,9 @@
             }
 
             ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
                 background-color: $menuitemActiveBgColor;
                 padding-left: 1.5em;
 
@@ -166,7 +159,7 @@
                 li {
                     a {
                         cursor: pointer;
-                        padding: .75em 33px .75em .75em;
+                        padding: .75em 1em;
                         font-size: $submenuFontSize;
                         border-top: 0 none;
                     }
@@ -186,9 +179,8 @@
             }
         }
 
-        .menuitem-toggle-icon {
-            float: right;
-            margin-top: 2px;
+        > li > ul {
+            padding-bottom: 1em;
         }
 
         .menuitem-badge {
@@ -212,7 +204,7 @@
     &.layout-sidebar-dark {
         @include linear-gradient($menuDarkBgColorFirst, $menuDarkBgColorLast);
 
-        .profile {
+        .layout-profile {
             > button {
                 color: $menuitemDarkColor;
 
@@ -246,11 +238,6 @@
 
                     &:hover {
                         color: $menuitemDarkHoverColor;
-                    }
-
-                    &.active-route {
-                        background-color: $menuitemDarkActiveBgColor;
-                        color: $menuitemDarkActiveColor;
                     }
                 }
 

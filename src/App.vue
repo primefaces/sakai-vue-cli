@@ -141,7 +141,7 @@ export default {
         onMenuToggle() {
             this.menuClick = true;
 
-            if (this.isDesktop) {
+            if (this.isDesktop()) {
                 if (this.layoutMode === 'overlay') {
                     this.overlayMenuActive = !this.overlayMenuActive;
                 }
@@ -175,6 +175,9 @@ export default {
                 element.classList.remove(className);
             else
                 element.className = element.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+        },
+        isDesktop() {
+            return window.innerWidth > 1024;
         }
     },
     computed: {
@@ -194,9 +197,6 @@ export default {
         },
         logo() {
             return (this.layoutColorMode === 'dark') ? "assets/layout/images/logo-white.svg" : "assets/layout/images/logo.svg";
-        },
-        isDesktop() {
-            return window.innerWidth > 1024;
         }
     },
     beforeUpdate() {

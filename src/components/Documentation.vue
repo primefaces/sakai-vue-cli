@@ -284,6 +284,7 @@ pre {
     text-align: left;
     white-space: pre;
     padding: 1em;
+    overflow: auto;
 }
 
 i {
