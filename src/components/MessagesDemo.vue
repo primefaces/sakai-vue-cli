@@ -2,18 +2,14 @@
 	<div class="p-grid">
 		<div class="p-col-12">
 			<div class="card">
-				<h1>Messages and Toast</h1>
-				<Toast />
-				<transition-group name="p-messages" tag="div">
-					<Message v-for="msg of messages" :severity="msg.severity" :key="msg.content" :life="msg.life" :sticky="msg.sticky">{{msg.content}}</Message>
-				</transition-group>
-
+				<h1 class="first">Toast</h1>
+                <Toast />
 				<Button @click="showInfo()" label="Info" class="p-button-info" style="width: 10em; margin-right: .25em" />
 				<Button @click="showSuccess()" label="Success" class="p-button-success" style="width: 10em; margin-right: .25em" />
 				<Button @click="showWarn()" label="Warn" class="p-button-warning" style="width: 10em; margin-right: .25em" />
 				<Button @click="showError()" label="Error" class="p-button-danger" style="width: 10em; margin-right: .25em" />
 
-				<h1>Inline Message</h1>
+				<h1>Messages</h1>
 				<div class="p-grid">
 					<div class="p-col-12 p-md-3">
 						<Message severity="info" :closable="false">PrimeReact Rocks</Message>
@@ -54,19 +50,15 @@ export default {
 	},
 	methods: {
 		showInfo() {
-			this.messages = [{severity: 'info', content: 'Info Message', life: 3000, sticky: false}];
 			this.$toast.add({severity:'info', summary: 'Info Message', detail:'PrimeVue rocks', life: 3000});
 		},
 		showSuccess() {
-			this.messages = [{severity: 'success', content: 'Success Message', life: 3000, sticky: false}];
 			this.$toast.add({severity:'success', summary: 'Success Message', detail:'Order submitted', life: 3000});
 		},
 		showWarn() {
-			this.messages = [{severity: 'warn', content: 'Warning Message', life: 3000, sticky: false}];
 			this.$toast.add({severity:'warn', summary: 'Warn Message', detail:'There are unsaved changes', life: 3000});
 		},
 		showError() {
-			this.messages = [{severity: 'error', content: 'Error Message', life: 3000, sticky: false}];
 			this.$toast.add({severity:'error', summary: 'Error Message', detail:'Validation failed', life: 3000});
 		}
 	}
