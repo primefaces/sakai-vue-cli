@@ -416,6 +416,10 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style>
+@media (max-width: 1024px) {
+	.p-dataview-list .p-dataview-content {
+		text-align: center
+	}
+}
 </style>
