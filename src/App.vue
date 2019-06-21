@@ -3,16 +3,14 @@
 		<AppTopBar @menu-toggle="onMenuToggle" />
 
 		<div :class="sidebarClass" @click="onSidebarClick">
-			<div class="layout-sidebar-scroll-content" >
-				<div class="layout-logo">
-                    <router-link to="/">
-                        <img alt="Logo" :src="logo" />
-                    </router-link>
-				</div>
+			<div class="layout-logo">
+                <router-link to="/">
+                    <img alt="Logo" :src="logo" />
+                </router-link>
+            </div>
 
-				<AppProfile />
-				<AppMenu :model="menu" @menuitem-click="onMenuItemClick" />
-			</div>
+            <AppProfile />
+            <AppMenu :model="menu" @menuitem-click="onMenuItemClick" />
 		</div>
 
 		<div class="layout-main">
@@ -192,7 +190,8 @@ export default {
         },
         sidebarClass() {
             return ['layout-sidebar', {
-                'layout-sidebar-dark': this.layoutColorMode === 'dark'
+                'layout-sidebar-dark': this.layoutColorMode === 'dark',
+                'layout-sidebar-light': this.layoutColorMode === 'light'
             }];
         },
         logo() {

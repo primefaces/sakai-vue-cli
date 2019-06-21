@@ -1,0 +1,61 @@
+.layout-profile {
+    text-align: center;
+    padding: 20px 0;
+
+    img {
+        width: 56px;
+        margin: 10px;
+    }
+
+    .layout-profile-link {
+        cursor: pointer;
+        color: $menuitemColor;
+        display: inline-block;
+        margin-bottom: 10px;
+        @include transition(color $transitionDuration);
+
+        i {
+            display: inline-block;
+            font-size: 16px;
+            vertical-align: middle;
+        }
+
+        &:hover {
+            color: $menuitemHoverColor;
+        }
+    }
+
+    > ul {
+        background-color: $menuitemActiveBgColor;
+        text-align: left;
+        margin: 0;
+       
+        li {
+            button {
+                width: 100%;
+                padding: 1em;
+                border: 0 none;
+                border-radius: 0;
+
+                &:hover {
+                    color: $menuitemHoverColor;
+                }
+
+                span {
+                    margin-left: .25em;
+                    vertical-align: middle;
+                }
+
+                i {
+                    vertical-align: middle;
+                }
+            }
+
+            &:last-child {
+                > button {
+                    border: 0 none;
+                }
+            }
+        }
+    }
+}
