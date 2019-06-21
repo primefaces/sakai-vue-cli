@@ -33,7 +33,7 @@
             }
 
             &.router-link-active {
-                color: $menuitemActiveRouteColor;
+                font-weight: 700;
             }
         }
 
@@ -130,6 +130,10 @@
             a {
                 color: $menuitemColor;
 
+                &.router-link-active {
+                    color: $menuitemActiveRouteColor;
+                }
+
                 &:hover {
                     color: $menuitemHoverColor;
                 }
@@ -168,6 +172,10 @@
         li {
             a {
                 color: $menuitemDarkColor;
+
+                &.router-link-active {
+                    color: $menuitemActiveRouteColor;
+                }
 
                 &:hover {
                     color: $menuitemDarkHoverColor;

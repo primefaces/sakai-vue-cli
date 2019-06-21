@@ -3,7 +3,7 @@
 		<template v-for="(item,i) of items">
 			<li :key="i" :class="[{'active-menuitem': activeIndex === i && !item.to}]">
 				<div v-if="item.items && root===true" class='arrow'></div>
-				<router-link v-if="item.to" :to="item.to" :class="[{'active-route': activeIndex === i}]" @click.native="onMenuItemClick($event,item,i)" :target="item.target">
+				<router-link v-if="item.to" :to="item.to" :class="[{'active-route': activeIndex === i}]" @click.native="onMenuItemClick($event,item,i)" :target="item.target" exact>
 					<i :class="item.icon"></i>
 					<span>{{item.label}}</span>
 					<i v-if="item.items" class="pi pi-fw pi-angle-down menuitem-toggle-icon"></i>

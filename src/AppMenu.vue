@@ -1,7 +1,6 @@
 <template>
 	<div class="layout-menu-container">
-		<AppSubmenu :items="model" class="layout-menu" 
-            :root="true" @menuitem-click="onMenuItemClick" />
+		<AppSubmenu :items="model" class="layout-menu" :root="true" @menuitem-click="onMenuItemClick" />
 	</div>
 </template>
 
