@@ -161,8 +161,8 @@
 		<div class="card">
 			<h1 style="font-size:16px">Recent Sales</h1>
 			<DataView :value="cars" :layout="layout" paginatorPosition="bottom" :paginator="true" :rows="10">
-				<template #list="slotProps" >
-					<div class="p-col-12 car-details" style="padding-bottom:0; border-bottom: 1px solid #d9d9d9">
+				<template #list="slotProps">
+					<div class="p-col-12 car-details" style="padding-bottom:0; border-bottom: 1px solid #e3e3e3">
 						<div class="p-grid">
 							<div class="p-col-3">{{slotProps.data.vin}}</div>
 
