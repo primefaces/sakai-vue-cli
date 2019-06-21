@@ -16,7 +16,7 @@
 					<span v-if="item.badge" class="menuitem-badge">{{item.badge}}</span>
 				</a>
 				<transition name="layout-submenu-wrapper">
-					<AppSubmenu v-show="activeIndex === i" :items="item.items" @menuitem-click="$emit('menuitem-click', {originalEvent: $event,item: item})"></AppSubmenu>
+					<AppSubmenu v-show="activeIndex === i" :items="item.items" @menuitem-click="$emit('menuitem-click', {originalEvent: $event, item: item})"></AppSubmenu>
 				</transition>
 			</li>
 		</template>
@@ -41,12 +41,13 @@ export default {
 		onMenuItemClick(event, item, index) {
 			if (item.disabled) {
 				event.preventDefault();
-				return true;
+				return;
 			}
 
 			//execute command
 			if (item.command) {
-				item.command({originalEvent: event, item: item});
+                item.command({originalEvent: event, item: item});
+                event.preventDefault();
 			}
 
 			this.activeIndex = index === this.activeIndex ? null : index;
