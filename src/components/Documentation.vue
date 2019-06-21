@@ -49,14 +49,12 @@ npm run serve
         &lt;AppTopBar @menu-toggle="onMenuToggle" /&gt;
 
         &lt;div :class="sidebarClass" @click="onSidebarClick"&gt;
-            &lt;div class="layout-sidebar-scroll-content" &gt;
-                &lt;div class="layout-logo"&gt;
-                    &lt;img alt="Logo" :src="logo" /&gt;
-                &lt;/div&gt;
-
-                &lt;AppProfile /&gt;
-                &lt;AppMenu :model="menu" @menuitem-click="onMenuItemClick" /&gt;
+            &lt;div class="layout-logo"&gt;
+                &lt;img alt="Logo" :src="logo" /&gt;
             &lt;/div&gt;
+
+            &lt;AppProfile /&gt;
+            &lt;AppMenu :model="menu" @menuitem-click="onMenuItemClick" /&gt;
         &lt;/div&gt;
 
         &lt;div class="layout-main"&gt;
@@ -178,10 +176,10 @@ data() {
                 <p>Sigma uses the free Nova-Light which is a free theme distributed within PrimeVue, however it can be used with any PrimeVue theme as well.</p>
 
                 <h1>SASS Variables</h1>
-                <p>In case you'd like to customize the layout variables, open <i>layout.scss</i> file under src/layout folder. Saving the changes
+                <p>In case you'd like to customize the layout variables, open <i>_variables.scss</i> file under src/layout folder. Saving the changes
                     will be reflected instantly at your browser.</p>
 
-                <h3>src/assets/layout.scss</h3>
+                <h3>src/assets/_vaiables.scss</h3>
 <pre>
 /* General */
 $fontSize:14px;
@@ -194,7 +192,6 @@ $transitionDuration:.2s;
 $maskBgColor:#424242;
 
 /* Menu */
-$scrollPanelBgColor:#aaaaaa;
 $menuitemBadgeBgColor:#007be5;
 $menuitemBadgeColor:#ffffff;
 $submenuFontSize:13px;
@@ -229,9 +226,6 @@ $topbarSearchInputColor:#ffffff;
 
 /* Footer */
 $footerBgColor:#ffffff;
-
-@import "./sass/_layout";
-@import "./overrides";
 </pre>
 
                 <h1>Menu Modes</h1>
@@ -251,11 +245,18 @@ $footerBgColor:#ffffff;
                 <p>It is also possible to leave the choice to the user by keeping the preference at a component and using an expression to bind it so that user can switch between modes. Sample
                     application has an example implementation of such use case with a computed property. Refer to App.vue for an example.</p>
 
-                <h1>Dark Menu</h1>
-                <p>Default color scheme of menu is light and alternative dark mode can be activated by adding <i>layout-sidebar-dark</i> style class to the sidebar element.</p>
+                <h1>Menu Color Scheme</h1>
+                <p>There are two alternatives as the menu colors schemes; "light" and "dark". A color scheme is applied using the <i>layout-sidebar-light</i> or <i>layout-sidebar-dark</i>
+                to the sidebar element.</p>
 
-                <pre>
+                <b>Dark Menu</b>
+<pre>
 &lt;div class="layout-sidebar layout-sidebar-dark"&gt;
+</pre>
+                
+                <b>Light Menu</b>
+<pre>
+&lt;div class="layout-sidebar layout-sidebar-light"&gt;
 </pre>
 
                 <h1>Grid CSS</h1>
