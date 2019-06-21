@@ -104,19 +104,6 @@
             }
         }
     }
-
-    .menuitem-badge {
-        display: inline-block;
-        margin-left: 4px;
-        font-size: 10px;
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        text-align: center;
-        color: $menuitemBadgeColor;
-        background-color: $menuitemBadgeBgColor;
-        @include border-radius(50%);
-    }
 }
 
 .layout-sidebar-light {

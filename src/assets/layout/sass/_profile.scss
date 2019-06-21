@@ -9,9 +9,8 @@
 
     .layout-profile-link {
         cursor: pointer;
-        color: $menuitemColor;
         display: inline-block;
-        margin-bottom: 10px;
+        margin-bottom: .75em;
         @include transition(color $transitionDuration);
 
         i {
@@ -19,15 +18,11 @@
             font-size: 16px;
             vertical-align: middle;
         }
-
-        &:hover {
-            color: $menuitemHoverColor;
-        }
     }
 
-    > ul {
-        background-color: $menuitemActiveBgColor;
-        text-align: left;
+    ul {
+        list-style-type: none;
+        padding: 0;
         margin: 0;
        
         li {
@@ -36,6 +31,7 @@
                 padding: 1em;
                 border: 0 none;
                 border-radius: 0;
+                @include transition(color $transitionDuration);
 
                 &:hover {
                     color: $menuitemHoverColor;
@@ -50,10 +46,76 @@
                     vertical-align: middle;
                 }
             }
+        }
 
-            &:last-child {
-                > button {
-                    border: 0 none;
+        &.layout-submenu-wrapper-enter,
+        &.layout-submenu-wrapper-leave-to {
+            max-height: 0;
+        }
+
+        &.layout-submenu-wrapper-enter-to,
+        &.layout-submenu-wrapper-leave {
+            max-height: 1000px;
+        }
+
+        &.layout-submenu-wrapper-leave-active {
+            overflow: hidden;
+            transition: max-height 0.45s cubic-bezier(0, 1, 0, 1);
+        }
+
+        &.layout-submenu-wrapper-enter-active {
+            overflow: hidden;
+            transition: max-height 1s ease-in-out;
+        }
+    }
+}
+
+.layout-sidebar-light {
+    .layout-profile {
+        .layout-profile-link {
+            color: $menuitemColor;
+    
+            &:hover {
+                color: $menuitemHoverColor;
+            }
+        }
+
+        ul {
+            background-color: $menuitemActiveBgColor;
+
+            li {
+                button {
+                    color: $menuitemColor;
+
+                    &:hover {
+                        color: $menuitemHoverColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.layout-sidebar-dark {
+    .layout-profile {
+        .layout-profile-link {
+            color: $menuitemDarkColor;
+    
+            &:hover {
+                color: $menuitemDarkHoverColor;
+            }
+        }
+
+        ul {
+            background-color: $menuitemDarkActiveBgColor;
+
+            li {
+                button {
+                    color: $menuitemDarkColor;
+
+                    &:hover {
+                        color: $menuitemDarkHoverColor;
+                    }
                 }
             }
         }
