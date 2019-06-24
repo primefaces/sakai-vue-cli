@@ -1,6 +1,6 @@
 {
 	"name": "sigma-vue",
-	"version": "1.0.0-SNAPSHOT",
+	"version": "1.0.0",
     "repository": {
         "type": "git",
         "url": "https://github.com/primefaces/sigma-vue.git"
