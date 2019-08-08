@@ -1,11 +1,11 @@
 {
 	"name": "sigma-vue",
 	"version": "1.0.1-SNAPSHOT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/primefaces/sigma-vue.git"
-    },
-    "license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/primefaces/sigma-vue.git"
+	},
+	"license": "MIT",
 	"scripts": {
 		"serve": "vue-cli-service serve",
 		"build": "vue-cli-service build",
@@ -28,7 +28,7 @@
 		"node-sass": "^4.9.0",
 		"sass-loader": "^7.1.0",
 		"vue-template-compiler": "^2.6.10",
-		"primevue": "1.0.0-beta.3",
+		"primevue": "1.0.0-beta.6",
 		"primeicons": "1.0.0",
 		"primeflex": "1.0.0-rc.1",
 		"axios": "^0.15.3",

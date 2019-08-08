@@ -1,4 +1,4 @@
-<template>
+ <template>
 <div class="p-grid p-fluid dashboard">
 	<div class="p-col-12 p-lg-4">
 		<div class="card summary">
@@ -160,21 +160,12 @@
 	<div class="p-col-12 p-lg-6">
 		<div class="card">
 			<h1 style="font-size:16px">Recent Sales</h1>
-			<DataView :value="cars" :layout="layout" paginatorPosition="bottom" :paginator="true" :rows="10">
-				<template #list="slotProps">
-					<div class="p-col-12 car-details" style="padding-bottom:0; border-bottom: 1px solid #e3e3e3">
-						<div class="p-grid">
-							<div class="p-col-3">{{slotProps.data.vin}}</div>
-
-							<div class="p-col-3">{{slotProps.data.year}}</div>
-
-							<div class="p-col-3">{{slotProps.data.brand}}</div>
-
-							<div class="p-col-3">{{slotProps.data.color}}</div>
-						</div>
-					</div>
-				</template>
-			</DataView>
+			<DataTable :value="dataTableCars" class="p-datatable-responsive" :selection.sync="dataTableSelectedCar" selectionMode="single" dataKey="vin">
+				<Column field="vin" header="Vin" :sortable="true"></Column>
+				<Column field="year" header="Year" :sortable="true"></Column>
+				<Column field="brand" header="Brand" :sortable="true"></Column>
+				<Column field="color" header="Color" :sortable="true"></Column>
+			</DataTable>
 		</div>
 	</div>
 	<div class="p-col-12 p-lg-6">
@@ -286,8 +277,8 @@ export default {
 				editable: true
 			},
 			events: null,
-			cars: null,
-			layout: 'list',
+			dataTableCars: null,
+			dataTableSelectedCar: null,
 			lineData: {
 				labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
 				datasets: [
@@ -316,7 +307,7 @@ export default {
 		this.eventService = new EventService();
 	},
 	mounted() {
-		this.carService.getCarsLarge().then(data => this.cars = data);
+		this.carService.getCarsSmall().then(data => this.dataTableCars = data);
 		this.eventService.getEvents().then(data => this.events = data);
 	},
 }

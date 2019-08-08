@@ -2,6 +2,15 @@
 	<div class="p-fluid">
 		<div class="p-grid">
 			<div class="p-col-12">
+				<div class="p-messages p-component p-messages-success" style="margin: 0 0 1em 0; display: block">
+					<div class="p-messages-wrapper">
+						<span class="p-messages-icon pi pi-fw pi-2x pi-check"></span>
+						<span class="p-messages-detail">Designer API is a theme engine for the complete PrimeVue UI Suite and includes this demo application
+							to test the commonly used components while designing your theme.
+						</span>
+					</div>
+				</div>
+
 				<div class="card card-w-title">
 					<h1>Form Elements</h1>
 					<div class="p-grid">
@@ -147,12 +156,25 @@
 						</div>
 					</Dialog>
 				</div>
+
+				<div class="card card-w-title">
+					<h1>DataTable</h1>
+					<DataTable :value="dataTableCars" class="p-datatable-responsive" :selection.sync="dataTableSelectedCar" selectionMode="single" dataKey="vin">
+						<template #header>
+							DataTable
+						</template>
+						<Column field="vin" header="Vin" :sortable="true"></Column>
+						<Column field="year" header="Year" :sortable="true"></Column>
+						<Column field="brand" header="Brand" :sortable="true"></Column>
+						<Column field="color" header="Color" :sortable="true"></Column>
+					</DataTable>
+				</div>
 			</div>
 
 			<div class="p-col-12">
 				<div class="card card-w-title">
 					<h1>DataView</h1>
-					<DataView :value="cars" :layout="layout" paginatorPosition="both" :paginator="true" :rows="10" :sortOrder="sortOrder" :sortField="sortField">
+					<DataView :value="dataViewValue" :layout="layout" paginatorPosition="both" :paginator="true" :rows="10" :sortOrder="sortOrder" :sortField="sortField">
 						<template #header>
 							<div class="p-grid p-nogutter ">
 								<div class="p-col-4" style="text-align: left">
@@ -202,18 +224,38 @@
 
 			<div class="p-col-12 p-lg-6">
 				<div class="card card-w-title">
-					<h1>ProgressBar</h1>
-					<ProgressBar :value="50" />
+					<h1>PickList</h1>
+					<PickList v-model="picklistCars" dataKey="vin">
+						<template #sourceHeader>
+							Available
+						</template>
+						<template #targetHeader>
+							Selected
+						</template>
+						<template #item="slotProps">
+							<span>{{slotProps.item.brand}}</span>
+						</template>
+					</PickList>
 				</div>
 
 				<div class="card card-w-title">
-					<h1>Panel</h1>
-					<Panel header="Godfather I" :toggleable="true">
-						The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.
-						His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.
-						Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family,
-						kind and benevolent to those who give respect, but given to ruthless violence whenever anything stands against the good of the family.
-					</Panel>
+					<h1>OrderList</h1>
+					<OrderList v-model="orderlistCars" listStyle="height:250px" dataKey="vin">
+						<template #header>
+							OrderList
+						</template>
+						<template #item="slotProps">
+							<div class="p-clearfix">
+								<img :src="'assets/layout/images/car/' + slotProps.item.brand + '.png'" style="display:inline-block; margin:2px 0 2px 2px; width: 50px">
+								<div style="font-size:14px; float:right; margin:15px 5px 0 0}}">{{slotProps.item.brand}} - {{slotProps.item.year}} - {{slotProps.item.color}}</div>
+							</div>
+						</template>
+					</OrderList>
+				</div>
+
+				<div class="card card-w-title">
+					<h1>ProgressBar</h1>
+					<ProgressBar :value="50" />
 				</div>
 
 				<div class="card card-w-title">
@@ -260,6 +302,21 @@
 						</TabPanel>
 					</TabView>
 				</div>
+
+				<div class="card card-w-title">
+					<h1>Panel</h1>
+					<Panel header="Godfather I" :toggleable="true">
+						The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.
+						His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.
+						Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family,
+						kind and benevolent to those who give respect, but given to ruthless violence whenever anything stands against the good of the family.
+					</Panel>
+				</div>
+
+				<div class="card card-w-title">
+					<h1>Tree</h1>
+					<Tree :value="nodes" selectionMode="single" :selectionKeys.sync="selectedTree"></Tree>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -268,6 +325,7 @@
 <script>
 import CountryService from '../service/CountryService'
 import CarService from '../service/CarService'
+import NodeService from '../service/NodeService'
 
 export default {
 	data(){
@@ -335,7 +393,9 @@ export default {
 				}
 			],
 			display: false,
-			cars: null,
+			dataTableCars: null,
+			dataTableSelectedCar: null,
+			dataViewValue: null,
 			layout: 'list',
 			sortKey: null,
 			sortOrder: null,
@@ -345,6 +405,10 @@ export default {
 				{label: 'Oldest First', value: 'year'},
 				{label: 'Brand', value: 'brand'}
 			],
+			picklistCars: null,
+			orderlistCars: null,
+			nodes: null,
+			selectedTree: null,
 			menuItems: [
 				{
 					label: 'Options',
@@ -375,13 +439,19 @@ export default {
 	},
 	countryService: null,
 	carService: null,
+	nodeService: null,
 	created() {
 		this.carService = new CarService();
 		this.countryService = new CountryService();
+		this.nodeService = new NodeService();
 	},
 	mounted() {
-		this.carService.getCarsLarge().then(data => this.cars = data);
+		this.carService.getCarsLarge().then(data => this.dataViewValue = data);
+		this.carService.getCarsSmall().then(data => this.dataTableCars = data);
 		this.countryService.getCountries().then(data => this.countries = data);
+		this.carService.getCarsSmall().then(data => this.picklistCars = [data,[]]);
+		this.carService.getCarsSmall().then(data => this.orderlistCars = data);
+		this.nodeService.getTreeNodes().then(data => this.nodes = data);
 	},
 	methods: {
 		searchCountry(query) {

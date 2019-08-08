@@ -3,10 +3,27 @@
 		<div class="p-col-12">
             <div class="card">
 				<h1>Overlay Panel</h1>
-				<Button type="button" label="Toggle" @click="toggle" />
-                <OverlayPanel ref="op" appendTo="body" :showCloseIcon="true">
-                    <img src="assets/layout/images/nature/nature1.jpg" alt="Nature 1" />
-                </OverlayPanel>
+				<div class="p-grid p-fluid">
+					<div class="p-col-6">
+						<div class="p-col-6">
+							<Button type="button" label="Image" @click="toggle" />
+							<OverlayPanel ref="op" appendTo="body" :showCloseIcon="true">
+								<img src="assets/layout/images/nature/nature1.jpg" alt="Nature 1" />
+							</OverlayPanel>
+						</div>
+						<div class="p-col-6">
+							<Button type="button" label="DataTable" @click="toggleDataTable" />
+							<OverlayPanel ref="op2" appendTo="body" :showCloseIcon="true">
+								<DataTable :value="dataTableValue" style="width: 500px">
+									<Column field="vin" header="Vin" :sortable="true"></Column>
+									<Column field="year" header="Year" :sortable="true"></Column>
+									<Column field="brand" header="Brand" :sortable="true"></Column>
+									<Column field="color" header="Color" :sortable="true"></Column>
+								</DataTable>
+							</OverlayPanel>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
         <div class="p-col-12">
@@ -31,11 +48,21 @@
 </template>
 
 <script>
+import CarService from '../service/CarService'
+
 export default {
 	data() {
 		return {
+			dataTableValue: [],
 			display: false
 		}
+	},
+	carService: null,
+	created() {
+		this.carService = new CarService();
+	},
+	mounted() {
+		this.carService.getCarsSmall().then(data => this.dataTableValue = data.slice(0,5));
 	},
 	methods: {
 		open() {
@@ -47,7 +74,7 @@ export default {
 		toggle(event) {
 			this.$refs.op.toggle(event);
 		},
-		toggleData(event) {
+		toggleDataTable(event) {
 			this.$refs.op2.toggle(event);
 		}
 	}
