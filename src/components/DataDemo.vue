@@ -5,7 +5,7 @@
 				<h1>DataTable</h1>
 				<DataTable :value="dataTableCars" class="p-datatable-responsive" :selection.sync="dataTableSelectedCar" selectionMode="single" dataKey="vin" :paginator="true" paginatorPosition="both" :rows="10">
 					<template #header>
-						List of Car
+						List of Cars
 					</template>
 					<Column field="vin" header="Vin" :sortable="true"></Column>
 					<Column field="year" header="Year" :sortable="true"></Column>

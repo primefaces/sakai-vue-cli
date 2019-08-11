@@ -10,7 +10,7 @@ import Card from 'primevue/card';
 import Chart from 'primevue/chart';
 import Checkbox from 'primevue/checkbox';
 import Chips from 'primevue/chips';
-import Column from 'primevue/components/column/Column';
+import Column from 'primevue/column';
 import DataTable from 'primevue/datatable';
 import DataView from 'primevue/dataview';
 import DataViewLayoutOptions from 'primevue/dataviewlayoutoptions';
