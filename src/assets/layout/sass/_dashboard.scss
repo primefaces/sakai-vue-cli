@@ -190,12 +190,12 @@
                 border: 0;
             }
 
-            .p-g-6:first-child {
+            .p-col-6:first-child {
                 font-size: 18px;
-                padding-left: 0;
+                padding: .5em 0 0 .5em;
             }
             
-            .p-g-6:last-child {
+            .p-col-6:last-child {
                 text-align: right;
                 color: $textSecondaryColor;
             }
