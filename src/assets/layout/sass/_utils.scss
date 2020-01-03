@@ -33,6 +33,17 @@ h2 {
     }
 }
 
-.p-g {
-    -ms-flex-wrap: wrap;
+/* Code Highlight */
+.docs {
+    pre[class*="language-"] {
+        padding: 0 !important;
+        background: transparent;
+        overflow: visible;
+    
+        > code {
+            border-left: 0 none;
+            box-shadow: none;
+            font-size: 14px;
+        }
+    }
 }

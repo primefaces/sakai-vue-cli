@@ -44,6 +44,7 @@ npm run serve
                 </p>
 
 <CodeHighlight>
+<template v-pre>
 &lt;template&gt;
     &lt;div :class="containerClass" @click="onWrapperClick"&gt;
         &lt;AppTopBar @menu-toggle="onMenuToggle" /&gt;
@@ -64,6 +65,7 @@ npm run serve
         &lt;AppFooter /&gt;
     &lt;/div&gt;
 &lt;/template&gt;
+</template>
 </CodeHighlight>
 
                 <h1>Menu</h1>
@@ -71,7 +73,7 @@ npm run serve
                     navigate to data section of <i>App.vue</i> file and define your own model as a nested structure using the menu property. 
                     Here is the menu component from the demo application. Notice that menu object is bound to the model property of AppMenu component as shown above.</p>
 
-<pre>
+<CodeHighlight lang="js">
 data() {
     return {
         menu : [
@@ -160,19 +162,19 @@ data() {
         ]
     }
 }
-</pre>
+</CodeHighlight>
 
                 <h1>Dependencies</h1>
 
                 <p>Dependencies of Sigma are listed below and needs to be added to package.json. Sigma has no direct dependency, even PrimeVue components are an optional dependency..</p>
 
-                <pre>
+<CodeHighlight lang="js">
 {
     "primevue": "^1.0.0-rc.6",         //optional: PrimeVue components
     "primeicons": "2.0.0",             //optional: Icons
     "primeflex": "1.0.0",              //optional: Grid system
 }
-</pre>
+</CodeHighlight>
 
                 <h1>Nova Theme</h1>
                 <p>Sigma uses the free Nova-Light which is a free theme distributed within PrimeVue, however it can be used with any PrimeVue theme as well.</p>
@@ -182,7 +184,7 @@ data() {
                     will be reflected instantly at your browser.</p>
 
                 <h3>src/assets/_vaiables.scss</h3>
-<pre>
+<CodeHighlight lang="css">
 /* General */
 $fontSize:14px;
 $bodyBgColor:#edf0f5;
@@ -192,6 +194,8 @@ $borderRadius:3px;
 $dividerColor:#e3e3e3;
 $transitionDuration:.2s;
 $maskBgColor:#424242;
+$focusShadowColor:#8dcdff;
+
 
 /* Menu */
 $menuitemBadgeBgColor:#007be5;
@@ -228,7 +232,7 @@ $topbarSearchInputColor:#ffffff;
 
 /* Footer */
 $footerBgColor:#ffffff;
-</pre>
+</CodeHighlight>
 
                 <h1>Menu Modes</h1>
                 <p>Menu has 2 modes, <i>static</i> and <i>overlay</i>. Main layout container element in App.vue is used to define which mode to use by adding specific classes. List
@@ -240,9 +244,9 @@ $footerBgColor:#ffffff;
                 </ul>
 
                 <p>For example to create an overlay menu, the div element should be in following form;</p>
-                <pre>
+<CodeHighlight>
 &lt;div class="layout-wrapper layout-static"&gt;
-</pre>
+</CodeHighlight>
 
                 <p>It is also possible to leave the choice to the user by keeping the preference at a component and using an expression to bind it so that user can switch between modes. Sample
                     application has an example implementation of such use case with a computed property. Refer to App.vue for an example.</p>
@@ -252,14 +256,14 @@ $footerBgColor:#ffffff;
                 to the sidebar element.</p>
 
                 <b>Dark Menu</b>
-<pre>
+<CodeHighlight>
 &lt;div class="layout-sidebar layout-sidebar-dark"&gt;
-</pre>
+</CodeHighlight>
                 
                 <b>Light Menu</b>
-<pre>
+<CodeHighlight>
 &lt;div class="layout-sidebar layout-sidebar-light"&gt;
-</pre>
+</CodeHighlight>
 
                 <h1>Grid CSS</h1>
                 <p>Sigma uses PrimeFlex CSS Grid throughout the samples. Although any grid library can be used, we recommend using PrimeFlex as your layout framework as it is well tested and supported by PrimeVue. PrimeFlex is
@@ -274,8 +278,12 @@ $footerBgColor:#ffffff;
 </template>
 
 <script>
+import CodeHighlight from './CodeHighlight';
+
 export default {
-    
+    components: {
+        'CodeHighlight': CodeHighlight
+    }
 }
 </script>
 
