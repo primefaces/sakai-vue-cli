@@ -38,12 +38,12 @@ npm run serve
                 <p>Sigma consists of 2 main parts; the application layout and the resources. <i>App.vue</i> inside src folder is the main component containing the template for the base layout
                     whereas required resources such as SASS structure for the layout are placed inside the <b>src/assets/layout</b> folder.</p>
 
-                <h1>Template</h1>
+                <h1>Templates</h1>
                 <p>Main layout is the template of the <i>App.vue</i>, it is divided into a couple of child components such as topbar, profile, menu and footer. Here is template of the
                     <i>App.vue</i> component that implements the logic such as menu state, layout modes and so on.
                 </p>
 
-<pre>
+<CodeHighlight>
 &lt;template&gt;
     &lt;div :class="containerClass" @click="onWrapperClick"&gt;
         &lt;AppTopBar @menu-toggle="onMenuToggle" /&gt;
@@ -64,7 +64,7 @@ npm run serve
         &lt;AppFooter /&gt;
     &lt;/div&gt;
 &lt;/template&gt;
-</pre>
+</CodeHighlight>
 
                 <h1>Menu</h1>
                 <p>Menu is a separate component defined in <i>AppMenu.vue</i> file based on PrimeNG MenuModel API. In order to define the menuitems,

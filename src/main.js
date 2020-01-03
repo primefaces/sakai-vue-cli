@@ -65,10 +65,13 @@ import TreeTable from 'primevue/treetable';
 import TriStateCheckbox from 'primevue/tristatecheckbox';
 import ValidationMessage from 'primevue/validationmessage';
 
+import CodeHighlight from './CodeHighlight';
+
 import 'primevue/resources/themes/nova-light/theme.css';
 import 'primevue/resources/primevue.min.css';
 import 'primeflex/primeflex.css';
 import 'primeicons/primeicons.css';
+import 'prismjs/themes/prism-coy.css';
 import '@fullcalendar/core/main.min.css';
 import '@fullcalendar/daygrid/main.min.css';
 import '@fullcalendar/timegrid/main.min.css';
@@ -140,6 +143,8 @@ Vue.component('Tree', Tree);
 Vue.component('TreeTable', TreeTable);
 Vue.component('TriStateCheckbox', TriStateCheckbox);
 Vue.component('ValidationMessage', ValidationMessage);
+
+Vue.component('CodeHighlight', CodeHighlight);
 
 new Vue({
 	router,
