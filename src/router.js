@@ -38,9 +38,24 @@ export default new Router({
 		},
 		{
 			path: '/menus',
-			name: 'menus',
-			component: () => import('./components/MenusDemo.vue')
-		},
+            component: () => import('./components/MenusDemo.vue'),
+            children: [{
+                path: '',
+                component: () => import('./components/menu/PersonalDemo.vue')
+            },
+            {
+                path: '/menus/seat',
+                component: () => import('./components/menu/SeatDemo.vue')
+            },
+            {
+                path: '/menus/payment',
+                component: () => import('./components/menu/PaymentDemo.vue')
+            },
+            {
+                path: '/menus/confirmation',
+                component: () => import('./components/menu/ConfirmationDemo.vue')
+            }]
+        },
 		{
 			path: '/messages',
 			name: 'messages',

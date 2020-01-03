@@ -7,8 +7,13 @@
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
-    @include transition(left $transitionDuration);
+    @include transition(transform $transitionDuration);
     @include shadow(0 0 6px 0 rgba(0, 0, 0, 0.16));
+
+    &.layout-sidebar-enter,
+    &.layout-sidebar-leave-to {
+        transform: translateX(-100%);
+    }
 
     .layout-logo {
         text-align: center;

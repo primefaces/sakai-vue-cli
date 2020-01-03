@@ -6,7 +6,7 @@
 					<div class="p-messages-wrapper">
 						<span class="p-messages-icon pi pi-fw pi-2x pi-check"></span>
 						<span class="p-messages-detail">Designer API is a theme engine for the complete PrimeVue UI Suite and includes this demo application
-							to test the commonly used components while designing your theme.
+                                        to test the commonly used components while designing your theme.
 						</span>
 					</div>
 				</div>
@@ -30,7 +30,7 @@
 							<label htmlFor="calendar">Calendar</label>
 						</div>
 						<div class="p-col-12 p-md-4">
-							<Calendar placeholder="Popup" v-model="date"/>
+							<Calendar placeholder="Popup" v-model="date" :showIcon="true"  />
 						</div>
 						<div class="p-col-12 p-md-2">
 							<label htmlFor="autocomplete">AutoComplete</label>
@@ -49,6 +49,12 @@
 						</div>
 						<div class="p-col-12 p-md-4">
 							<Password v-model="passwordValue" id="password"/>
+						</div>
+						<div class="p-col-12 p-md-2">
+							<label htmlFor="inputmask">InputMask</label>
+						</div>
+						<div class="p-col-12 p-md-4">
+							<InputMask mask="99/99/9999" v-model="inputMaskValue" slotChar="dd/mm/yyyy" placeholder="Date" id="inputmask"/>
 						</div>
 						<div class="p-col-12 p-md-2">
 							<label htmlFor="spinner">Spinner</label>
@@ -129,7 +135,7 @@
 							SelectButton
 						</div>
 						<div class="p-col-12 p-md-4">
-							<SelectButton v-model="selectButtonValue" :options="selectButtonValues" optionLabel="name" class="p-buttonset-3" />
+							<SelectButton v-model="selectButtonValue" :options="selectButtonValues" optionLabel="name" />
 						</div>
 						<div class="p-col-12 p-md-2">
 							<label htmlFor="listbox">ListBox</label>
@@ -145,7 +151,7 @@
 						</div>
 					</div>
 
-					<Dialog header="Login" :visible.sync="display" :modal="true">
+					<Dialog header="Godfather I" :visible.sync="display" :modal="true">
 						<div class="p-grid">
 							<div class="p-col-12">
 								<InputText placeholder="Username" />
@@ -156,18 +162,72 @@
 						</div>
 					</Dialog>
 				</div>
+			</div>
 
+			<div class="p-col-12">
 				<div class="card card-w-title">
 					<h1>DataTable</h1>
-					<DataTable :value="dataTableCars" class="p-datatable-responsive" :selection.sync="dataTableSelectedCar" selectionMode="single" dataKey="vin">
-						<template #header>
-							DataTable
-						</template>
-						<Column field="vin" header="Vin" :sortable="true"></Column>
-						<Column field="year" header="Year" :sortable="true"></Column>
-						<Column field="brand" header="Brand" :sortable="true"></Column>
-						<Column field="color" header="Color" :sortable="true"></Column>
-					</DataTable>
+                    <DataTable :value="dataTableCars" class="p-datatable-responsive" :selection.sync="dataTableSelectedCar" selectionMode="single" dataKey="vin" :paginator="true" :rows="10" :filters="filters">
+                        <template #header>
+                            List of Cars
+                        </template>
+                        <Column field="vin" header="Vin" :sortable="true">
+                            <template #body="slotProps">
+                                <span class="p-column-title">Vin</span>
+                                {{slotProps.data.vin}}
+                            </template>
+                            <template #filter>
+                                <InputText type="text" v-model="filters['vin']" class="p-column-filter" placeholder="Starts with" />
+                            </template>
+                        </Column>
+                        <Column field="year" header="Year" :sortable="true" filterMatchMode="contains">
+                            <template #body="slotProps">
+                                <span class="p-column-title">Year</span>
+                                {{slotProps.data.year}}
+                            </template>
+                        <template #filter>
+                                <InputText type="text" v-model="filters['year']" class="p-column-filter" placeholder="Contains" />
+                            </template>
+                        </Column>
+                        <Column field="brand" header="Brand" :sortable="true">
+                            <template #body="slotProps">
+                                <span class="p-column-title">Brand</span>
+                                {{slotProps.data.brand}}
+                            </template>
+                            <template #filter>
+                                <Dropdown v-model="filters['brand']" :options="brands" optionLabel="brand" optionValue="value" placeholder="Select a Brand" class="p-column-filter" :showClear="true">
+                                    <template #option="slotProps">
+                                        <div class="p-clearfix p-dropdown-car-option">
+                                            <img :alt="slotProps.option.brand" :src="'assets/demo/images/car/' + slotProps.option.brand + '.png'" />
+                                            <span>{{slotProps.option.brand}}</span>
+                                        </div>
+                                    </template>
+                                </Dropdown>
+                            </template>
+                        </Column>
+                        <Column field="color" header="Color" :sortable="true" filterMatchMode="in">
+                            <template #body="slotProps">
+                                <span class="p-column-title">Color</span>
+                                {{slotProps.data.color}}
+                            </template>
+                            <template #filter>
+                                <MultiSelect v-model="filters['color']" :options="colors" optionLabel="name" optionValue="value" placeholder="Select a Color" class="p-column-filter" />
+                            </template>
+                        </Column>
+                        <Column headerStyle="width: 8em; text-align: center" bodyStyle="text-align: center">
+                            <template #body="slotProps">
+                                <span class="p-column-title">Color</span>
+                                {{slotProps.data.color}}
+                            </template>
+                            <template #header>
+                                <Button type="button" icon="pi pi-cog"></Button>
+                            </template>
+                            <template #body="slotProps">
+                                <Button type="button" icon="pi pi-search" class="p-button-success" style="margin-right: .5em"></Button>
+                                <Button type="button" icon="pi pi-pencil" class="p-button-warning"></Button>
+                            </template>
+                        </Column>
+                    </DataTable>
 				</div>
 			</div>
 
@@ -175,56 +235,48 @@
 				<div class="card card-w-title">
 					<h1>DataView</h1>
 					<DataView :value="dataViewValue" :layout="layout" paginatorPosition="both" :paginator="true" :rows="10" :sortOrder="sortOrder" :sortField="sortField">
-						<template #header>
-							<div class="p-grid p-nogutter ">
-								<div class="p-col-4" style="text-align: left">
-									<Dropdown v-model="sortKey" :options="sortOptions" optionLabel="label" placeholder="Sort By" @change="onSortChange($event)"/>
-								</div>
-								<div class="p-col-4 p-offset-4" style="text-align: right">
-									<DataViewLayoutOptions v-model="layout" />
-								</div>
-							</div>
-						</template>
-						<template #list="slotProps" >
-							<div class="p-col-12 car-details" style="padding: 2em; border-bottom: 1px solid #d9d9d9">
-								<div class="p-grid">
-									<div class="p-col-12 p-md-3">
-										<img :src="'assets/layout/images/car/' + slotProps.data.brand + '.png'" :alt="slotProps.data.brand"/>
-									</div>
-									<div class="p-col-12 p-md-8 car-details">
-										<div class="p-grid">
-											<div class="p-col-12">Vin: <b>{{slotProps.data.vin}}</b></div>
-
-											<div class="p-col-12">Year: <b>{{slotProps.data.year}}</b></div>
-
-											<div class="p-col-12">Brand: <b>{{slotProps.data.brand}}</b></div>
-
-											<div class="p-col-12">Color: <b>{{slotProps.data.color}}</b></div>
-										</div>
-									</div>
-									<div class="p-col-12 p-md-1 search-icon" style="margin-top: 40px">
-										<Button icon="pi pi-search"></Button>
-									</div>
-								</div>
-							</div>
-						</template>
-						<template #grid="slotProps">
-							<div style="padding: .5em" class="p-col-12 p-md-3">
-								<Panel :header="slotProps.data.vin" style="text-align: center">
-									<img :src="'assets/layout/images/car/' + slotProps.data.brand + '.png'" :alt="slotProps.data.brand"/>
-									<div class="car-detail">{{slotProps.data.year}} - {{slotProps.data.color}}</div>
-									<hr class="ui-widget-content" style="border-top: 0" />
-									<Button icon="pi pi-search"></Button>
-								</Panel>
-							</div>
-						</template>
-					</DataView>
+                        <template #header>
+                            <div class="p-grid p-nogutter">
+                                <div class="p-col-6" style="text-align: left">
+                                    <Dropdown v-model="sortKey" :options="sortOptions" optionLabel="label" placeholder="Sort By" @change="onSortChange($event)" />
+                                </div>
+                                <div class="p-col-6" style="text-align: right">
+                                    <DataViewLayoutOptions v-model="layout" />
+                                </div>
+                            </div>
+                        </template>
+                        <template #list="slotProps" >
+                            <div class="p-col-12">
+                                <div class="car-details">
+                                    <div>
+                                        <img :src="'assets/layout/images/car/' + slotProps.data.brand + '.png'" :alt="slotProps.data.brand"/>
+                                        <div class="p-grid">
+                                            <div class="p-col-12">Vin: <b>{{slotProps.data.vin}}</b></div>
+                                            <div class="p-col-12">Year: <b>{{slotProps.data.year}}</b></div>
+                                            <div class="p-col-12">Brand: <b>{{slotProps.data.brand}}</b></div>
+                                            <div class="p-col-12">Color: <b>{{slotProps.data.color}}</b></div>
+                                        </div>
+                                    </div>
+                                    <Button icon="pi pi-search"></Button>
+                                </div>
+                            </div>
+                        </template>
+                        <template #grid="slotProps">
+                            <div style="padding: .5em" class="p-col-12 p-md-3">
+                                <Panel :header="slotProps.data.vin" style="text-align: center">
+                                    <img :src="'assets/demo/images/car/' + slotProps.data.brand + '.png'" :alt="slotProps.data.brand"/>
+                                    <div class="car-detail">{{slotProps.data.year}} - {{slotProps.data.color}}</div>
+                                    <Button icon="pi pi-search"></Button>
+                                </Panel>
+                            </div>
+                        </template>
+                    </DataView>
 				</div>
 			</div>
 
 			<div class="p-col-12 p-lg-6">
 				<div class="card card-w-title">
-					<h1>PickList</h1>
+					<div class="card-title">PickList</div>
 					<PickList v-model="picklistCars" dataKey="vin">
 						<template #sourceHeader>
 							Available
@@ -239,7 +291,7 @@
 				</div>
 
 				<div class="card card-w-title">
-					<h1>OrderList</h1>
+					<div class="card-title">OrderList</div>
 					<OrderList v-model="orderlistCars" listStyle="height:250px" dataKey="vin">
 						<template #header>
 							OrderList
@@ -291,16 +343,16 @@
 
 					<h1>TabView</h1>
 					<TabView>
-						<TabPanel header="Godfather I">
-							The story begins as Don Vito Corleone, the head of a New York Mafia family, overseeshis daughter's wedding. His beloved son ichael has just come home from the war, but does not intend to become part of his father's business. Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family, kind and benevolent to those who give respect, but given to ruthless violence whenever anything stands against the good of the family.
-						</TabPanel>
-						<TabPanel header="Godfather II">
-							Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, The_Godfather parallels the young Vito Corleone's rise with his son Michael's spiritual fall, deepening The_Godfather's depiction of the dark side of the American dream. In the early 1900s, the child Vito flees his Sicilian village for America after the local Mafia kills his family. Vito struggles to make a living, legally or illegally, for his wife and growing brood in Little Italy.
-						</TabPanel>
-						<TabPanel header="Godfather III">
-							The Godfather Part III is set in 1979 and 1980. Michael has moved back to New York and taken great strides to remove the family from crime. He turns over his New York criminal interests to longtime enforcer Joey Zasa. He uses his wealth in an attempt to rehabilitate his reputation through numerous philanthropic acts, administered by a foundation named after his father. A decade earlier, he gave custody of his two children to Kay, who has since remarried.
-						</TabPanel>
-					</TabView>
+                        <TabPanel header="Godfather I">
+                            The story begins as Don Vito Corleone, the head of a New York Mafia family, overseeshis daughter's wedding. His beloved son ichael has just come home from the war, but does not intend to become part of his father's business. Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family, kind and benevolent to those who give respect, but given to ruthless violence whenever anything stands against the good of the family.
+                        </TabPanel>
+                        <TabPanel header="Godfather II">
+                            Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, The_Godfather parallels the young Vito Corleone's rise with his son Michael's spiritual fall, deepening The_Godfather's depiction of the dark side of the American dream. In the early 1900s, the child Vito flees his Sicilian village for America after the local Mafia kills his family. Vito struggles to make a living, legally or illegally, for his wife and growing brood in Little Italy.
+                        </TabPanel>
+                        <TabPanel header="Godfather III">
+                            The Godfather Part III is set in 1979 and 1980. Michael has moved back to New York and taken great strides to remove the family from crime. He turns over his New York criminal interests to longtime enforcer Joey Zasa. He uses his wealth in an attempt to rehabilitate his reputation through numerous philanthropic acts, administered by a foundation named after his father. A decade earlier, he gave custody of his two children to Kay, who has since remarried.
+                        </TabPanel>
+                    </TabView>
 				</div>
 
 				<div class="card card-w-title">
@@ -315,7 +367,7 @@
 
 				<div class="card card-w-title">
 					<h1>Tree</h1>
-					<Tree :value="nodes" selectionMode="single" :selectionKeys.sync="selectedTree"></Tree>
+                    <Tree :value="nodes" selectionMode="checkbox" :selectionKeys.sync="selectedTreeValue"></Tree>
 				</div>
 			</div>
 		</div>
@@ -333,7 +385,8 @@ export default {
 			countries: null,
 			selectedCountry: null,
 			filteredCountriesBasic: null,
-			multiselectedCars: null,
+            multiselectedCars: null,
+            filters: {},
 			multiselectCars: [
 				{brand: 'Audi', value: 'Audi'},
 				{brand: 'Bmw', value: 'Bmw'},
@@ -357,6 +410,7 @@ export default {
 			],
 			dropdownCity: null,
 			passwordValue: '',
+			inputMaskValue: null,
 			spinnerValue: null,
 			sliderValue: [20,80],
 			listboxCities: [
@@ -408,7 +462,7 @@ export default {
 			picklistCars: null,
 			orderlistCars: null,
 			nodes: null,
-			selectedTree: null,
+			selectedTreeValue: null,
 			menuItems: [
 				{
 					label: 'Options',
@@ -434,7 +488,29 @@ export default {
 						}
 					]
 				}
-			]
+            ],
+            brands: [
+                {brand: 'Audi', value: 'Audi'},
+                {brand: 'BMW', value: 'BMW'},
+                {brand: 'Fiat', value: 'Fiat'},
+                {brand: 'Honda', value: 'Honda'},
+                {brand: 'Jaguar', value: 'Jaguar'},
+                {brand: 'Mercedes', value: 'Mercedes'},
+                {brand: 'Renault', value: 'Renault'},
+                {brand: 'Volkswagen', value: 'Volkswagen'},
+                {brand: 'Volvo', value: 'Volvo'}
+            ],
+            colors: [
+                {name: 'White', value: 'White'},
+                {name: 'Green', value: 'Green'},
+                {name: 'Silver', value: 'Silver'},
+                {name: 'Black', value: 'Black'},
+                {name: 'Red', value: 'Red'},
+                {name: 'Maroon', value: 'Maroon'},
+                {name: 'Brown', value: 'Brown'},
+                {name: 'Orange', value: 'Orange'},
+                {name: 'Blue', value: 'Blue'}
+            ]
 		}
 	},
 	countryService: null,
@@ -486,10 +562,35 @@ export default {
 }
 </script>
 
-<style>
-@media (max-width: 1024px) {
-	.p-dataview-list .p-dataview-content {
-		text-align: center
-	}
+<style scoped lang="scss">
+.p-column-filter {
+    margin-top: .5em;
+}
+
+/deep/ .p-dataview {
+    .car-details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2em;
+
+        & > div {
+            display: flex;
+            align-items: center;
+
+            img {
+                margin-right: 14px;
+            }
+        }
+    }
+
+    .car-detail {
+        padding: 0 1em 1em 1em;
+        margin: 1em;
+    }
+
+    .p-dropdown {
+        width: 12em;
+    }
 }
 </style>

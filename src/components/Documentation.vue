@@ -3,7 +3,7 @@
         <div class="p-col-12">
             <div class="card docs">
                 <h1>Current Version</h1>
-                <p>Vue 2.6.0 and PrimeVue 1.0.0-beta.3</p>
+                <p>Vue 2.6.0 and PrimeVue 1.0.0</p>
 
                 <h1>Getting Started</h1>
                 <p>Sigma is an application template for Vue based on the <a href="https://cli.vuejs.org/">Vue CLI</a> that provides out-of-the-box standard
@@ -162,13 +162,15 @@ data() {
 }
 </pre>
 
-                <p>Dependencies of Sigma are listed below and needs to be added to package.json. Only required
-                    dependency is PrimeVue where optional dependencies exist to enable certain components in PrimeVue such as FullCalendar.</p>
+                <h1>Dependencies</h1>
+
+                <p>Dependencies of Sigma are listed below and needs to be added to package.json. Sigma has no direct dependency, even PrimeVue components are an optional dependency..</p>
 
                 <pre>
 {
-    "primevue": "^1.0.0-beta.3",         //required: PrimeVue components
-    "primeicons": "1.0.0-beta.10"        //required: Icons
+    "primevue": "^1.0.0-rc.6",         //optional: PrimeVue components
+    "primeicons": "2.0.0",             //optional: Icons
+    "primeflex": "1.0.0",              //optional: Grid system
 }
 </pre>
 

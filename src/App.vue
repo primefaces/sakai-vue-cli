@@ -2,16 +2,18 @@
 	<div :class="containerClass" @click="onWrapperClick">
 		<AppTopBar @menu-toggle="onMenuToggle" />
 
-		<div :class="sidebarClass" @click="onSidebarClick">
-			<div class="layout-logo">
-                <router-link to="/">
-                    <img alt="Logo" :src="logo" />
-                </router-link>
-            </div>
+        <transition name="layout-sidebar">
+            <div :class="sidebarClass" @click="onSidebarClick" v-show="isSidebarVisible()">
+                <div class="layout-logo">
+                    <router-link to="/">
+                        <img alt="Logo" :src="logo" />
+                    </router-link>
+                </div>
 
-            <AppProfile />
-            <AppMenu :model="menu" @menuitem-click="onMenuItemClick" />
-		</div>
+                <AppProfile />
+                <AppMenu :model="menu" @menuitem-click="onMenuItemClick" />
+            </div>
+        </transition>
 
 		<div class="layout-main">
 			<router-view />
@@ -176,7 +178,20 @@ export default {
         },
         isDesktop() {
             return window.innerWidth > 1024;
-        }
+        },
+        isSidebarVisible() {
+            if (this.isDesktop()) {
+                if (this.layoutMode === 'static')
+                    return !this.staticMenuInactive;
+                else if (this.layoutMode === 'overlay')
+                    return this.overlayMenuActive;
+                else
+                    return true;
+            }
+            else {
+                return true;
+            }
+        },
     },
     computed: {
         containerClass() {

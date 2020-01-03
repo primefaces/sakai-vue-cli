@@ -28,6 +28,10 @@
                 color: $topbarItemHoverColor;
             }
 
+            &:focus {
+                @include focused();
+            }
+
             span {
                 &.layout-topbar-icon {
                     font-size: 2em;

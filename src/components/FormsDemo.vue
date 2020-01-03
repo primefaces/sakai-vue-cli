@@ -1,5 +1,4 @@
 <template>
-
 	<div class="p-grid p-fluid">
 		<div class="p-col-12 p-lg-6">
 			<div class="card card-w-title">
@@ -196,9 +195,9 @@
 
 					<div class="p-col-12 p-md-6">
 						<div class="p-inputgroup">
-                            <span class="p-inputgroup-addon p-inputgroup-addon-checkbox">
-                                <Checkbox v-model="inputGroupValue" :binary="true"/>
-                            </span>
+                                    <span class="p-inputgroup-addon p-inputgroup-addon-checkbox">
+										<Checkbox v-model="inputGroupValue" :binary="true" />
+                                    </span>
 							<InputText placeholder="Confirm"/>
 						</div>
 					</div>
@@ -227,7 +226,7 @@
 
 							<div class="p-col-12">SelectButton</div>
 							<div class="p-col-12">
-								<SelectButton v-model="selectButtonValue" :options="selectButtonValues" optionLabel="name" class="p-buttonset-3" />
+								<SelectButton v-model="selectButtonValue" :options="selectButtonValues" optionLabel="name" />
 							</div>
 
 							<div class="p-col-12">Button</div>
@@ -389,7 +388,7 @@ export default {
 	},
 	mounted() {
 		this.countryService.getCountries().then(data => this.countries = data);
-		this.brands = ['Audi', 'BMW', 'Fiat', 'Ford', 'Honda', 'Jaguar', 'Mercedes', 'Renault', 'Volvo'];
+		this.brands = ['Audi', 'Bmw', 'Fiat', 'Ford', 'Honda', 'Jaguar', 'Mercedes', 'Renault', 'Volvo'];
 	},
 	methods: {
 		searchCountry(query) {

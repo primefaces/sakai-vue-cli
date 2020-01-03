@@ -165,6 +165,19 @@
 				<Column field="year" header="Year" :sortable="true"></Column>
 				<Column field="brand" header="Brand" :sortable="true"></Column>
 				<Column field="color" header="Color" :sortable="true"></Column>
+                <Column headerStyle="width: 8em; text-align: center" bodyStyle="text-align: center">
+                    <template #body="slotProps">
+                        <span class="p-column-title">Color</span>
+                        {{slotProps.data.color}}
+                    </template>
+                    <template #header>
+                        <Button type="button" icon="pi pi-cog"></Button>
+                    </template>
+                    <template #body="slotProps">
+                        <Button type="button" icon="pi pi-search" class="p-button-success" style="margin-right: .5em"></Button>
+                        <Button type="button" icon="pi pi-pencil" class="p-button-warning"></Button>
+                    </template>
+                </Column>
 			</DataTable>
 		</div>
 	</div>

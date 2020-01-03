@@ -14,6 +14,22 @@
 				<ProgressBar :value="value" />
 			</div>
 		</div>
+
+        <div class="p-col-12">
+			<div class="card">
+				<h1>Inplace</h1>
+				<Inplace :closable="true">
+                    <template #display>
+                        {{text || 'Click to Edit'}}
+                    </template>
+                    <template #content>
+                        <InputText v-model="text" autoFocus />
+                    </template>
+                </Inplace>
+			</div>
+		</div>
+
+        
 	</div>
 </template>
 
@@ -21,7 +37,8 @@
 export default {
 	data() {
 		return {
-			value: 0
+            value: 0,
+            text: null
 		}
 	},
 	interval: null,
