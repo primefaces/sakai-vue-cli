@@ -46,6 +46,7 @@ import PickList from 'primevue/picklist';
 import ProgressBar from 'primevue/progressbar';
 import Rating from 'primevue/rating';
 import RadioButton from 'primevue/radiobutton';
+import Ripple from 'primevue/ripple';
 import SelectButton from 'primevue/selectbutton';
 import Slider from 'primevue/slider';
 import Sidebar from 'primevue/sidebar';
@@ -78,6 +79,10 @@ import './assets/layout/flags/flags.css';
 
 Vue.use(ToastService);
 Vue.directive('tooltip', Tooltip);
+Vue.directive('ripple', Ripple);
+
+Vue.prototype.$appState = Vue.observable({inputStyle: 'outlined'});
+Vue.prototype.$primevue = Vue.observable({ripple: true});
 
 Vue.config.productionTip = false;
 

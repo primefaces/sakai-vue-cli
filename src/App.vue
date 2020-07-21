@@ -19,6 +19,8 @@
 			<router-view />
 		</div>
 
+		<AppConfig :layoutMode="layoutMode" :layoutColorMode="layoutColorMode" @layout-change="onLayoutChange" @layout-color-change="onLayoutColorChange"/>
+
 		<AppFooter />
 	</div>
 </template>
@@ -27,6 +29,7 @@
 import AppTopBar from './AppTopbar.vue';
 import AppProfile from './AppProfile.vue';
 import AppMenu from './AppMenu.vue';
+import AppConfig from './AppConfig.vue';
 import AppFooter from './AppFooter.vue';
 
 export default {
@@ -39,20 +42,6 @@ export default {
             mobileMenuActive: false,
             menu : [
                 {label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/'},
-                {
-                    label: 'Menu Modes', icon: 'pi pi-fw pi-cog',
-                    items: [
-                        {label: 'Static Menu', icon: 'pi pi-fw pi-bars',  command: () => this.layoutMode = 'static' },
-                        {label: 'Overlay Menu', icon: 'pi pi-fw pi-bars',  command: () => this.layoutMode = 'overlay' }
-                    ]
-                },
-                {
-                    label: 'Menu Colors', icon: 'pi pi-fw pi-align-left',
-                    items: [
-                        {label: 'Dark', icon: 'pi pi-fw pi-bars',  command: () => this.layoutColorMode = 'dark' },
-                        {label: 'Light', icon: 'pi pi-fw pi-bars',  command: () => this.layoutColorMode = 'light' }
-                    ]
-                },
 				{
 					label: 'UI KIT', icon: 'pi pi-fw pi-sitemap',
 					items: [
@@ -183,6 +172,12 @@ export default {
                 this.mobileMenuActive = false;
             }
         },
+		onLayoutChange(layoutMode) {
+			this.layoutMode = layoutMode;
+		},
+		onLayoutColorChange(layoutColorMode) {
+			this.layoutColorMode = layoutColorMode;
+		},
         addClass(element, className) {
             if (element.classList)
                 element.classList.add(className);
@@ -219,7 +214,9 @@ export default {
                 'layout-static': this.layoutMode === 'static',
                 'layout-static-sidebar-inactive': this.staticMenuInactive && this.layoutMode === 'static',
                 'layout-overlay-sidebar-active': this.overlayMenuActive && this.layoutMode === 'overlay',
-                'layout-mobile-sidebar-active': this.mobileMenuActive
+                'layout-mobile-sidebar-active': this.mobileMenuActive,
+				'p-input-filled': this.$appState.inputStyle === 'filled',
+				'p-ripple-disabled': this.$primevue.ripple === false
             }];
         },
         sidebarClass() {
@@ -242,6 +239,7 @@ export default {
         'AppTopBar': AppTopBar,
         'AppProfile': AppProfile,
         'AppMenu': AppMenu,
+        'AppConfig': AppConfig,
         'AppFooter': AppFooter,
     }
 }
