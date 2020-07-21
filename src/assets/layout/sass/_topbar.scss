@@ -1,7 +1,7 @@
 .layout-topbar {
     position: fixed;
     height: 50px;
-    padding: .7em 1.5em 0em 1.5em;
+    padding: 1em 1.5em 0em 1.5em;
     color: #ffffff;
     z-index: 999;
     right: 0;
@@ -34,7 +34,7 @@
 
             span {
                 &.layout-topbar-icon {
-                    font-size: 2em;
+                    font-size: 1.5em;
                 }
 
                 &.layout-topbar-item-text {
@@ -116,7 +116,7 @@
         @include transition(color $transitionDuration);
 
         span {
-            font-size: 2em;
+            font-size: 1.5em;
         }
 
         &:hover {

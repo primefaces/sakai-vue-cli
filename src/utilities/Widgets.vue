@@ -1,6 +1,6 @@
 <template>
 	<div class="p-grid">
-		<h4 style="margin-top: .75em">Reusable CSS widgets for your applications.</h4>
+		<h4 style="margin-top: .75em; margin-left: .5em">Reusable CSS widgets for your applications.</h4>
 		<div class="p-col-12">
 			<div class="card">
 				<h4>Overview Boxes</h4>

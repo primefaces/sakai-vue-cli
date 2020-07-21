@@ -132,16 +132,6 @@ export default new Router({
 			component: () => import('./pages/CalendarDemo.vue')
 		},
 		{
-			path: '/invoice',
-			name: 'invoice',
-			component: () => import('./pages/Invoice.vue')
-		},
-		{
-			path: '/help',
-			name: 'help',
-			component: () => import('./pages/Help.vue')
-		},
-		{
 			path: '/empty',
 			name: 'empty',
 			component: () => import('./components/EmptyPage.vue')

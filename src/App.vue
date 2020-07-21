@@ -76,8 +76,6 @@ export default {
 					items: [
 						{label: 'Crud', icon: 'pi pi-fw pi-pencil', to: '/crud'},
 						{label: 'Calendar', icon: 'pi pi-fw pi-calendar-plus', to: '/calendar'},
-						{label: 'Invoice', icon: 'pi pi-fw pi-dollar', to: '/invoice'},
-						{label: 'Help', icon: 'pi pi-fw pi-question-circle', to: '/help'},
 						{label: 'Empty Page', icon: 'pi pi-fw pi-circle-off', to: '/empty'}
 					]
 				},
