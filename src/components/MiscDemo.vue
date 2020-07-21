@@ -2,73 +2,107 @@
 	<div class="p-grid">
 		<div class="p-col-12">
 			<div class="card">
-				<h1>Upload</h1>
-
-				<FileUpload name="demo[]" url="./upload.php" @upload="onUpload" :multiple="true" accept="image/*" :maxFileSize="1000000" />
+				<h5>ProgressBar</h5>
+				<div class="p-grid">
+					<div class="p-col">
+						<ProgressBar :value="value" />
+					</div>
+					<div class="p-col">
+						<ProgressBar :value="50" :showValue="false"/>
+					</div>
+				</div>
 			</div>
 		</div>
 
 		<div class="p-col-12">
 			<div class="card">
-				<h1>ProgressBar</h1>
-				<ProgressBar :value="value" />
+				<h4>Badge</h4>
+				<h5>Numbers</h5>
+				<div class="badges">
+					<span class="p-badge">2</span>
+					<span class="p-badge p-badge-success">8</span>
+					<span class="p-badge p-badge-info">4</span>
+					<span class="p-badge p-badge-warning">12</span>
+					<span class="p-badge p-badge-danger">3</span>
+				</div>
+
+				<h5>Tags</h5>
+				<div class="badges">
+					<span class="p-tag">Primary</span>
+					<span class="p-tag p-tag-success">Success</span>
+					<span class="p-tag p-tag-info">Info</span>
+					<span class="p-tag p-tag-warning">Warning</span>
+					<span class="p-tag p-tag-danger">Danger</span>
+				</div>
+
+				<h5>Pills</h5>
+				<div class="badges">
+					<span class="p-tag p-tag-rounded">Primary</span>
+					<span class="p-tag p-tag-rounded p-tag-success">Success</span>
+					<span class="p-tag p-tag-rounded p-tag-info">Info</span>
+					<span class="p-tag p-tag-rounded p-tag-warning">Warning</span>
+					<span class="p-tag p-tag-rounded p-tag-danger">Danger</span>
+				</div>
+
+				<h5>Icon Badge</h5>
+				<span class="p-overlay-badge p-mr-5">
+					<i class="pi pi-bell" style="font-size: 2em"></i>
+					<span class="p-badge">2</span>
+				</span>
+
+				<h5>Button Badge</h5>
+				<span class="p-overlay-badge">
+					<Button type="button" label="New" />
+					<span class="p-badge p-badge-warning">5</span>
+				</span>
+
+				<h5>Sizes</h5>
+				<div class="badges">
+					<span class="p-badge">2</span>
+					<span class="p-badge p-badge-lg p-badge-sucess">4</span>
+					<span class="p-badge p-badge-xl p-badge-warning">6</span>
+				</div>
+
 			</div>
 		</div>
-
-        <div class="p-col-12">
-			<div class="card">
-				<h1>Inplace</h1>
-				<Inplace :closable="true">
-                    <template #display>
-                        {{text || 'Click to Edit'}}
-                    </template>
-                    <template #content>
-                        <InputText v-model="text" autoFocus />
-                    </template>
-                </Inplace>
-			</div>
-		</div>
-
-        
 	</div>
 </template>
 
 <script>
-export default {
-	data() {
-		return {
-            value: 0,
-            text: null
-		}
-	},
-	interval: null,
-	methods: {
-		startProgress() {
-			this.interval = setInterval(() => {
-				let newValue = this.value + Math.floor(Math.random() * 10) + 1;
-				if (newValue >= 100) {
-					newValue = 100;
-				}
-				this.value = newValue;
-			}, 2000);
+	export default {
+		data() {
+			return {
+				value: 0
+			}
 		},
-		endProgress() {
-			clearInterval(this.interval);
-			this.interval = null;
+		interval: null,
+		methods: {
+			startProgress() {
+				this.interval = setInterval(() => {
+					let newValue = this.value + Math.floor(Math.random() * 10) + 1;
+					if (newValue >= 100) {
+						newValue = 100;
+					}
+					this.value = newValue;
+				}, 2000);
+			},
+			endProgress() {
+				clearInterval(this.interval);
+				this.interval = null;
+			}
 		},
-		onUpload() {
-			this.$toast.add({severity: 'info', summary: 'Success', detail: 'File Uploaded', life: 3000});
+		mounted() {
+			this.startProgress();
+		},
+		beforeDestroy() {
+			this.endProgress();
 		}
-	},
-	mounted() {
-		this.startProgress();
-	},
-	beforeDestroy() {
-		this.endProgress();
 	}
-}
 </script>
 
 <style scoped>
-
+	.badges .p-badge,
+	.badges .p-tag {
+		margin-right: .125rem;
+	}
 </style>

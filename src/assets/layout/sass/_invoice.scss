@@ -1,0 +1,129 @@
+.invoice {
+	padding: 2rem;
+
+	.invoice-header {
+		@include flex();
+		@include flex-justify-between();
+	}
+
+	.invoice-company {
+		.logo-image {
+			margin-bottom: .5rem;
+		}
+
+		div {
+			margin-bottom: .5rem;
+		}
+
+		.company-name {
+			font-weight: 700;
+			font-size: 1.5rem;
+		}
+	}
+
+	.invoice-title {
+		font-size: 2rem;
+		margin-bottom: 2rem;
+		text-align: right;
+	}
+
+	.invoice-details {
+		width: 15rem;
+		@include flex();
+		@include flex-wrap(wrap);
+
+		> div {
+			width: 50%;
+			margin-bottom: .5rem;
+		}
+
+		.invoice-label {
+			text-align: left;
+			font-weight: 700;
+		}
+
+		.invoice-value {
+			text-align: right;
+		}
+	}
+
+	.invoice-to {
+		margin-top: 1.5rem;
+		padding-top: 2rem;
+		border-top: 1px solid $dividerColor;
+
+		.bill-to {
+			font-size: 1.25rem;
+			font-weight: 700;
+			margin-bottom: .5rem;
+		}
+
+		.invoice-to-info {
+			div {
+				margin-bottom: .5rem;
+			}
+		}
+	}
+
+	.invoice-items {
+		margin-top: 2rem;
+		padding-top: 2rem;
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+
+			tr {
+				border-bottom: 1px solid $dividerColor;
+			}
+
+			th {
+				font-weight: 700;
+			}
+
+			th, td {
+				padding: 1rem;
+				text-align: right;
+			}
+
+			th:first-child, td:first-child {
+				text-align: left;
+			}
+		}
+	}
+
+	.invoice-summary {
+		@include flex();
+		@include flex-justify-between();
+		margin-top: 2.5rem;
+		padding-top: 2.5rem;
+
+		.invoice-value {
+			font-weight: 700;
+		}
+	}
+}
+
+@media print {
+	body * {
+		visibility: hidden;
+	}
+	#invoice-content * {
+		visibility: visible;
+	}
+	#invoice-content {
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	#invoice-content{
+		.card{
+			box-shadow: none;
+
+			&.invoice-table{
+				margin-bottom: 10px;
+				background-color: transparent;
+			}
+		}
+	}
+}

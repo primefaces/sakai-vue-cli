@@ -1,0 +1,141 @@
+.help-page {
+	p {
+		margin: 0;
+	}
+
+	.help-search {
+		//background: url("../../layout/images/pages/bg-help.png") repeat;
+		padding: 0;
+		text-align: center;
+
+		.help-search-content {
+			padding: 5rem 12rem;
+		}
+
+		.search-container {
+			font-size: 1.5rem;
+			padding: 1rem;
+			position: relative;
+
+			input {
+				appearance: none;
+				font-size: 1.5rem;
+				text-indent: 2.5rem;
+				padding: .5rem;
+				width: 100%;
+			}
+
+			i {
+				color: $textColor;
+				position: absolute;
+				margin-left: 1rem;
+				top: 50%;
+				margin-top: -.5rem;
+			}
+		}
+	}
+
+	.status-bars {
+		margin-top: 1rem;
+		@include flex();
+
+		.status-bar {
+			flex: 1 1 0;
+			-ms-flex: 1 1 0px;
+			background: #8BC34A;
+			height: 50px;
+			margin-right: .25rem;
+			transition: transform $transitionDuration;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			&.status-bar-failure {
+				background: #EC407A;
+			}
+
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+	}
+
+	.status-bar-footer {
+		padding: 1rem 0 0 0;
+		@include flex();
+		@include flex-justify-between();
+	}
+
+	.blog-post {
+		height: 150px;
+		border-radius: 4px;
+		margin: 3rem 2rem;
+		position: relative;
+		box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+
+		&:last-child {
+			margin-bottom: 1rem;
+		}
+
+		img {
+			width: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+
+		.blog-text {
+			position: absolute;
+			left: 20px;
+			top: 30px;
+
+			h1 {
+				font-size: 1.25rem;
+				color: #ffffff;
+				margin-bottom: 1rem;
+				font-weight: 700;
+			}
+
+			span {
+				color: #ffffff;
+				font-weight: 600;
+			}
+		}
+
+		.blog-profile {
+			position: absolute;
+			top: -25px;
+			left: -25px;
+
+			img {
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+
+			}
+		}
+
+		&:nth-child(1) {
+			//background-image: url("../../layout/images/pages/help/blog1.jpg");
+		}
+
+		&:nth-child(2) {
+			//background-image: url("../../layout/images/pages/help/blog2.jpg");
+		}
+
+		&:nth-child(3) {
+			//background-image: url("../../layout/images/pages/help/blog3.jpg");
+		}
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.help-page {
+		.help-search {
+			.help-search-content {
+				padding: 6rem 2rem;
+			}
+		}
+	}
+}

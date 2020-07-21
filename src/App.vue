@@ -47,32 +47,51 @@ export default {
                     ]
                 },
                 {
-                    label: 'Menu Colors', icon: 'pi pi-fw pi-align-left', 
+                    label: 'Menu Colors', icon: 'pi pi-fw pi-align-left',
                     items: [
                         {label: 'Dark', icon: 'pi pi-fw pi-bars',  command: () => this.layoutColorMode = 'dark' },
                         {label: 'Light', icon: 'pi pi-fw pi-bars',  command: () => this.layoutColorMode = 'light' }
                     ]
                 },
-                {
-                    label: 'Components', icon: 'pi pi-fw pi-globe', badge: '9',
-                    items: [
-                        {label: 'Sample Page', icon: 'pi pi-fw pi-th-large', to: '/sample'},
-                        {label: 'Forms', icon: 'pi pi-fw pi-file', to: '/forms'},
-                        {label: 'Data', icon: 'pi pi-fw pi-table', to: '/data'},
-                        {label: 'Panels', icon: 'pi pi-fw pi-list', to: '/panels'},
-                        {label: 'Overlays', icon: 'pi pi-fw pi-clone', to: '/overlays'},
-                        {label: 'Menus', icon: 'pi pi-fw pi-plus', to: '/menus'},
-                        {label: 'Messages', icon: 'pi pi-fw pi-spinner',to: '/messages'},
-                        {label: 'Charts', icon: 'pi pi-fw pi-chart-bar', to: '/charts'},
-                        {label: 'Misc', icon: 'pi pi-fw pi-upload', to: '/misc'}
-                    ]
-                },
-                {
-                    label: 'Template Pages', icon: 'pi pi-fw pi-file',
-                    items: [
-                        {label: 'Empty Page', icon: 'pi pi-fw pi-circle-off', to: '/empty'}
-                    ]
-                },
+				{
+					label: 'UI KIT', icon: 'pi pi-fw pi-sitemap',
+					items: [
+						{label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/formlayout'},
+						{label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/input'},
+						{label: 'Button', icon: 'pi pi-fw pi-mobile', to: '/button'},
+						{label: 'Table', icon: 'pi pi-fw pi-table', to: '/table'},
+						{label: 'List', icon: 'pi pi-fw pi-list', to: '/list'},
+						{label: 'Tree', icon: 'pi pi-fw pi-share-alt', to: '/tree'},
+						{label: 'Panel', icon: 'pi pi-fw pi-tablet', to: '/panel'},
+						{label: 'Overlay', icon: 'pi pi-fw pi-clone', to: '/overlay'},
+						{label: 'Menu', icon: 'pi pi-fw pi-bars', to: '/menu'},
+						{label: 'Message', icon: 'pi pi-fw pi-comment', to: '/messages'},
+						{label: 'File', icon: 'pi pi-fw pi-file', to: '/file'},
+						{label: 'Chart', icon: 'pi pi-fw pi-chart-bar', to: '/chart'},
+						{label: 'Misc', icon: 'pi pi-fw pi-circle-off', to: '/misc'},
+					]
+				},
+				{
+					label: "Utilities", icon:'pi pi-globe',
+					items: [
+						{label: 'Icons', icon:'pi pi-search', to:'/icons'},
+						{label: 'Widgets', icon:'pi pi-star-o', to:'/widgets'},
+						{label: 'Grid System', icon:'pi pi-th-large', to:'/grid'},
+						{label: 'Spacing', icon:'pi pi-arrow-right', to:'/spacing'},
+						{label: 'Elevation', icon:'pi pi-external-link', to:'/elevation'},
+						{label: 'Typography', icon:'pi pi-align-center', to:'/typography'},
+					]
+				},
+				{
+					label: 'Pages', icon: 'pi pi-fw pi-clone',
+					items: [
+						{label: 'Crud', icon: 'pi pi-fw pi-pencil', to: '/crud'},
+						{label: 'Calendar', icon: 'pi pi-fw pi-calendar-plus', to: '/calendar'},
+						{label: 'Invoice', icon: 'pi pi-fw pi-dollar', to: '/invoice'},
+						{label: 'Help', icon: 'pi pi-fw pi-question-circle', to: '/help'},
+						{label: 'Empty Page', icon: 'pi pi-fw pi-circle-off', to: '/empty'}
+					]
+				},
                 {
                     label: 'Menu Hierarchy', icon: 'pi pi-fw pi-search',
                     items: [

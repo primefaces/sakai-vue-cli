@@ -99,7 +99,7 @@
 			</ul>
 		</Panel>
 	</div>
-	
+
 	<div class="p-col-12 p-md-6 p-lg-4 p-fluid contact-form">
 		<Panel header="Contact Us">
 			<div class="p-grid">
@@ -156,28 +156,41 @@
 			</ul>
 		</Panel>
 	</div>
-	
+
 	<div class="p-col-12 p-lg-6">
 		<div class="card">
 			<h1 style="font-size:16px">Recent Sales</h1>
-			<DataTable :value="dataTableCars" class="p-datatable-responsive" :selection.sync="dataTableSelectedCar" selectionMode="single" dataKey="vin">
-				<Column field="vin" header="Vin" :sortable="true"></Column>
-				<Column field="year" header="Year" :sortable="true"></Column>
-				<Column field="brand" header="Brand" :sortable="true"></Column>
-				<Column field="color" header="Color" :sortable="true"></Column>
-                <Column headerStyle="width: 8em; text-align: center" bodyStyle="text-align: center">
-                    <template #body="slotProps">
-                        <span class="p-column-title">Color</span>
-                        {{slotProps.data.color}}
-                    </template>
-                    <template #header>
-                        <Button type="button" icon="pi pi-cog"></Button>
-                    </template>
-                    <template #body="slotProps">
-                        <Button type="button" icon="pi pi-search" class="p-button-success" style="margin-right: .5em"></Button>
-                        <Button type="button" icon="pi pi-pencil" class="p-button-warning"></Button>
-                    </template>
-                </Column>
+			<DataTable :value="products" class="p-datatable-responsive" dataKey="vin" :rows="5" style="margin-bottom: 20px" :paginator="true">
+				<Column>
+					<template #header>
+						Logo
+					</template>
+					<template #body="slotProps">
+						<img :src="'assets/layout/images/product/' + slotProps.data.image" :alt="slotProps.data.image" width="50px" />
+					</template>
+				</Column>
+				<Column field="name" header="Name"></Column>
+				<Column field="category" header="Category"></Column>
+				<Column field="price" header="Price">
+					<template #body="slotProps">
+						{{formatCurrency(slotProps.data.price)}}
+					</template>
+				</Column>
+				<Column>
+					<template #header>
+						View
+					</template>
+					<template #body="slotProps">
+						<div class="p-grid">
+							<div class="p-col-6">
+								<Button icon="pi pi-search" type="button"></Button>
+							</div>
+							<div class="p-col-6">
+								<Button icon="pi pi-times" type="button" class="p-button-danger"></Button>
+							</div>
+						</div>
+					</template>
+				</Column>
 			</DataTable>
 		</div>
 	</div>
@@ -254,14 +267,14 @@
 		</Panel>
 	</div>
 </div>
-	
-	
-	
+
+
+
 
 </template>
 
 <script>
-import CarService from '../service/CarService';
+import ProductService from '../service/ProductService';
 import EventService from '../service/EventService';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -290,8 +303,8 @@ export default {
 				editable: true
 			},
 			events: null,
-			dataTableCars: null,
-			dataTableSelectedCar: null,
+			products: null,
+			selectedProducts: null,
 			lineData: {
 				labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
 				datasets: [
@@ -313,14 +326,14 @@ export default {
 			},
 		}
 	},
-	carService: null,
+	productService: null,
 	eventService: null,
 	created() {
-		this.carService = new CarService();
+		this.productService = new ProductService();
 		this.eventService = new EventService();
 	},
 	mounted() {
-		this.carService.getCarsSmall().then(data => this.dataTableCars = data);
+		this.productService.getProductsSmall().then(data => this.products = data);
 		this.eventService.getEvents().then(data => this.events = data);
 
 		let afId = this.$route.query['af_id'];
@@ -330,6 +343,11 @@ export default {
             expire.setTime(today.getTime() + 3600000*24*7);
             document.cookie = 'primeaffiliateid=' + afId + ';expires=' + expire.toUTCString() + ';path=/; domain:primefaces.org';
         }
+	},
+	methods: {
+		formatCurrency(value) {
+			return value.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
+		}
 	}
 }
 </script>
