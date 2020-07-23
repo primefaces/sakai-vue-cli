@@ -1,19 +1,19 @@
 /* Dashboard */
 .dashboard {
-    
+
     .summary {
         position: relative;
-        
+
         .title {
             font-size: 20px;
         }
-        
+
         .detail {
             color: $textSecondaryColor;
             display: block;
             margin-top: 10px;
         }
-        
+
         .count {
             color: #ffffff;
             position: absolute;
@@ -21,16 +21,16 @@
             right: 10px;
             font-size: 24px;
             padding: 7px 14px;
-            @include border-radius($borderRadius);
-            
+            border-radius: $borderRadius;
+
             &.visitors {
                 background-color: #20d077;
             }
-            
+
             &.purchases {
                 background-color: #f9c851;
             }
-            
+
             &.revenue {
                 background-color: #007be5;
             }
@@ -41,7 +41,7 @@
         height: 100px;
         display: flex;
         @include clearfix();
-        
+
         .initials {
             height: 100%;
             width: 50%;
@@ -52,7 +52,7 @@
                 font-size: 48px;
             }
         }
-        
+
         .highlight-details {
             height: 100%;
             background-color: #ffffff;
@@ -64,7 +64,7 @@
                 vertical-align: middle;
                 margin-right: .5em;
             }
-            
+
             .count {
                 color: $textSecondaryColor;
                 font-size: 36px;
@@ -73,27 +73,27 @@
             }
         }
     }
-    
+
     .task-list {
         list-style-type: none;
         margin: 0;
         padding: 0;
-        
+
         li {
             padding: .5em .25em;
             border-bottom: 1px solid $dividerColor;
             @include clearfix();
         }
-        
+
         .p-checkbox {
             vertical-align: middle;
             margin-right: .5em;
         }
-        
+
         .task-name {
             vertical-align: middle;
         }
-        
+
         i {
             float: right;
             font-size: 24px;
@@ -120,7 +120,7 @@
 
             li {
                 border-bottom: 1px solid $dividerColor;
-                
+
                 button {
                     padding: 9px;
                     width: 100%;
@@ -128,16 +128,16 @@
                     text-decoration: none;
                     position: relative;
                     display: block;
-                    @include border-radius(2px);
-                    @include transition(background-color .2s);
-                    
+                    border-radius: 2px;
+                    transition: background-color .2s;
+
                     .name {
                         position: absolute;
                         right: 10px;
                         top: 10px;
                         font-size: 18px;
                     }
-                    
+
                     .email {
                         position: absolute;
                         right: 10px;
@@ -145,33 +145,33 @@
                         font-size: 14px;
                         color: $textSecondaryColor;
                     }
-                    
+
                     &:hover {
                         cursor: pointer;
                         background-color: #eeeeee;
                     }
                 }
-                
+
                 &:last-child {
                     border: 0;
                 }
             }
         }
- 
+
         .p-panel-content {
             min-height: 256px;
         }
     }
-        
+
     .activity-list {
         list-style-type: none;
         padding: 0;
         margin: 0;
-        
+
         li {
             border-bottom: 1px solid $dividerColor;
             padding: 16px 8px;
-            
+
             .count {
                 font-size: 24px;
                 color: #ffffff;

@@ -3,7 +3,7 @@
     background-color: #ffffff;
     padding: 1em;
     margin-bottom: 16px;
-    @include border-radius($borderRadius);
+    border-radius: $borderRadius;
 
     &.card-w-title {
         padding-bottom: 2em;

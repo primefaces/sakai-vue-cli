@@ -1,114 +1,25 @@
-// Icon Override Mixin
 @mixin icon-override($icon) {
     &:before {
         content: $icon;
     }
 }
 
-// === MIXINS === //
-@mixin border-radius($val) {
-    -moz-border-radius: $val;
-    -webkit-border-radius: $val;
-    border-radius: $val;
-}
-
-@mixin border-radius-right($val) {
-    -moz-border-radius-topright: $val;
-    -webkit-border-top-right-radius: $val;
-    border-top-right-radius: $val;
-    -moz-border-radius-bottomright: $val;
-    -webkit-border-bottom-right-radius: $val;
-    border-bottom-right-radius: $val;
-}
-
-@mixin border-radius-left($val) {
-    -moz-border-radius-topleft: $val;
-    -webkit-border-top-left-radius: $val;
-    border-top-left-radius: $val;
-    -moz-border-radius-bottomleft: $val;
-    -webkit-border-bottom-left-radius: $val;
-    border-bottom-left-radius: $val;
-}
-
-@mixin border-radius-top($val) {
-    -moz-border-radius-topleft: $val;
-    -webkit-border-top-left-radius: $val;
-    border-top-left-radius: $val;
-    -moz-border-radius-topright: $val;
-    -webkit-border-top-right-radius: $val;
-    border-top-right-radius: $val;
-}
-
-@mixin border-radius-bottom($val) {
-    -moz-border-radius-bottomleft: $val;
-    -webkit-border-bottom-left-radius: $val;
-    border-bottom-left-radius: $val;
-    -moz-border-radius-bottomright: $val;
-    -webkit-border-bottom-right-radius: $val;
-    border-bottom-right-radius: $val;
-}
-
 @mixin linear-gradient($top, $bottom){
     background: $top; /* Old browsers */
-    background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
     background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 }
 
 @mixin linear-gradient-left($left, $right){
     background: $left; /* Old browsers */
-    background: -moz-linear-gradient(left,  $left 0%, $right 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,$left), color-stop(100%,$right)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(left,  $left 0%,$right 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(left,  $left 0%,$right 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(left,  $left 0%,$right 100%); /* IE10+ */
     background: linear-gradient(to right,  $left 0%,$right 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$left, endColorstr=$right,GradientType=1 ); /* IE6-9 */
-}
-
-@mixin transition($transition...) {
-    -moz-transition:    $transition;
-    -o-transition:      $transition;
-    -webkit-transition: $transition;
-    transition:         $transition;
-}
-
-@mixin transition-property($property) {
-    -webkit-transition-property: $property;
-    -moz-transition-property: $property;
-    -ms-transition-property: $property;
-    -o-transition-property: $property;
-    transition-property: $property;
-}
-
-@mixin transition-duration($duration) {
-    -moz-transition-duration: $duration;
-    -webkit-transition-duration: $duration;
-    -o-transition-duration: $duration;
-    transition-duration: $duration;
-}
-
-@mixin transition-timing-function($function) {
-    -webkit-transition-timing-function: $function;
-    -moz-transition-timing-function: $function;
-    -o-transition-timing-function: $function;
-    transition-timing-function: $function;
 }
 
 @mixin opacity($opacity) {
     opacity: $opacity;
     $opacity-ie: $opacity * 100;
     filter: alpha(opacity=$opacity-ie);
-}
-
-@mixin shadow($value) {
-    -webkit-box-shadow: $value;
-    -moz-box-shadow: $value;
-    box-shadow: $value;
 }
 
 @mixin focused() {
@@ -129,74 +40,4 @@
         display: table;
         clear: both;
     }
-}
-
-@mixin rotate($deg) {
-    -webkit-transform: rotate($deg);
-    -moz-transform: rotate($deg);
-    -o-transform: rotate($deg);
-    -ms-transform: rotate($deg);
-    transform: rotate($deg);
-}
-
-@mixin flex() {
-    display: -ms-flexbox;
-    display: flex;
-}
-
-@mixin flex-wrap($value) {
-    -ms-flex-wrap: $value;
-    flex-wrap: $value;
-}
-
-@mixin flex-direction-row() {
-    -ms-flex-direction: row;
-    flex-direction: row;
-}
-
-@mixin flex-direction-column() {
-    -ms-flex-direction: column;
-    flex-direction: column;
-}
-
-@mixin flex-justify-center() {
-    -ms-flex-pack: center;
-    justify-content: center;
-}
-
-@mixin flex-justify-between() {
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-}
-
-@mixin flex-align-center() {
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-@mixin flex-align-start() {
-    -ms-flex-align: start;
-    align-items: flex-start;
-}
-
-@mixin flex-align-end() {
-    -ms-flex-align: end;
-    align-items: flex-end;
-}
-
-@mixin flex-justify-start() {
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-}
-
-@mixin flex-justify-end() {
-    -ms-flex-pack: end;
-    justify-content: flex-end;
-}
-
-@mixin input-placeholder($color) {
-    &::-webkit-input-placeholder {color: $color}
-    &:-moz-placeholder           {color: $color}
-    &::-moz-placeholder          {color: $color}
-    &:-ms-input-placeholder      {color: $color}
 }
