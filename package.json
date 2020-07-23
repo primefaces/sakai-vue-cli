@@ -1,6 +1,6 @@
 {
 	"name": "sigma-vue",
-	"version": "1.0.2-SNAPSHOT",
+	"version": "2.0.0",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/primefaces/sigma-vue.git"
@@ -34,7 +34,6 @@
 		"primeicons": "4.0.0",
 		"primevue": "2.0.4",
 		"prismjs": "^1.15.0",
-		"quill": "^1.3.7",
 		"sass-loader": "^7.1.0",
 		"vue": "^2.6.10",
 		"vue-router": "^3.0.3",

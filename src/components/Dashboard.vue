@@ -129,28 +129,28 @@
 					<button class="p-link">
 						<img src="assets/layout/images/avatar_1.png" width="35" alt="avatar1"/>
 						<span class="name">Claire Williams</span>
-						<span class="email">clare@pf-sigma.com</span>
+						<span class="email">clare@primevue.com</span>
 					</button>
 				</li>
 				<li>
 					<button class="p-link">
 						<img src="assets/layout/images/avatar_2.png" width="35" alt="avatar2"/>
 						<span class="name">Jason Dourne</span>
-						<span class="email">jason@pf-sigma.com</span>
+						<span class="email">jason@primevue.com</span>
 					</button>
 				</li>
 				<li>
 					<button class="p-link">
 						<img src="assets/layout/images/avatar_3.png" width="35" alt="avatar3"/>
 						<span class="name">Jane Davidson</span>
-						<span class="email">jane@pf-sigma.com</span>
+						<span class="email">jane@primevue.com</span>
 					</button>
 				</li>
 				<li>
 					<button class="p-link">
 						<img src="assets/layout/images/avatar_4.png" width="35" alt="avatar4"/>
 						<span class="name">Tony Corleone</span>
-						<span class="email">tony@pf-sigma.com</span>
+						<span class="email">tony@primevue.com</span>
 					</button>
 				</li>
 			</ul>
@@ -169,9 +169,9 @@
 						<img :src="'assets/layout/images/product/' + slotProps.data.image" :alt="slotProps.data.image" width="50px" />
 					</template>
 				</Column>
-				<Column field="name" header="Name"></Column>
-				<Column field="category" header="Category"></Column>
-				<Column field="price" header="Price">
+				<Column field="name" header="Name" sortable></Column>
+				<Column field="category" header="Category" sortable></Column>
+				<Column field="price" header="Price" sortable>
 					<template #body="slotProps">
 						{{formatCurrency(slotProps.data.price)}}
 					</template>
@@ -180,15 +180,9 @@
 					<template #header>
 						View
 					</template>
-					<template #body="slotProps">
-						<div class="p-grid">
-							<div class="p-col-6">
-								<Button icon="pi pi-search" type="button"></Button>
-							</div>
-							<div class="p-col-6">
-								<Button icon="pi pi-times" type="button" class="p-button-danger"></Button>
-							</div>
-						</div>
+					<template #body>
+                        <Button icon="pi pi-search" type="button" class="p-button-success p-mr-2"></Button>
+                        <Button icon="pi pi-times" type="button" class="p-button-danger"></Button>
 					</template>
 				</Column>
 			</DataTable>
@@ -222,11 +216,11 @@
 
 			<ul class="activity-list">
 				<li>
-					<div class="count">$900</div>
-					<div class="p-grid">
-						<div class="p-col-6">Income</div>
-						<div class="p-col-6">95%</div>
-					</div>
+                    <div class="p-d-flex p-jc-between p-ai-center p-mb-3">
+                        <h5 class="activity p-m-0">Income</h5>
+                        <div class="count">$900</div>
+                    </div>
+                    <ProgressBar value="50" :showValue="false" />
 				</li>
 				<li>
 					<div class="count" style="background-color:#f9c851">$250</div>

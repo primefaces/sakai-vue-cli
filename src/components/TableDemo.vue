@@ -5,7 +5,7 @@
 				<h4>Default</h4>
 				<p>Pagination, sorting, filtering and checkbox selection.</p>
 				<DataTable :value="customer1" :paginator="true" class="p-datatable-customers" :rows="10" dataKey="id" :rowHover="true" :selection.sync="selectedCustomers1"
-						   :filters="filters1" :loading="loading1">
+                        :filters="filters1" :loading="loading1">
 					<template #header>
 						<div class="table-header">
 							List of Customers
@@ -67,7 +67,7 @@
 				<h4>Customized</h4>
 				<p>Scrollable table with gridlines (<mark>.p-datatable-gridlines</mark>), striped rows (<mark>.p-datatable-striped</mark>) and smaller paddings (<mark>p-datatable-sm</mark>).</p>
 				<DataTable :value="customer2" :paginator="true" class="p-datatable-responsive p-datatable-gridlines p-datatable-customers"
-							:rows="10" dataKey="id" :rowHover="true" :selection.sync="selectedCustomers2" :filters="filters2" :loading="loading2">
+                        :rows="10" dataKey="id" :rowHover="true" :selection.sync="selectedCustomers2" :filters="filters2" :loading="loading2">
 					<template #header>
 						<div class="table-header">
 							Customers

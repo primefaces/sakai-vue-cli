@@ -12,26 +12,20 @@
             cursor: pointer;
             position: relative;
             text-decoration: none;
-            display: block;
+            display: flex;
+            align-items: center;
             @include transition(color $transitionDuration);
 
             i {
-                font-size: 18px;
-                vertical-align: middle;
+                font-size: 16px;
             }
 
             span {
-                margin-left: .25em;
-                vertical-align: middle;
-                line-height: 18px;
-                display: inline-block;
+                margin-left: .5em;
             }
 
             .menuitem-toggle-icon {
-                position: absolute;
-                top: 50%;
-                right: 1em;
-                margin-top: -9px;
+                margin-left: auto;
             }
 
             &:focus {
