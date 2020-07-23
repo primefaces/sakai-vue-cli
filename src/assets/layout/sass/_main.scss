@@ -21,10 +21,17 @@ body {
 
 a {
     text-decoration: none;
+    color: #2196f3;
 }
 
 .layout-wrapper {
     padding: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     min-height: 100vh;
 }
 
