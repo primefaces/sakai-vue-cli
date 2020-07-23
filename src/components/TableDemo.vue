@@ -247,7 +247,7 @@
 		},
 		mounted() {
 			this.productService.getProductsWithOrdersSmall().then(data => this.products = data);
-			this.customerService.getCustomersLarge().then(data => this.customer1 = data);
+			this.customerService.getCustomersMedium().then(data => this.customer1 = data);
 			this.customerService.getCustomersLarge().then(data => this.customer2 = data);
 			this.customerService.getCustomersMedium().then(data => this.customer3 = data);
 			this.loading1 = false;

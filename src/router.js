@@ -44,7 +44,7 @@ export default new Router({
 		{
 			path: '/panel',
 			name: 'panel',
-			component: () => import('./components/PanelDemo.vue')
+			component: () => import('./components/PanelsDemo.vue')
 		},
 		{
 			path: '/overlay',

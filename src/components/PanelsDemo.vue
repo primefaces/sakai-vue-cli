@@ -24,7 +24,7 @@
 			<div class="card">
 				<h5>AccordionPanel</h5>
 				<Accordion>
-					<AccordionTab header="Header I">
+					<AccordionTab header="Header I" :active="true">
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 							Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
@@ -90,7 +90,7 @@
 				<Card>
 					<template slot="title">
 						<h5>Card</h5>
-						<Button icon="pi pi-plus" class="p-button-secondary"/>
+						<Button icon="pi pi-plus" class="p-button-text"/>
 					</template>
 
 					<template slot="subtitle">

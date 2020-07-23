@@ -53,24 +53,18 @@
 		</div>
 		<div class="p-col-12 p-lg-6">
 			<div class="card p-fluid">
-				<h5>Dialog with Position</h5>
-				<Dialog header="Dialog" :visible.sync="displayPosition" :style="{width: '50vw'}" :position="position" :modal="true">
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-						in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-						Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</p>
+				<h5>Confirmation</h5>
+				<Button label="Delete" icon="pi pi-trash" class="p-button-danger" @click="openConfirmation" />
+				<Dialog header="Confirmation" :visible.sync="displayConfirmation" :style="{width: '350px'}" :modal="true">
+					<div class="confirmation-content">
+						<i class="pi pi-exclamation-triangle p-mr-3" style="font-size: 2rem" />
+						<span>Are you sure you want to proceed?</span>
+					</div>
 					<template #footer>
-						<Button label="Yes" icon="pi pi-check" @click="closePosition" />
-						<Button label="No" icon="pi pi-times" @click="closePosition" class="p-button-secondary"/>
+						<Button label="No" icon="pi pi-times" @click="closeConfirmation" class="p-button-text"/>
+						<Button label="Yes" icon="pi pi-check" @click="closeConfirmation" class="p-button-text" autofocus />
 					</template>
 				</Dialog>
-				<div class="p-grid">
-					<div class="p-col-12">
-						<Button label="TopLeft" icon="pi pi-arrow-down" @click="openPosition('topleft')" class="p-button-warning" />
-					</div>
-				</div>
 			</div>
 			<div class="card">
 				<h5>Sidebar</h5>
@@ -104,11 +98,11 @@
 					<Button type="button" @click="visibleFull = false" label="Cancel" class="p-button-secondary"/>
 				</Sidebar>
 
-				<Button icon="pi pi-arrow-right" @click="visibleLeft = true" style="margin-right:.25em" />
-				<Button icon="pi pi-arrow-left" @click="visibleRight = true" style="margin-right:.25em" />
-				<Button icon="pi pi-arrow-down" @click="visibleTop = true" style="margin-right:.25em" />
-				<Button icon="pi pi-arrow-up" @click="visibleBottom = true" style="margin-right:.25em" />
-				<Button icon="pi pi-external-link" @click="visibleFull = true"  />
+				<Button icon="pi pi-arrow-right" class="p-button-warning" @click="visibleLeft = true" style="margin-right:.25em" />
+				<Button icon="pi pi-arrow-left" class="p-button-warning" @click="visibleRight = true" style="margin-right:.25em" />
+				<Button icon="pi pi-arrow-down" class="p-button-warning" @click="visibleTop = true" style="margin-right:.25em" />
+				<Button icon="pi pi-arrow-up" class="p-button-warning" @click="visibleBottom = true" style="margin-right:.25em" />
+				<Button icon="pi pi-external-link" class="p-button-warning" @click="visibleFull = true"  />
 			</div>
 		</div>
 		<div class="p-col-12">
@@ -116,7 +110,7 @@
 				<h5>Tooltip</h5>
 				<div class="p-formgroup-inline">
 					<div class="p-field">
-						<InputText type="text" placeholder="Firstname" v-tooltip="'Your username'" />
+						<InputText type="text" placeholder="Username" v-tooltip="'Your username'" />
 					</div>
 
 					<Button type="button" label="Save" icon="pi pi-check" v-tooltip="'Click to proceed'" />
@@ -133,8 +127,7 @@
 		data() {
 			return {
 				display: false,
-				displayPosition: false,
-				position: 'center',
+				displayConfirmation: false,
 				visibleLeft: false,
 				visibleRight: false,
 				visibleTop: false,
@@ -158,12 +151,11 @@
 			close() {
 				this.display = false;
 			},
-			openPosition(position) {
-				this.position = position;
-				this.displayPosition = true;
+			openConfirmation() {
+				this.displayConfirmation = true;
 			},
-			closePosition() {
-				this.displayPosition = false;
+			closeConfirmation() {
+				this.displayConfirmation = false;
 			},
 			toggle(event) {
 				this.$refs.op.toggle(event);
@@ -183,13 +175,19 @@
 </script>
 
 <style scoped>
-	p {
-		line-height: 1.5;
-		margin: 0;
-	}
+p {
+	line-height: 1.5;
+	margin: 0;
+}
 
-	.product-image {
-		width: 50px;
-		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
-	}
+.product-image {
+	width: 50px;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+}
+
+.confirmation-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 </style>
