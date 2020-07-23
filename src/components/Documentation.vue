@@ -2,10 +2,10 @@
     <div class="p-grid">
         <div class="p-col-12">
             <div class="card docs">
-                <h1>Current Version</h1>
+                <h4>Current Version</h4>
                 <p>Vue 2.6.0 and PrimeVue 1.0.0</p>
 
-                <h1>Getting Started</h1>
+                <h4>Getting Started</h4>
                 <p>Sigma is an application template for Vue based on the <a href="https://cli.vuejs.org/">Vue CLI</a> that provides out-of-the-box standard
                 tooling for Vue projects. To get started, clone the <a href="https://github.com/primefaces/sigma-vue">repository</a> from GitHub and install the dependencies with npm or yarn.</p>
 <pre>
@@ -25,7 +25,7 @@ yarn
 npm run serve
 </pre>
 
-                <h1>Vue CLI Scripts</h1>
+                <h4>Vue CLI Scripts</h4>
                 <p>Following commands are derived from create-app-app.</p>
 <pre>
 "npm run serve": Starts the development server
@@ -34,11 +34,11 @@ npm run serve
 "npm run test:unit": Runs the tests.
 </pre>
 
-                <h1>Structure</h1>
+                <h4>Structure</h4>
                 <p>Sigma consists of 2 main parts; the application layout and the resources. <i>App.vue</i> inside src folder is the main component containing the template for the base layout
                     whereas required resources such as SASS structure for the layout are placed inside the <b>src/assets/layout</b> folder.</p>
 
-                <h1>Templates</h1>
+                <h4>Templates</h4>
                 <p>Main layout is the template of the <i>App.vue</i>, it is divided into a couple of child components such as topbar, profile, menu and footer. Here is template of the
                     <i>App.vue</i> component that implements the logic such as menu state, layout modes and so on.
                 </p>
@@ -49,18 +49,24 @@ npm run serve
     &lt;div :class="containerClass" @click="onWrapperClick"&gt;
         &lt;AppTopBar @menu-toggle="onMenuToggle" /&gt;
 
-        &lt;div :class="sidebarClass" @click="onSidebarClick"&gt;
-            &lt;div class="layout-logo"&gt;
-                &lt;img alt="Logo" :src="logo" /&gt;
-            &lt;/div&gt;
+        &lt;transition name="layout-sidebar"&gt;
+            &lt;div :class="sidebarClass" @click="onSidebarClick" v-show="isSidebarVisible()"&gt;
+                &lt;div class="layout-logo"&gt;
+                    &lt;router-link to="/"&gt;
+                        &lt;img alt="Logo" :src="logo" /&gt;
+                    &lt;/router-link&gt;
+                &lt;/div&gt;
 
-            &lt;AppProfile /&gt;
-            &lt;AppMenu :model="menu" @menuitem-click="onMenuItemClick" /&gt;
-        &lt;/div&gt;
+                &lt;AppProfile /&gt;
+                &lt;AppMenu :model="menu" @menuitem-click="onMenuItemClick" /&gt;
+            &lt;/div&gt;
+        &lt;/transition&gt;
 
         &lt;div class="layout-main"&gt;
             &lt;router-view /&gt;
         &lt;/div&gt;
+
+        &lt;AppConfig :layoutMode="layoutMode" :layoutColorMode="layoutColorMode" @layout-change="onLayoutChange" @layout-color-change="onLayoutColorChange"/&gt;
 
         &lt;AppFooter /&gt;
     &lt;/div&gt;
@@ -68,9 +74,9 @@ npm run serve
 </template>
 </CodeHighlight>
 
-                <h1>Menu</h1>
+                <h4>Menu</h4>
                 <p>Menu is a separate component defined in <i>AppMenu.vue</i> file based on PrimeNG MenuModel API. In order to define the menuitems,
-                    navigate to data section of <i>App.vue</i> file and define your own model as a nested structure using the menu property. 
+                    navigate to data section of <i>App.vue</i> file and define your own model as a nested structure using the menu property.
                     Here is the menu component from the demo application. Notice that menu object is bound to the model property of AppMenu component as shown above.</p>
 
 <CodeHighlight lang="js">
@@ -78,20 +84,6 @@ data() {
     return {
         menu : [
             {label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/'},
-            {
-                label: 'Menu Modes', icon: 'pi pi-fw pi-cog',
-                items: [
-                    {label: 'Static Menu', icon: 'pi pi-fw pi-bars',  command: () => this.layoutMode = 'static' },
-                    {label: 'Overlay Menu', icon: 'pi pi-fw pi-bars',  command: () => this.layoutMode = 'overlay' }
-                ]
-            },
-            {
-                label: 'Menu Colors', icon: 'pi pi-fw pi-align-left', 
-                items: [
-                    {label: 'Dark', icon: 'pi pi-fw pi-bars',  command: () => this.layoutColorMode = 'dark' },
-                    {label: 'Light', icon: 'pi pi-fw pi-bars',  command: () => this.layoutColorMode = 'light' }
-                ]
-            },
             {
                 label: 'Components', icon: 'pi pi-fw pi-globe', badge: '9',
                 items: [
@@ -164,7 +156,7 @@ data() {
 }
 </CodeHighlight>
 
-                <h1>Dependencies</h1>
+                <h4>Dependencies</h4>
 
                 <p>Dependencies of Sigma are listed below and needs to be added to package.json. Sigma has no direct dependency, even PrimeVue components are an optional dependency..</p>
 
@@ -176,10 +168,10 @@ data() {
 }
 </CodeHighlight>
 
-                <h1>Nova Theme</h1>
+                <h4>Nova Theme</h4>
                 <p>Sigma uses the free Nova-Light which is a free theme distributed within PrimeVue, however it can be used with any PrimeVue theme as well.</p>
 
-                <h1>SASS Variables</h1>
+                <h4>SASS Variables</h4>
                 <p>In case you'd like to customize the layout variables, open <i>_variables.scss</i> file under src/layout folder. Saving the changes
                     will be reflected instantly at your browser.</p>
 
@@ -234,7 +226,7 @@ $topbarSearchInputColor:#ffffff;
 $footerBgColor:#ffffff;
 </CodeHighlight>
 
-                <h1>Menu Modes</h1>
+                <h4>Menu Modes</h4>
                 <p>Menu has 2 modes, <i>static</i> and <i>overlay</i>. Main layout container element in App.vue is used to define which mode to use by adding specific classes. List
                     below indicates the style classes for each mode.</p>
 
@@ -251,7 +243,7 @@ $footerBgColor:#ffffff;
                 <p>It is also possible to leave the choice to the user by keeping the preference at a component and using an expression to bind it so that user can switch between modes. Sample
                     application has an example implementation of such use case with a computed property. Refer to App.vue for an example.</p>
 
-                <h1>Menu Color Scheme</h1>
+                <h4>Menu Color Scheme</h4>
                 <p>There are two alternatives as the menu colors schemes; "light" and "dark". A color scheme is applied using the <i>layout-sidebar-light</i> or <i>layout-sidebar-dark</i>
                 to the sidebar element.</p>
 
@@ -259,17 +251,17 @@ $footerBgColor:#ffffff;
 <CodeHighlight>
 &lt;div class="layout-sidebar layout-sidebar-dark"&gt;
 </CodeHighlight>
-                
+
                 <b>Light Menu</b>
 <CodeHighlight>
 &lt;div class="layout-sidebar layout-sidebar-light"&gt;
 </CodeHighlight>
 
-                <h1>Grid CSS</h1>
+                <h4>Grid CSS</h4>
                 <p>Sigma uses PrimeFlex CSS Grid throughout the samples. Although any grid library can be used, we recommend using PrimeFlex as your layout framework as it is well tested and supported by PrimeVue. PrimeFlex is
                     available at <a href="https://www.npmjs.com/package/primeflex">NPM</a>.</p>
 
-                <h1>Customizing Styles</h1>
+                <h4>Customizing Styles</h4>
                 <p>It is suggested to write your customizations in <i>_overrides.scss</i> file instead of adding them to the
                     scss files under sass folder to avoid maintenance issues after an update.</p>
             </div>

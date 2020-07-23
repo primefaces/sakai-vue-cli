@@ -97,11 +97,6 @@ export default new Router({
 			component: () => import('./utilities/Icons.vue')
 		},
 		{
-			path: '/widgets',
-			name: 'widgets',
-			component: () => import('./utilities/Widgets.vue')
-		},
-		{
 			path: '/grid',
 			name: 'grid',
 			component: () => import('./utilities/GridDemo.vue')

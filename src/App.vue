@@ -61,14 +61,13 @@ export default {
 					]
 				},
 				{
-					label: "Utilities", icon:'pi pi-globe',
+					label: "Utilities", icon:'pi pi-fw pi-globe',
 					items: [
-						{label: 'Icons', icon:'pi pi-search', to:'/icons'},
-						{label: 'Widgets', icon:'pi pi-star-o', to:'/widgets'},
-						{label: 'Grid System', icon:'pi pi-th-large', to:'/grid'},
-						{label: 'Spacing', icon:'pi pi-arrow-right', to:'/spacing'},
-						{label: 'Elevation', icon:'pi pi-external-link', to:'/elevation'},
-						{label: 'Typography', icon:'pi pi-align-center', to:'/typography'},
+						{label: 'Icons', icon:'pi pi-fw pi-search', to:'/icons'},
+						{label: 'Grid System', icon:'pi pi-fw pi-th-large', to:'/grid'},
+						{label: 'Spacing', icon:'pi pi-fw pi-arrow-right', to:'/spacing'},
+						{label: 'Elevation', icon:'pi pi-fw pi-external-link', to:'/elevation'},
+						{label: 'Typography', icon:'pi pi-fw pi-align-center', to:'/typography'},
 					]
 				},
 				{
