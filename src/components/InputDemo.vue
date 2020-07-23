@@ -320,8 +320,8 @@
 			border-radius: 3px;
 			display: inline-flex;
 			margin-right: .5rem;
-			background-color: var(--primary-color);
-			color: var(--primary-color-text);
+			background-color: #2196F3;
+			color: #ffffff;
 		}
 	}
 </style>

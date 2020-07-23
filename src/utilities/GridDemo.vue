@@ -395,7 +395,7 @@
 <style lang="scss">
 	.flexgrid-demo {
 		.box {
-			background-color: var(--surface-e);
+			background-color: #ffffff;
 			text-align: center;
 			padding-top: 1rem;
 			padding-bottom: 1rem;
@@ -410,7 +410,7 @@
 		.vertical-container {
 			margin: 0;
 			height: 200px;
-			background: var(--surface-d);
+			background: #dee2e6;
 			border-radius: 4px;
 		}
 

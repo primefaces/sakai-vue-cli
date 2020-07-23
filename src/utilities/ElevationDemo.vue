@@ -2,7 +2,7 @@
     <div class="p-grid">
         <div class="p-col-12">
             <div class="card">
-                <h5>Shadow</h5>
+                <h4>Shadow</h4>
                 <p>Elevation is used to specify the separation between surfaces and elements along the z-axis. There are 24 style classes (<mark>.p-shadow-{level}</mark>) to define the elevation layers.</p>
 
                 <div class="shadow-container">

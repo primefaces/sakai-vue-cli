@@ -92,6 +92,21 @@ export default new Router({
 			component: () => import('./components/MiscDemo.vue')
 		},
 		{
+			path: '/display',
+			name: 'display',
+			component: () => import('./utilities/DisplayDemo.vue')
+		},
+		{
+			path: '/flexbox',
+			name: 'flexbox',
+			component: () => import('./utilities/FlexBoxDemo.vue')
+		},
+		{
+			path: '/text',
+			name: 'text',
+			component: () => import('./utilities/TextDemo.vue')
+		},
+		{
 			path: '/icons',
 			name: 'icons',
 			component: () => import('./utilities/Icons.vue')

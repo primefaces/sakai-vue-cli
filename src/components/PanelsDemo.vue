@@ -143,11 +143,8 @@
 	}
 
 	/deep/ .p-card .p-card-title {
-		display: -ms-flexbox;
 		display: flex;
-		-ms-flex-align: center;
 		align-items: center;
-		-ms-flex-pack: justify;
 		justify-content: space-between;
 		margin-bottom: 0;
 	}

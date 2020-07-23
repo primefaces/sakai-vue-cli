@@ -113,6 +113,6 @@ export default {
 
 <style scoped>
 .demo-container {
-    border: 1px solid var(--surface-d);
+    border: 1px solid #dee2e6;
 }
 </style>

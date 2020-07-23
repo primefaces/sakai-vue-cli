@@ -66,7 +66,7 @@
 			<div class="card">
 				<h4>Customized</h4>
 				<p>Scrollable table with gridlines (<mark>.p-datatable-gridlines</mark>), striped rows (<mark>.p-datatable-striped</mark>) and smaller paddings (<mark>p-datatable-sm</mark>).</p>
-				<DataTable :value="customer2" :paginator="true" class="p-datatable-responsive p-datatable-gridlines p-datatable-customers"
+				<DataTable :value="customer2" :paginator="true" class="p-datatable-gridlines p-datatable-striped p-datatable-sm p-datatable-responsive p-datatable-customers"
                         :rows="10" dataKey="id" :rowHover="true" :selection.sync="selectedCustomers2" :filters="filters2" :loading="loading2">
 					<template #header>
 						<div class="table-header">
@@ -456,8 +456,6 @@
 			}
 
 			.p-datatable-tbody > tr {
-				border-bottom: 1px solid var(--layer-2);
-
 				> td {
 					text-align: left;
 					display: block;

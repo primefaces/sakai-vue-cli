@@ -3,7 +3,7 @@
         <div class="p-col-12">
             <div class="card docs">
                 <h4>Current Version</h4>
-                <p>Vue 2.6.0 and PrimeVue 1.0.0</p>
+                <p>Vue 2.6.0 and PrimeVue 2.x</p>
 
                 <h4>Getting Started</h4>
                 <p>Sigma is an application template for Vue based on the <a href="https://cli.vuejs.org/">Vue CLI</a> that provides out-of-the-box standard
@@ -85,22 +85,41 @@ data() {
         menu : [
             {label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/'},
             {
-                label: 'Components', icon: 'pi pi-fw pi-globe', badge: '9',
+                label: 'UI KIT', icon: 'pi pi-fw pi-sitemap',
                 items: [
-                    {label: 'Sample Page', icon: 'pi pi-fw pi-th-large', to: '/sample'},
-                    {label: 'Forms', icon: 'pi pi-fw pi-file', to: '/forms'},
-                    {label: 'Data', icon: 'pi pi-fw pi-table', to: '/data'},
-                    {label: 'Panels', icon: 'pi pi-fw pi-list', to: '/panels'},
-                    {label: 'Overlays', icon: 'pi pi-fw pi-clone', to: '/overlays'},
-                    {label: 'Menus', icon: 'pi pi-fw pi-plus', to: '/menus'},
-                    {label: 'Messages', icon: 'pi pi-fw pi-spinner',to: '/messages'},
-                    {label: 'Charts', icon: 'pi pi-fw pi-chart-bar', to: '/charts'},
-                    {label: 'Misc', icon: 'pi pi-fw pi-upload', to: '/misc'}
+                    {label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/formlayout'},
+                    {label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/input'},
+                    {label: 'Button', icon: 'pi pi-fw pi-mobile', to: '/button'},
+                    {label: 'Table', icon: 'pi pi-fw pi-table', to: '/table'},
+                    {label: 'List', icon: 'pi pi-fw pi-list', to: '/list'},
+                    {label: 'Tree', icon: 'pi pi-fw pi-share-alt', to: '/tree'},
+                    {label: 'Panel', icon: 'pi pi-fw pi-tablet', to: '/panel'},
+                    {label: 'Overlay', icon: 'pi pi-fw pi-clone', to: '/overlay'},
+                    {label: 'Menu', icon: 'pi pi-fw pi-bars', to: '/menu'},
+                    {label: 'Message', icon: 'pi pi-fw pi-comment', to: '/messages'},
+                    {label: 'File', icon: 'pi pi-fw pi-file', to: '/file'},
+                    {label: 'Chart', icon: 'pi pi-fw pi-chart-bar', to: '/chart'},
+                    {label: 'Misc', icon: 'pi pi-fw pi-circle-off', to: '/misc'},
                 ]
             },
             {
-                label: 'Template Pages', icon: 'pi pi-fw pi-file',
+                label: "Utilities", icon:'pi pi-fw pi-globe',
                 items: [
+                    {label: 'Display', icon:'pi pi-fw pi-desktop', to:'/display'},
+                    {label: 'Elevation', icon:'pi pi-fw pi-external-link', to:'/elevation'},
+                    {label: 'Flexbox', icon:'pi pi-fw pi-directions', to:'/flexbox'},
+                    {label: 'Icons', icon:'pi pi-fw pi-search', to:'/icons'},
+                    {label: 'Grid System', icon:'pi pi-fw pi-th-large', to:'/grid'},
+                    {label: 'Spacing', icon:'pi pi-fw pi-arrow-right', to:'/spacing'},
+                    {label: 'Typography', icon:'pi pi-fw pi-align-center', to:'/typography'},
+                    {label: 'Text', icon:'pi pi-fw pi-pencil', to:'/text'},
+                ]
+            },
+            {
+                label: 'Pages', icon: 'pi pi-fw pi-clone',
+                items: [
+                    {label: 'Crud', icon: 'pi pi-fw pi-user-edit', to: '/crud'},
+                    {label: 'Calendar', icon: 'pi pi-fw pi-calendar-plus', to: '/calendar'},
                     {label: 'Empty Page', icon: 'pi pi-fw pi-circle-off', to: '/empty'}
                 ]
             },
@@ -168,8 +187,8 @@ data() {
 }
 </CodeHighlight>
 
-                <h4>Nova Theme</h4>
-                <p>Sigma uses the free Nova-Light which is a free theme distributed within PrimeVue, however it can be used with any PrimeVue theme as well.</p>
+                <h4>Saga Theme</h4>
+                <p>Sigma uses the free Saga-Blue which is a free theme distributed within PrimeVue, however it can be used with any PrimeVue theme as well.</p>
 
                 <h4>SASS Variables</h4>
                 <p>In case you'd like to customize the layout variables, open <i>_variables.scss</i> file under src/layout folder. Saving the changes
