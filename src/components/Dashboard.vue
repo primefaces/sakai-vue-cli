@@ -220,42 +220,42 @@
                         <h5 class="activity p-m-0">Income</h5>
                         <div class="count">$900</div>
                     </div>
-                    <ProgressBar value="50" :showValue="false" />
+                    <ProgressBar :value="95" :showValue="false" />
 				</li>
 				<li>
-					<div class="count" style="background-color:#f9c851">$250</div>
-					<div class="p-grid">
-						<div class="p-col-6">Tax</div>
-						<div class="p-col-6">24%</div>
+					<div class="p-d-flex p-jc-between p-ai-center p-mb-3">
+						<h5 class="activity p-m-0">Tax</h5>
+						<div class="count" style="background-color:#f9c851">$250</div>
 					</div>
+					<ProgressBar :value="24" :showValue="false" />
 				</li>
 				<li>
-					<div class="count" style="background-color:#20d077">$125</div>
-					<div class="p-grid">
-						<div class="p-col-6">Invoices</div>
-						<div class="p-col-6">55%</div>
+					<div class="p-d-flex p-jc-between p-ai-center p-mb-3">
+						<h5 class="activity p-m-0">Invoices</h5>
+						<div class="count" style="background-color:#20d077">$125</div>
 					</div>
+					<ProgressBar :value="55" :showValue="false" />
 				</li>
 				<li>
-					<div class="count" style="background-color:#f9c851">$250</div>
-					<div class="p-grid">
-						<div class="p-col-6">Expenses</div>
-						<div class="p-col-6">15%</div>
+					<div class="p-d-flex p-jc-between p-ai-center p-mb-3">
+						<h5 class="activity p-m-0">Expenses</h5>
+						<div class="count" style="background-color:#f9c851">$250</div>
 					</div>
+					<ProgressBar :value="15" :showValue="false" />
 				</li>
 				<li>
-					<div class="count" style="background-color:#007be5">$350</div>
-					<div class="p-grid">
-						<div class="p-col-6">Bonus</div>
-						<div class="p-col-6">5%</div>
+					<div class="p-d-flex p-jc-between p-ai-center p-mb-3">
+						<h5 class="activity p-m-0">Bonus</h5>
+						<div class="count" style="background-color:#007be5">$350</div>
 					</div>
+					<ProgressBar :value="5" :showValue="false" />
 				</li>
 				<li>
-					<div class="count" style="background-color:#ef6262">$500</div>
-					<div class="p-grid">
-						<div class="p-col-6">Revenue</div>
-						<div class="p-col-6">25%</div>
+					<div class="p-d-flex p-jc-between p-ai-center p-mb-3">
+						<h5 class="activity p-m-0">Revenue</h5>
+						<div class="count" style="background-color:#ef6262">$500</div>
 					</div>
+					<ProgressBar :value="25" :showValue="false" />
 				</li>
 			</ul>
 		</Panel>
