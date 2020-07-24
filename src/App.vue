@@ -43,7 +43,7 @@ export default {
             menu : [
                 {label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/'},
 				{
-					label: 'UI KIT', icon: 'pi pi-fw pi-sitemap',
+					label: 'UI Kit', icon: 'pi pi-fw pi-sitemap',
 					items: [
 						{label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/formlayout'},
 						{label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/input'},

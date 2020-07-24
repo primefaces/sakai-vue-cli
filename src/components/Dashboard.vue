@@ -160,7 +160,7 @@
 	<div class="p-col-12 p-lg-6">
 		<div class="card">
 			<h1 style="font-size:16px">Recent Sales</h1>
-			<DataTable :value="products" class="p-datatable-responsive" dataKey="vin" :rows="5" style="margin-bottom: 20px" :paginator="true">
+			<DataTable :value="products" class="p-datatable-customers" :rows="5" style="margin-bottom: 20px" :paginator="true">
 				<Column>
 					<template #header>
 						Logo
@@ -181,8 +181,8 @@
 						View
 					</template>
 					<template #body>
-                        <Button icon="pi pi-search" type="button" class="p-button-success p-mr-2"></Button>
-                        <Button icon="pi pi-times" type="button" class="p-button-danger"></Button>
+                        <Button icon="pi pi-search" type="button" class="p-button-success p-mr-2 p-mb-1"></Button>
+                        <Button icon="pi pi-times" type="button" class="p-button-danger p-mb-1"></Button>
 					</template>
 				</Column>
 			</DataTable>
@@ -346,6 +346,42 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+	@media screen and (max-width: 960px) {
+		/deep/ .p-datatable {
+			&.p-datatable-customers {
+				.p-datatable-thead > tr > th,
+				.p-datatable-tfoot > tr > td {
+					display: none !important;
+				}
 
+				.p-datatable-tbody > tr {
+					border-bottom: 1px solid #dee2e6;
+					> td {
+						text-align: left;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						border: 0 none !important;
+						width: 100% !important;
+						float: left;
+						clear: left;
+						border: 0 none;
+
+						.p-column-title {
+							padding: .4rem;
+							min-width: 30%;
+							display: inline-block;
+							margin: -.4rem 1rem -.4rem -.4rem;
+							font-weight: bold;
+						}
+
+						.p-progressbar {
+							margin-top: .5rem;
+						}
+					}
+				}
+			}
+		}
+	}
 </style>
