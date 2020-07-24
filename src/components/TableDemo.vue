@@ -22,12 +22,12 @@
 						Loading customers data. Please wait.
 					</template>
 					<Column selectionMode="multiple" headerStyle="width: 3em"></Column>
-					<Column field="name" header="Name" :sortable="true">
+					<Column field="name" header="Name" :sortable="true" filterMatchMode="startsWith">
 						<template #body="slotProps">
 							{{slotProps.data.name}}
 						</template>
 					</Column>
-					<Column header="Country" :sortable="true" sortField="country.name">
+					<Column header="Country" :sortable="true" sortField="country.name" filterMatchMode="startsWith">
 						<template #body="slotProps">
 							<img src="assets/layout/flags/flag_placeholder.png" :alt="slotProps.data.country.name" :class="'flag flag-' + slotProps.data.country.code" width="30" />
 							<span style="margin-left: .5em; vertical-align: middle" class="image-text">{{slotProps.data.country.name}}</span>
@@ -127,7 +127,7 @@
 				<h4>Row Expand</h4>
 
 				<Toast />
-				<DataTable :value="products" :expandedRows.sync="expandedRows" dataKey="id" @row-expand="onRowExpand" @row-collapse="onRowCollapse">
+				<DataTable :value="products" :expandedRows.sync="expandedRows" class="p-datatable-customers" dataKey="id" @row-expand="onRowExpand" @row-collapse="onRowCollapse">
 					<template #header>
 						<div class="table-header-container">
 							<Button icon="pi pi-plus" label="Expand All" @click="expandAll" class="p-mr-2" />
@@ -189,7 +189,7 @@
 		<div class="p-col-12">
 			<div class="card">
 				<h4>Row Group</h4>
-				<DataTable :value="customer3" rowGroupMode="subheader" groupRowsBy="representative.name" sortMode="single" sortField="representative.name" :sortOrder="1">
+				<DataTable :value="customer3" rowGroupMode="subheader" class="p-datatable-customers" groupRowsBy="representative.name" sortMode="single" sortField="representative.name" :sortOrder="1">
 					<Column field="representative.name" header="Representative"></Column>
 					<Column field="name" header="Name"></Column>
 					<Column field="country" header="Country">

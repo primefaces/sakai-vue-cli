@@ -151,7 +151,12 @@ export default {
 
             if (this.isDesktop()) {
                 if (this.layoutMode === 'overlay') {
+					if(this.mobileMenuActive === true) {
+						this.overlayMenuActive = true;
+					}
+
                     this.overlayMenuActive = !this.overlayMenuActive;
+					this.mobileMenuActive = false;
                 }
                 else if (this.layoutMode === 'static') {
                     this.staticMenuInactive = !this.staticMenuInactive;

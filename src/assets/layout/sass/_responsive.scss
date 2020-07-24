@@ -18,6 +18,16 @@
                     left: 250px;
                 }
             }
+
+            &.layout-mobile-sidebar-active {
+                .layout-sidebar {
+                    left: 0;
+                }
+
+                .layout-topbar  {
+                    left: 250px;
+                }
+            }
         }
 
         &.layout-static {
