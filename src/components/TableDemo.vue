@@ -22,18 +22,18 @@
 						Loading customers data. Please wait.
 					</template>
 					<Column selectionMode="multiple" headerStyle="width: 3em"></Column>
-					<Column field="name" header="Name" :sortable="true" filterMatchMode="startsWith">
+					<Column field="name" header="Name" :sortable="true">
 						<template #body="slotProps">
 							{{slotProps.data.name}}
 						</template>
 					</Column>
-					<Column header="Country" :sortable="true" sortField="country.name" filterMatchMode="startsWith">
+					<Column header="Country" :sortable="true" sortField="country.name" filterField="country.name">
 						<template #body="slotProps">
 							<img src="assets/layout/flags/flag_placeholder.png" :alt="slotProps.data.country.name" :class="'flag flag-' + slotProps.data.country.code" width="30" />
 							<span style="margin-left: .5em; vertical-align: middle" class="image-text">{{slotProps.data.country.name}}</span>
 						</template>
 					</Column>
-					<Column header="Representative" :sortable="true" sortField="representative.name">
+					<Column header="Representative" :sortable="true" sortField="representative.name" filterField="representative.name">
 						<template #body="slotProps">
 							<img :alt="slotProps.data.representative.name" :src="'assets/layout/images/avatar/' + slotProps.data.representative.image" width="32" style="vertical-align: middle" />
 							<span style="margin-left: .5em; vertical-align: middle" class="image-text">{{slotProps.data.representative.name}}</span>
