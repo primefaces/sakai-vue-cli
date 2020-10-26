@@ -3,13 +3,13 @@
 		<div class="p-col-12">
 			<div class="card">
 				<h5>Tree</h5>
-				<Tree :value="treeValue" selectionMode="checkbox" :selectionKeys.sync="selectedTreeValue"></Tree>
+				<Tree :value="treeValue" selectionMode="checkbox" v-model:selectionKeys="selectedTreeValue"></Tree>
 			</div>
 		</div>
 		<div class="p-col-12">
 			<div class="card">
 				<h5>TreeTable</h5>
-				<TreeTable :value="treeTableValue" selectionMode="checkbox" :selectionKeys.sync="selectedTreeTableValue">
+				<TreeTable :value="treeTableValue" selectionMode="checkbox" v-model:selectionKeys="selectedTreeTableValue">
 					<template #header>
 						FileSystem
 					</template>

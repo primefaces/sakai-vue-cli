@@ -504,7 +504,7 @@
 
 			<h5>Margin with FlexBox</h5>
 			<p>When combined with
-				<router-link to="/setup">spacing utilities</router-link>
+				<router-link to="/spacing">spacing utilities</router-link>
 				, flexbox offers endless possibilities.
 			</p>
 			<h6>Horizontal Spacing</h6>
@@ -562,7 +562,7 @@ export default {
 		width: 8rem;
 	}
 
-	/deep/ pre[class*="language-"] {
+	::v-deep(pre[class*="language-"]) {
 		&:after, &:before {
 			box-shadow: none;
 		}

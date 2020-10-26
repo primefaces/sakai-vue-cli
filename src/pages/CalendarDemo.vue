@@ -4,7 +4,7 @@
 			<div class="card">
 				<FullCalendar :events="events" :options="options" />
 
-				<Dialog :visible.sync="eventDialog" :style="{width: '450px'}" header="Event Details" :modal="true" :closable="true">
+				<Dialog v-model:visible="eventDialog" :style="{width: '450px'}" header="Event Details" :modal="true" :closable="true">
 					<div class="p-fluid">
 						<div class="p-field">
 							<label for="title">Title</label>

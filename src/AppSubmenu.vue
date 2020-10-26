@@ -4,7 +4,7 @@
 			<li v-if="visible(item) && !item.separator" :key="i" :class="[{'active-menuitem': activeIndex === i && !item.to && !item.disabled}]" role="none">
 				<div v-if="item.items && root===true" class='arrow'></div>
 				<router-link v-if="item.to" :to="item.to" :class="[item.class, 'p-ripple',{'active-route': activeIndex === i, 'p-disabled': item.disabled}]" :style="item.style"
-							@click.native="onMenuItemClick($event,item,i)" :target="item.target" exact role="menuitem" v-ripple>
+							@click="onMenuItemClick($event,item,i)" :target="item.target" exact role="menuitem" v-ripple>
 					<i :class="item.icon"></i>
 					<span>{{item.label}}</span>
 					<i v-if="item.items" class="pi pi-fw pi-angle-down menuitem-toggle-icon"></i>

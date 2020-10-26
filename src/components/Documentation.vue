@@ -181,9 +181,9 @@ data() {
 
 <CodeHighlight lang="js">
 {
-    "primevue": "^1.0.0-rc.6",         //optional: PrimeVue components
-    "primeicons": "2.0.0",             //optional: Icons
-    "primeflex": "1.0.0",              //optional: Grid system
+    "primevue": "3.0.1",              //optional: PrimeVue components
+    "primeicons": "4.0.0",            //optional: Icons
+    "primeflex": "2.0.0",             //optional: Grid system
 }
 </CodeHighlight>
 
@@ -194,7 +194,7 @@ data() {
                 <p>In case you'd like to customize the layout variables, open <i>_variables.scss</i> file under src/layout folder. Saving the changes
                     will be reflected instantly at your browser.</p>
 
-                <h3>src/assets/_vaiables.scss</h3>
+                <h3>src/assets/_variables.scss</h3>
 <CodeHighlight lang="css">
 /* General */
 $fontSize:14px;

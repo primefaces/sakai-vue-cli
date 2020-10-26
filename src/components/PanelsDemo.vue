@@ -4,7 +4,7 @@
 			<div class="card">
 				<h5>Toolbar</h5>
 				<Toolbar>
-					<template slot="left">
+					<template #left>
 						<Button label="New" icon="pi pi-plus" style="margin-right: .5em" />
 						<Button label="Open" icon="pi pi-folder-open" class="p-button-secondary" />
 
@@ -14,7 +14,7 @@
 						<Button icon="pi pi-trash" class="p-button-warning" style="margin-right: .5em"/>
 						<Button icon="pi pi-print" class="p-button-danger" />
 					</template>
-					<template slot="right">
+					<template #right>
 						<SplitButton label="Options" :model="toolbarItems"></SplitButton>
 					</template>
 				</Toolbar>
@@ -23,8 +23,8 @@
 		<div class="p-col-12 p-md-6">
 			<div class="card">
 				<h5>AccordionPanel</h5>
-				<Accordion>
-					<AccordionTab header="Header I" :active="true">
+				<Accordion :activeIndex="0">
+					<AccordionTab header="Header I">
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 							Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
@@ -88,16 +88,16 @@
 			</div>
 			<div class="card">
 				<Card>
-					<template slot="title">
+					<template #title>
 						<h5>Card</h5>
 						<Button icon="pi pi-plus" class="p-button-text"/>
 					</template>
 
-					<template slot="subtitle">
+					<template #subtitle>
 						Subtitle
 					</template>
 
-					<template slot="content">
+					<template #content>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 							Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
@@ -142,7 +142,7 @@
 		margin: 0;
 	}
 
-	/deep/ .p-card .p-card-title {
+	::v-deep(.p-card .p-card-title) {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;

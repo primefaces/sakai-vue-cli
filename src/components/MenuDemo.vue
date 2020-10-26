@@ -547,7 +547,7 @@
 </script>
 
 <style scoped lang="scss">
-	/deep/ .stepsdemo-content  {
+	::v-deep(.stepsdemo-content)  {
 		padding: 1em 0;
 
 		p {

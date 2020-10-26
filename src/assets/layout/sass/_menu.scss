@@ -21,7 +21,7 @@
             }
 
             span {
-                margin-left: .5em;
+                margin-left: 0.5em;
             }
 
             .menuitem-toggle-icon {
@@ -36,7 +36,7 @@
         &.active-menuitem {
             > a {
                 .menuitem-toggle-icon {
-                    @include icon-override("\e933");
+                    @include icon-override('\e933');
                 }
             }
         }
@@ -66,7 +66,7 @@
             li {
                 a {
                     cursor: pointer;
-                    padding: .75em 1em;
+                    padding: 0.75em 1em;
                     border-top: 0 none;
 
                     span {
@@ -79,13 +79,13 @@
                 }
             }
 
-            &.layout-submenu-wrapper-enter,
+            &.layout-submenu-wrapper-enter-from,
             &.layout-submenu-wrapper-leave-to {
                 max-height: 0;
             }
 
             &.layout-submenu-wrapper-enter-to,
-            &.layout-submenu-wrapper-leave {
+            &.layout-submenu-wrapper-leave-from {
                 max-height: 1000px;
             }
 

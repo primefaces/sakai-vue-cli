@@ -3,7 +3,7 @@
 		<div class="p-col-12 p-lg-6">
 			<div class="card p-fluid">
 				<h5>Dialog</h5>
-				<Dialog header="Dialog" :visible.sync="display" :style="{width: '30vw'}" :modal="true">
+				<Dialog header="Dialog" v-model:visible="display" :style="{width: '30vw'}" :modal="true">
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
@@ -32,14 +32,14 @@
 					<div class="p-col-6">
 						<Button type="button" label="DataTable" @click="toggleDataTable" class="p-button-success"/>
 						<OverlayPanel ref="op2" appendTo="body" :showCloseIcon="true" id="overlay_panel" style="width: 450px">
-							<DataTable :value="products" :selection.sync="selectedProduct" selectionMode="single" :paginator="true" :rows="5" @row-select="onProductSelect">
-								<Column field="name" header="Name" sortable></Column>
+							<DataTable :value="products" v-model:selection="selectedProduct" selectionMode="single" :paginator="true" :rows="5" @row-select="onProductSelect">
+								<Column field="name" header="Name" :sortable="true"></Column>
 								<Column header="Image">
 									<template #body="slotProps">
 										<img :src="'assets/layout/images/product/' + slotProps.data.image" :alt="slotProps.data.image" class="product-image" />
 									</template>
 								</Column>
-								<Column field="price" header="Price" sortable>
+								<Column field="price" header="Price" :sortable="true">
 									<template #body="slotProps">
 										{{formatCurrency(slotProps.data.price)}}
 									</template>
@@ -55,7 +55,7 @@
 			<div class="card p-fluid">
 				<h5>Confirmation</h5>
 				<Button label="Delete" icon="pi pi-trash" class="p-button-danger" @click="openConfirmation" />
-				<Dialog header="Confirmation" :visible.sync="displayConfirmation" :style="{width: '350px'}" :modal="true">
+				<Dialog header="Confirmation" v-model:visible="displayConfirmation" :style="{width: '350px'}" :modal="true">
 					<div class="confirmation-content">
 						<i class="pi pi-exclamation-triangle p-mr-3" style="font-size: 2rem" />
 						<span>Are you sure you want to proceed?</span>
@@ -68,31 +68,31 @@
 			</div>
 			<div class="card">
 				<h5>Sidebar</h5>
-				<Sidebar :visible.sync="visibleLeft" :baseZIndex="1000">
+				<Sidebar v-model:visible="visibleLeft" :baseZIndex="1000">
 					<h1 style="fontWeight:normal">Left Sidebar</h1>
 					<Button type="button" @click="visibleLeft = false" label="Save" class="p-button-success" style="margin-right:.25em" />
 					<Button type="button" @click="visibleLeft = false" label="Cancel" class="p-button-secondary"/>
 				</Sidebar>
 
-				<Sidebar :visible.sync="visibleRight" :baseZIndex="1000" position="right">
+				<Sidebar v-model:visible="visibleRight" :baseZIndex="1000" position="right">
 					<h1 style="fontWeight:normal">Right Sidebar</h1>
 					<Button type="button" @click="visibleRight = false" label="Save" class="p-button-success" style="margin-right:.25em" />
 					<Button type="button" @click="visibleRight = false" label="Cancel" class="p-button-secondary"/>
 				</Sidebar>
 
-				<Sidebar :visible.sync="visibleTop" :baseZIndex="1000" position="top">
+				<Sidebar v-model:visible="visibleTop" :baseZIndex="1000" position="top">
 					<h1 style="fontWeight:normal">Top Sidebar</h1>
 					<Button type="button" @click="visibleTop = false" label="Save" class="p-button-success" style="margin-right:.25em" />
 					<Button type="button" @click="visibleTop = false" label="Cancel" class="p-button-secondary"/>
 				</Sidebar>
 
-				<Sidebar :visible.sync="visibleBottom" :baseZIndex="1000" position="bottom">
+				<Sidebar v-model:visible="visibleBottom" :baseZIndex="1000" position="bottom">
 					<h1 style="fontWeight:normal">Bottom Sidebar</h1>
 					<Button type="button" @click="visibleBottom = false" label="Save" class="p-button-success" style="margin-right:.25em" />
 					<Button type="button" @click="visibleBottom = false" label="Cancel" class="p-button-secondary"/>
 				</Sidebar>
 
-				<Sidebar :visible.sync="visibleFull" :baseZIndex="1000" position="full">
+				<Sidebar v-model:visible="visibleFull" :baseZIndex="1000" position="full">
 					<h1 style="fontWeight:normal">Full Screen</h1>
 					<Button type="button" @click="visibleFull = false" label="Save" class="p-button-success" style="margin-right:.25em" />
 					<Button type="button" @click="visibleFull = false" label="Cancel" class="p-button-secondary"/>

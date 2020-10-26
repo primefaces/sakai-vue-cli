@@ -4,19 +4,19 @@
 			<div class="card">
 				<Toast/>
 				<Toolbar class="p-mb-4">
-					<template slot="left">
+					<template v-slot:left>
 						<Button label="New" icon="pi pi-plus" class="p-button-success p-mr-2" @click="openNew" />
 						<Button label="Delete" icon="pi pi-trash" class="p-button-danger" @click="confirmDeleteSelected" :disabled="!selectedProducts || !selectedProducts.length" />
 					</template>
 
-					<template slot="right">
+					<template v-slot:right>
 						<FileUpload mode="basic" accept="image/*" :maxFileSize="1000000" label="Import" chooseLabel="Import" class="p-mr-2 p-d-inline-block" />
 						<Button label="Export" icon="pi pi-upload" class="p-button-help" @click="exportCSV($event)"  />
 					</template>
 				</Toolbar>
 
-				<DataTable ref="dt" :value="products" :selection.sync="selectedProducts" dataKey="id" :paginator="true" :rows="10" :filters="filters"
-                            paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown" :rowsPerPageOptions="[5,10,25]"
+				<DataTable ref="dt" :value="products" v-model:selection="selectedProducts" dataKey="id" :paginator="true" :rows="10" :filters="filters"
+                            paginatorTemplate="CurrentPageReport FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown" :rowsPerPageOptions="[5,10,25]"
                             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products">
 					<template #header>
 						<div class="table-header">
@@ -29,25 +29,25 @@
 					</template>
 
 					<Column selectionMode="multiple" headerStyle="width: 3rem"></Column>
-					<Column field="code" header="Code" sortable></Column>
-					<Column field="name" header="Name" sortable></Column>
+					<Column field="code" header="Code" :sortable="true"></Column>
+					<Column field="name" header="Name" :sortable="true"></Column>
 					<Column header="Image">
 						<template #body="slotProps">
 							<img :src="'assets/layout/images/product/' + slotProps.data.image" :alt="slotProps.data.image" class="product-image" />
 						</template>
 					</Column>
-					<Column field="price" header="Price" sortable>
+					<Column field="price" header="Price" :sortable="true">
 						<template #body="slotProps">
 							{{formatCurrency(slotProps.data.price)}}
 						</template>
 					</Column>
-					<Column field="category" header="Category" sortable></Column>
-					<Column field="rating" header="Reviews" sortable>
+					<Column field="category" header="Category" :sortable="true"></Column>
+					<Column field="rating" header="Reviews" :sortable="true">
 						<template #body="slotProps">
-							<Rating :value="slotProps.data.rating" :readonly="true" :cancel="false" />
+							<Rating :modelValue="slotProps.data.rating" :readonly="true" :cancel="false" />
 						</template>
 					</Column>
-					<Column field="inventoryStatus" header="Status" sortable>
+					<Column field="inventoryStatus" header="Status" :sortable="true">
 						<template #body="slotProps">
 							<span :class="'product-badge status-' + slotProps.data.inventoryStatus.toLowerCase()">{{slotProps.data.inventoryStatus}}</span>
 						</template>
@@ -60,7 +60,7 @@
 					</Column>
 				</DataTable>
 
-				<Dialog :visible.sync="productDialog" :style="{width: '450px'}" header="Product Details" :modal="true" class="p-fluid">
+				<Dialog v-model:visible="productDialog" :style="{width: '450px'}" header="Product Details" :modal="true" class="p-fluid">
 					<img :src="'assets/layout/images/product/' + product.image" :alt="product.image" class="product-image" v-if="product.image" />
 					<div class="p-field">
 						<label for="name">Name</label>
@@ -110,7 +110,7 @@
 					</template>
 				</Dialog>
 
-				<Dialog :visible.sync="deleteProductDialog" :style="{width: '450px'}" header="Confirm" :modal="true">
+				<Dialog v-model:visible="deleteProductDialog" :style="{width: '450px'}" header="Confirm" :modal="true">
 					<div class="confirmation-content">
 						<i class="pi pi-exclamation-triangle p-mr-3" style="font-size: 2rem" />
 						<span v-if="product">Are you sure you want to delete <b>{{product.name}}</b>?</span>
@@ -121,7 +121,7 @@
 					</template>
 				</Dialog>
 
-				<Dialog :visible.sync="deleteProductsDialog" :style="{width: '450px'}" header="Confirm" :modal="true">
+				<Dialog v-model:visible="deleteProductsDialog" :style="{width: '450px'}" header="Confirm" :modal="true">
 					<div class="confirmation-content">
 						<i class="pi pi-exclamation-triangle p-mr-3" style="font-size: 2rem" />
 						<span v-if="product">Are you sure you want to delete the selected products?</span>

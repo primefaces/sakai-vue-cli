@@ -10,14 +10,14 @@
     .layout-profile-link {
         cursor: pointer;
         display: inline-block;
-        margin-bottom: .75em;
+        margin-bottom: 0.75em;
         transition: color $transitionDuration;
 
         i {
             display: inline-block;
             font-size: 16px;
             vertical-align: middle;
-            margin-left: .5em;
+            margin-left: 0.5em;
         }
     }
 
@@ -40,7 +40,7 @@
                 }
 
                 span {
-                    margin-left: .25em;
+                    margin-left: 0.25em;
                     vertical-align: middle;
                 }
 
@@ -50,13 +50,13 @@
             }
         }
 
-        &.layout-submenu-wrapper-enter,
+        &.layout-submenu-wrapper-enter-from,
         &.layout-submenu-wrapper-leave-to {
             max-height: 0;
         }
 
         &.layout-submenu-wrapper-enter-to,
-        &.layout-submenu-wrapper-leave {
+        &.layout-submenu-wrapper-leave-from {
             max-height: 1000px;
         }
 

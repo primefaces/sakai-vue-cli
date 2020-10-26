@@ -12,17 +12,17 @@
 			<h5 style="margin-top: 0">Input Style</h5>
 			<div class="p-formgroup-inline">
 				<div class="p-field-radiobutton">
-					<RadioButton id="input_outlined" name="inputstyle" value="outlined" :modelValue="inputStyle" @input="changeInputStyle" />
+					<RadioButton id="input_outlined" name="inputstyle" value="outlined" :modelValue="inputStyle" @update:modelValue="changeInputStyle" />
 					<label for="input_outlined">Outlined</label>
 				</div>
 				<div class="p-field-radiobutton">
-					<RadioButton id="input_filled" name="inputstyle" value="filled" :modelValue="inputStyle" @input="changeInputStyle" />
+					<RadioButton id="input_filled" name="inputstyle" value="filled" :modelValue="inputStyle" @update:modelValue="changeInputStyle" />
 					<label for="input_filled">Filled</label>
 				</div>
 			</div>
 
 			<h5>Ripple Effect</h5>
-			<InputSwitch :value="rippleActive" @input="changeRipple"  />
+			<InputSwitch :modelValue="rippleActive" @update:modelValue="changeRipple" />
 
 			<h5>Menu Type</h5>
 			<div class="p-formgroup-inline">

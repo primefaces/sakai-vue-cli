@@ -166,12 +166,12 @@
 						Logo
 					</template>
 					<template #body="slotProps">
-						<img :src="'assets/layout/images/product/' + slotProps.data.image" :alt="slotProps.data.image" width="50px" />
+						<img :src="'assets/layout/images/product/' + slotProps.data.image" :alt="slotProps.data.image" width="50" />
 					</template>
 				</Column>
-				<Column field="name" header="Name" sortable></Column>
-				<Column field="category" header="Category" sortable></Column>
-				<Column field="price" header="Price" sortable>
+				<Column field="name" header="Name" :sortable="true"></Column>
+				<Column field="category" header="Category" :sortable="true"></Column>
+				<Column field="price" header="Price" :sortable="true">
 					<template #body="slotProps">
 						{{formatCurrency(slotProps.data.price)}}
 					</template>
@@ -261,10 +261,6 @@
 		</Panel>
 	</div>
 </div>
-
-
-
-
 </template>
 
 <script>
@@ -348,7 +344,7 @@ export default {
 
 <style lang="scss" scoped>
 	@media screen and (max-width: 960px) {
-		/deep/ .p-datatable {
+		::v-deep(.p-datatable) {
 			&.p-datatable-customers {
 				.p-datatable-thead > tr > th,
 				.p-datatable-tfoot > tr > td {
