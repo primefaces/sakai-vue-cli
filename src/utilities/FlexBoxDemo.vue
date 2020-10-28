@@ -13,10 +13,12 @@
 			<p>An element can configured as a flexbox container using the <i>p-d-flex</i> or <i>p-d-inline-flex</i>
 				classes.</p>
 
-<CodeHighlight>
+<pre v-code>
+<code><template v-pre>
 &lt;div class="p-d-flex"&gt;Flex Container&lt;/div&gt;
 &lt;div class="p-d-inline-flex"&gt;Inline Flex Container&lt;/div&gt;
-</CodeHighlight>
+</template>
+</code></pre>
 
 			<div class="box p-d-flex p-mb-3">Flex Container</div>
 			<div class="box p-d-inline-flex">Inline Flex Container</div>
@@ -32,13 +34,15 @@
 			</ul>
 
 			<h6>Row</h6>
-<CodeHighlight>
+<pre v-code>
+<code><template v-pre>
 &lt;div class="p-d-flex"&gt;
 &lt;div class="p-mr-2"&gt;Item 1&lt;/div&gt;
 &lt;div class="p-mr-2"&gt;Item 2&lt;/div&gt;
 &lt;div&gt;Item 3&lt;/div&gt;
 &lt;/div&gt;
-</CodeHighlight>
+</template>
+</code></pre>
 			<div class="p-d-flex">
 				<div class="p-mr-2">Item 1</div>
 				<div class="p-mr-2">Item 2</div>
@@ -46,13 +50,15 @@
 			</div>
 
 			<h6>Column</h6>
-<CodeHighlight>
+<pre v-code>
+<code><template v-pre>
 &lt;div class="p-d-flex p-flex-column"&gt;
 &lt;div class="p-mb-2"&gt;Item 1&lt;/div&gt;
 &lt;div class="p-mb-2"&gt;Item 2&lt;/div&gt;
 &lt;div&gt;Item 3&lt;/div&gt;
 &lt;/div&gt;
-</CodeHighlight>
+</template>
+</code></pre>
 			<div class="p-d-flex p-flex-column">
 				<div class="p-mb-2">Item 1</div>
 				<div class="p-mb-2">Item 2</div>
@@ -62,13 +68,15 @@
 			<h6>Responsive</h6>
 			<p>Row direction for larger screens and column for smaller.</p>
 
-<CodeHighlight>
+<pre v-code>
+<code><template v-pre>
 &lt;div class="p-d-flex p-flex-column p-flex-md-row"&gt;
 &lt;div class="p-mb-2 p-mr-2"&gt;Item 1&lt;/div&gt;
 &lt;div class="p-mb-2 p-mr-2"&gt;Item 2&lt;/div&gt;
 &lt;div class="p-mb-2 p-mr-2"&gt;Item 3&lt;/div&gt;
 &lt;/div&gt;
-</CodeHighlight>
+</template>
+</code></pre>
 
 			<div class="p-d-flex p-flex-column p-flex-md-row">
 				<div class="p-mb-2 p-mr-2">Item 1</div>
@@ -105,13 +113,15 @@
 				used where value can be a number from 0 to 6.</p>
 
 			<h6>Customized</h6>
-<CodeHighlight>
+<pre v-code>
+<code><template v-pre>
 &lt;div class="p-d-flex"&gt;
 	&lt;div class="p-mr-2 p-order-3"&gt;Item 1&lt;/div&gt;
 	&lt;div class="p-mr-2 p-order-1"&gt;Item 2&lt;/div&gt;
 	&lt;div class="p-mr-2 p-order-2"&gt;Item 3&lt;/div&gt;
 &lt;/div&gt;
-</CodeHighlight>
+</template>
+</code></pre>
 			<div class="p-d-flex">
 				<div class="p-mr-2 p-order-3">Item 1</div>
 				<div class="p-mr-2 p-order-1">Item 2</div>
@@ -120,13 +130,15 @@
 
 			<h6>Responsive</h6>
 			<p>Orders change depending on the screen size.</p>
-<CodeHighlight>
+<pre v-code>
+<code><template v-pre>
 &lt;div class="p-d-flex"&gt;
 	&lt;div class="p-mr-2 p-order-3 p-order-md-2"&gt;Item 1&lt;/div&gt;
 	&lt;div class="p-mr-2 p-order-1 p-order-md-3"&gt;Item 2&lt;/div&gt;
 	&lt;div class="p-mr-2 p-order-2 p-order-md-1"&gt;Item 3&lt;/div&gt;
 &lt;/div&gt;
-</CodeHighlight>
+</template>
+</code></pre>
 
 			<div class="p-d-flex">
 				<div class="p-mr-2 p-order-3 p-order-md-2">Item 1</div>
@@ -185,7 +197,8 @@
 			</ul>
 
 			<h6>No Wrap</h6>
-<CodeHighlight>
+<pre v-code>
+<code><template v-pre>
 &lt;div class="p-d-flex"&gt;
 	&lt;div class="p-mr-2 p-mb-2"&gt;Item 1&lt;/div&gt;
 	&lt;div class="p-mr-2 p-mb-2"&gt;Item 2&lt;/div&gt;
@@ -194,7 +207,8 @@
 	&lt;div class="p-mr-2 p-mb-2"&gt;Item 5&lt;/div&gt;
 	&lt;div class="p-mr-2 p-mb-2"&gt;Item 6&lt;/div&gt;
 &lt;/div&gt;
-</CodeHighlight>
+</template>
+</code></pre>
 			<div class="p-d-flex">
 				<div class="p-mr-2 p-mb-2">Item 1</div>
 				<div class="p-mr-2 p-mb-2">Item 2</div>
@@ -205,7 +219,8 @@
 			</div>
 
 			<h6>Wrap</h6>
-<CodeHighlight>
+<pre v-code>
+<code><template v-pre>
 &lt;div class="p-d-flex p-flex-wrap"&gt;
 	&lt;div class="p-mr-2 p-mb-2"&gt;Item 1&lt;/div&gt;
 	&lt;div class="p-mr-2 p-mb-2"&gt;Item 2&lt;/div&gt;
@@ -214,7 +229,8 @@
 	&lt;div class="p-mr-2 p-mb-2"&gt;Item 5&lt;/div&gt;
 	&lt;div class="p-mr-2 p-mb-2"&gt;Item 6&lt;/div&gt;
 &lt;/div&gt;
-</CodeHighlight>
+</template>
+</code></pre>
 			<div class="p-d-flex p-flex-wrap">
 				<div class="p-mr-2 p-mb-2">Item 1</div>
 				<div class="p-mr-2 p-mb-2">Item 2</div>
@@ -225,7 +241,8 @@
 			</div>
 
 			<h6>Wrap Reverse</h6>
-<CodeHighlight>
+<pre v-code>
+<code><template v-pre>
 &lt;div class="p-d-flex p-flex-wrap-reverse"&gt;
 	&lt;div class="p-mr-2 p-mb-2"&gt;Item 1&lt;/div&gt;
 	&lt;div class="p-mr-2 p-mb-2"&gt;Item 2&lt;/div&gt;
@@ -234,7 +251,8 @@
 	&lt;div class="p-mr-2 p-mb-2"&gt;Item 5&lt;/div&gt;
 	&lt;div class="p-mr-2 p-mb-2"&gt;Item 6&lt;/div&gt;
 &lt;/div&gt;
-</CodeHighlight>
+</template>
+</code></pre>
 			<div class="p-d-flex p-flex-wrap-reverse">
 				<div class="p-mr-2 p-mb-2">Item 1</div>
 				<div class="p-mr-2 p-mb-2">Item 2</div>
@@ -277,24 +295,28 @@
 			</ul>
 
 			<h6>Between</h6>
-<CodeHighlight>
+<pre v-code>
+<code><template v-pre>
 &lt;div class="p-d-flex p-jc-between"&gt;
 	&lt;div&gt;Item 1&lt;/div&gt;
 	&lt;div&gt;Item 2&lt;/div&gt;
 &lt;/div&gt;
-</CodeHighlight>
+</template>
+</code></pre>
 			<div class="p-d-flex p-jc-between">
 				<div>Item 1</div>
 				<div>Item 2</div>
 			</div>
 
 			<h6>Center</h6>
-<CodeHighlight>
+<pre v-code>
+<code><template v-pre>
 &lt;div class="p-d-flex p-jc-center"&gt;
 	&lt;div class="p-mr-2"&gt;Item 1&lt;/div&gt;
 	&lt;div&gt;Item 2&lt;/div&gt;
 &lt;/div&gt;
-</CodeHighlight>
+</template>
+</code></pre>
 			<div class="p-d-flex p-jc-center">
 				<div class="p-mr-2">Item 1</div>
 				<div>Item 2</div>
@@ -347,24 +369,28 @@
 			</ul>
 
 			<h6>Start</h6>
-<CodeHighlight>
+<pre v-code>
+<code><template v-pre>
 &lt;div class="p-d-flex p-ai-start"&gt;
 	&lt;div class="p-mr-2" style="height:100px"&gt;Item 1&lt;/div&gt;
 	&lt;div style="height:50px"&gt;Item 2&lt;/div&gt;
 &lt;/div&gt;
-</CodeHighlight>
+</template>
+</code></pre>
 			<div class="p-d-flex p-ai-start">
 				<div class="p-mr-2" style="height:100px">Item 1</div>
 				<div style="height:50px">Item 2</div>
 			</div>
 
 			<h6>Center</h6>
-<CodeHighlight>
+<pre v-code>
+<code><template v-pre>
 &lt;div class="p-d-flex p-ai-center"&gt;
 	&lt;div class="p-mr-2" style="height:100px"&gt;Item 1&lt;/div&gt;
 	&lt;div style="height:50px"&gt;Item 2&lt;/div&gt;
 &lt;/div&gt;
-</CodeHighlight>
+</template>
+</code></pre>
 			<div class="p-d-flex p-ai-center">
 				<div class="p-mr-2" style="height:100px">Item 1</div>
 				<div style="height:50px">Item 2</div>
@@ -411,14 +437,16 @@
 				<li>stretch (default)</li>
 			</ul>
 
-<CodeHighlight>
+<pre v-code>
+<code><template v-pre>
 &lt;div class="p-d-flex" style="height: 150px;"&gt;
 	&lt;div class="p-mr-2 p-as-start"&gt;Start&lt;/div&gt;
 	&lt;div class="p-mr-2 p-as-center"&gt;Center&lt;/div&gt;
 	&lt;div class="p-mr-2 p-as-end"&gt;End&lt;/div&gt;
 	&lt;div class="p-mr-2 p-as-stretch"&gt;Stretch&lt;/div&gt;
 &lt;/div&gt;
-</CodeHighlight>
+</template>
+</code></pre>
 			<div class="p-d-flex" style="height: 150px;">
 				<div class="p-mr-2 p-as-start">Start</div>
 				<div class="p-mr-2 p-as-center">Center</div>
@@ -509,13 +537,15 @@
 			</p>
 			<h6>Horizontal Spacing</h6>
 
-<CodeHighlight>
+<pre v-code>
+<code><template v-pre>
 &lt;div class="p-d-flex p-p-3 card"&gt;
 	&lt;Button type="Button" icon="pi pi-check" class="p-mr-2" /&gt;
 	&lt;Button type="Button" icon="pi pi-trash" class="p-button-danger"/&gt;
 	&lt;Button type="Button" icon="pi pi-search" class="p-ml-auto p-button-help"/&gt;
 &lt;/div&gt;
-</CodeHighlight>
+</template>
+</code></pre>
 			<div class="p-d-flex p-p-3 card">
 				<Button type="Button" icon="pi pi-check" class="p-mr-2"/>
 				<Button type="Button" icon="pi pi-trash" class="p-button-danger"/>
@@ -523,12 +553,14 @@
 			</div>
 
 			<h6>Vertical Spacing</h6>
-<CodeHighlight>
+<pre v-code>
+<code><template v-pre>
 &lt;div class="p-d-flex p-flex-column" style="height:150px"&gt;
 	&lt;div&gt;Item 1&lt;/div&gt;
 	&lt;div class="p-mt-auto"&gt;Item 2&lt;/div&gt;
 &lt;/div&gt;
-</CodeHighlight>
+</template>
+</code></pre>
 			<div class="p-d-flex p-flex-column" style="height:150px">
 				<div>Item 1</div>
 				<div class="p-mt-auto">Item 2</div>
@@ -538,12 +570,7 @@
 </template>
 
 <script>
-import CodeHighlight from '../components/CodeHighlight';
-
 export default {
-	components: {
-		'CodeHighlight': CodeHighlight
-	}
 }
 </script>
 

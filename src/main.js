@@ -68,6 +68,8 @@ import Tree from 'primevue/tree';
 import TreeTable from 'primevue/treetable';
 import TriStateCheckbox from 'primevue/tristatecheckbox';
 
+import CodeHighlight from './AppCodeHighlight';
+
 import 'primevue/resources/themes/saga-blue/theme.css';
 import 'primevue/resources/primevue.min.css';
 import 'primeflex/primeflex.css';
@@ -94,6 +96,7 @@ app.use(router);
 
 app.directive('tooltip', Tooltip);
 app.directive('ripple', Ripple);
+app.directive('code', CodeHighlight);
 
 app.component('Accordion', Accordion);
 app.component('AccordionTab', AccordionTab);

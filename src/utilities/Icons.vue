@@ -5,42 +5,52 @@
 
 		<h5>Getting Started</h5>
 		<p>PrimeIcons use the pi pi-{icon} syntax such as pi pi-check. A standalone icon can be displayed using an element like i or span.</p>
-<CodeHighlight>
+<pre v-code>
+<code><template v-pre>
 &lt;i class="pi pi-check"&gt;&lt;/i&gt;
 &lt;i class="pi pi-times"&gt;&lt;/i&gt;
-</CodeHighlight>
+</template>
+</code></pre>
 
 		<i class="pi pi-check" style="margin-right: .5rem"></i>
 		<i class="pi pi-times"></i>
 
 		<h5>Component Icons</h5>
 		<p>Components that have icon properties accept PrimeIcons with the pi pi-{icon} syntax.</p>
-<CodeHighlight>
+<pre v-code>
+<code><template v-pre>
 &lt;Button label="Confirm" icon="pi pi-check"&gt;&lt;/Button&gt;
-</CodeHighlight>
+</template>
+</code></pre>
 
 		<Button label="Confirm" icon="pi pi-check"></Button>
 
 		<h5>Size</h5>
 		<p>Size of the icons can easily be changed using font-size property.</p>
 
-<CodeHighlight>
+<pre v-code>
+<code><template v-pre>
 &lt;i class="pi pi-check"&gt;&lt;/i&gt;
-</CodeHighlight>
+</template>
+</code></pre>
 
 		<i class="pi pi-check"></i>
 
-<CodeHighlight>
+<pre v-code>
+<code><template v-pre>
 &lt;i class="pi pi-check" style="fontSize: 2rem"&gt;&lt;/i&gt;
-</CodeHighlight>
+</template>
+</code></pre>
 
 		<i class="pi pi-check" style="fontSize: 2rem"></i>
 
 		<h5>Spinning Animation</h5>
 		<p>Special pi-spin class applies continuous rotation to an icon.</p>
-<CodeHighlight>
+<pre v-code>
+<code><template v-pre>
 &lt;i class="pi pi-spin pi-spinner" style="fontSize: 2rem"&gt;&lt;/i&gt;
-</CodeHighlight>
+</template>
+</code></pre>
 
 		<i class="pi pi-spin pi-spinner" style="fontSize: 2rem"></i>
 
@@ -58,7 +68,6 @@
 </template>
 
 <script>
-import CodeHighlight from "../components/CodeHighlight";
 import axios from 'axios';
 
 export default {
@@ -80,9 +89,6 @@ export default {
 			});
 			this.icons = icons;
 		});
-	},
-	components: {
-		'CodeHighlight': CodeHighlight
 	}
 }
 </script>

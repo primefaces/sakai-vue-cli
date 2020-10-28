@@ -43,8 +43,8 @@ npm run serve
                     <i>App.vue</i> component that implements the logic such as menu state, layout modes and so on.
                 </p>
 
-<CodeHighlight>
-<template v-pre>
+<pre v-code>
+<code><template v-pre>
 &lt;template&gt;
     &lt;div :class="containerClass" @click="onWrapperClick"&gt;
         &lt;AppTopBar @menu-toggle="onMenuToggle" /&gt;
@@ -72,14 +72,15 @@ npm run serve
     &lt;/div&gt;
 &lt;/template&gt;
 </template>
-</CodeHighlight>
+</code></pre>
 
                 <h4>Menu</h4>
                 <p>Menu is a separate component defined in <i>AppMenu.vue</i> file based on PrimeNG MenuModel API. In order to define the menuitems,
                     navigate to data section of <i>App.vue</i> file and define your own model as a nested structure using the menu property.
                     Here is the menu component from the demo application. Notice that menu object is bound to the model property of AppMenu component as shown above.</p>
 
-<CodeHighlight lang="js">
+<pre v-code.script>
+<code>
 data() {
     return {
         menu : [
@@ -173,19 +174,22 @@ data() {
         ]
     }
 }
-</CodeHighlight>
+
+</code></pre>
 
                 <h4>Dependencies</h4>
 
                 <p>Dependencies of Sigma are listed below and needs to be added to package.json. Sigma has no direct dependency, even PrimeVue components are an optional dependency..</p>
 
-<CodeHighlight lang="js">
+<pre v-code.script>
+<code>
 {
     "primevue": "3.0.1",              //optional: PrimeVue components
     "primeicons": "4.0.0",            //optional: Icons
     "primeflex": "2.0.0",             //optional: Grid system
 }
-</CodeHighlight>
+
+</code></pre>
 
                 <h4>Saga Theme</h4>
                 <p>Sigma uses the free Saga-Blue which is a free theme distributed within PrimeVue, however it can be used with any PrimeVue theme as well.</p>
@@ -195,7 +199,8 @@ data() {
                     will be reflected instantly at your browser.</p>
 
                 <h3>src/assets/_variables.scss</h3>
-<CodeHighlight lang="css">
+<pre v-code.css>
+<code>
 /* General */
 $fontSize:14px;
 $bodyBgColor:#edf0f5;
@@ -243,7 +248,8 @@ $topbarSearchInputColor:#ffffff;
 
 /* Footer */
 $footerBgColor:#ffffff;
-</CodeHighlight>
+
+</code></pre>
 
                 <h4>Menu Modes</h4>
                 <p>Menu has 2 modes, <i>static</i> and <i>overlay</i>. Main layout container element in App.vue is used to define which mode to use by adding specific classes. List
@@ -255,9 +261,11 @@ $footerBgColor:#ffffff;
                 </ul>
 
                 <p>For example to create an overlay menu, the div element should be in following form;</p>
-<CodeHighlight>
+<pre v-code>
+<code><template v-pre>
 &lt;div class="layout-wrapper layout-static"&gt;
-</CodeHighlight>
+</template>
+</code></pre>
 
                 <p>It is also possible to leave the choice to the user by keeping the preference at a component and using an expression to bind it so that user can switch between modes. Sample
                     application has an example implementation of such use case with a computed property. Refer to App.vue for an example.</p>
@@ -267,14 +275,18 @@ $footerBgColor:#ffffff;
                 to the sidebar element.</p>
 
                 <b>Dark Menu</b>
-<CodeHighlight>
+<pre v-code>
+<code><template v-pre>
 &lt;div class="layout-sidebar layout-sidebar-dark"&gt;
-</CodeHighlight>
+</template>
+</code></pre>
 
                 <b>Light Menu</b>
-<CodeHighlight>
+<pre v-code>
+<code><template v-pre>
 &lt;div class="layout-sidebar layout-sidebar-light"&gt;
-</CodeHighlight>
+</template>
+</code></pre>
 
                 <h4>Grid CSS</h4>
                 <p>Sigma uses PrimeFlex CSS Grid throughout the samples. Although any grid library can be used, we recommend using PrimeFlex as your layout framework as it is well tested and supported by PrimeVue. PrimeFlex is
@@ -289,12 +301,7 @@ $footerBgColor:#ffffff;
 </template>
 
 <script>
-import CodeHighlight from './CodeHighlight';
-
 export default {
-    components: {
-        'CodeHighlight': CodeHighlight
-    }
 }
 </script>
 
