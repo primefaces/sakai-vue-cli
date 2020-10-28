@@ -3,7 +3,7 @@
         <div class="p-col-12">
             <div class="card docs">
                 <h4>Current Version</h4>
-                <p>Vue 2.6.0 and PrimeVue 2.x</p>
+                <p>Vue 3.0.2 and PrimeVue 3.x</p>
 
                 <h4>Getting Started</h4>
                 <p>Sigma is an application template for Vue based on the <a href="https://cli.vuejs.org/">Vue CLI</a> that provides out-of-the-box standard
