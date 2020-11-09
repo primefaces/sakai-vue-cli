@@ -178,7 +178,7 @@ export default {
 
 			if (this.product.name.trim()) {
 				if (this.product.id) {
-					this.$set(this.products, this.findIndexById(this.product.id), this.product);
+					this.products[this.findIndexById(this.product.id)] = this.product;
 					this.$toast.add({severity:'success', summary: 'Successful', detail: 'Product Updated', life: 3000});
 				}
 				else {
