@@ -18,7 +18,7 @@
 					<span v-if="item.badge" class="menuitem-badge">{{item.badge}}</span>
 				</a>
 				<transition name="layout-submenu-wrapper">
-					<AppSubmenu v-show="activeIndex === i" :items="visible(item) && item.items" @menuitem-click="$emit('menuitem-click', $event)"></AppSubmenu>
+					<appsubmenu v-show="activeIndex === i" :items="visible(item) && item.items" @menuitem-click="$emit('menuitem-click', $event)"></appsubmenu>
 				</transition>
 			</li>
 			<li class="p-menu-separator" :style="item.style" v-if="visible(item) && item.separator" :key="'separator' + i" role="separator"></li>
@@ -27,7 +27,7 @@
 </template>
 <script>
 export default {
-	name: 'AppSubmenu',
+	name: 'appsubmenu',
 	props: {
 		items: Array,
 		root: {
@@ -66,9 +66,6 @@ export default {
 		visible(item) {
 			return (typeof item.visible === 'function' ? item.visible() : item.visible !== false);
 		}
-	},
-	components: {
-		"AppSubmenu": this
 	}
 }
 </script>
