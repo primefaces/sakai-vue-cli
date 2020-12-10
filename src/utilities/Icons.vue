@@ -1,7 +1,7 @@
 <template>
 	<div class="card icons-demo">
 		<h3>Icons</h3>
-		<p>Apollo uses PrimeIcons v4.1, PrimeTek's new modern icon library.</p>
+		<p>Sigma uses PrimeIcons v4.1, PrimeTek's new modern icon library.</p>
 
 		<h5>Getting Started</h5>
 		<p>PrimeIcons use the pi pi-{icon} syntax such as pi pi-check. A standalone icon can be displayed using an element like i or span.</p>
