@@ -5,17 +5,17 @@
 				<Toast/>
 				<Toolbar class="p-mb-4">
 					<template v-slot:left>
-						<Button label="New" icon="pi pi-plus" class="p-button-success p-mr-2" @click="openNew" />
-						<Button label="Delete" icon="pi pi-trash" class="p-button-danger" @click="confirmDeleteSelected" :disabled="!selectedProducts || !selectedProducts.length" />
+						<Button label="New" icon="pi pi-plus" class="p-button-success p-mr-2 p-mb*2" @click="openNew" />
+						<Button label="Delete" icon="pi pi-trash" class="p-button-danger p-mb-2" @click="confirmDeleteSelected" :disabled="!selectedProducts || !selectedProducts.length" />
 					</template>
 
 					<template v-slot:right>
-						<FileUpload mode="basic" accept="image/*" :maxFileSize="1000000" label="Import" chooseLabel="Import" class="p-mr-2 p-d-inline-block" />
-						<Button label="Export" icon="pi pi-upload" class="p-button-help" @click="exportCSV($event)"  />
+						<FileUpload mode="basic" accept="image/*" :maxFileSize="1000000" label="Import" chooseLabel="Import" class="p-mr-2 p-mb-2 p-d-inline-block" />
+						<Button label="Export" icon="pi pi-upload" class="p-button-help p-mb-2" @click="exportCSV($event)"  />
 					</template>
 				</Toolbar>
 
-				<DataTable ref="dt" :value="products" v-model:selection="selectedProducts" dataKey="id" :paginator="true" :rows="10" :filters="filters"
+				<DataTable ref="dt" :value="products" class="p-datatable-responsive-demo" v-model:selection="selectedProducts" dataKey="id" :paginator="true" :rows="10" :filters="filters"
                             paginatorTemplate="CurrentPageReport FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown" :rowsPerPageOptions="[5,10,25]"
                             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products">
 					<template #header>
@@ -29,26 +29,45 @@
 					</template>
 
 					<Column selectionMode="multiple" headerStyle="width: 3rem"></Column>
-					<Column field="code" header="Code" :sortable="true"></Column>
-					<Column field="name" header="Name" :sortable="true"></Column>
+					<Column field="code" header="Code" :sortable="true">
+						<template #body="slotProps">
+							<span class="p-column-title">Code</span>
+							{{slotProps.data.code}}
+						</template>
+					</Column>
+					<Column field="name" header="Name" :sortable="true">
+						<template #body="slotProps">
+							<span class="p-column-title">Name</span>
+							{{slotProps.data.name}}
+						</template>
+					</Column>
 					<Column header="Image">
 						<template #body="slotProps">
+							<span class="p-column-title">Image</span>
 							<img :src="'assets/layout/images/product/' + slotProps.data.image" :alt="slotProps.data.image" class="product-image" />
 						</template>
 					</Column>
 					<Column field="price" header="Price" :sortable="true">
 						<template #body="slotProps">
+							<span class="p-column-title">Price</span>
 							{{formatCurrency(slotProps.data.price)}}
 						</template>
 					</Column>
-					<Column field="category" header="Category" :sortable="true"></Column>
+					<Column field="category" header="Category" :sortable="true">
+						<template #body="slotProps">
+							<span class="p-column-title">Category</span>
+							{{slotProps.data.category}}
+						</template>
+					</Column>
 					<Column field="rating" header="Reviews" :sortable="true">
 						<template #body="slotProps">
+							<span class="p-column-title">Category</span>
 							<Rating :modelValue="slotProps.data.rating" :readonly="true" :cancel="false" />
 						</template>
 					</Column>
 					<Column field="inventoryStatus" header="Status" :sortable="true">
 						<template #body="slotProps">
+							<span class="p-column-title">Status</span>
 							<span :class="'product-badge status-' + slotProps.data.inventoryStatus.toLowerCase()">{{slotProps.data.inventoryStatus}}</span>
 						</template>
 					</Column>
@@ -162,7 +181,9 @@ export default {
 	},
 	methods: {
 		formatCurrency(value) {
-			return value.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
+			if(value)
+				return value.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
+			return;
 		},
 		openNew() {
 			this.product = {};
@@ -289,5 +310,46 @@ export default {
 		background: #FEEDAF;
 		color: #8A5340;
 	}
+}
+
+.p-datatable-responsive-demo .p-datatable-tbody > tr > td .p-column-title {
+    display: none;
+}
+
+@media screen and (max-width: 40em) {
+    ::v-deep(.p-datatable) {
+        &.p-datatable-responsive-demo {
+            .p-datatable-thead > tr > th,
+            .p-datatable-tfoot > tr > td {
+                display: none !important;
+            }
+
+            .p-datatable-tbody > tr > td {
+                text-align: left;
+                display: block;
+                width: 100%;
+                float: left;
+                clear: left;
+                border: 0 none;
+
+                .p-column-title {
+                    padding: .4rem;
+                    min-width: 30%;
+                    display: inline-block;
+                    margin: -.4em 1em -.4em -.4rem;
+                    font-weight: bold;
+                }
+
+                &:last-child {
+					border-bottom: 1px solid var(--surface-d);
+					text-align: center;
+				}
+				
+				.p-rating {
+					display: inline-block;
+				}
+            }
+        }
+    }
 }
 </style>
