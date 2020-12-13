@@ -1,0 +1,5 @@
+**/node_modules
+**/dist
+
+# Note that Vue config file is excluded from docker image
+vue.config.js
