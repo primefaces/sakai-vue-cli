@@ -5,6 +5,7 @@
 				<h5>Default</h5>
 				<Button label="Submit" class="p-mr-2 p-mb-2"></Button>
 				<Button label="Disabled" class="p-mr-2 p-mb-2" :disabled="true"></Button>
+				<Button label="Link" class="p-button-link p-mr-2 p-mb-2" />
 			</div>
 
 			<div class="card">
