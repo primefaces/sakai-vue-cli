@@ -5,21 +5,21 @@
 				<Toast/>
 				<Toolbar class="p-mb-4">
 					<template v-slot:left>
-						<Button label="New" icon="pi pi-plus" class="p-button-success p-mr-2 p-mb*2" @click="openNew" />
-						<Button label="Delete" icon="pi pi-trash" class="p-button-danger p-mb-2" @click="confirmDeleteSelected" :disabled="!selectedProducts || !selectedProducts.length" />
+						<Button label="New" icon="pi pi-plus" class="p-button-success p-mr-2" @click="openNew" />
+						<Button label="Delete" icon="pi pi-trash" class="p-button-danger" @click="confirmDeleteSelected" :disabled="!selectedProducts || !selectedProducts.length" />
 					</template>
 
 					<template v-slot:right>
-						<FileUpload mode="basic" accept="image/*" :maxFileSize="1000000" label="Import" chooseLabel="Import" class="p-mr-2 p-mb-2 p-d-inline-block" />
-						<Button label="Export" icon="pi pi-upload" class="p-button-help p-mb-2" @click="exportCSV($event)"  />
+						<FileUpload mode="basic" accept="image/*" :maxFileSize="1000000" label="Import" chooseLabel="Import" class="p-mr-2 p-d-inline-block" />
+						<Button label="Export" icon="pi pi-upload" class="p-button-help" @click="exportCSV($event)"  />
 					</template>
 				</Toolbar>
 
-				<DataTable ref="dt" :value="products" class="p-datatable-responsive-demo" v-model:selection="selectedProducts" dataKey="id" :paginator="true" :rows="10" :filters="filters"
-                            paginatorTemplate="CurrentPageReport FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown" :rowsPerPageOptions="[5,10,25]"
-                            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products">
+				<DataTable ref="dt" :value="products" v-model:selection="selectedProducts" dataKey="id" :paginator="true" :rows="10" :filters="filters"
+							paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown" :rowsPerPageOptions="[5,10,25]"
+							currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products" responsiveLayout="scroll">
 					<template #header>
-						<div class="table-header">
+						<div class="table-header p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
 							<h5 class="p-m-0">Manage Products</h5>
 							<span class="p-input-icon-left">
                                 <i class="pi pi-search" />
@@ -56,19 +56,19 @@
 					<Column field="category" header="Category" :sortable="true">
 						<template #body="slotProps">
 							<span class="p-column-title">Category</span>
-							{{slotProps.data.category}}
+							{{formatCurrency(slotProps.data.category)}}
 						</template>
 					</Column>
 					<Column field="rating" header="Reviews" :sortable="true">
 						<template #body="slotProps">
-							<span class="p-column-title">Category</span>
+							<span class="p-column-title">Rating</span>
 							<Rating :modelValue="slotProps.data.rating" :readonly="true" :cancel="false" />
 						</template>
 					</Column>
 					<Column field="inventoryStatus" header="Status" :sortable="true">
 						<template #body="slotProps">
 							<span class="p-column-title">Status</span>
-							<span :class="'product-badge status-' + slotProps.data.inventoryStatus.toLowerCase()">{{slotProps.data.inventoryStatus}}</span>
+							<span :class="'product-badge status-' + (slotProps.data.inventoryStatus ? slotProps.data.inventoryStatus.toLowerCase() : '')">{{slotProps.data.inventoryStatus}}</span>
 						</template>
 					</Column>
 					<Column>
@@ -80,7 +80,7 @@
 				</DataTable>
 
 				<Dialog v-model:visible="productDialog" :style="{width: '450px'}" header="Product Details" :modal="true" class="p-fluid">
-					<img :src="'assets/layout/images/product/' + product.image" :alt="product.image" class="product-image" v-if="product.image" />
+					<img :src="'assets/demo/images/product/' + product.image" :alt="product.image" class="product-image" v-if="product.image" />
 					<div class="p-field">
 						<label for="name">Name</label>
 						<InputText id="name" v-model.trim="product.name" required="true" autofocus :class="{'p-invalid': submitted && !product.name}" />
@@ -89,6 +89,23 @@
 					<div class="p-field">
 						<label for="description">Description</label>
 						<Textarea id="description" v-model="product.description" required="true" rows="3" cols="20" />
+					</div>
+
+					<div class="p-field">
+						<label for="inventoryStatus" class="p-mb-3">Inventory Status</label>
+						<Dropdown id="inventoryStatus" v-model="product.inventoryStatus" :options="statuses" optionLabel="label" placeholder="Select a Status">
+							<template #value="slotProps">
+								<div v-if="slotProps.value && slotProps.value.value">
+									<span :class="'product-badge status-' +slotProps.value.value">{{slotProps.value.label}}</span>
+								</div>
+								<div v-else-if="slotProps.value && !slotProps.value.value">
+									<span :class="'product-badge status-' +slotProps.value.toLowerCase()">{{slotProps.value}}</span>
+								</div>
+								<span v-else>
+									{{slotProps.placeholder}}
+								</span>
+							</template>
+						</Dropdown>
 					</div>
 
 					<div class="p-field">
@@ -169,7 +186,12 @@ export default {
 			product: {},
 			selectedProducts: null,
 			filters: {},
-			submitted: false
+			submitted: false,
+			statuses: [
+				{label: 'INSTOCK', value: 'instock'},
+				{label: 'LOWSTOCK', value: 'lowstock'},
+				{label: 'OUTOFSTOCK', value: 'outofstock'}
+			]
 		}
 	},
 	productService: null,
@@ -196,21 +218,20 @@ export default {
 		},
 		saveProduct() {
 			this.submitted = true;
-
 			if (this.product.name.trim()) {
-				if (this.product.id) {
-					this.products[this.findIndexById(this.product.id)] = this.product;
-					this.$toast.add({severity:'success', summary: 'Successful', detail: 'Product Updated', life: 3000});
+			if (this.product.id) {
+				this.product.inventoryStatus = this.product.inventoryStatus.value ? this.product.inventoryStatus.value: this.product.inventoryStatus;
+				this.products[this.findIndexById(this.product.id)] = this.product;
+				this.$toast.add({severity:'success', summary: 'Successful', detail: 'Product Updated', life: 3000});
 				}
 				else {
 					this.product.id = this.createId();
 					this.product.code = this.createId();
 					this.product.image = 'product-placeholder.svg';
-					this.product.inventoryStatus = 'INSTOCK';
+					this.product.inventoryStatus = this.product.inventoryStatus ? this.product.inventoryStatus.value : 'INSTOCK';
 					this.products.push(this.product);
 					this.$toast.add({severity:'success', summary: 'Successful', detail: 'Product Created', life: 3000});
 				}
-
 				this.productDialog = false;
 				this.product = {};
 			}
@@ -237,7 +258,6 @@ export default {
 					break;
 				}
 			}
-
 			return index;
 		},
 		createId() {
@@ -265,91 +285,56 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.table-header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.product-image {
-	width: 100px;
-	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-}
-
-.p-dialog .product-image {
-	width: 150px;
-	margin: 0 auto 2rem auto;
-	display: block;
-}
-
-.confirmation-content {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.product-badge {
-	border-radius: 2px;
-	padding: .25em .5rem;
-	text-transform: uppercase;
-	font-weight: 700;
-	font-size: 12px;
-	letter-spacing: .3px;
-
-	&.status-instock {
-		background: #C8E6C9;
-		color: #256029;
+	.table-header {
+		display: flex;
+		justify-content: space-between;
 	}
 
-	&.status-outofstock {
-		background: #FFCDD2;
-		color: #C63737;
+	.product-image {
+		width: 100px;
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 	}
 
-	&.status-lowstock {
-		background: #FEEDAF;
-		color: #8A5340;
+	.p-dialog .product-image {
+		width: 150px;
+		margin: 0 auto 2rem auto;
+		display: block;
 	}
-}
 
-.p-datatable-responsive-demo .p-datatable-tbody > tr > td .p-column-title {
-    display: none;
-}
+	.confirmation-content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 
-@media screen and (max-width: 40em) {
-    ::v-deep(.p-datatable) {
-        &.p-datatable-responsive-demo {
-            .p-datatable-thead > tr > th,
-            .p-datatable-tfoot > tr > td {
-                display: none !important;
-            }
+	.product-badge {
+		border-radius: 2px;
+		padding: .25em .5rem;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 12px;
+		letter-spacing: .3px;
 
-            .p-datatable-tbody > tr > td {
-                text-align: left;
-                display: block;
-                width: 100%;
-                float: left;
-                clear: left;
-                border: 0 none;
+		&.status-instock {
+			background: #C8E6C9;
+			color: #256029;
+		}
 
-                .p-column-title {
-                    padding: .4rem;
-                    min-width: 30%;
-                    display: inline-block;
-                    margin: -.4em 1em -.4em -.4rem;
-                    font-weight: bold;
-                }
+		&.status-outofstock {
+			background: #FFCDD2;
+			color: #C63737;
+		}
 
-                &:last-child {
-					border-bottom: 1px solid var(--surface-d);
-					text-align: center;
-				}
-				
-				.p-rating {
-					display: inline-block;
-				}
-            }
-        }
-    }
-}
+		&.status-lowstock {
+			background: #FEEDAF;
+			color: #8A5340;
+		}
+	}
+
+	::v-deep(.p-toolbar) {
+		flex-wrap: wrap;
+		.p-button {
+			margin-bottom: .25rem;
+		}
+	}
 </style>
