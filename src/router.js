@@ -23,6 +23,11 @@ const routes = [
         component: () => import('./components/FloatLabelDemo.vue'),
     },
     {
+        path: '/invalidstate',
+        name: 'invalidstate',
+        component: () => import('./components/InvalidStateDemo.vue'),
+    },
+    {
         path: '/button',
         name: 'button',
         component: () => import('./components/ButtonDemo.vue'),

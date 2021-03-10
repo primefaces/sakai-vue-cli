@@ -11,7 +11,7 @@
 						<InputText type="text" placeholder="Disabled" :disabled="true"></InputText>
 					</div>
 					<div class="p-col-12 p-mb-2 p-lg-4 p-mb-lg-0">
-						<InputText type="text" placeholder="Invalid" class="p-error" />
+						<InputText type="text" placeholder="Invalid" class="p-invalid" />
 					</div>
 				</div>
 
