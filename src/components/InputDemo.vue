@@ -61,15 +61,25 @@
 			</div>
 
 			<div class="card">
-				<h5>Slider</h5>
-				<InputText v-model.number="sliderValue" />
-				<Slider v-model="sliderValue" />
-
-				<h5>Rating</h5>
-				<Rating v-model="ratingValue"/>
-
-				<h5>ColorPicker</h5>
-				<ColorPicker v-model="colorValue" />
+				<div class="p-grid">
+					<div class="p-col-12">
+						<h5>Slider</h5>
+						<InputText v-model.number="sliderValue" />
+						<Slider v-model="sliderValue" />
+					</div>
+					<div class="p-col-12 p-md-6">
+						<h5>Rating</h5>
+						<Rating v-model="ratingValue"/>
+					</div>
+					<div class="p-col-12 p-md-6">
+						<h5>ColorPicker</h5>
+						<ColorPicker style="width: 2rem" v-model="colorValue" />
+					</div>
+					<div class="p-col-12">
+						<h5>Knob</h5>
+						<Knob v-model="knobValue" :step="10" :min="-50" :max="50" valueTemplate="{value}%" />
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -97,7 +107,7 @@
 					</div>
 				</div>
 
-				<h5 style="margin-top: 0">Checkbox</h5>
+				<h5>Checkbox</h5>
 				<div class="p-grid">
 					<div class="p-col-12 p-md-4">
 						<div class="p-field-checkbox">
@@ -119,7 +129,7 @@
 					</div>
 				</div>
 
-				<h5 style="margin-top: 0">Input Switch</h5>
+				<h5>Input Switch</h5>
 				<InputSwitch v-model="switchValue" />
 			</div>
 
@@ -138,7 +148,9 @@
 							<div>{{option.name}}</div>
 						</div>
 						<template v-if="!slotProps.value || slotProps.value.length === 0">
-							Select Countries
+							<div class="country-placeholder">
+								Select Countries
+							</div>
 						</template>
 					</template>
 					<template #option="slotProps">
@@ -152,7 +164,7 @@
 
 			<div class="card">
 				<h5>ToggleButton</h5>
-				<ToggleButton v-model="toggleValue" onLabel="Yes" offLabel="No"/>
+				<ToggleButton v-model="toggleValue" onLabel="Yes" offLabel="No" :style="{width: '10em'}"/>
 
 				<h5>SelectButton</h5>
 				<SelectButton v-model="selectButtonValue1" :options="selectButtonValues1" optionLabel="name" />
@@ -217,7 +229,7 @@
 				calendarValue: null,
 				inputNumberValue: null,
 				chipsValue: null,
-				sliderValue: null,
+				sliderValue: 50,
 				ratingValue: null,
 				colorValue: '1976D2',
 				radioValue: null,
@@ -265,7 +277,8 @@
 					{name: 'Option 3', code: 'O3'},
 				],
 				selectButtonValue2: null,
-				inputGroupValue: false
+				inputGroupValue: false,
+				knobValue: 20
 			}
 		},
 		countryService: null,
@@ -293,35 +306,37 @@
 </script>
 
 <style scoped lang="scss">
-	.p-multiselect {
+	::v-deep(.p-multiselect) {
 		min-width: 15rem;
 	}
-
-	.multiselect-custom {
-
-		.p-multiselect-label:not(.p-placeholder) {
-			padding-top: .25rem;
-			padding-bottom: .25rem;
-		}
-
-		.country-item {
-			display: flex;
-			align-items: center;
-
-			span.flag {
-				width: 18px;
-				height: 12px;
-				margin-right: .5rem;
-				margin-left: .5rem;
-			}
-		}
-
-		.country-item-value {
-			border-radius: 3px;
-			display: inline-flex;
-			margin-right: .5rem;
-			background-color: #2196F3;
-			color: #ffffff;
-		}
+	.multiselect-custom-virtual-scroll .p-multiselect {
+		min-width: 20rem;
+	}
+	::v-deep(.multiselect-custom .p-multiselect-label) {
+		padding-top: .25rem;
+		padding-bottom: .25rem;
+	}
+	.multiselect-custom .country-item.country-item-value {
+		padding: .25rem .5rem;
+		border-radius: 3px;
+		display: inline-flex;
+		margin-right: .5rem;
+		background-color: var(--primary-color);
+		color: var(--primary-color-text);
+	}
+	.multiselect-custom .country-item.country-item-value span.flag {
+		width: 17px;
+	}
+	.country-item {
+		display: flex;
+		align-items: center;
+	}
+	.country-item span.flag {
+		width: 18px;
+		height: 12px;
+		margin-right: .5rem;
+	}
+	.multiselect-custom .country-placeholder {
+		padding: 0.25rem;
 	}
 </style>
