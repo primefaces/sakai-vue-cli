@@ -150,6 +150,11 @@ const routes = [
         component: () => import('./pages/CalendarDemo.vue'),
     },
     {
+        path: '/timeline',
+        name: 'timeline',
+        component: () => import('./pages/TimelineDemo.vue'),
+    },
+    {
         path: '/empty',
         name: 'empty',
         component: () => import('./components/EmptyPage.vue'),
