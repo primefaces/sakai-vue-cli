@@ -194,6 +194,25 @@ data() {
 
 </code></pre>
 
+                <h4>Integration with an Existing CLI Project</h4>
+				<p>
+					To setup Sigma in an existing project, follow the steps below;
+				</p>
+
+				<ul>
+					<li>Copy the <i>public/assets</i> folder to your projects folder with the same name</li>
+					<li>Copy all <i>src/App*.vue</i> files to the src folder of your application.</li>
+				</ul>
+
+				<p>Install PrimeVue</p>
+
+<pre v-code><code>
+npm install primevue@latest --save
+npm install	primeicons@latest --save
+npm install primeflex@latest --save
+
+</code></pre>
+
                 <h4>Saga Theme</h4>
                 <p>Sigma uses the free Saga-Blue which is a free theme distributed within PrimeVue, however it can be used with any PrimeVue theme as well.</p>
 
