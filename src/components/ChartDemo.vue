@@ -7,12 +7,12 @@
 				<Chart type="line" :data="lineData" />
 			</div>
 
-			<div class="card">
+			<div class="card flex flex-column align-items-center">
 				<h5>Pie Chart</h5>
 				<Chart type="pie" :data="pieData" />
 			</div>
 
-			<div class="card">
+			<div class="card  flex flex-column align-items-center">
 				<h5>Polar Area Chart</h5>
 				<Chart type="polarArea" :data="polarData" />
 			</div>
@@ -23,12 +23,12 @@
 				<Chart type="bar" :data="barData" />
 			</div>
 
-			<div class="card">
+			<div class="card flex flex-column align-items-center">
 				<h5>Doughnut Chart</h5>
 				<Chart type="doughnut" :data="doughnutData" />
 			</div>
 
-			<div class="card">
+			<div class="card flex flex-column align-items-center">
 				<h5>Radar Chart</h5>
 				<Chart type="radar" :data="radarData" />
 			</div>
@@ -48,14 +48,16 @@ export default {
 						data: [65, 59, 80, 81, 56, 55, 40],
 						fill: false,
 						backgroundColor: '#2f4860',
-						borderColor: '#2f4860'
+						borderColor: '#2f4860',
+						tension: 0.4
 					},
 					{
 						label: 'Second Dataset',
 						data: [28, 48, 40, 19, 86, 27, 90],
 						fill: false,
 						backgroundColor: '#00bb7e',
-						borderColor: '#00bb7e'
+						borderColor: '#00bb7e',
+						tension: 0.4
 					}
 				]
 			},
