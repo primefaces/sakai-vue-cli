@@ -1,35 +1,35 @@
 <template>
 
-	<div class="p-grid p-fluid">
-		<div class="p-col-12 p-lg-6">
+	<div class="grid p-fluid">
+		<div class="col-12 lg:col-6">
 			<div class="card">
-				<h5 class="centerText">Linear Chart</h5>
+				<h5>Linear Chart</h5>
 				<Chart type="line" :data="lineData" />
 			</div>
 
 			<div class="card">
-				<h5 class="centerText">Pie Chart</h5>
+				<h5>Pie Chart</h5>
 				<Chart type="pie" :data="pieData" />
 			</div>
 
 			<div class="card">
-				<h5 class="centerText">Polar Area Chart</h5>
+				<h5>Polar Area Chart</h5>
 				<Chart type="polarArea" :data="polarData" />
 			</div>
 		</div>
-		<div class="p-col-12 p-lg-6">
+		<div class="col-12 lg:col-6">
 			<div class="card">
-				<h5 class="centerText">Bar Chart</h5>
+				<h5>Bar Chart</h5>
 				<Chart type="bar" :data="barData" />
 			</div>
 
 			<div class="card">
-				<h5 class="centerText">Doughnut Chart</h5>
+				<h5>Doughnut Chart</h5>
 				<Chart type="doughnut" :data="doughnutData" />
 			</div>
 
 			<div class="card">
-				<h5 class="centerText">Radar Chart</h5>
+				<h5>Radar Chart</h5>
 				<Chart type="radar" :data="radarData" />
 			</div>
 		</div>

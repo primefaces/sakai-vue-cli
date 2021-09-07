@@ -1,6 +1,6 @@
 <template>
-	<div class="p-grid p-fluid">
-		<div class="p-col-12">
+	<div class="grid p-fluid">
+		<div class="col-12">
 			<div class="card card-w-title">
 				<h5>Menubar</h5>
 				<Menubar :model="nestedMenuitems">
@@ -14,14 +14,14 @@
 			</div>
 		</div>
 
-		<div class="p-col-12">
+		<div class="col-12">
 			<div class="card card-w-title">
 				<h5>Breadcrumb</h5>
 				<Breadcrumb :home="breadcrumbHome" :model="breadcrumbItems" />
 			</div>
 		</div>
 
-		<div class="p-col-12 p-md-6">
+		<div class="col-12 md:col-6">
 			<div class="card card-w-title">
 				<h5>Steps</h5>
 				<p>Steps and TabMenu are integrated with the same child routes.</p>
@@ -30,7 +30,7 @@
 			</div>
 		</div>
 
-		<div class="p-col-12 p-md-6">
+		<div class="col-12 md:col-6">
 			<div class="card card-w-title">
 				<h5>TabMenu</h5>
 				<p>Steps and TabMenu are integrated with the same child routes.</p>
@@ -40,21 +40,21 @@
 		</div>
 
 
-		<div class="p-col-12 p-md-4">
+		<div class="col-12 md:col-4">
 			<div class="card">
 				<h5>Tiered Menu</h5>
 				<TieredMenu :model="tieredMenuItems" />
 			</div>
 		</div>
 
-		<div class="p-col-12 p-md-4">
+		<div class="col-12 md:col-4">
 			<div class="card">
 				<h5>Plain Menu</h5>
 				<Menu :model="menuitems" />
 			</div>
 		</div>
 
-		<div class="p-col-12 p-md-4">
+		<div class="col-12 md:col-4">
 			<div class="card">
 				<h5>Overlay Menu</h5>
 
@@ -69,7 +69,7 @@
 			</div>
 		</div>
 
-		<div class="p-col-12 p-md-6">
+		<div class="col-12 md:col-6">
 			<div class="card">
 				<h5>MegaMenu - Horizontal</h5>
 				<MegaMenu :model="megamenuItems" />
@@ -79,7 +79,7 @@
 			</div>
 		</div>
 
-		<div class="p-col-12 p-md-6">
+		<div class="col-12 md:col-6">
 			<div class="card">
 				<h5>PanelMenu</h5>
 				<PanelMenu :model="panelMenuitems" />

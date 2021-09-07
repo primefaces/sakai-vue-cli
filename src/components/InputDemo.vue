@@ -1,35 +1,35 @@
 <template>
-	<div class="p-grid p-fluid">
-		<div class="p-col-12 p-md-6">
+	<div class="grid p-fluid">
+		<div class="col-12 md:col-6">
 			<div class="card">
 				<h5>InputText</h5>
-				<div class="p-grid p-formgrid">
-					<div class="p-col-12 p-mb-2 p-lg-4 p-mb-lg-0">
+				<div class="grid formgrid">
+					<div class="col-12 mb-2 lg:col-4 lg:mb-0">
 						<InputText type="text" placeholder="Default"></InputText>
 					</div>
-					<div class="p-col-12 p-mb-2 p-lg-4 p-mb-lg-0">
+					<div class="col-12 mb-2 lg:col-4 lg:mb-0">
 						<InputText type="text" placeholder="Disabled" :disabled="true"></InputText>
 					</div>
-					<div class="p-col-12 p-mb-2 p-lg-4 p-mb-lg-0">
+					<div class="col-12 mb-2 lg:col-4 lg:mb-0">
 						<InputText type="text" placeholder="Invalid" class="p-invalid" />
 					</div>
 				</div>
 
 				<h5>Icons</h5>
-				<div class="p-grid p-formgrid">
-					<div class="p-col-12 p-mb-2 p-lg-4 p-mb-lg-0">
+				<div class="grid formgrid">
+					<div class="col-12 mb-2 lg:col-4 lg:mb-0">
 						<span class="p-input-icon-left">
 							<i class="pi pi-user" />
 							<InputText type="text" placeholder="Username" />
 						</span>
 					</div>
-					<div class="p-col-12 p-mb-2 p-lg-4 p-mb-lg-0">
+					<div class="col-12 mb-2 lg:col-4 lg:mb-0">
 						<span class="p-input-icon-right">
 							<InputText type="text" placeholder="Search" />
 							<i class="pi pi-search" />
 						</span>
 					</div>
-					<div class="p-col-12 p-mb-2 p-lg-4 p-mb-lg-0">
+					<div class="col-12 mb-2 lg:col-4 lg:mb-0">
 						<span class="p-input-icon-left p-input-icon-right">
 							<i class="pi pi-user" />
 							<InputText type="text" placeholder="Search" />
@@ -61,21 +61,21 @@
 			</div>
 
 			<div class="card">
-				<div class="p-grid">
-					<div class="p-col-12">
+				<div class="grid">
+					<div class="col-12">
 						<h5>Slider</h5>
 						<InputText v-model.number="sliderValue" />
 						<Slider v-model="sliderValue" />
 					</div>
-					<div class="p-col-12 p-md-6">
+					<div class="col-12 md:col-6">
 						<h5>Rating</h5>
 						<Rating v-model="ratingValue"/>
 					</div>
-					<div class="p-col-12 p-md-6">
+					<div class="col-12 md:col-6">
 						<h5>ColorPicker</h5>
 						<ColorPicker style="width: 2rem" v-model="colorValue" />
 					</div>
-					<div class="p-col-12">
+					<div class="col-12">
 						<h5>Knob</h5>
 						<Knob v-model="knobValue" :step="10" :min="-50" :max="50" valueTemplate="{value}%" />
 					</div>
@@ -83,24 +83,24 @@
 			</div>
 		</div>
 
-		<div class="p-col-12 p-md-6">
+		<div class="col-12 md:col-6">
 			<div class="card">
 				<h5>RadioButton</h5>
-				<div class="p-grid">
-					<div class="p-col-12 p-md-4">
-						<div class="p-field-radiobutton">
+				<div class="grid">
+					<div class="col-12 md:col-4">
+						<div class="field-radiobutton mb-0">
 							<RadioButton id="option1" name="option" value="Chicago" v-model="radioValue" />
 							<label for="option1">Chicago</label>
 						</div>
 					</div>
-					<div class="p-col-12 p-md-4">
-						<div class="p-field-radiobutton">
+					<div class="col-12 md:col-4">
+						<div class="field-radiobutton mb-0">
 							<RadioButton id="option2" name="option" value="Los Angeles" v-model="radioValue" />
 							<label for="option2">Los Angeles</label>
 						</div>
 					</div>
-					<div class="p-col-12 p-md-4">
-						<div class="p-field-radiobutton">
+					<div class="col-12 md:col-4">
+						<div class="field-radiobutton mb-0">
 							<RadioButton id="option3" name="option" value="New York" v-model="radioValue" />
 							<label for="option3">New York</label>
 						</div>
@@ -108,21 +108,21 @@
 				</div>
 
 				<h5>Checkbox</h5>
-				<div class="p-grid">
-					<div class="p-col-12 p-md-4">
-						<div class="p-field-checkbox">
+				<div class="grid">
+					<div class="col-12 md:col-4">
+						<div class="field-checkbox mb-0">
 							<Checkbox id="checkOption1" name="option" value="Chicago" v-model="checkboxValue" />
 							<label for="checkOption1">Chicago</label>
 						</div>
 					</div>
-					<div class="p-col-12 p-md-4">
-						<div class="p-field-checkbox">
+					<div class="col-12 md:col-4">
+						<div class="field-checkbox mb-0">
 							<Checkbox id="checkOption2" name="option" value="Los Angeles" v-model="checkboxValue" />
 							<label for="checkOption2">Los Angeles</label>
 						</div>
 					</div>
-					<div class="p-col-12 p-md-4">
-						<div class="p-field-checkbox">
+					<div class="col-12 md:col-4">
+						<div class="field-checkbox mb-0">
 							<Checkbox id="checkOption3" name="option" value="New York" v-model="checkboxValue" />
 							<label for="checkOption3">New York</label>
 						</div>
@@ -174,11 +174,11 @@
 			</div>
 		</div>
 
-		<div class="p-col-12">
+		<div class="col-12">
 			<div class="card">
 				<h5>Input Groups</h5>
-				<div class="p-grid p-fluid">
-					<div class="p-col-12 p-md-6">
+				<div class="grid p-fluid">
+					<div class="col-12 md:col-6">
 						<div class="p-inputgroup">
 							<span class="p-inputgroup-addon">
 								<i class="pi pi-user"></i>
@@ -187,7 +187,7 @@
 						</div>
 					</div>
 
-					<div class="p-col-12 p-md-6">
+					<div class="col-12 md:col-6">
 						<div class="p-inputgroup">
 							<span class="p-inputgroup-addon"><i class="pi pi-shopping-cart"></i></span>
 							<span class="p-inputgroup-addon"><i class="pi pi-globe"></i></span>
@@ -197,14 +197,14 @@
 						</div>
 					</div>
 
-					<div class="p-col-12 p-md-6">
+					<div class="col-12 md:col-6">
 						<div class="p-inputgroup">
 							<Button label="Search"/>
 							<InputText placeholder="Keyword"/>
 						</div>
 					</div>
 
-					<div class="p-col-12 p-md-6">
+					<div class="col-12 md:col-6">
 						<div class="p-inputgroup">
 							<span class="p-inputgroup-addon p-inputgroup-addon-checkbox">
 								<Checkbox v-model="inputGroupValue" :binary="true"/>

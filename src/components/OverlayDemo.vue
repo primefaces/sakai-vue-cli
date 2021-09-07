@@ -1,6 +1,6 @@
 <template>
-	<div class="p-grid overlay-demo">
-		<div class="p-col-12 p-lg-6">
+	<div class="grid overlay-demo">
+		<div class="col-12 lg:col-6">
 			<div class="card p-fluid">
 				<h5>Dialog</h5>
 				<Dialog header="Dialog" v-model:visible="display" :breakpoints="{'960px': '75vw'}" :style="{width: '30vw'}" :modal="true">
@@ -14,22 +14,22 @@
 						<Button label="Dismiss" @click="close" icon="pi pi-check" class="p-button-secondary"/>
 					</template>
 				</Dialog>
-				<div class="p-grid">
-					<div class="p-col-12">
+				<div class="grid">
+					<div class="col-12">
 						<Button label="Show" icon="pi pi-external-link" @click="open"/>
 					</div>
 				</div>
 			</div>
 			<div class="card p-fluid">
 				<h5>Overlay Panel</h5>
-				<div class="p-grid p-formgrid">
-					<div class="p-col-6">
+				<div class="grid formgrid">
+					<div class="col-6">
 						<Button type="button" label="Image" @click="toggle" class="p-button-success"/>
 						<OverlayPanel ref="op" appendTo="body" :showCloseIcon="true">
 							<img src="assets/layout/images/nature/nature9.jpg" alt="Nature 9" />
 						</OverlayPanel>
 					</div>
-					<div class="p-col-6">
+					<div class="col-6">
 						<Button type="button" label="DataTable" @click="toggleDataTable" class="p-button-success"/>
 						<OverlayPanel ref="op2" appendTo="body" :showCloseIcon="true" id="overlay_panel" style="width: 450px">
 							<DataTable :value="products" v-model:selection="selectedProduct" selectionMode="single" :paginator="true" :rows="5" @row-select="onProductSelect">
@@ -51,13 +51,13 @@
 				</div>
 			</div>
 		</div>
-		<div class="p-col-12 p-lg-6">
+		<div class="col-12 lg:col-6">
 			<div class="card p-fluid">
 				<h5>Confirmation</h5>
 				<Button label="Delete" icon="pi pi-trash" class="p-button-danger" @click="openConfirmation" />
 				<Dialog header="Confirmation" v-model:visible="displayConfirmation" :style="{width: '350px'}" :modal="true">
 					<div class="confirmation-content">
-						<i class="pi pi-exclamation-triangle p-mr-3" style="font-size: 2rem" />
+						<i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem" />
 						<span>Are you sure you want to proceed?</span>
 					</div>
 					<template #footer>
@@ -105,11 +105,11 @@
 				<Button icon="pi pi-external-link" class="p-button-warning" @click="visibleFull = true"  />
 			</div>
 		</div>
-		<div class="p-col-12 p-lg-6">
+		<div class="col-12 lg:col-6">
 			<div class="card">
 				<h5>Tooltip</h5>
-				<div class="p-formgroup-inline">
-					<div class="p-field">
+				<div class="formgroup-inline">
+					<div class="field">
 						<InputText type="text" placeholder="Username" v-tooltip="'Your username'" />
 					</div>
 
@@ -117,11 +117,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="p-col-12 p-lg-6">
+		<div class="col-12 lg:col-6">
 			<div class="card">
 				<h5>ConfirmPopup</h5>
 				<ConfirmPopup></ConfirmPopup>
-				<Button ref="popup" @click="confirm($event)" icon="pi pi-check" label="Confirm" class="p-mr-2"></Button>
+				<Button ref="popup" @click="confirm($event)" icon="pi pi-check" label="Confirm" class="mr-2"></Button>
 			</div>
 		</div>
 	</div>

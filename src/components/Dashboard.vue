@@ -1,20 +1,20 @@
  <template>
-<div class="p-grid p-fluid dashboard">
-	<div class="p-col-12 p-lg-4">
+<div class="grid p-fluid dashboard">
+	<div class="col-12 lg:col-4">
 		<div class="card summary">
 			<span class="title">Users</span>
 			<span class="detail">Number of visitors</span>
 			<span class="count visitors">12</span>
 		</div>
 	</div>
-	<div class="p-col-12 p-lg-4">
+	<div class="col-12 lg:col-4">
 		<div class="card summary">
 			<span class="title">Sales</span>
 			<span class="detail">Number of purchases</span>
 			<span class="count purchases">534</span>
 		</div>
 	</div>
-	<div class="p-col-12 p-lg-4">
+	<div class="col-12 lg:col-4">
 		<div class="card summary">
 			<span class="title">Revenue</span>
 			<span class="detail">Income for today</span>
@@ -22,7 +22,7 @@
 		</div>
 	</div>
 
-	<div class="p-col-12 p-md-6 p-xl-3">
+	<div class="col-12 md:col-6 xl:col-3">
 		<div class="highlight-box">
 			<div class="initials" style="background-color: #007be5; color: #00448f"><span>TV</span></div>
 			<div class="highlight-details ">
@@ -32,7 +32,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="p-col-12 p-md-6 p-xl-3">
+	<div class="col-12 md:col-6 xl:col-3">
 		<div class="highlight-box">
 			<div class="initials" style="background-color: #ef6262; color: #a83d3b"><span>TI</span></div>
 			<div class="highlight-details ">
@@ -42,7 +42,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="p-col-12 p-md-6 p-xl-3">
+	<div class="col-12 md:col-6 xl:col-3">
 		<div class="highlight-box">
 			<div class="initials" style="background-color: #20d077; color: #038d4a"><span>OI</span></div>
 			<div class="highlight-details ">
@@ -52,7 +52,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="p-col-12 p-md-6 p-xl-3">
+	<div class="col-12 md:col-6 xl:col-3">
 		<div class="highlight-box">
 			<div class="initials" style="background-color: #f9c851; color: #b58c2b"><span>CI</span></div>
 			<div class="highlight-details ">
@@ -63,7 +63,7 @@
 		</div>
 	</div>
 
-	<div class="p-col-12 p-md-6 p-lg-4">
+	<div class="col-12 md:col-6 lg:col-4">
 		<Panel header="Tasks" style="height: 100%">
 			<ul class='task-list'>
 				<li>
@@ -100,29 +100,29 @@
 		</Panel>
 	</div>
 
-	<div class="p-col-12 p-md-6 p-lg-4 p-fluid contact-form">
+	<div class="col-12 md:col-6 lg:col-4 p-fluid contact-form">
 		<Panel header="Contact Us">
-			<div class="p-grid">
-				<div class="p-col-12">
+			<div class="grid">
+				<div class="col-12">
 					<Dropdown v-model="dropdownCity" :options="dropdownCities" optionLabel="name" placeholder="Select a City" />
 				</div>
-				<div class="p-col-12">
+				<div class="col-12">
 					<InputText type="text" placeholder="Name" />
 				</div>
-				<div class="p-col-12">
+				<div class="col-12">
 					<InputText type="text" placeholder="Age" />
 				</div>
-				<div class="p-col-12">
+				<div class="col-12">
 					<InputText type="text" placeholder="Message" />
 				</div>
-				<div class="p-col-12">
+				<div class="col-12">
 					<Button type="button" label="Send" icon="pi pi-envelope"/>
 				</div>
 			</div>
 		</Panel>
 	</div>
 
-	<div class="p-col-12 p-lg-4 contacts">
+	<div class="col-12 lg:col-4 contacts">
 		<Panel header="Contacts">
 			<ul>
 				<li>
@@ -157,7 +157,7 @@
 		</Panel>
 	</div>
 
-	<div class="p-col-12 p-lg-6">
+	<div class="col-12 lg:col-6">
 		<div class="card">
 			<h1 style="font-size:16px">Recent Sales</h1>
 			<DataTable :value="products" class="p-datatable-customers" :rows="5" style="margin-bottom: 20px" :paginator="true">
@@ -181,34 +181,34 @@
 						View
 					</template>
 					<template #body>
-                        <Button icon="pi pi-search" type="button" class="p-button-success p-mr-2 p-mb-1"></Button>
-                        <Button icon="pi pi-times" type="button" class="p-button-danger p-mb-1"></Button>
+                        <Button icon="pi pi-search" type="button" class="p-button-success mr-2 mb-1"></Button>
+                        <Button icon="pi pi-times" type="button" class="p-button-danger mb-1"></Button>
 					</template>
 				</Column>
 			</DataTable>
 		</div>
 	</div>
-	<div class="p-col-12 p-lg-6">
+	<div class="col-12 lg:col-6">
 		<div class="card">
 			<Chart type="line" :data="lineData" />
 		</div>
 	</div>
 
-	<div class="p-col-12 p-lg-8">
+	<div class="col-12 lg:col-8">
 		<Panel header="Calendar" style="height: 100%">
 			<FullCalendar :events="events" :options="options" />
 		</Panel>
 	</div>
 
-	<div class="p-col-12 p-lg-4">
+	<div class="col-12 lg:col-4">
 		<Panel header="Activity" style="height: 100%">
 			<div class="activity-header">
-				<div class="p-grid">
-					<div class="p-col-6">
+				<div class="grid">
+					<div class="col-6">
 						<span style="font-weight:bold">Last Activity</span>
 						<p>Updated 1 minute ago</p>
 					</div>
-					<div class="p-col-6" style="text-align: right">
+					<div class="col-6" style="text-align: right">
 						<Button label="Refresh" icon="pi pi-refresh" />
 					</div>
 				</div>
@@ -216,43 +216,43 @@
 
 			<ul class="activity-list">
 				<li>
-                    <div class="p-d-flex p-jc-between p-ai-center p-mb-3">
-                        <h5 class="activity p-m-0">Income</h5>
+                    <div class="flex justify-content-between align-items-center mb-3">
+                        <h5 class="activity m-0">Income</h5>
                         <div class="count">$900</div>
                     </div>
                     <ProgressBar :value="95" :showValue="false" />
 				</li>
 				<li>
-					<div class="p-d-flex p-jc-between p-ai-center p-mb-3">
-						<h5 class="activity p-m-0">Tax</h5>
+					<div class="flex justify-content-between align-items-center mb-3">
+						<h5 class="activity m-0">Tax</h5>
 						<div class="count" style="background-color:#f9c851">$250</div>
 					</div>
 					<ProgressBar :value="24" :showValue="false" />
 				</li>
 				<li>
-					<div class="p-d-flex p-jc-between p-ai-center p-mb-3">
-						<h5 class="activity p-m-0">Invoices</h5>
+					<div class="flex justify-content-between align-items-center mb-3">
+						<h5 class="activity m-0">Invoices</h5>
 						<div class="count" style="background-color:#20d077">$125</div>
 					</div>
 					<ProgressBar :value="55" :showValue="false" />
 				</li>
 				<li>
-					<div class="p-d-flex p-jc-between p-ai-center p-mb-3">
-						<h5 class="activity p-m-0">Expenses</h5>
+					<div class="flex justify-content-between align-items-center mb-3">
+						<h5 class="activity m-0">Expenses</h5>
 						<div class="count" style="background-color:#f9c851">$250</div>
 					</div>
 					<ProgressBar :value="15" :showValue="false" />
 				</li>
 				<li>
-					<div class="p-d-flex p-jc-between p-ai-center p-mb-3">
-						<h5 class="activity p-m-0">Bonus</h5>
+					<div class="flex justify-content-between align-items-center mb-3">
+						<h5 class="activity m-0">Bonus</h5>
 						<div class="count" style="background-color:#007be5">$350</div>
 					</div>
 					<ProgressBar :value="5" :showValue="false" />
 				</li>
 				<li>
-					<div class="p-d-flex p-jc-between p-ai-center p-mb-3">
-						<h5 class="activity p-m-0">Revenue</h5>
+					<div class="flex justify-content-between align-items-center mb-3">
+						<h5 class="activity m-0">Revenue</h5>
 						<div class="count" style="background-color:#ef6262">$500</div>
 					</div>
 					<ProgressBar :value="25" :showValue="false" />
@@ -342,43 +342,3 @@ export default {
 	}
 }
 </script>
-
-<style lang="scss" scoped>
-	@media screen and (max-width: 960px) {
-		::v-deep(.p-datatable) {
-			&.p-datatable-customers {
-				.p-datatable-thead > tr > th,
-				.p-datatable-tfoot > tr > td {
-					display: none !important;
-				}
-
-				.p-datatable-tbody > tr {
-					border-bottom: 1px solid #dee2e6;
-					> td {
-						text-align: left;
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						border: 0 none !important;
-						width: 100% !important;
-						float: left;
-						clear: left;
-						border: 0 none;
-
-						.p-column-title {
-							padding: .4rem;
-							min-width: 30%;
-							display: inline-block;
-							margin: -.4rem 1rem -.4rem -.4rem;
-							font-weight: bold;
-						}
-
-						.p-progressbar {
-							margin-top: .5rem;
-						}
-					}
-				}
-			}
-		}
-	}
-</style>

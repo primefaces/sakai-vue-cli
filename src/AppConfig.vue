@@ -11,11 +11,11 @@
 
 			<h5 style="margin-top: 0">Input Style</h5>
 			<div class="p-formgroup-inline">
-				<div class="p-field-radiobutton">
+				<div class="field-radiobutton">
 					<RadioButton id="input_outlined" name="inputstyle" value="outlined" :modelValue="inputStyle" @update:modelValue="changeInputStyle" />
 					<label for="input_outlined">Outlined</label>
 				</div>
-				<div class="p-field-radiobutton">
+				<div class="field-radiobutton">
 					<RadioButton id="input_filled" name="inputstyle" value="filled" :modelValue="inputStyle" @update:modelValue="changeInputStyle" />
 					<label for="input_filled">Filled</label>
 				</div>
@@ -26,11 +26,11 @@
 
 			<h5>Menu Type</h5>
 			<div class="p-formgroup-inline">
-				<div class="p-field-radiobutton">
+				<div class="field-radiobutton">
 					<RadioButton id="static" name="layoutMode" value="static" v-model="d_layoutMode" @change="changeLayout($event, 'static')" />
 					<label for="static">Static</label>
 				</div>
-				<div class="p-field-radiobutton">
+				<div class="field-radiobutton">
 					<RadioButton id="overlay" name="layoutMode" value="overlay" v-model="d_layoutMode" @change="changeLayout($event, 'overlay')" />
 					<label for="overlay">Overlay</label>
 				</div>
@@ -38,11 +38,11 @@
 
 			<h5>Menu Color</h5>
 			<div class="p-formgroup-inline">
-				<div class="p-field-radiobutton">
+				<div class="field-radiobutton">
 					<RadioButton id="dark" name="layoutColorMode" value="dark" v-model="d_layoutColorMode" @change="changeLayoutColor($event, 'dark')" />
 					<label for="dark">Dark</label>
 				</div>
-				<div class="p-field-radiobutton">
+				<div class="field-radiobutton">
 					<RadioButton id="light" name="layoutColorMode" value="light" v-model="d_layoutColorMode" @change="changeLayoutColor($event, 'light')" />
 					<label for="light">Light</label>
 				</div>

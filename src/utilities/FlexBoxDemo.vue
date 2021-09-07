@@ -1,5 +1,5 @@
 <template>
-	<div class="p-grid">
+	<div class="grid">
 		<div class="p-col-12">
 			<h4>FlexBox</h4>
 			<p>Easily manage the layout of your components with the responsive FlexBox utilities. If you require a

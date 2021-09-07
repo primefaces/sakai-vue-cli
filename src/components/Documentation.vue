@@ -1,6 +1,6 @@
 <template>
-    <div class="p-grid">
-        <div class="p-col-12">
+    <div class="grid">
+        <div class="col-12">
             <div class="card docs">
                 <h4>Current Version</h4>
                 <p>Vue 3.0.6 and PrimeVue 3.x</p>

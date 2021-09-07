@@ -1,5 +1,5 @@
 <template>
-	<div class="p-grid">
+	<div class="grid">
 		<div class="p-col-12 p-md-6">
 			<div class="card">
 				<h1>Heading 1</h1>

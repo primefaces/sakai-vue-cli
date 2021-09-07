@@ -57,7 +57,7 @@
 		<h5>List of Icons</h5>
 		<p>Here is the current list of PrimeIcons, more icons are added periodically. You may also <a href="https://github.com/primefaces/primeicons/issues">request new icons</a> at the issue tracker.</p>
 
-		<div class="p-grid icons-list">
+		<div class="grid icons-list">
 			<div class="p-col-12 p-md-2" v-for="icon of icons" :key="icon.properties.name">
 				<i :class="'pi pi-' + icon.properties.name"></i>
 				<div>pi-{{icon.properties.name}}</div>

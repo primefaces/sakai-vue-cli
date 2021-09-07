@@ -1,6 +1,6 @@
 <template>
-	<div class="p-grid">
-		<div class="p-col-12">
+	<div class="grid">
+		<div class="col-12">
 			<div class="card">
 				<h5>Filter Menu</h5>
 				<DataTable :value="customer1" :paginator="true" class="p-datatable-gridlines" :rows="10" dataKey="id" :rowHover="true" 
@@ -8,9 +8,9 @@
 							:globalFilterFields="['name','country.name','representative.name','balance','status']" >
 					
 					<template #header>
-                        <div class="p-d-flex p-jc-between p-flex-column p-flex-sm-row">
-                            <Button type="button" icon="pi pi-filter-slash" label="Clear" class="p-button-outlined p-mb-2" @click="clearFilter1()"/>
-                            <span class="p-input-icon-left p-mb-2">
+                        <div class="flex justify-content-between flex-column sm:flex-row">
+                            <Button type="button" icon="pi pi-filter-slash" label="Clear" class="p-button-outlined mb-2" @click="clearFilter1()"/>
+                            <span class="p-input-icon-left mb-2">
                                 <i class="pi pi-search" />
                                 <InputText v-model="filters1['global'].value" placeholder="Keyword Search" style="width: 100%"/>
                             </span>
@@ -46,9 +46,6 @@
                         <template #filterapply="{filterCallback}">
                             <Button type="button" icon="pi pi-check" @click="filterCallback()" class="p-button-success"></Button>
                         </template>
-                        <template #filterfooter>
-                            <div class="p-px-3 p-pt-0 p-pb-3 p-text-center p-text-bold">Customized Buttons</div>
-                        </template>
                     </Column>
                     <Column header="Agent" filterField="representative" :showFilterMatchModes="false" :filterMenuStyle="{'width':'14rem'}" style="min-width:14rem">
                         <template #body="{data}">
@@ -57,7 +54,7 @@
                             <span style="margin-left: .5em; vertical-align: middle" class="image-text">{{data.representative.name}}</span>
                         </template>
                         <template #filter="{filterModel}">
-                            <div class="p-mb-3 p-text-bold">Agent Picker</div>
+                            <div class="mb-3 text-bold">Agent Picker</div>
                             <MultiSelect v-model="filterModel.value" :options="representatives" optionLabel="name" placeholder="Any" class="p-column-filter">
                                 <template #option="slotProps">
                                     <div class="p-multiselect-representative-option">
@@ -109,14 +106,14 @@
                             <ProgressBar :value="data.activity" :showValue="false"></ProgressBar>
                         </template>
                         <template #filter={filterModel}>
-                            <Slider v-model="filterModel.value" range class="p-m-3"></Slider>
-                            <div class="p-d-flex p-ai-center p-jc-between p-px-2">
+                            <Slider v-model="filterModel.value" range class="m-3"></Slider>
+                            <div class="flex align-items-center justify-content-between px-2">
                                 <span>{{filterModel.value ? filterModel.value[0] : 0}}</span>
                                 <span>{{filterModel.value ? filterModel.value[1] : 100}}</span>
                             </div>
                         </template>
                     </Column>
-                    <Column field="verified" header="Verified" dataType="boolean" bodyClass="p-text-center" style="min-width:8rem">
+                    <Column field="verified" header="Verified" dataType="boolean" bodyClass="text-center" style="min-width:8rem">
                         <template #body="{data}">
                             <span class="p-column-title">Verified</span>
                             <i class="pi" :class="{'true-icon pi-check-circle': data.verified, 'false-icon pi-times-circle': !data.verified}"></i>
@@ -129,12 +126,12 @@
 			</div>
 		</div>
 
-		<div class="p-col-12">
+		<div class="col-12">
 			<div class="card">
 				<h5>Frozen Columns</h5>
                 <ToggleButton v-model="idFrozen" onIcon="pi pi-lock" offIcon="pi pi-lock-open" onLabel="Unfreeze Id" offLabel="Freeze Id" style="width: 10rem" />
 
-                <DataTable :value="customer2" :scrollable="true" scrollHeight="400px" :loading="loading2" scrollDirection="both" class="p-mt-3">
+                <DataTable :value="customer2" :scrollable="true" scrollHeight="400px" :loading="loading2" scrollDirection="both" class="mt-3">
                     <Column field="name" header="Name" :style="{width:'150px'}" frozen></Column>
                     <Column field="id" header="Id" :style="{width:'100px'}" :frozen="idFrozen"></Column>
                     <Column field="name" header="Name" :style="{width:'200px'}"></Column>
@@ -160,14 +157,14 @@
 					</Column>
                     <Column field="balance" header="Balance" :style="{width:'150px'}" frozen alignFrozen="right">
                         <template #body="{data}">
-                             <span class="p-text-bold">{{formatCurrency(data.balance)}}</span>
+                            <span class="text-bold">{{formatCurrency(data.balance)}}</span>
                         </template>
                     </Column>
                 </DataTable>
 			</div>
 		</div>
 
-		<div class="p-col-12">
+		<div class="col-12">
 			<div class="card">
 				<h5>Row Expand</h5>
 
@@ -176,8 +173,8 @@
 					@row-expand="onRowExpand" @row-collapse="onRowCollapse">
 					<template #header>
 						<div class="table-header-container">
-							<Button icon="pi pi-plus" label="Expand All" @click="expandAll" class="p-mr-2 p-mb-2" />
-							<Button icon="pi pi-minus" label="Collapse All" @click="collapseAll" class="p-mb-2" />
+							<Button icon="pi pi-plus" label="Expand All" @click="expandAll" class="mr-2 mb-2" />
+							<Button icon="pi pi-minus" label="Collapse All" @click="collapseAll" class="mb-2" />
 						</div>
 					</template>
 					<Column :expander="true" headerStyle="width: 3rem" />
@@ -262,7 +259,7 @@
 			</div>
 		</div>
 
-		<div class="p-col-12">
+		<div class="col-12">
 			<div class="card">
 				<h5>Subheader Grouping</h5>
 				<DataTable :value="customer3" rowGroupMode="subheader" groupRowsBy="representative.name"
@@ -272,7 +269,7 @@
                     <Column field="country" header="Country" style="min-width:200px">
                         <template #body="slotProps">
                             <img src="assets/layout/flags/flag_placeholder.png" :class="'flag flag-' + slotProps.data.country.code" width="30" />
-                            <span class="image-text p-ml-2">{{slotProps.data.country.name}}</span>
+                            <span class="image-text ml-2">{{slotProps.data.country.name}}</span>
                         </template>
                     </Column>
                     <Column field="company" header="Company" style="min-width:200px"></Column>
@@ -287,7 +284,7 @@
                         <span class="image-text">{{slotProps.data.representative.name}}</span>
                     </template>
                     <template #groupfooter="slotProps">
-                        <td style="text-align: right" class="p-text-bold p-pr-6">Total Customers: {{calculateCustomerTotal(slotProps.data.representative.name)}}</td>
+                        <td style="text-align: right" class="text-bold pr-6">Total Customers: {{calculateCustomerTotal(slotProps.data.representative.name)}}</td>
                     </template>
                 </DataTable>
 			</div>

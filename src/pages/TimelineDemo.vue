@@ -1,13 +1,13 @@
 <template>
-<div class="p-grid">
-    <div class="p-col-12">
+<div class="grid">
+    <div class="col-12">
         <div class="card">
             <h4>Timeline</h4>
 
             <h5>Custom Timeline</h5>
             <Timeline :value="customEvents" align="alternate" class="customized-timeline">
                 <template #marker="slotProps">
-                <span class="custom-marker p-shadow-2" :style="{backgroundColor: slotProps.item.color}">
+                <span class="custom-marker shadow-2" :style="{backgroundColor: slotProps.item.color}">
                     <i :class="slotProps.item.icon"></i>
                 </span>
                 </template>
@@ -20,7 +20,7 @@
                             {{slotProps.item.date}}
                         </template>
                         <template #content>
-                            <img v-if="slotProps.item.image" :src="'assets/layout/images/product/' + slotProps.item.image" :alt="slotProps.item.name" width="200" class="p-shadow-2" />
+                            <img v-if="slotProps.item.image" :src="'assets/layout/images/product/' + slotProps.item.image" :alt="slotProps.item.name" width="200" class="shadow-2" />
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
                                 quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
                             <Button label="Read more" class="p-button-text"></Button>

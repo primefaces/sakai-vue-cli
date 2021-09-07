@@ -1,24 +1,24 @@
 <template>
-	<div class="p-grid">
-		<div class="p-col-12">
+	<div class="grid">
+		<div class="col-12">
 			<div class="card">
 				<FullCalendar :events="events" :options="options" />
 
 				<Dialog v-model:visible="eventDialog" :style="{width: '450px'}" header="Event Details" :modal="true" :closable="true">
 					<div class="p-fluid">
-						<div class="p-field">
+						<div class="field">
 							<label for="title">Title</label>
 							<InputText id="title" v-if="clickedEvent" v-model="changedEvent.title" required="true" autofocus/>
 						</div>
-						<div class="p-field">
+						<div class="field">
 							<label for="start">From</label>
 							<Calendar id="start" v-if="clickedEvent" v-model="changedEvent.start" :showTime="true" appendTo="body"/>
 						</div>
-						<div class="p-field">
+						<div class="field">
 							<label for="end">To</label>
 							<Calendar id="end" v-if="clickedEvent" v-model="changedEvent.end" :showTime="true" appendTo="body"/>
 						</div>
-						<div class="p-field-checkbox">
+						<div class="field-checkbox">
 							<Checkbox id="allday" name="allday" value="All Day" v-model="changedEvent.allDay" />
 							<label for="allday">All Day</label>
 						</div>

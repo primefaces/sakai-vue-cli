@@ -1,6 +1,6 @@
 <template>
-	<div class="p-grid panel-demo">
-		<div class="p-col-12">
+	<div class="grid panel-demo">
+		<div class="col-12">
 			<div class="card toolbar-demo">
 				<h5>Toolbar</h5>
 				<Toolbar>
@@ -20,7 +20,7 @@
 				</Toolbar>
 			</div>
 		</div>
-		<div class="p-col-12 p-md-6">
+		<div class="col-12 md:col-6">
 			<div class="card">
 				<h5>AccordionPanel</h5>
 				<Accordion  :activeIndex="0">
@@ -67,7 +67,7 @@
 				</TabView>
 			</div>
 		</div>
-		<div class="p-col-12 p-md-6">
+		<div class="col-12 md:col-6">
 			<div class="card">
 				<h5>Panel</h5>
 				<Panel header="Header" :toggleable="true">
@@ -107,17 +107,17 @@
 			</Card>
 		</div>
 
-		<div class="p-col-12">
+		<div class="col-12">
 			<div class="card">
 				<h5>Divider</h5>
-				<div class="p-grid">
-					<div class="p-col-5 p-d-flex p-flex-column p-ai-center p-jc-center">
+				<div class="grid">
+					<div class="col-5 flex flex-column align-items-center justify-content-center">
 						<div class="p-fluid">
-							<div class="p-field">
+							<div class="field">
 								<label for="username">Username</label>
 								<InputText id="username" type="text" />
 							</div>
-							<div class="p-field">
+							<div class="field">
 								<label for="password">Password</label>
 								<InputText id="password" type="password" />
 							</div>
@@ -127,12 +127,12 @@
 						</div>
 					</div>
 					
-					<div class="p-col-2">
+					<div class="col-2">
 						<Divider layout="vertical">
 							<b>OR</b>
 						</Divider>
 					</div>
-					<div class="p-col-5 p-ai-center p-jc-center">
+					<div class="col-5 align-items-center justify-content-center">
 						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
                         totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
                         architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
@@ -164,13 +164,13 @@
 			</div>
 		</div>
 
-		<div class="p-col-12">
+		<div class="col-12">
 			<div class="card">
 				<h5>Splitter</h5>
-				<div class="p-grid">
-					<Splitter style="height: 300px" class="p-mb-5">
+				<div class="grid">
+					<Splitter style="height: 300px" class="mb-5">
 						<SplitterPanel :size="40" :minSize="10" style="overflow: scroll">
-							<p class="p-col p-m-3">
+							<p class="col m-3">
 								Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur pariatur recusandae rerum atque nisi ipsum fuga numquam 
 								distinctio obcaecati quibusdam repellat, est assumenda quam perferendis reprehenderit, blanditiis, excepturi facilis! Voluptatem.
 							</p>
@@ -178,7 +178,7 @@
 						<SplitterPanel :size="60" style="overflow: scroll">
 							<Splitter layout="vertical">
 								<SplitterPanel :size="15">
-									<p class="p-col p-m-3">
+									<p class="col m-3">
 										At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti 
 										quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, 
 										id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis 
@@ -186,7 +186,7 @@
 									</p>
 								</SplitterPanel>
 								<SplitterPanel :size="85">
-									<p class="p-col p-m-3">
+									<p class="col m-3">
 										Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et 
 										molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur 
 										aut perferendis doloribus asperiores repellat. Donec vel volutpat ipsum. Integer nunc magna, posuere ut tincidunt eget, 

@@ -1,6 +1,6 @@
 <template>
 
-    <div class="p-grid spacing-demo">
+    <div class="grid spacing-demo">
         <div class="p-col-12">
             <div class="card">
                 <h3>Spacing</h3>
@@ -76,7 +76,7 @@
                 </p>
 
                 <h6>Without Spacing</h6>
-                <div class="p-grid p-formgrid p-fluid">
+                <div class="grid formgrid p-fluid">
                     <div class="p-col-12 p-lg-4">
                         <InputText />
                     </div>
@@ -89,7 +89,7 @@
                 </div>
 
                 <h6>With Spacing</h6>
-                <div class="p-grid p-formgrid p-fluid">
+                <div class="grid formgrid p-fluid">
                     <div class="p-col-12 p-mb-2 p-lg-4 p-mb-lg-0">
                         <InputText />
                     </div>

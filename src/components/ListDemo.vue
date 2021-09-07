@@ -1,22 +1,22 @@
 <template>
-	<div class="p-grid">
-		<div class="p-col-12">
+	<div class="grid">
+		<div class="col-12">
 			<div class="card">
 				<h5>DataView</h5>
 				<DataView :value="dataviewValue" :layout="layout" :paginator="true" :rows="9" :sortOrder="sortOrder" :sortField="sortField">
 					<template #header>
-						<div class="p-grid p-nogutter">
-							<div class="p-col-6" style="text-align: left">
+						<div class="grid nogutter">
+							<div class="col-6 text-left">
 								<Dropdown v-model="sortKey" :options="sortOptions" optionLabel="label" placeholder="Sort By Price" @change="onSortChange($event)"/>
 							</div>
-							<div class="p-col-6" style="text-align: right">
+							<div class="col-6 text-right">
 								<DataViewLayoutOptions v-model="layout" />
 							</div>
 						</div>
 					</template>
 
 					<template #list="slotProps">
-						<div class="p-col-12">
+						<div class="col-12">
 							<div class="product-list-item">
 								<img :src="'assets/layout/images/product/' + slotProps.data.image" :alt="slotProps.data.name"/>
 								<div class="product-list-detail">
@@ -35,7 +35,7 @@
 					</template>
 
 					<template #grid="slotProps">
-						<div class="p-col-12 p-md-4">
+						<div class="col-12 md:col-4">
 							<div class="product-grid-item card">
 								<div class="product-grid-item-top">
 									<div>
@@ -61,7 +61,7 @@
 			</div>
 		</div>
 
-		<div class="p-col-12 p-lg-8">
+		<div class="col-12 lg:col-8">
 			<div class="card">
 				<h5>PickList</h5>
 				<PickList v-model="picklistValue" dataKey="code">
@@ -78,7 +78,7 @@
 			</div>
 		</div>
 
-		<div class="p-col-12 p-lg-4">
+		<div class="col-12 lg:col-4">
 			<div class="card">
 				<h5>OrderList</h5>
 				<OrderList v-model="orderlistValue" listStyle="height:250px" dataKey="code" class="p-orderlist-responsive" :rows="10">
