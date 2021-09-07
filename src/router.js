@@ -100,46 +100,6 @@ const routes = [
         component: () => import('./components/MiscDemo.vue'),
     },
     {
-        path: '/display',
-        name: 'display',
-        component: () => import('./utilities/DisplayDemo.vue'),
-    },
-    {
-        path: '/flexbox',
-        name: 'flexbox',
-        component: () => import('./utilities/FlexBoxDemo.vue'),
-    },
-    {
-        path: '/text',
-        name: 'text',
-        component: () => import('./utilities/TextDemo.vue'),
-    },
-    {
-        path: '/icons',
-        name: 'icons',
-        component: () => import('./utilities/Icons.vue'),
-    },
-    {
-        path: '/grid',
-        name: 'grid',
-        component: () => import('./utilities/GridDemo.vue'),
-    },
-    {
-        path: '/spacing',
-        name: 'spacing',
-        component: () => import('./utilities/SpacingDemo.vue'),
-    },
-    {
-        path: '/elevation',
-        name: 'elevation',
-        component: () => import('./utilities/ElevationDemo.vue'),
-    },
-    {
-        path: '/typography',
-        name: 'typography',
-        component: () => import('./utilities/Typography.vue'),
-    },
-    {
         path: '/crud',
         name: 'crud',
         component: () => import('./pages/CrudDemo.vue'),
