@@ -9,12 +9,12 @@
 
 			<div class="card flex flex-column align-items-center">
 				<h5>Pie Chart</h5>
-				<Chart type="pie" :data="pieData" />
+				<Chart type="pie" :data="pieData" style="width: 50%" />
 			</div>
 
 			<div class="card  flex flex-column align-items-center">
 				<h5>Polar Area Chart</h5>
-				<Chart type="polarArea" :data="polarData" />
+				<Chart type="polarArea" :data="polarData" style="width: 50%" />
 			</div>
 		</div>
 		<div class="col-12 lg:col-6">
@@ -25,12 +25,12 @@
 
 			<div class="card flex flex-column align-items-center">
 				<h5>Doughnut Chart</h5>
-				<Chart type="doughnut" :data="doughnutData" />
+				<Chart type="doughnut" :data="doughnutData" style="width: 50%" />
 			</div>
 
 			<div class="card flex flex-column align-items-center">
 				<h5>Radar Chart</h5>
-				<Chart type="radar" :data="radarData" />
+				<Chart type="radar" :data="radarData" style="width: 50%" />
 			</div>
 		</div>
 	</div>
