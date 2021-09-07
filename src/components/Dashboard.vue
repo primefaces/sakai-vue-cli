@@ -285,13 +285,16 @@ export default {
 			dropdownCity: null,
 			options: {
 				plugins:[dayGridPlugin, timeGridPlugin, interactionPlugin],
-				defaultDate: '2019-01-01',
-				header: {
+				initialDate: '2023-01-01',
+				headerToolbar: {
 					left: 'prev,next',
 					center: 'title',
 					right: 'dayGridMonth,timeGridWeek,timeGridDay'
 				},
-				editable: true
+				editable: true,
+                selectable:true, 
+                selectMirror: true, 
+                dayMaxEvents: true,
 			},
 			events: null,
 			products: null,
@@ -304,14 +307,16 @@ export default {
 						data: [65, 59, 80, 81, 56, 55, 40],
 						fill: false,
 						backgroundColor: '#2f4860',
-						borderColor: '#2f4860'
+						borderColor: '#2f4860',
+						tension: 0.4
 					},
 					{
 						label: 'Second Dataset',
 						data: [28, 48, 40, 19, 86, 27, 90],
 						fill: false,
 						backgroundColor: '#00bb7e',
-						borderColor: '#00bb7e'
+						borderColor: '#00bb7e',
+						tension: 0.4
 					}
 				]
 			},

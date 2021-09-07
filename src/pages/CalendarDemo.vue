@@ -48,13 +48,16 @@ export default {
 			changedEvent: {title:'', start: null, end:'', allDay: null},
 			options: {
 				plugins:[dayGridPlugin, timeGridPlugin, interactionPlugin],
-				defaultDate: '2019-01-01',
-				header: {
+				initialDate: '2023-01-01',
+				headerToolbar: {
 					left: 'prev,next',
 					center: 'title',
 					right: 'dayGridMonth,timeGridWeek,timeGridDay'
 				},
 				editable: true,
+                selectable:true, 
+                selectMirror: true, 
+                dayMaxEvents: true,
 				eventClick: (e) => {
 					this.eventDialog = true;
 
