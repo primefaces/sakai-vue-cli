@@ -32,14 +32,16 @@
 		width: 52px;
 		height: 52px;
 		line-height: 52px;
-		background-color: $menuitemBadgeBgColor;
+		background-color: var(--primary-color);
 		text-align: center;
-		color: $menuitemBadgeColor;
+		color: var(--primary-color-text);
 		top: 230px;
 		left: -52px;
 		z-index: -1;
 		overflow: hidden;
 		cursor: pointer;
+		border-top-left-radius: $borderRadius;
+		border-bottom-left-radius: $borderRadius;
 		transition: background-color $transitionDuration;
 		box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.24);
 
@@ -106,7 +108,7 @@
 				i {
 					font-size: 1rem;
 					position: absolute;
-					color: $menuitemBadgeColor;
+					color: var(--primary-color);
 					top: 50%;
 					left: 50%;
 					margin-left: -.5rem;

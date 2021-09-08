@@ -1,27 +1,21 @@
 <template>
 	<div :class="containerClass" @click="onWrapperClick">
-		<AppTopBar @menu-toggle="onMenuToggle" />
-
+        <AppTopBar @menu-toggle="onMenuToggle" />
         <transition name="layout-sidebar">
             <div :class="sidebarClass" @click="onSidebarClick" v-show="isSidebarVisible()">
-                <div class="layout-logo">
-                    <router-link to="/">
-                        <img alt="Logo" :src="logo" />
-                    </router-link>
-                </div>
-
-                <AppProfile />
+                <AppProfile v-if="false" />
                 <AppMenu :model="menu" @menuitem-click="onMenuItemClick" />
             </div>
         </transition>
 
-		<div class="layout-main">
-			<router-view />
-		</div>
+        <div class="layout-main-container">
+            <div class="layout-main">
+                <router-view />
+            </div>
+            <AppFooter />
+        </div>
 
 		<AppConfig :layoutMode="layoutMode" :layoutColorMode="layoutColorMode" @layout-change="onLayoutChange" @layout-color-change="onLayoutColorChange"/>
-
-		<AppFooter />
 	</div>
 </template>
 
@@ -36,12 +30,17 @@ export default {
     data() {
         return {
             layoutMode: 'static',
-            layoutColorMode: 'dark',
+            layoutColorMode: 'light',
             staticMenuInactive: false,
             overlayMenuActive: false,
             mobileMenuActive: false,
             menu : [
-                {label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/'},
+                {
+                    label: 'Home',
+                    items: [{
+                        label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/'
+                    }]
+                },
 				{
 					label: 'UI Kit', icon: 'pi pi-fw pi-sitemap',
 					items: [
@@ -66,7 +65,6 @@ export default {
 					label: 'Pages', icon: 'pi pi-fw pi-clone',
 					items: [
 						{label: 'Crud', icon: 'pi pi-fw pi-user-edit', to: '/crud'},
-						{label: 'Calendar', icon: 'pi pi-fw pi-calendar-plus', to: '/calendar'},
 						{label: 'Timeline', icon: 'pi pi-fw pi-calendar', to: '/timeline'},
 						{label: 'Empty', icon: 'pi pi-fw pi-circle-off', to: '/empty'}
 					]
@@ -116,8 +114,13 @@ export default {
                         }
                     ]
                 },
-                {label: 'Documentation', icon: 'pi pi-fw pi-question', command: () => {window.location = "#/documentation"}},
-                {label: 'View Source', icon: 'pi pi-fw pi-search', command: () => {window.location = "https://github.com/primefaces/sigma-vue"}}
+                {
+                    label: 'Get Started', 
+                    items: [
+                        {label: 'Documentation', icon: 'pi pi-fw pi-question', command: () => {window.location = "#/documentation"}},
+                        {label: 'View Source', icon: 'pi pi-fw pi-search', command: () => {window.location = "https://github.com/primefaces/sigma-vue"}}
+                    ]
+                }
             ]
         }
     },

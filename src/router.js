@@ -105,11 +105,6 @@ const routes = [
         component: () => import('./pages/CrudDemo.vue'),
     },
     {
-        path: '/calendar',
-        name: 'calendar',
-        component: () => import('./pages/CalendarDemo.vue'),
-    },
-    {
         path: '/timeline',
         name: 'timeline',
         component: () => import('./pages/TimelineDemo.vue'),

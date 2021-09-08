@@ -5,7 +5,7 @@
                 left: 0;
             }
 
-            .layout-main, .layout-footer {
+            .layout-main-container {
                 margin-left: 0;
             }
 
@@ -32,11 +32,11 @@
 
         &.layout-static {
             .layout-topbar {
-                left: 250px;
+                left: 0;
             }
 
-            .layout-main, .layout-footer {
-                margin-left: 250px;
+            .layout-main-container {
+                margin-left: 300px;
             }
 
             &.layout-static-sidebar-inactive {
@@ -44,7 +44,7 @@
                     left: 0;
                 }
 
-                .layout-main, .layout-footer {
+                .layout-main {
                     margin-left: 0;
                 }
             }
@@ -58,7 +58,7 @@
             left: 0;
         }
 
-        .layout-main, .layout-footer {
+        .layout-main-container {
             margin-left: 0;
         }
 

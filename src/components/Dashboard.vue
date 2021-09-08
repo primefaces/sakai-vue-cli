@@ -1,314 +1,250 @@
- <template>
-<div class="grid p-fluid dashboard">
-	<div class="col-12 lg:col-4">
-		<div class="card flex justify-content-between align-items-start mb-0">
-			<div>
-				<span class="text-2xl">Users</span>
-				<span class="p-text-secondary block mt-2">Number of visitors</span>
-			</div>
-			<span class="bg-green-500 text-white py-2 px-3 text-2xl border-round">12</span>
-		</div>
-	</div>
-	<div class="col-12 lg:col-4">
-		<div class="card flex justify-content-between align-items-start mb-0">
-			<div>
-				<span class="text-2xl">Sales</span>
-				<span class="p-text-secondary block mt-2">Number of purchases</span>
-			</div>
-			<span class="bg-purple-500 text-white py-2 px-3 text-2xl border-round">534</span>
-		</div>
-	</div>
-	<div class="col-12 lg:col-4">
-		<div class="card flex justify-content-between align-items-start mb-0">
-			<div>
-				<span class="text-2xl">Revenue</span>
-				<span class="p-text-secondary block mt-2">Income for today</span>
-			</div>
-			<span class="bg-blue-500 text-white py-2 px-3 text-2xl border-round">$320</span>
-		</div>
-	</div>
-
-	<div class="col-12 md:col-6 xl:col-3">
-		<div class="flex">
-			<div class="flex-1 bg-indigo-500 text-white p-3 text-7xl flex align-items-center justify-content-center"><span>TQ</span></div>
-			<div class="flex-1 bg-white p-3">
-				<div class="flex flex align-items-center">
-					<i class="pi pi-search text-lg mr-2"></i>
-					<span>Total Queries</span>
-				</div>
-				<span class="block mt-2 p-text-secondary text-5xl">523</span>
-			</div>
-		</div>
-	</div>
-	<div class="col-12 md:col-6 xl:col-3">
-		<div class="flex">
-			<div class="flex-1 bg-purple-500 text-white p-3 text-7xl flex align-items-center justify-content-center"><span>TI</span></div>
-			<div class="flex-1 bg-white p-3">
-				<div class="flex flex align-items-center">
-					<i class="pi pi-search text-lg mr-2"></i>
-					<span>Total Issues</span>
-				</div>
-				<span class="block mt-2 p-text-secondary text-5xl">81</span>
-			</div>
-		</div>
-	</div>
-	<div class="col-12 md:col-6 xl:col-3">
-		<div class="flex">
-			<div class="flex-1 bg-orange-500 text-white p-3 text-7xl flex align-items-center justify-content-center"><span>OI</span></div>
-			<div class="flex-1 bg-white p-3">
-				<div class="flex flex align-items-center">
-					<i class="pi pi-search text-lg mr-2"></i>
-					<span>Open Issues</span>
-				</div>
-				<span class="block mt-2 p-text-secondary text-5xl">21</span>
-			</div>
-		</div>
-	</div>
-	<div class="col-12 md:col-6 xl:col-3">
-		<div class="flex">
-			<div class="flex-1 bg-bluegray-500 text-white p-3 text-7xl flex align-items-center justify-content-center"><span>CI</span></div>
-			<div class="flex-1 bg-white p-3">
-				<div class="flex flex align-items-center">
-					<i class="pi pi-search text-lg mr-2"></i>
-					<span>Closed Issues</span>
-				</div>
-				<span class="block mt-2 p-text-secondary text-5xl">60</span>
-			</div>
-		</div>
-	</div>
-
-	<div class="col-12 md:col-6 lg:col-4">
-		<Panel header="Tasks">
-			<ul class="list-none m-0 p-0">
-				<li class="py-2 px-1 border-bottom-1 surface-border flex align-items-center">
-					<Checkbox name="task" value="reports" v-model="tasksCheckbox" />
-					<span class="ml-2">Sales Reports</span>
-					<i class="pi pi-chart-bar ml-auto" />
-				</li>
-				<li class="py-2 px-1 border-bottom-1 surface-border flex align-items-center">
-					<Checkbox name="task" value="invoices" v-model="tasksCheckbox" />
-					<span class="ml-2">Pay Invoices</span>
-					<i class="pi pi-dollar ml-auto" />
-				</li>
-				<li class="py-2 px-1 border-bottom-1 surface-border flex align-items-center">
-					<Checkbox name="task" value="dinner" v-model="tasksCheckbox" />
-					<span class="ml-2">Dinner with Tony</span>
-					<i class="pi pi-user ml-auto" />
-				</li>
-				<li class="py-2 px-1 border-bottom-1 surface-border flex align-items-center">
-					<Checkbox name="task" value="meeting" v-model="tasksCheckbox" />
-					<span class="ml-2">Client Meeting</span>
-					<i class="pi pi-users ml-auto" />
-				</li>
-				<li class="py-2 px-1 border-bottom-1 surface-border flex align-items-center">
-					<Checkbox name="task" value="theme" v-model="tasksCheckbox" />
-					<span class="ml-2">New Theme</span>
-					<i class="pi pi-globe ml-auto" />
-				</li>
-				<li class="py-2 px-1 flex align-items-center">
-					<Checkbox name="task" value="flight" v-model="tasksCheckbox" />
-					<span class="ml-2">Flight Ticket</span>
-					<i class="pi pi-briefcase ml-auto" />
-				</li>
-			</ul>
-		</Panel>
-	</div>
-
-	<div class="col-12 md:col-6 lg:col-4 p-fluid contact-form">
-		<Panel header="Contact Us">
-			<div class="grid">
-				<div class="col-12">
-					<Dropdown v-model="dropdownCity" :options="dropdownCities" optionLabel="name" placeholder="Select a City" />
-				</div>
-				<div class="col-12">
-					<InputText type="text" placeholder="Name" />
-				</div>
-				<div class="col-12">
-					<InputText type="text" placeholder="Age" />
-				</div>
-				<div class="col-12">
-					<InputText type="text" placeholder="Message" />
-				</div>
-				<div class="col-12">
-					<Button type="button" label="Send" icon="pi pi-envelope"/>
-				</div>
-			</div>
-		</Panel>
-	</div>
-
-	<div class="col-12 lg:col-4 contacts">
-		<Panel header="Contacts">
-			<ul class="list-none p-0 m-0">
-				<li class="py-2 border-bottom-1 surface-border flex align-items-center">
-					<img src="assets/layout/images/avatar_1.png" width="35" alt="avatar1"/>
-					<div class="ml-auto text-righ">
-						<span class="text-xl">Claire Williams</span>
-						<span class="p-text-secondary block">clare@primevue.com</span>
+<template>
+	<div class="grid">
+		<div class="col-12 md:col-6 lg:col-3">
+			<div class="surface-card shadow-1 p-3 border-round mb-2">
+				<div class="flex justify-content-between mb-3">
+					<div>
+						<span class="block text-500 font-medium mb-3">Orders</span>
+						<div class="text-900 font-medium text-xl">152</div>
 					</div>
-				</li>
-				<li class="py-2 border-bottom-1 surface-border flex align-items-center">
-					<img src="assets/layout/images/avatar_2.png" width="35" alt="avatar2"/>
-					<div class="ml-auto text-righ">
-						<span class="text-xl">Jason Dourne</span>
-						<span class="p-text-secondary block">jason@primevue.com</span>
+					<div class="flex align-items-center justify-content-center bg-blue-100 border-round" style="width:2.5rem;height:2.5rem">
+						<i class="pi pi-shopping-cart text-blue-500 text-xl"></i>
 					</div>
-				</li>
-				<li class="py-2 border-bottom-1 surface-border flex align-items-center">
-					<img src="assets/layout/images/avatar_3.png" width="35" alt="avatar3"/>
-					<div class="ml-auto text-righ">
-						<span class="text-xl">Jane Davidson</span>
-						<span class="ep-text-secondary block">jane@primevue.com</span>
-					</div>
-				</li>
-				<li class="py-2 border-bottom-1 surface-border flex align-items-center">
-					<img src="assets/layout/images/avatar_4.png" width="35" alt="avatar4"/>
-					<div class="ml-auto text-right">
-						<span class="text-xl">Tony Corleone</span>
-						<span class="p-text-secondary block">tony@primevue.com</span>
-					</div>
-				</li>
-			</ul>
-		</Panel>
-	</div>
-
-	<div class="col-12 lg:col-6">
-		<div class="card">
-			<h1 style="font-size:16px">Recent Sales</h1>
-			<DataTable :value="products" class="p-datatable-customers" :rows="5" style="margin-bottom: 20px" :paginator="true">
-				<Column>
-					<template #header>
-						Logo
-					</template>
-					<template #body="slotProps">
-						<img :src="'assets/layout/images/product/' + slotProps.data.image" :alt="slotProps.data.image" width="50" />
-					</template>
-				</Column>
-				<Column field="name" header="Name" :sortable="true"></Column>
-				<Column field="category" header="Category" :sortable="true"></Column>
-				<Column field="price" header="Price" :sortable="true">
-					<template #body="slotProps">
-						{{formatCurrency(slotProps.data.price)}}
-					</template>
-				</Column>
-				<Column>
-					<template #header>
-						View
-					</template>
-					<template #body>
-                        <Button icon="pi pi-search" type="button" class="p-button-success mr-2 mb-1"></Button>
-                        <Button icon="pi pi-times" type="button" class="p-button-danger mb-1"></Button>
-					</template>
-				</Column>
-			</DataTable>
-		</div>
-	</div>
-	<div class="col-12 lg:col-6">
-		<div class="card">
-			<Chart type="line" :data="lineData" />
-		</div>
-	</div>
-
-	<div class="col-12 lg:col-8">
-		<Panel header="Calendar" style="height: 100%">
-			<FullCalendar :events="events" :options="options" />
-		</Panel>
-	</div>
-
-	<div class="col-12 lg:col-4">
-		<Panel header="Activity" style="height: 100%">
-			<div class="flex align-items-start mb-3 pb-2 border-bottom-1 surface-border">
-				<div>
-					<span style="font-weight:bold">Last Activity</span>
-					<p>Updated 1 minute ago</p>
 				</div>
-				<Button label="Refresh" icon="pi pi-refresh" class="ml-auto w-auto" />
+				<span class="text-green-500 font-medium">24 new </span>
+				<span class="text-500">since last visit</span>
 			</div>
+		</div>
+		<div class="col-12 md:col-6 lg:col-3">
+			<div class="surface-card shadow-1 p-3 border-round mb-2">
+				<div class="flex justify-content-between mb-3">
+					<div>
+						<span class="block text-500 font-medium mb-3">Revenue</span>
+						<div class="text-900 font-medium text-xl">$2.100</div>
+					</div>
+					<div class="flex align-items-center justify-content-center bg-orange-100 border-round" style="width:2.5rem;height:2.5rem">
+						<i class="pi pi-map-marker text-orange-500 text-xl"></i>
+					</div>
+				</div>
+				<span class="text-green-500 font-medium">%52+ </span>
+				<span class="text-500">since last week</span>
+			</div>
+		</div>
+		<div class="col-12 md:col-6 lg:col-3">
+			<div class="surface-card shadow-1 p-3 border-round mb-2">
+				<div class="flex justify-content-between mb-3">
+					<div>
+						<span class="block text-500 font-medium mb-3">Customers</span>
+						<div class="text-900 font-medium text-xl">28441</div>
+					</div>
+					<div class="flex align-items-center justify-content-center bg-cyan-100 border-round" style="width:2.5rem;height:2.5rem">
+						<i class="pi pi-inbox text-cyan-500 text-xl"></i>
+					</div>
+				</div>
+				<span class="text-green-500 font-medium">520  </span>
+				<span class="text-500">newly registered</span>
+			</div>
+		</div>
+		<div class="col-12 md:col-6 lg:col-3">
+			<div class="surface-card shadow-1 p-3 border-round mb-2">
+				<div class="flex justify-content-between mb-3">
+					<div>
+						<span class="block text-500 font-medium mb-3">Comments</span>
+						<div class="text-900 font-medium text-xl">152 Unread</div>
+					</div>
+					<div class="flex align-items-center justify-content-center bg-purple-100 border-round" style="width:2.5rem;height:2.5rem">
+						<i class="pi pi-comment text-purple-500 text-xl"></i>
+					</div>
+				</div>
+				<span class="text-green-500 font-medium">85 </span>
+				<span class="text-500">responded</span>
+			</div>
+		</div>
+	</div>
 
-			<ul class="list-none p-0 m-0">
-				<li class="py-3 px-2 border-bottom-1 surface-border">
-                    <div class="flex justify-content-between align-items-center mb-3">
-                        <span class="text-2xl">Income</span>
-                        <div class="font-bold bg-cyan-500 text-white p-2 border-round text-2xl">$900</div>
+	<div class="grid p-fluid dashboard">
+		<div class="col-12 lg:col-6">
+			<div class="card">
+				<h1 style="font-size:16px">Recent Sales</h1>
+				<DataTable :value="products" :rows="5" :paginator="true" responsiveLayout="scroll">
+					<Column>
+						<template #header>
+							Logo
+						</template>
+						<template #body="slotProps">
+							<img :src="'assets/layout/images/product/' + slotProps.data.image" :alt="slotProps.data.image" width="50" />
+						</template>
+					</Column>
+					<Column field="name" header="Name" :sortable="true"></Column>
+					<Column field="price" header="Price" :sortable="true">
+						<template #body="slotProps">
+							{{formatCurrency(slotProps.data.price)}}
+						</template>
+					</Column>
+					<Column>
+						<template #header>
+							View
+						</template>
+						<template #body>
+							<Button icon="pi pi-search" type="button" class="p-button-text"></Button>
+						</template>
+					</Column>
+				</DataTable>
+			</div>
+			<div class="card">
+				<div class="flex justify-content-between align-items-center mb-5">
+					<span class="text-xl text-900 font-medium">Best Selling Products</span>
+					<div>
+						<Button icon="pi pi-ellipsis-v" class="p-button-text p-button-plain p-button-rounded" @click="$refs.menu2.toggle($event)"></Button>
+						<Menu ref="menu2" :popup="true" :model="items"></Menu>
+					</div>
+				</div>
+				<ul class="list-none p-0 m-0">
+					<li class="flex flex-column md:flex-row md:align-items-center md:justify-content-between mb-4">
+						<div class="mr-8 md:mr-8">
+							<span class="inline-block text-900 font-medium mr-2 mb-1 md:mb-0">Space T-Shirt</span>
+							<span class="text-600">Clothing</span>
+						</div>
+						<div class="mt-2 md:mt-0 ml-0 md:ml-8 flex align-items-center">
+							<div class="surface-300 border-round overflow-hidden" style="height:8px; width: 200px">
+								<div class="bg-orange-500 h-full" style="width:50%"></div>
+							</div>
+							<span class="text-orange-500 ml-3 font-medium">%50</span>
+						</div>
+					</li>
+					<li class="flex flex-column md:flex-row md:align-items-center md:justify-content-between mb-4">
+						<div class="mr-8 md:mr-8">
+							<span class="inline-block text-900 font-medium mr-2 mb-1 md:mb-0">Portal Sticker</span>
+							<span class="text-600">Accessories</span>
+						</div>
+						<div class="mt-2 md:mt-0 ml-0 md:ml-8 flex align-items-center">
+							<div class="surface-300 border-round overflow-hidden" style="height:8px; width: 200px">
+								<div class="bg-cyan-500 h-full" style="width:16%"></div>
+							</div>
+							<span class="text-cyan-500 ml-3 font-medium">%16</span>
+						</div>
+					</li>
+					<li class="flex flex-column md:flex-row md:align-items-center md:justify-content-between mb-4">
+						<div class="mr-8 md:mr-8">
+							<span class="inline-block text-900 font-medium mr-2 mb-1 md:mb-0">Supernova Sticker</span>
+							<span class="text-600">Accessories</span>
+						</div>
+						<div class="mt-2 md:mt-0 ml-0 md:ml-8 flex align-items-center">
+							<div class="surface-300 border-round overflow-hidden" style="height:8px; width: 200px">
+								<div class="bg-pink-500 h-full" style="width:67%"></div>
+							</div>
+							<span class="text-pink-500 ml-3 font-medium">%67</span>
+						</div>
+					</li>
+					<li class="flex flex-column md:flex-row md:align-items-center md:justify-content-between mb-4">
+						<div class="mr-8 md:mr-8">
+							<span class="inline-block text-900 font-medium mr-2 mb-1 md:mb-0">Wonders Notebook</span>
+							<span class="text-600">Office</span>
+						</div>
+						<div class="mt-2 md:mt-0 ml-0 md:ml-8 flex align-items-center">
+							<div class="surface-300 border-round overflow-hidden" style="height:8px; width: 200px">
+								<div class="bg-green-500 h-full" style="width:35%"></div>
+							</div>
+							<span class="text-green-500 ml-3 font-medium">%35</span>
+						</div>
+					</li>
+					<li class="flex flex-column md:flex-row md:align-items-center md:justify-content-between mb-4">
+						<div class="mr-8 md:mr-8">
+							<span class="inline-block text-900 font-medium mr-2 mb-1 md:mb-0">Mat Black Case</span>
+							<span class="text-600">Accessories</span>
+						</div>
+						<div class="mt-2 md:mt-0 ml-0 md:ml-8 flex align-items-center">
+							<div class="surface-300 border-round overflow-hidden" style="height:8px; width: 200px">
+								<div class="bg-purple-500 h-full" style="width:75%"></div>
+							</div>
+							<span class="text-purple-500 ml-3 font-medium">%75</span>
+						</div>
+					</li>
+					<li class="flex flex-column md:flex-row md:align-items-center md:justify-content-between mb-4">
+						<div class="mr-8 md:mr-8">
+							<span class="inline-block text-900 font-medium mr-2 mb-1 md:mb-0">Robots T-Shirt</span>
+							<span class="text-600">Clothing</span>
+						</div>
+						<div class="mt-2 md:mt-0 ml-0 md:ml-8 flex align-items-center">
+							<div class="surface-300 border-round overflow-hidden" style="height:8px; width: 200px">
+								<div class="bg-teal-500 h-full" style="width:40%"></div>
+							</div>
+							<span class="text-teal-500 ml-3 font-medium">%40</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-12 lg:col-6">
+			<div class="card">
+				<Chart type="line" :data="lineData" />
+			</div>
+			<div class="card">
+                <div class="flex align-items-center justify-content-between mb-4">
+                    <div class="text-900 font-medium text-xl">Notifications</div>
+                    <div>
+                        <Button icon="pi pi-ellipsis-v" class="p-button-text p-button-plain p-button-rounded" @click="$refs.menu1.toggle($event)"></Button>
+                        <Menu ref="menu1" :popup="true" :model="items"></Menu>
                     </div>
-                    <ProgressBar :value="95" :showValue="false" />
-				</li>
-				<li class="py-3 px-2 border-bottom-1 surface-border">
-					<div class="flex justify-content-between align-items-center mb-3">
-						<h5 class="text-2xl">Tax</h5>
-						<div class="font-bold bg-purple-500 text-white p-2 border-round text-2xl" style="background-color:#f9c851">$250</div>
-					</div>
-					<ProgressBar :value="24" :showValue="false" />
-				</li>
-				<li class="py-3 px-2 border-bottom-1 surface-border">
-					<div class="flex justify-content-between align-items-center mb-3">
-						<h5 class="text-2xl">Invoices</h5>
-						<div class="font-bold bg-indigo-500 text-white p-2 border-round text-2xl" style="background-color:#20d077">$125</div>
-					</div>
-					<ProgressBar :value="55" :showValue="false" />
-				</li>
-				<li class="py-3 px-2 border-bottom-1 surface-border">
-					<div class="flex justify-content-between align-items-center mb-3">
-						<h5 class="text-2xl">Expenses</h5>
-						<div class="font-bold bg-orange-500 text-white p-2 border-round text-2xl" style="background-color:#f9c851">$250</div>
-					</div>
-					<ProgressBar :value="15" :showValue="false" />
-				</li>
-				<li class="py-3 px-2 border-bottom-1 surface-border">
-					<div class="flex justify-content-between align-items-center mb-3">
-						<h5 class="text-2xl">Bonus</h5>
-						<div class="font-bold bg-red-500 text-white p-2 border-round text-2xl" style="background-color:#007be5">$350</div>
-					</div>
-					<ProgressBar :value="5" :showValue="false" />
-				</li>
-				<li class="py-3 px-2">
-					<div class="flex justify-content-between align-items-center mb-3">
-						<h5 class="text-2xl">Revenue</h5>
-						<div class="font-bold bg-green-500 text-white p-2 border-round text-2xl" style="background-color:#ef6262">$500</div>
-					</div>
-					<ProgressBar :value="25" :showValue="false" />
-				</li>
-			</ul>
-		</Panel>
+                </div>
+                
+                <span class="block text-600 font-medium mb-3">TODAY</span>
+                <ul class="p-0 mx-0 mt-0 mb-4 list-none">
+                    <li class="flex align-items-center py-2 border-bottom-1 surface-border">
+                        <div class="w-3rem h-3rem flex align-items-center justify-content-center bg-blue-100 border-circle mr-3 flex-shrink-0">
+                            <i class="pi pi-dollar text-xl text-blue-500"></i>
+                        </div>
+                        <span class="text-900 line-height-3">Richard Jones
+                            <span class="text-700">has purchased a blue t-shirt for <span class="text-blue-500">79$</span></span>
+                        </span>
+                    </li>
+                    <li class="flex align-items-center py-2">
+                        <div class="w-3rem h-3rem flex align-items-center justify-content-center bg-orange-100 border-circle mr-3 flex-shrink-0">
+                            <i class="pi pi-download text-xl text-orange-500"></i>
+                        </div>
+                        <span class="text-700 line-height-3">Your request for withdrawal of <span class="text-blue-500 font-medium">2500$</span> has been initiated.</span>
+                    </li>
+                </ul>
+
+                <span class="block text-600 font-medium mb-3">YESTERDAY</span>
+                <ul class="p-0 m-0 list-none">
+                    <li class="flex align-items-center py-2 border-bottom-1 surface-border">
+                        <div class="w-3rem h-3rem flex align-items-center justify-content-center bg-blue-100 border-circle mr-3 flex-shrink-0">
+                            <i class="pi pi-dollar text-xl text-blue-500"></i>
+                        </div>
+                        <span class="text-900 line-height-3">Keyser Wick
+                            <span class="text-700">has purchased a black jacket for <span class="text-blue-500">59$</span></span>
+                        </span>
+                    </li>
+                    <li class="flex align-items-center py-2 border-bottom-1 surface-border">
+                        <div class="w-3rem h-3rem flex align-items-center justify-content-center bg-pink-100 border-circle mr-3 flex-shrink-0">
+                            <i class="pi pi-question text-xl text-pink-500"></i>
+                        </div>
+                        <span class="text-900 line-height-3">Jane Davis
+                            <span class="text-700">has posted a new questions about your product.</span>
+                        </span>
+                    </li>
+                    <li class="flex align-items-center py-2">
+                        <div class="w-3rem h-3rem flex align-items-center justify-content-center bg-green-100 border-circle mr-3 flex-shrink-0">
+                            <i class="pi pi-arrow-up text-xl text-green-500"></i>
+                        </div>
+                        <span class="text-900 line-height-3">Claire Smith
+                            <span class="text-700">has upvoted your store along with a comment.</span>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+		</div>
 	</div>
-</div>
 </template>
 
 <script>
 import ProductService from '../service/ProductService';
-import EventService from '../service/EventService';
-import '@fullcalendar/core';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGridPlugin from '@fullcalendar/timegrid';
-import interactionPlugin from '@fullcalendar/interaction';
 
 export default {
 	data() {
 		return {
-			tasksCheckbox: [],
-			dropdownCities: [
-				{name: 'New York', code: 'NY'},
-				{name: 'Rome', code: 'RM'},
-				{name: 'London', code: 'LDN'},
-				{name: 'Istanbul', code: 'IST'},
-				{name: 'Paris', code: 'PRS'}
-			],
-			dropdownCity: null,
-			options: {
-				plugins:[dayGridPlugin, timeGridPlugin, interactionPlugin],
-				initialDate: '2023-01-01',
-				headerToolbar: {
-					left: 'prev,next',
-					center: 'title',
-					right: 'dayGridMonth,timeGridWeek,timeGridDay'
-				},
-				editable: true,
-                selectable:true, 
-                selectMirror: true, 
-                dayMaxEvents: true,
-			},
-			events: null,
 			products: null,
-			selectedProducts: null,
 			lineData: {
 				labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
 				datasets: [
@@ -330,25 +266,18 @@ export default {
 					}
 				]
 			},
+			items: [
+                {label: 'Add New', icon: 'pi pi-fw pi-plus'},
+                {label: 'Remove', icon: 'pi pi-fw pi-minus'}
+            ]
 		}
 	},
 	productService: null,
-	eventService: null,
 	created() {
 		this.productService = new ProductService();
-		this.eventService = new EventService();
 	},
 	mounted() {
 		this.productService.getProductsSmall().then(data => this.products = data);
-		this.eventService.getEvents().then(data => this.events = data);
-
-		let afId = this.$route.query['af_id'];
-        if (afId) {
-            let today = new Date();
-            let expire = new Date();
-            expire.setTime(today.getTime() + 3600000*24*7);
-            document.cookie = 'primeaffiliateid=' + afId + ';expires=' + expire.toUTCString() + ';path=/; domain:primefaces.org';
-        }
 	},
 	methods: {
 		formatCurrency(value) {

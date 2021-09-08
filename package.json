@@ -1,6 +1,6 @@
 {
 	"name": "sigma-vue",
-	"version": "3.0.0",
+	"version": "4.0.0-SNAPSHOT",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/primefaces/sigma-vue.git"
@@ -33,11 +33,6 @@
 		"primevue": "3.7.1",
 		"prismjs": "1.9.0",
 		"vue": "3.2.9",
-		"vue-router": "^4.0.0-0",
-		"@fullcalendar/core": "5.7.2",
-		"@fullcalendar/daygrid": "5.7.2",
-		"@fullcalendar/interaction": "5.7.2",
-		"@fullcalendar/timegrid": "5.7.2",
-		"@fullcalendar/vue3": "5.7.2"
+		"vue-router": "^4.0.0-0"
 	}
 }
