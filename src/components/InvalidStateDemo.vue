@@ -2,9 +2,8 @@
 <div class="grid p-nogutter">
     <div class="card" style="width: 100%">
         <h5>Invalid State</h5>
-        <p>All form components have an invalid state style to display the validation errors.</p>
         <div class="p-fluid grid">
-            <div class="p-col-12 p-md-6">
+            <div class="col-12 md:col-6">
                 <div class="field">
                     <label for="inputtext">InputText</label>
                     <InputText id="inputtext" type="text" v-model="value1" class="p-invalid" />
@@ -27,7 +26,7 @@
                 </div>
             </div>
 
-            <div class="p-col-12 p-md-6">
+            <div class="col-12 md:col-6">
                 <div class="field">
                     <label for="inputmask">InputMask</label>
                     <InputMask id="inputmask" v-model="value5" mask="99/99/9999" slotChar="mm/dd/yyyy" class="p-invalid" />

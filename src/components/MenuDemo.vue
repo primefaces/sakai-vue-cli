@@ -39,7 +39,6 @@
 			</div>
 		</div>
 
-
 		<div class="col-12 md:col-4">
 			<div class="card">
 				<h5>Tiered Menu</h5>
@@ -545,27 +544,3 @@
 		}
 	}
 </script>
-
-<style scoped lang="scss">
-	::v-deep(.stepsdemo-content)  {
-		padding: 1em 0;
-
-		p {
-			font-weight: 400;
-			display: inline-block;
-			vertical-align: middle;
-			font-size: 18px;
-			margin: 0;
-		}
-
-		i {
-			vertical-align: middle;
-			font-size: 1.5em;
-			margin: 0;
-		}
-	}
-
-	.contextmenu-image {
-		width: 100%;
-	}
-</style>

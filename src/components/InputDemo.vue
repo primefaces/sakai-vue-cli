@@ -141,21 +141,19 @@
 				<Dropdown v-model="dropdownValue" :options="dropdownValues" optionLabel="name" placeholder="Select" />
 
 				<h5>MultiSelect</h5>
-				<MultiSelect v-model="multiselectValue" :options="multiselectValues" optionLabel="name" placeholder="Select Countries" :filter="true" class="multiselect-custom">
+				<MultiSelect v-model="multiselectValue" :options="multiselectValues" optionLabel="name" placeholder="Select Countries" :filter="true">
 					<template #value="slotProps">
-						<div class="country-item country-item-value" v-for="option of slotProps.value" :key="option.code">
-							<span :class="'flag flag-' + option.code.toLowerCase()" />
+						<div class="inline-flex align-items-center py-1 px-2 bg-primary text-primary border-round mr-2" v-for="option of slotProps.value" :key="option.code">
+							<span :class="'mr-2 flag flag-' + option.code.toLowerCase()" style="width:18px; height: 12px"/>
 							<div>{{option.name}}</div>
 						</div>
 						<template v-if="!slotProps.value || slotProps.value.length === 0">
-							<div class="country-placeholder">
-								Select Countries
-							</div>
+							<div class="p-1">Select Countries</div>
 						</template>
 					</template>
 					<template #option="slotProps">
-						<div class="country-item">
-							<span :class="'flag flag-' + slotProps.option.code.toLowerCase()" />
+						<div class="flex align-items-center">
+							<span :class="'mr-2 flag flag-' + slotProps.option.code.toLowerCase()" style="width:18px; height: 12px"/>
 							<div>{{slotProps.option.name}}</div>
 						</div>
 					</template>
@@ -304,39 +302,3 @@
 		}
 	}
 </script>
-
-<style scoped lang="scss">
-	::v-deep(.p-multiselect) {
-		min-width: 15rem;
-	}
-	.multiselect-custom-virtual-scroll .p-multiselect {
-		min-width: 20rem;
-	}
-	::v-deep(.multiselect-custom .p-multiselect-label) {
-		padding-top: .25rem;
-		padding-bottom: .25rem;
-	}
-	.multiselect-custom .country-item.country-item-value {
-		padding: .25rem .5rem;
-		border-radius: 3px;
-		display: inline-flex;
-		margin-right: .5rem;
-		background-color: var(--primary-color);
-		color: var(--primary-color-text);
-	}
-	.multiselect-custom .country-item.country-item-value span.flag {
-		width: 17px;
-	}
-	.country-item {
-		display: flex;
-		align-items: center;
-	}
-	.country-item span.flag {
-		width: 18px;
-		height: 12px;
-		margin-right: .5rem;
-	}
-	.multiselect-custom .country-placeholder {
-		padding: 0.25rem;
-	}
-</style>

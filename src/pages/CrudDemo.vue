@@ -5,8 +5,10 @@
 				<Toast/>
 				<Toolbar class="mb-4">
 					<template v-slot:left>
-						<Button label="New" icon="pi pi-plus" class="p-button-success mr-2" @click="openNew" />
-						<Button label="Delete" icon="pi pi-trash" class="p-button-danger" @click="confirmDeleteSelected" :disabled="!selectedProducts || !selectedProducts.length" />
+						<div class="my-2">
+							<Button label="New" icon="pi pi-plus" class="p-button-success mr-2" @click="openNew" />
+							<Button label="Delete" icon="pi pi-trash" class="p-button-danger" @click="confirmDeleteSelected" :disabled="!selectedProducts || !selectedProducts.length" />
+						</div>
 					</template>
 
 					<template v-slot:right>
@@ -19,9 +21,9 @@
 							paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown" :rowsPerPageOptions="[5,10,25]"
 							currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products" responsiveLayout="scroll">
 					<template #header>
-						<div class="table-header flex flex-column md:flex-row md:justify-content-between">
+						<div class="flex flex-column md:flex-row md:justify-content-between md:align-items-center">
 							<h5 class="m-0">Manage Products</h5>
-							<span class="p-input-icon-left">
+							<span class="block mt-2 md:mt-0 p-input-icon-left">
                                 <i class="pi pi-search" />
                                 <InputText v-model="filters['global']" placeholder="Search..." />
                             </span>
@@ -44,7 +46,7 @@
 					<Column header="Image">
 						<template #body="slotProps">
 							<span class="p-column-title">Image</span>
-							<img :src="'assets/layout/images/product/' + slotProps.data.image" :alt="slotProps.data.image" class="product-image" />
+							<img :src="'assets/layout/images/product/' + slotProps.data.image" :alt="slotProps.data.image" class="shadow-2" width="100" />
 						</template>
 					</Column>
 					<Column field="price" header="Price" :sortable="true">
@@ -80,7 +82,7 @@
 				</DataTable>
 
 				<Dialog v-model:visible="productDialog" :style="{width: '450px'}" header="Product Details" :modal="true" class="p-fluid">
-					<img :src="'assets/layout/images/product/' + product.image" :alt="product.image" class="product-image" v-if="product.image" />
+					<img :src="'assets/layout/images/product/' + product.image" :alt="product.image" v-if="product.image" width="150" class="mt-0 mx-auto mb-5 block shadow-2" />
 					<div class="field">
 						<label for="name">Name</label>
 						<InputText id="name" v-model.trim="product.name" required="true" autofocus :class="{'p-invalid': submitted && !product.name}" />
@@ -147,7 +149,7 @@
 				</Dialog>
 
 				<Dialog v-model:visible="deleteProductDialog" :style="{width: '450px'}" header="Confirm" :modal="true">
-					<div class="confirmation-content">
+					<div class="flex align-items-center justify-content-center">
 						<i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem" />
 						<span v-if="product">Are you sure you want to delete <b>{{product.name}}</b>?</span>
 					</div>
@@ -158,7 +160,7 @@
 				</Dialog>
 
 				<Dialog v-model:visible="deleteProductsDialog" :style="{width: '450px'}" header="Confirm" :modal="true">
-					<div class="confirmation-content">
+					<div class="flex align-items-center justify-content-center">
 						<i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem" />
 						<span v-if="product">Are you sure you want to delete the selected products?</span>
 					</div>
@@ -285,28 +287,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-	.table-header {
-		display: flex;
-		justify-content: space-between;
-	}
-
-	.product-image {
-		width: 100px;
-		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-	}
-
-	.p-dialog .product-image {
-		width: 150px;
-		margin: 0 auto 2rem auto;
-		display: block;
-	}
-
-	.confirmation-content {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
 	.product-badge {
 		border-radius: 2px;
 		padding: .25em .5rem;
@@ -328,13 +308,6 @@ export default {
 		&.status-lowstock {
 			background: #FEEDAF;
 			color: #8A5340;
-		}
-	}
-
-	::v-deep(.p-toolbar) {
-		flex-wrap: wrap;
-		.p-button {
-			margin-bottom: .25rem;
 		}
 	}
 </style>

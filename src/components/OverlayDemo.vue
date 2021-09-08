@@ -4,7 +4,7 @@
 			<div class="card p-fluid">
 				<h5>Dialog</h5>
 				<Dialog header="Dialog" v-model:visible="display" :breakpoints="{'960px': '75vw'}" :style="{width: '30vw'}" :modal="true">
-					<p>
+					<p class="line-height-3 m-0">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
 						in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
@@ -36,7 +36,7 @@
 								<Column field="name" header="Name" :sortable="true"></Column>
 								<Column header="Image">
 									<template #body="slotProps">
-										<img :src="'assets/layout/images/product/' + slotProps.data.image" :alt="slotProps.data.image" class="product-image" />
+										<img :src="'assets/layout/images/product/' + slotProps.data.image" :alt="slotProps.data.image" width="100" class="shadow-2" />
 									</template>
 								</Column>
 								<Column field="price" header="Price" :sortable="true">
@@ -56,7 +56,7 @@
 				<h5>Confirmation</h5>
 				<Button label="Delete" icon="pi pi-trash" class="p-button-danger" @click="openConfirmation" />
 				<Dialog header="Confirmation" v-model:visible="displayConfirmation" :style="{width: '350px'}" :modal="true">
-					<div class="confirmation-content">
+					<div class="flex align-items-center justify-content-center">
 						<i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem" />
 						<span>Are you sure you want to proceed?</span>
 					</div>
@@ -193,21 +193,3 @@
 		}
 	}
 </script>
-
-<style scoped>
-p {
-	line-height: 1.5;
-	margin: 0;
-}
-
-.product-image {
-	width: 50px;
-	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
-}
-
-.confirmation-content {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-</style>

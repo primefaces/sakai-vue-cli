@@ -39,7 +39,7 @@
             <div class="badges">
                 <Badge :value="2" class="mr-2"></Badge>
                 <Badge :value="4" size="large" severity="warning" class="mr-2"></Badge>
-                <Badge :value="6" size="xlarge" severity="success" class="mr-2"></Badge>
+                <Badge :value="6" size="xlarge" severity="success"></Badge>
             </div>
         </div>
 
@@ -80,7 +80,7 @@
                     Eget egestas purus viverra accumsan in nisl nisi. Suscipit adipiscing bibendum est ultricies integer.
                     Mattis aliquam faucibus purus in massa tempor nec.
                 </p>
-                <ScrollTop target="parent" class="custom-scrolltop" :threshold="100" icon="pi pi-arrow-up"></ScrollTop>
+                <ScrollTop target="parent" :threshold="100" icon="pi pi-arrow-up"></ScrollTop>
             </ScrollPanel>
         </div>
     </div>
@@ -146,7 +146,7 @@
 
         <div class="card">
             <h4>Skeleton</h4>
-            <div class="custom-skeleton p-4">
+            <div class="border-round border-1 surface-border p-4">
                 <div class="flex mb-3">
                     <Skeleton shape="circle" size="4rem" class="mr-2"></Skeleton>
                     <div>
@@ -198,40 +198,3 @@
 		}
 	}
 </script>
-
-<style lang="scss" scoped>
-	.badges {
-		.p-badge, .p-tag {
-			margin-right: .5rem;
-		}
-	}
-
-	.p-button {
-		margin-right: .5rem;
-	}
-
-	.p-overlay-badge {
-		margin-right: 2rem;
-	}
-
-    ::v-deep(.custom-scrolltop){
-        width: 2rem;
-        height: 2rem;
-        border-radius: 4px;
-        background-color: var(--primary-color);
-    }
-    ::v-deep(.custom-scrolltop .p-scrolltop-icon) {
-        font-size: 1rem;
-        color: var(--primary-color-text);
-    }
-    ::v-deep(.custom-scrolltop:hover) {
-         background-color: var(--primary-color);
-    }
-    ::v-deep(.custom-skeleton) {
-        border: 1px solid var(--surface-d);
-        border-radius: 4px;
-    }
-    ::v-deep(.custom-skeleton ul) {
-        list-style: none;
-    }
-</style>

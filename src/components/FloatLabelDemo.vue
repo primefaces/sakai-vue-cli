@@ -2,8 +2,7 @@
 	<div class="floatlabel-demo">
 		<div class="card">
 			<h5>Float Label</h5>
-			<p>All input text components support floating labels by adding (<mark>.p-float-label</mark>) to wrapper class.</p>
-			<div class="grid p-fluid">
+			<div class="grid p-fluid mt-3">
 				<div class="field col-12 md:col-4">	
 					<span class="p-float-label">
 						<InputText type="text" id="inputtext" v-model="value1" />
@@ -125,11 +124,3 @@ export default {
 	},
 };
 </script>
-
-<style lang="scss" scoped>
-.floatlabel-demo {
-	.field {
-		margin-top: 2rem;
-	}
-}
-</style>

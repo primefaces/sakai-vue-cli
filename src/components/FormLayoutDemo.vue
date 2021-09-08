@@ -107,6 +107,7 @@
 		</div>
 	</div>
 </template>
+
 <script>
 	export default {
 		data() {
@@ -116,7 +117,7 @@
 					{name: 'Option 2', code: 'Option 2'},
 					{name: 'Option 3', code: 'Option 3'}
 				],
-				dropdownItem: null,
+				dropdownItem: null
 			}
 		}
 	}
