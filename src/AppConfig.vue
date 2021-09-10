@@ -16,11 +16,11 @@
 			<h6>Input Style</h6>
 			<div class="p-formgroup-inline">
 				<div class="field-radiobutton">
-					<RadioButton id="input_outlined" name="inputstyle" value="outlined" :modelValue="inputStyle" @update:modelValue="changeInputStyle" />
+					<RadioButton id="input_outlined" name="inputstyle" value="outlined" :modelValue="$primevue.config.inputStyle" @change="changeInputStyle('outlined')" />
 					<label for="input_outlined">Outlined</label>
 				</div>
 				<div class="field-radiobutton">
-					<RadioButton id="input_filled" name="inputstyle" value="filled" :modelValue="inputStyle" @update:modelValue="changeInputStyle" />
+					<RadioButton id="input_filled" name="inputstyle" value="filled" :modelValue="$primevue.config.inputStyle" @change="changeInputStyle('filled')" />
 					<label for="input_filled">Filled</label>
 				</div>
 			</div>
@@ -121,7 +121,7 @@
 				event.preventDefault();
 			},
 			changeInputStyle(value) {
-				this.$appState.inputStyle = value;
+				this.$primevue.config.inputStyle = value;
 			},
 			changeRipple(value) {
 				this.$primevue.config.ripple = value;

@@ -209,7 +209,7 @@ export default {
                 'layout-static-sidebar-inactive': this.staticMenuInactive && this.layoutMode === 'static',
                 'layout-overlay-sidebar-active': this.overlayMenuActive && this.layoutMode === 'overlay',
                 'layout-mobile-sidebar-active': this.mobileMenuActive,
-				'p-input-filled': this.$appState.inputStyle === 'filled',
+				'p-input-filled': this.$primevue.config.inputStyle === 'filled',
 				'p-ripple-disabled': this.$primevue.config.ripple === false
             }];
         },
