@@ -3,7 +3,7 @@ import axios from 'axios'
 export default class PhotoService {
 
 	getImages() {
-        return axios.get('assets//data/photos.json')
+        return axios.get('assets/data/photos.json')
                 .then(res => res.data.data);
     }
 }

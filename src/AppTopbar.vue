@@ -1,7 +1,7 @@
 <template>
 	<div class="layout-topbar">
 		<router-link to="/" class="layout-topbar-logo">
-			<img alt="Logo" :src="darkTheme ? 'assets//images/logo-dark.svg' : 'assets//images/logo-white.svg'" />
+			<img alt="Logo" :src="darkTheme ? 'assets/images/logo-dark.svg' : 'assets/images/logo-white.svg'" />
 			<span>SAKAI</span>
 		</router-link>
 		<button class="p-link layout-menu-button layout-topbar-button" @click="onMenuToggle">

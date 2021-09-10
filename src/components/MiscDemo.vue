@@ -47,11 +47,11 @@
             <h4>Avatar</h4>
             <h5>Avatar Group</h5>
             <AvatarGroup class="mb-3">
-                <Avatar image="assets//images/avatar/amyelsner.png" size="large" shape="circle"></Avatar>
-                <Avatar image="assets//images/avatar/asiyajavayant.png" size="large" shape="circle"></Avatar>
-                <Avatar image="assets//images/avatar/onyamalimba.png" size="large" shape="circle"></Avatar>
-                <Avatar image="assets//images/avatar/ionibowcher.png" size="large" shape="circle"></Avatar>
-                <Avatar image="assets//images/avatar/xuxuefeng.png" size="large" shape="circle"></Avatar>
+                <Avatar image="assets/images/avatar/amyelsner.png" size="large" shape="circle"></Avatar>
+                <Avatar image="assets/images/avatar/asiyajavayant.png" size="large" shape="circle"></Avatar>
+                <Avatar image="assets/images/avatar/onyamalimba.png" size="large" shape="circle"></Avatar>
+                <Avatar image="assets/images/avatar/ionibowcher.png" size="large" shape="circle"></Avatar>
+                <Avatar image="assets/images/avatar/xuxuefeng.png" size="large" shape="circle"></Avatar>
                 <Avatar label="+2" shape="circle" size="large" :style="{'background-color':'#9c27b0', 'color': '#ffffff'}"></Avatar>
             </AvatarGroup>
 
@@ -129,18 +129,18 @@
 
             <h5>Image</h5>
             <div class="flex align-items-center flex-column sm:flex-row">
-                <Chip label="Amy Elsner" image="assets//images/avatar/amyelsner.png" class="mr-2 mb-2"></Chip>
-                <Chip label="Asiya Javayant" image="assets//images/avatar/asiyajavayant.png" class="mr-2 mb-2"></Chip>
-                <Chip label="Onyama Limba" image="assets//images/avatar/onyamalimba.png" class="mr-2 mb-2"></Chip>
-                <Chip label="Xuxue Feng" image="assets//images/avatar/xuxuefeng.png" :removable="true" class="mb-2"></Chip>
+                <Chip label="Amy Elsner" image="assets/images/avatar/amyelsner.png" class="mr-2 mb-2"></Chip>
+                <Chip label="Asiya Javayant" image="assets/images/avatar/asiyajavayant.png" class="mr-2 mb-2"></Chip>
+                <Chip label="Onyama Limba" image="assets/images/avatar/onyamalimba.png" class="mr-2 mb-2"></Chip>
+                <Chip label="Xuxue Feng" image="assets/images/avatar/xuxuefeng.png" :removable="true" class="mb-2"></Chip>
             </div>
 
             <h5>Styling</h5>
             <div class="flex align-items-center flex-column sm:flex-row">
                 <Chip label="Action" class="mr-2 mb-2 custom-chip"></Chip>
                 <Chip label="Comedy" class="mr-2 mb-2 custom-chip"></Chip>
-                <Chip label="Onyama Limba" image="assets//images/avatar/onyamalimba.png" class="mr-2 mb-2 custom-chip"></Chip>
-                <Chip label="Xuxue Feng" image="assets//images/avatar/xuxuefeng.png" :removable="true" class="mb-2 custom-chip"></Chip>
+                <Chip label="Onyama Limba" image="assets/images/avatar/onyamalimba.png" class="mr-2 mb-2 custom-chip"></Chip>
+                <Chip label="Xuxue Feng" image="assets/images/avatar/xuxuefeng.png" :removable="true" class="mb-2 custom-chip"></Chip>
             </div>
         </div>
 

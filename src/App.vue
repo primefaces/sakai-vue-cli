@@ -215,7 +215,7 @@ export default {
             }];
         },
         logo() {
-            return (this.layoutColorMode === 'dark') ? "assets//images/logo-white.svg" : "assets//images/logo.svg";
+            return (this.layoutColorMode === 'dark') ? "assets/images/logo-white.svg" : "assets/images/logo.svg";
         }
     },
     beforeUpdate() {
