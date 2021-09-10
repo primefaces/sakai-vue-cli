@@ -59,4 +59,25 @@
 		height: calc(100vh - 5rem);
 		padding: 2rem;
 	}
+
+	.config-scale {
+        display: flex;
+        align-items: center;
+        margin: 1rem 0 2rem 0;
+
+        .p-button {
+            margin-right: .5rem;
+        }
+
+        i {
+            margin-right: .5rem;
+            font-size: .75rem;
+            color: var(--text-color-secondary);
+
+            &.scale-active {
+                font-size: 1.25rem;
+                color: var(--primary-color);
+            }
+        }
+	}
 }
