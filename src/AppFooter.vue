@@ -8,7 +8,12 @@
 
 <script>
 	export default {
-		name: "AppFooter"
+		name: "AppFooter",
+		computed: {
+			darkTheme() {
+				return this.$appState.theme.startsWith('saga');
+			}
+		}
 	}
 </script>
 

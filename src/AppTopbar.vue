@@ -1,30 +1,38 @@
 <template>
 	<div class="layout-topbar">
-		<div class="layout-topbar-left">
-			<div class="layout-topbar-logo-container">
-				<router-link to="/" class="layout-topbar-logo">
-					<img alt="Logo" :src="darkTheme ? 'assets/layout/images/logo-dark.svg' : 'assets/layout/images/logo-white.svg'" />
-					<span>SAKAI</span>
-				</router-link>
-				<button class="p-link layout-topbar-button" @click="onMenuToggle">
-					<span class="pi pi-bars layout-topbar-icon"></span>
+		<router-link to="/" class="layout-topbar-logo">
+			<img alt="Logo" :src="darkTheme ? 'assets/layout/images/logo-dark.svg' : 'assets/layout/images/logo-white.svg'" />
+			<span>SAKAI</span>
+		</router-link>
+		<button class="p-link layout-menu-button layout-topbar-button" @click="onMenuToggle">
+			<i class="pi pi-bars"></i>
+		</button>
+
+		<button class="p-link layout-topbar-menu-button layout-topbar-button"
+			v-styleclass="{ selector: '@next', enterClass: 'hidden', enterActiveClass: 'scalein', 
+			leaveToClass: 'hidden', leaveActiveClass: 'fadeout', hideOnOutsideClick: true}">
+			<i class="pi pi-ellipsis-v"></i>
+		</button>
+		<ul class="layout-topbar-menu hidden lg:flex origin-top">
+			<li>
+				<button class="p-link layout-topbar-button">
+					<i class="pi pi-calendar"></i>
+					<span>Events</span>
 				</button>
-			</div>
-		</div>
-		<div class="layout-topbar-right">
-			<button class="p-link layout-topbar-button">
-				<span class="layout-topbar-item-text">Events</span>
-				<span class="layout-topbar-icon pi pi-calendar" v-badge="'4'"></span>
-			</button>
-			<button class="p-link layout-topbar-button">
-				<span class="layout-topbar-item-text">Settings</span>
-				<span class="layout-topbar-icon pi pi-cog"></span>
-			</button>
-			<button class="p-link layout-topbar-button">
-				<span class="layout-topbar-item-text">User</span>
-				<span class="layout-topbar-icon pi pi-user"></span>
-			</button>
-		</div>
+			</li>
+			<li>
+				<button class="p-link layout-topbar-button">
+					<i class="pi pi-cog"></i>
+					<span>Settings</span>
+				</button>
+			</li>
+			<li>
+				<button class="p-link layout-topbar-button">
+					<i class="pi pi-user"></i>
+					<span>Profile</span>
+				</button>
+			</li>
+		</ul>
 	</div>
 </template>
 
@@ -33,6 +41,9 @@ export default {
     methods: {
         onMenuToggle(event) {
             this.$emit('menu-toggle', event);
+        },
+		onTopbarMenuToggle(event) {
+            this.$emit('topbar-menu-toggle', event);
         }
     },
 	computed: {

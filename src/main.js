@@ -75,6 +75,7 @@ import SplitButton from 'primevue/splitbutton';
 import Splitter from 'primevue/splitter';
 import SplitterPanel from 'primevue/splitterpanel';
 import Steps from 'primevue/steps';
+import StyleClass from 'primevue/styleclass';
 import TabMenu from 'primevue/tabmenu';
 import Tag from 'primevue/tag';
 import TieredMenu from 'primevue/tieredmenu';
@@ -111,6 +112,7 @@ app.directive('tooltip', Tooltip);
 app.directive('ripple', Ripple);
 app.directive('code', CodeHighlight);
 app.directive('badge', BadgeDirective);
+app.directive('styleclass', StyleClass);
 
 app.component('Accordion', Accordion);
 app.component('AccordionTab', AccordionTab);
