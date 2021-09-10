@@ -48,7 +48,7 @@ blockquote {
 }
 
 hr {
-	border-top: solid $dividerColor;
+	border-top: solid var(--surface-border);
 	border-width: 1px 0 0 0;
 	margin: 1rem 0;
 }

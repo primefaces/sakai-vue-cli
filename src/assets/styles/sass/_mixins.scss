@@ -25,13 +25,15 @@
 @mixin focused() {
     outline: 0 none;
     outline-offset: 0;
-    box-shadow: 0 0 0 0.2em $focusShadowColor;
+    transition: box-shadow .2s;
+    box-shadow: var(--focus-ring);
 }
 
 @mixin focused-inset() {
     outline: 0 none;
     outline-offset: 0;
-    box-shadow: inset 0 0 0 0.2em $focusShadowColor;
+    transition: box-shadow .2s;
+    box-shadow: inset var(--focus-ring);
 }
 
 @mixin clearfix {

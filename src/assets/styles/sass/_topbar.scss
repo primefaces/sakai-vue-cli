@@ -19,10 +19,15 @@
         font-size: 1.5rem;
         font-weight: 500;
         width: 300px;
+        border-radius: 12px;
 
         img {
             height: 2.5rem;
             margin-right: .5rem;
+        }
+
+        &:focus {
+            @include focused();
         }
     }
 
@@ -115,7 +120,7 @@
                 display: flex;
                 width: 100%;
                 height: auto;
-                justify-content: start;
+                justify-content: flex-start;
                 border-radius: 12px;
                 padding: 1rem;
 
