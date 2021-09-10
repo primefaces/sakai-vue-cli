@@ -6,7 +6,7 @@
     top: 0;
     width: 100%;
     padding: 0 2rem;
-    background-color: $topbarBg;
+    background-color: var(--surface-card);
     transition: left $transitionDuration;
     display: flex;
     align-items: center;
@@ -34,7 +34,7 @@
         justify-content: center;
         align-items: center;
         position: relative;
-        color: $topbarItemTextColor;
+        color: var(--text-color-secondary);
         margin-left: 1rem;
         border-radius: 50%;
         width: 3rem;
@@ -43,7 +43,8 @@
         transition: background-color $transitionDuration;
         
         &:hover {
-            background-color: $topbarItemHoverBg;
+            color: var(--text-color);
+            background-color: var(--surface-hover);
         }
 
         &:focus {

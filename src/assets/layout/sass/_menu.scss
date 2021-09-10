@@ -8,7 +8,7 @@
 	top: 7rem;
 	left: 2rem;
 	transition: transform $transitionDuration, left $transitionDuration;
-	background-color: #ffffff;
+	background-color: var(--surface-overlay);
 	border-radius: 12px;
     padding: 2rem;
 }
@@ -29,7 +29,7 @@
         
         .layout-menuitem-root-text {
             text-transform: uppercase;
-            color:$menuitemCategoryTextColor;
+            color:var(--text-color-secondary);
             font-weight: 600;
             margin-bottom: .5rem;
             font-size: .875rem;
@@ -40,7 +40,7 @@
             text-decoration: none;
             display: flex;
             align-items: center;
-            color: $menuitemTextColor;
+            color:var(--text-color);
             transition: color $transitionDuration;
             border-radius: $borderRadius;
             padding: 1rem;
@@ -59,7 +59,7 @@
             }
 
             &:hover {
-                background-color: $menuitemHoverBg;
+                background-color: var(--surface-hover);
             }
         }
 

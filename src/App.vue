@@ -210,7 +210,8 @@ export default {
                 'layout-overlay-sidebar-active': this.overlayMenuActive && this.layoutMode === 'overlay',
                 'layout-mobile-sidebar-active': this.mobileMenuActive,
 				'p-input-filled': this.$primevue.config.inputStyle === 'filled',
-				'p-ripple-disabled': this.$primevue.config.ripple === false
+				'p-ripple-disabled': this.$primevue.config.ripple === false,
+                'layout-theme-light': this.$appState.theme.startsWith('saga')
             }];
         },
         logo() {
