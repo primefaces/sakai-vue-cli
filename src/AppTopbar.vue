@@ -1,5 +1,5 @@
 <template>
-	<div class="layout-topbar shadow-1">
+	<div class="layout-topbar">
 		<div class="layout-topbar-left">
 			<div class="layout-topbar-logo-container">
 				<router-link to="/" class="layout-topbar-logo">

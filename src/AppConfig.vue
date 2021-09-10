@@ -3,13 +3,10 @@
 		<a href="#" class="layout-config-button" id="layout-config-button" @click="toggleConfigurator">
 			<i class="pi pi-cog"></i>
 		</a>
-		<a href="#" class="layout-config-close" @click="hideConfigurator">
-			<i class="pi pi-times"></i>
-		</a>
+		<Button class="p-button-danger layout-config-close p-button-rounded p-button-text" icon="pi pi-times" @click="hideConfigurator"></Button>
 
 		<div class="layout-config-content">
-
-			<h5 style="margin-top: 0">Input Style</h5>
+			<h6 class="mt-0">Input Style</h6>
 			<div class="p-formgroup-inline">
 				<div class="field-radiobutton">
 					<RadioButton id="input_outlined" name="inputstyle" value="outlined" :modelValue="inputStyle" @update:modelValue="changeInputStyle" />
@@ -21,10 +18,10 @@
 				</div>
 			</div>
 
-			<h5>Ripple Effect</h5>
+			<h6>Ripple Effect</h6>
 			<InputSwitch :modelValue="rippleActive" @update:modelValue="changeRipple" />
 
-			<h5>Menu Type</h5>
+			<h6>Menu Type</h6>
 			<div class="p-formgroup-inline">
 				<div class="field-radiobutton">
 					<RadioButton id="static" name="layoutMode" value="static" v-model="d_layoutMode" @change="changeLayout($event, 'static')" />
@@ -36,7 +33,7 @@
 				</div>
 			</div>
 
-			<h5>Menu Color</h5>
+			<h6>Menu Color</h6>
 			<div class="p-formgroup-inline">
 				<div class="field-radiobutton">
 					<RadioButton id="dark" name="layoutColorMode" value="dark" v-model="d_layoutColorMode" @change="changeLayoutColor($event, 'dark')" />

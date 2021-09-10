@@ -65,9 +65,9 @@
 	<div class="grid p-fluid dashboard">
 		<div class="col-12 lg:col-6">
 			<div class="card">
-				<h1 style="font-size:16px">Recent Sales</h1>
+				<h5>Recent Sales</h5>
 				<DataTable :value="products" :rows="5" :paginator="true" responsiveLayout="scroll">
-					<Column>
+					<Column style="width:15%">
 						<template #header>
 							Logo
 						</template>
@@ -75,13 +75,13 @@
 							<img :src="'assets/layout/images/product/' + slotProps.data.image" :alt="slotProps.data.image" width="50" />
 						</template>
 					</Column>
-					<Column field="name" header="Name" :sortable="true"></Column>
-					<Column field="price" header="Price" :sortable="true">
+					<Column field="name" header="Name" :sortable="true" style="width:35%"></Column>
+					<Column field="price" header="Price" :sortable="true" style="width:35%">
 						<template #body="slotProps">
 							{{formatCurrency(slotProps.data.price)}}
 						</template>
 					</Column>
-					<Column>
+					<Column style="width:15%">
 						<template #header>
 							View
 						</template>
@@ -93,7 +93,7 @@
 			</div>
 			<div class="card">
 				<div class="flex justify-content-between align-items-center mb-5">
-					<span class="text-xl text-900 font-medium">Best Selling Products</span>
+					<h5>Best Selling Products</h5>
 					<div>
 						<Button icon="pi pi-ellipsis-v" class="p-button-text p-button-plain p-button-rounded" @click="$refs.menu2.toggle($event)"></Button>
 						<Menu ref="menu2" :popup="true" :model="items"></Menu>
@@ -177,11 +177,12 @@
 		</div>
 		<div class="col-12 lg:col-6">
 			<div class="card">
+				<h5>Sales Overview</h5>
 				<Chart type="line" :data="lineData" />
 			</div>
 			<div class="card">
                 <div class="flex align-items-center justify-content-between mb-4">
-                    <div class="text-900 font-medium text-xl">Notifications</div>
+                    <h5>Notifications</h5>
                     <div>
                         <Button icon="pi pi-ellipsis-v" class="p-button-text p-button-plain p-button-rounded" @click="$refs.menu1.toggle($event)"></Button>
                         <Menu ref="menu1" :popup="true" :model="items"></Menu>
@@ -249,7 +250,7 @@ export default {
 				labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
 				datasets: [
 					{
-						label: 'First Dataset',
+						label: 'Revenue',
 						data: [65, 59, 80, 81, 56, 55, 40],
 						fill: false,
 						backgroundColor: '#2f4860',
@@ -257,7 +258,7 @@ export default {
 						tension: 0.4
 					},
 					{
-						label: 'Second Dataset',
+						label: 'Sales',
 						data: [28, 48, 40, 19, 86, 27, 90],
 						fill: false,
 						backgroundColor: '#00bb7e',
