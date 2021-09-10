@@ -7,15 +7,10 @@
 	user-select: none;
 	top: 7rem;
 	left: 2rem;
-	transition: transform $transitionDuration;
+	transition: transform $transitionDuration, left $transitionDuration;
 	background-color: #ffffff;
 	border-radius: 12px;
     padding: 2rem;
-
-	&.layout-sidebar-enter-from,
-	&.layout-sidebar-leave-to {
-		transform: translateX(-100%);
-	}
 }
 
 .layout-menu {

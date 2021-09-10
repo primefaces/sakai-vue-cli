@@ -3,13 +3,21 @@
         &.layout-overlay {
             .layout-main-container {
                 margin-left: 0;
+                padding-left: 2rem;
+            }
+
+            .layout-sidebar {
+                transform: translateX(-100%);
+                left: 0;
+                top: 0;
+                height: 100vh;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
             }
 
             &.layout-overlay-sidebar-active {
                 .layout-sidebar {
-                    left: 0;
-                    top: 0;
-                    height: 100vh;
+                    transform: translateX(0);
                     box-shadow: 0px 3px 5px rgba(0,0,0,.02), 0px 0px 2px rgba(0,0,0,.05), 0px 1px 4px rgba(0,0,0,.08) !important;
                 }
             }
@@ -21,10 +29,20 @@
             }
 
             &.layout-static-sidebar-inactive {
+                .layout-sidebar {
+                    transform: translateX(-100%);
+                    left: 0;
+                }
+
                 .layout-main-container {
                     margin-left: 0;
+                    padding-left: 2rem;
                 }
             }
+        }
+
+        .layout-mask {
+            display: none;
         }
     }
 }
@@ -37,23 +55,22 @@
         }
 
         .layout-sidebar {
+            transform: translateX(-100%);
             left: 0;
             top: 0;
             height: 100vh;
-            transform: translateX(-100%);
-            box-shadow: 0px 3px 5px rgba(0,0,0,.02), 0px 0px 2px rgba(0,0,0,.05), 0px 1px 4px rgba(0,0,0,.08) !important;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
         }
 
         .layout-mask {
-            display: none;
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
             z-index: 998;
-            background-color: $maskBgColor;
-            @include opacity(0.7);
+            background-color: $maskBg;
+
+            &.layout-mask-enter-from,
+            &.layout-mask-leave-to {
+                background-color: transparent;
+            }
         }
 
         &.layout-mobile-sidebar-active {

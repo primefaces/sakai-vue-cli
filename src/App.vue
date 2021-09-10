@@ -1,12 +1,9 @@
 <template>
 	<div :class="containerClass" @click="onWrapperClick">
         <AppTopBar @menu-toggle="onMenuToggle" />
-        <transition name="layout-sidebar">
-            <div :class="sidebarClass" @click="onSidebarClick" v-show="isSidebarVisible()">
-                <AppProfile v-if="false" />
-                <AppMenu :model="menu" @menuitem-click="onMenuItemClick" />
-            </div>
-        </transition>
+        <div class="layout-sidebar" @click="onSidebarClick">
+            <AppMenu :model="menu" @menuitem-click="onMenuItemClick" />
+        </div>
 
         <div class="layout-main-container">
             <div class="layout-main">
@@ -16,13 +13,14 @@
         </div>
 
 		<AppConfig :layoutMode="layoutMode" :layoutColorMode="layoutColorMode" @layout-change="onLayoutChange" @layout-color-change="onLayoutColorChange" />
-        <div class="layout-mask"></div>
+        <transition name="layout-mask">
+            <div class="layout-mask p-component-overlay" v-if="mobileMenuActive"></div>
+        </transition>
 	</div>
 </template>
 
 <script>
 import AppTopBar from './AppTopbar.vue';
-import AppProfile from './AppProfile.vue';
 import AppMenu from './AppMenu.vue';
 import AppConfig from './AppConfig.vue';
 import AppFooter from './AppFooter.vue';
@@ -198,12 +196,9 @@ export default {
                     return !this.staticMenuInactive;
                 else if (this.layoutMode === 'overlay')
                     return this.overlayMenuActive;
-                else
-                    return true;
             }
-            else {
-                return true;
-            }
+
+            return true;
         },
     },
     computed: {
@@ -218,12 +213,6 @@ export default {
 				'p-ripple-disabled': this.$primevue.config.ripple === false
             }];
         },
-        sidebarClass() {
-            return ['layout-sidebar', {
-                'layout-sidebar-dark': this.layoutColorMode === 'dark',
-                'layout-sidebar-light': this.layoutColorMode === 'light'
-            }];
-        },
         logo() {
             return (this.layoutColorMode === 'dark') ? "assets/layout/images/logo-white.svg" : "assets/layout/images/logo.svg";
         }
@@ -236,7 +225,6 @@ export default {
     },
     components: {
         'AppTopBar': AppTopBar,
-        'AppProfile': AppProfile,
         'AppMenu': AppMenu,
         'AppConfig': AppConfig,
         'AppFooter': AppFooter,
