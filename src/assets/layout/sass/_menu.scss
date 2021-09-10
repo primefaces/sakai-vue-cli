@@ -10,7 +10,7 @@
 	transition: transform $transitionDuration, left $transitionDuration;
 	background-color: var(--surface-overlay);
 	border-radius: 12px;
-    padding: 2rem;
+    padding: 1.5rem;
 }
 
 .layout-menu {
@@ -20,7 +20,7 @@
 
     li {
         &.layout-menuitem-category {
-            margin-top: 1rem;
+            margin-top: .75rem;
 
             &:first-child {
                 margin-top: 0;
@@ -43,7 +43,7 @@
             color:var(--text-color);
             transition: color $transitionDuration;
             border-radius: $borderRadius;
-            padding: 1rem;
+            padding: .75rem 1rem;
             transition: background-color .15s;
 
             span {
