@@ -32,7 +32,7 @@
                     </Column>
                     <Column header="Country" filterField="country.name" style="min-width:12rem">
                         <template #body="{data}">
-                            <img src="assets/flags/flag_placeholder.png" :alt="data.country.name" :class="'flag flag-' + data.country.code" width="30" />
+                            <img src="../assets/demo/flags/flag_placeholder.png" :alt="data.country.name" :class="'flag flag-' + data.country.code" width="30" />
                             <span style="margin-left: .5em; vertical-align: middle" class="image-text">{{data.country.name}}</span>
                         </template>
                         <template #filter="{filterModel}">
@@ -129,7 +129,7 @@
                     <Column field="name" header="Name" :style="{width:'200px'}"></Column>
                     <Column field="country.name" header="Country" :style="{width:'200px'}">
 						<template #body="{data}">
-							<img src="assets/flags/flag_placeholder.png" :class="'flag flag-' + data.country.code" width="30" />
+							<img src="../assets/demo/flags/flag_placeholder.png" :class="'flag flag-' + data.country.code" width="30" />
 							<span style="margin-left: .5em; vertical-align: middle" class="image-text">{{data.country.name}}</span>
 						</template>
 					</Column>
@@ -246,7 +246,7 @@
                     <Column field="name" header="Name" style="min-width:200px"></Column>
                     <Column field="country" header="Country" style="min-width:200px">
                         <template #body="slotProps">
-                            <img src="assets/flags/flag_placeholder.png" :class="'flag flag-' + slotProps.data.country.code" width="30" />
+                            <img src="../assets/demo/flags/flag_placeholder.png" :class="'flag flag-' + slotProps.data.country.code" width="30" />
                             <span class="image-text ml-2">{{slotProps.data.country.name}}</span>
                         </template>
                     </Column>
