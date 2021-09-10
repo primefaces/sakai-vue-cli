@@ -18,7 +18,7 @@
 					<template #list="slotProps">
 						<div class="col-12">
 							<div class="product-list-item">
-								<img :src="'assets/layout/images/product/' + slotProps.data.image" :alt="slotProps.data.name"/>
+								<img :src="'assets//images/product/' + slotProps.data.image" :alt="slotProps.data.name"/>
 								<div class="product-list-detail">
 									<div class="product-name">{{slotProps.data.name}}</div>
 									<div class="product-description">{{slotProps.data.description}}</div>
@@ -45,7 +45,7 @@
 									<span :class="'product-badge status-'+slotProps.data.inventoryStatus.toLowerCase()">{{slotProps.data.inventoryStatus}}</span>
 								</div>
 								<div class="product-grid-item-content">
-									<img :src="'assets/layout/images/product/' + slotProps.data.image" :alt="slotProps.data.name"/>
+									<img :src="'assets//images/product/' + slotProps.data.image" :alt="slotProps.data.name"/>
 									<div class="product-name">{{slotProps.data.name}}</div>
 									<div class="product-description">{{slotProps.data.description}}</div>
 									<Rating :modelValue="slotProps.data.rating" :readonly="true" :cancel="false"></Rating>

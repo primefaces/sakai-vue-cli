@@ -36,7 +36,7 @@ npm run serve
 
                 <h4>Structure</h4>
                 <p>Sigma consists of 2 main parts; the application layout and the resources. <i>App.vue</i> inside src folder is the main component containing the template for the base layout
-                    whereas required resources such as SASS structure for the layout are placed inside the <b>src/assets/layout</b> folder.</p>
+                    whereas required resources such as SASS structure for the layout are placed inside the <b>src/assets/</b> folder.</p>
 
                 <h4>Templates</h4>
                 <p>Main layout is the template of the <i>App.vue</i>, it is divided into a couple of child components such as topbar, profile, menu and footer. Here is template of the

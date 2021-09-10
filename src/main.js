@@ -2,8 +2,8 @@ import 'primevue/resources/primevue.min.css';
 import 'primeflex/primeflex.css';
 import 'primeicons/primeicons.css';
 import 'prismjs/themes/prism-coy.css';
-import './assets/layout/layout.scss';
-import './assets/layout/flags/flags.css';
+import './assets/styles/layout.scss';
+import './assets/demo/flags/flags.css';
 
 import { createApp, reactive } from 'vue';
 import router from './router';

@@ -72,7 +72,7 @@
 							Logo
 						</template>
 						<template #body="slotProps">
-							<img :src="'assets/layout/images/product/' + slotProps.data.image" :alt="slotProps.data.image" width="50" />
+							<img :src="'assets//images/product/' + slotProps.data.image" :alt="slotProps.data.image" width="50" />
 						</template>
 					</Column>
 					<Column field="name" header="Name" :sortable="true" style="width:35%"></Column>

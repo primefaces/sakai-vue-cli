@@ -26,7 +26,7 @@
 					<div class="col-6">
 						<Button type="button" label="Image" @click="toggle" class="p-button-success"/>
 						<OverlayPanel ref="op" appendTo="body" :showCloseIcon="true">
-							<img src="assets/layout/images/nature/nature9.jpg" alt="Nature 9" />
+							<img src="assets//images/nature/nature9.jpg" alt="Nature 9" />
 						</OverlayPanel>
 					</div>
 					<div class="col-6">
@@ -36,7 +36,7 @@
 								<Column field="name" header="Name" :sortable="true"></Column>
 								<Column header="Image">
 									<template #body="slotProps">
-										<img :src="'assets/layout/images/product/' + slotProps.data.image" :alt="slotProps.data.image" width="100" class="shadow-2" />
+										<img :src="'assets//images/product/' + slotProps.data.image" :alt="slotProps.data.image" width="100" class="shadow-2" />
 									</template>
 								</Column>
 								<Column field="price" header="Price" :sortable="true">
