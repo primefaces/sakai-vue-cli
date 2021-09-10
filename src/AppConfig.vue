@@ -40,16 +40,28 @@
 				</div>
 			</div>
 
-			<h6>Menu Color</h6>
+			<h6>Color Scheme</h6>
 			<div class="p-formgroup-inline">
 				<div class="field-radiobutton">
-					<RadioButton id="dark" name="layoutColorMode" value="dark" v-model="d_layoutColorMode" @change="changeLayoutColor($event, 'dark')" />
-					<label for="dark">Dark</label>
+					<RadioButton id="dark" name="layoutColorMode" value="saga" v-model="themeScheme" @change="changeThemeScheme('saga')" />
+					<label for="dark">Light</label>
 				</div>
 				<div class="field-radiobutton">
-					<RadioButton id="light" name="layoutColorMode" value="light" v-model="d_layoutColorMode" @change="changeLayoutColor($event, 'light')" />
-					<label for="light">Light</label>
+					<RadioButton id="dim" name="layoutColorMode" value="vela" v-model="themeScheme" @change="changeThemeScheme('vela')" />
+					<label for="dim">Dim</label>
 				</div>
+				<div class="field-radiobutton">
+					<RadioButton id="dark" name="layoutColorMode" value="arya" v-model="themeScheme" @change="changeThemeScheme('arya')" />
+					<label for="dark">Dark</label>
+				</div>
+			</div>
+
+			<h6>Primary Color</h6>
+			<div class="flex">
+				<div style="width:2rem;height:2rem;border-radius:6px" class="bg-blue-500 mr-3 cursor-pointer" @click="changeThemeColor('blue')"></div>
+				<div style="width:2rem;height:2rem;border-radius:6px" class="bg-green-500 mr-3 cursor-pointer" @click="changeThemeColor('green')"></div>
+				<div style="width:2rem;height:2rem;border-radius:6px" class="bg-orange-500 mr-3 cursor-pointer" @click="changeThemeColor('orange')"></div>
+				<div style="width:2rem;height:2rem;border-radius:6px" class="bg-purple-500 cursor-pointer" @click="changeThemeColor('purple')"></div>
 			</div>
 		</div>
 	</div>
@@ -73,7 +85,9 @@
 				d_layoutMode: this.layoutMode,
 				d_layoutColorMode: this.layoutColorMode,
 				scale: 16,
-				scales: [12,13,14,15,16]
+				scales: [12,13,14,15,16],
+				themeScheme: 'saga',
+				themeColor: 'blue'
 			}
 		},
 		watch: {
@@ -149,6 +163,20 @@
 			},
 			applyScale() {
 				document.documentElement.style.fontSize = this.scale + 'px';
+			},
+			changeTheme() {
+				let theme = this.themeScheme + '-' + this.themeColor;
+				let themeElement = document.getElementById('theme-link');
+				themeElement.setAttribute('href', themeElement.getAttribute('href').replace(this.$appState.theme, theme));
+				this.$appState.theme = theme;
+			},
+			changeThemeScheme(scheme) {
+				this.themeScheme = scheme;
+				this.changeTheme();
+			},
+			changeThemeColor(color) {
+				this.themeColor = color;
+				this.changeTheme();
 			}
 		},
 		computed: {

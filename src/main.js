@@ -1,4 +1,3 @@
-import 'primevue/resources/themes/saga-blue/theme.css';
 import 'primevue/resources/primevue.min.css';
 import 'primeflex/primeflex.css';
 import 'primeicons/primeicons.css';
@@ -101,9 +100,9 @@ router.beforeEach(function(to, from, next) {
 
 const app = createApp(App);
 
-app.config.globalProperties.$appState = reactive({ inputStyle: 'outlined' });
+app.config.globalProperties.$appState = reactive({ theme: 'saga-blue' });
 
-app.use(PrimeVue, { ripple: true });
+app.use(PrimeVue, { ripple: true, inputStyle: 'outlined' });
 app.use(ConfirmationService);
 app.use(ToastService);
 app.use(router);
