@@ -47,7 +47,7 @@
                     </Column>
                     <Column header="Agent" filterField="representative" :showFilterMatchModes="false" :filterMenuStyle="{'width':'14rem'}" style="min-width:14rem">
                         <template #body="{data}">
-                            <img :alt="data.representative.name" :src="'assets/images/avatar/' + data.representative.image" width="32" style="vertical-align: middle" />
+                            <img :alt="data.representative.name" :src="'images/avatar/' + data.representative.image" width="32" style="vertical-align: middle" />
                             <span style="margin-left: .5em; vertical-align: middle" class="image-text">{{data.representative.name}}</span>
                         </template>
                         <template #filter="{filterModel}">
@@ -55,7 +55,7 @@
                             <MultiSelect v-model="filterModel.value" :options="representatives" optionLabel="name" placeholder="Any" class="p-column-filter">
                                 <template #option="slotProps">
                                     <div class="p-multiselect-representative-option">
-                                        <img :alt="slotProps.option.name" :src="'assets/images/avatar/' + slotProps.option.image" width="32" style="vertical-align: middle" />
+                                        <img :alt="slotProps.option.name" :src="'images/avatar/' + slotProps.option.image" width="32" style="vertical-align: middle" />
                                         <span style="margin-left: .5em; vertical-align: middle" class="image-text">{{slotProps.option.name}}</span>
                                     </div>
                                 </template>
@@ -143,7 +143,7 @@
                     <Column field="activity" header="Activity" :style="{width:'200px'}"></Column>
                     <Column field="representative.name" header="Representative" :style="{width:'200px'}">
 						<template #body="{data}">
-                            <img :alt="data.representative.name" :src="'assets/images/avatar/' + data.representative.image" width="32" style="vertical-align: middle" />
+                            <img :alt="data.representative.name" :src="'images/avatar/' + data.representative.image" width="32" style="vertical-align: middle" />
                             <span style="margin-left: .5em; vertical-align: middle" class="image-text">{{data.representative.name}}</span>
                         </template>
 					</Column>
@@ -174,7 +174,7 @@
 					</Column>
 					<Column header="Image">
 						<template #body="slotProps">
-							<img :src="'assets/images/product/' + slotProps.data.image" :alt="slotProps.data.image" class="shadow-2" width="100" />
+							<img :src="'images/product/' + slotProps.data.image" :alt="slotProps.data.image" class="shadow-2" width="100" />
 						</template>
 					</Column>
 					<Column field="price" header="Price" :sortable="true">
@@ -258,7 +258,7 @@
                     </Column>
                     <Column field="date" header="Date" style="min-width:200px"></Column>
                     <template #groupheader="slotProps">
-						<img :alt="slotProps.data.representative.name" :src="'assets/images/avatar/' + slotProps.data.representative.image" width="32" style="vertical-align: middle" />
+						<img :alt="slotProps.data.representative.name" :src="'images/avatar/' + slotProps.data.representative.image" width="32" style="vertical-align: middle" />
                         <span class="image-text">{{slotProps.data.representative.name}}</span>
                     </template>
                     <template #groupfooter="slotProps">
