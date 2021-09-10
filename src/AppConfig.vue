@@ -43,8 +43,8 @@
 			<h6>Color Scheme</h6>
 			<div class="p-formgroup-inline">
 				<div class="field-radiobutton">
-					<RadioButton id="dark" name="layoutColorMode" value="saga" v-model="themeScheme" @change="changeThemeScheme('saga')" />
-					<label for="dark">Light</label>
+					<RadioButton id="light" name="layoutColorMode" value="saga" v-model="themeScheme" @change="changeThemeScheme('saga')" />
+					<label for="light">Light</label>
 				</div>
 				<div class="field-radiobutton">
 					<RadioButton id="dim" name="layoutColorMode" value="vela" v-model="themeScheme" @change="changeThemeScheme('vela')" />

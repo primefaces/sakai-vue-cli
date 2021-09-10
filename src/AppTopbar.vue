@@ -3,7 +3,8 @@
 		<div class="layout-topbar-left">
 			<div class="layout-topbar-logo-container">
 				<router-link to="/" class="layout-topbar-logo">
-					<img alt="Logo" src="assets/layout/images/logo.svg" />
+					<img alt="Logo" :src="darkTheme ? 'assets/layout/images/logo-dark.svg' : 'assets/layout/images/logo-white.svg'" />
+					<span>SAKAI</span>
 				</router-link>
 				<button class="p-link layout-topbar-button" @click="onMenuToggle">
 					<span class="pi pi-bars layout-topbar-icon"></span>
@@ -33,6 +34,11 @@ export default {
         onMenuToggle(event) {
             this.$emit('menu-toggle', event);
         }
-    }
+    },
+	computed: {
+		darkTheme() {
+			return this.$appState.theme.startsWith('saga');
+		}
+	}
 }
 </script>

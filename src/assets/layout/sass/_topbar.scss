@@ -22,6 +22,19 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+
+            img {
+                height: 2.5rem;
+                margin-right: .5rem;
+            }
+
+            .layout-topbar-logo {
+                display: flex;
+                align-items: center;
+                color: var(--surface-900);
+                font-size: 1.5rem;
+                font-weight: 500;
+            }
         }
 
         .layout-menu-button {
