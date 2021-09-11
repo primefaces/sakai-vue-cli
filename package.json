@@ -1,9 +1,9 @@
 {
-	"name": "sigma-vue",
-	"version": "4.0.0-SNAPSHOT",
+	"name": "sakai-vue",
+	"version": "3.0.0-SNAPSHOT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/primefaces/sigma-vue.git"
+		"url": "https://github.com/primefaces/sakai-vue.git"
 	},
 	"license": "MIT",
 	"scripts": {
