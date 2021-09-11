@@ -69,7 +69,7 @@
 				<DataTable :value="products" :rows="5" :paginator="true" responsiveLayout="scroll">
 					<Column style="width:15%">
 						<template #header>
-							Logo
+							Image
 						</template>
 						<template #body="slotProps">
 							<img :src="'images/product/' + slotProps.data.image" :alt="slotProps.data.image" width="50" />
@@ -225,17 +225,22 @@
                             <span class="text-700">has posted a new questions about your product.</span>
                         </span>
                     </li>
-                    <li class="flex align-items-center py-2">
-                        <div class="w-3rem h-3rem flex align-items-center justify-content-center bg-green-100 border-circle mr-3 flex-shrink-0">
-                            <i class="pi pi-arrow-up text-xl text-green-500"></i>
-                        </div>
-                        <span class="text-900 line-height-3">Claire Smith
-                            <span class="text-700">has upvoted your store along with a comment.</span>
-                        </span>
-                    </li>
                 </ul>
             </div>
+			<div class="px-4 py-5 shadow-2 flex flex-column md:flex-row align-items-center justify-content-between mb-3" 
+				style="border-radius: 1rem; background: linear-gradient(0deg, rgba(0, 123, 255, 0.5), rgba(0, 123, 255, 0.5)), linear-gradient(92.54deg, #1C80CF 47.88%, #FFFFFF 100.01%)">
+                <div class="pr-6">
+                    <div class="text-blue-100 font-medium text-xl mb-4">TAKE THE NEXT STEP</div>
+                    <div class="text-white font-medium text-5xl">Try PrimeBlocks for Vue</div>
+                </div>
+                <div class="mt-4 mr-auto md:mt-0 md:mr-0">
+                    <a href="https://www.primefaces.org/primeblocks-vue" class="p-button font-bold px-5 py-3 p-button-warning p-button-rounded p-button-raised white-space-nowrap">
+						Get Started
+					</a>
+                </div>
+            </div>
 		</div>
+		
 	</div>
 </template>
 
