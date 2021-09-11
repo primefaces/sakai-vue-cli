@@ -61,6 +61,10 @@
             &:hover {
                 background-color: var(--surface-hover);
             }
+
+            &.router-link-exact-active {
+                font-weight: 700;
+            }
         }
 
         &.active-menuitem {
