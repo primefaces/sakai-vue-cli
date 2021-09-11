@@ -37,7 +37,6 @@
         align-items: center;
         position: relative;
         color: var(--text-color-secondary);
-        margin-left: 1rem;
         border-radius: 50%;
         width: 3rem;
         height: 3rem;
@@ -80,10 +79,14 @@
         padding: 0;
         list-style: none;
         display: flex;
+        
+        .layout-topbar-button {
+            margin-left: 1rem;
+        }
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
     .layout-topbar {
         justify-content: space-between;
 

@@ -72,7 +72,7 @@
 							Image
 						</template>
 						<template #body="slotProps">
-							<img :src="'images/product/' + slotProps.data.image" :alt="slotProps.data.image" width="50" />
+							<img :src="'images/product/' + slotProps.data.image" :alt="slotProps.data.image" width="50" class="shadow-2" />
 						</template>
 					</Column>
 					<Column field="name" header="Name" :sortable="true" style="width:35%"></Column>
@@ -230,7 +230,7 @@
 			<div class="px-4 py-5 shadow-2 flex flex-column md:flex-row align-items-center justify-content-between mb-3" 
 				style="border-radius: 1rem; background: linear-gradient(0deg, rgba(0, 123, 255, 0.5), rgba(0, 123, 255, 0.5)), linear-gradient(92.54deg, #1C80CF 47.88%, #FFFFFF 100.01%)">
                 <div class="pr-6">
-                    <div class="text-blue-100 font-medium text-xl mb-4">TAKE THE NEXT STEP</div>
+                    <div class="text-blue-100 font-medium text-xl mt-2 mb-3">TAKE THE NEXT STEP</div>
                     <div class="text-white font-medium text-5xl">Try PrimeBlocks for Vue</div>
                 </div>
                 <div class="mt-4 mr-auto md:mt-0 md:mr-0">
