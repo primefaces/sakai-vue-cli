@@ -70,7 +70,9 @@
         &.active-menuitem {
             > a {
                 .menuitem-toggle-icon {
-                    @include icon-override('\e933');
+                    &:before {
+                        content: '\e933';
+                    }
                 }
             }
         }
