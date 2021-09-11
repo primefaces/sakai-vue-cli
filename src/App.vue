@@ -188,7 +188,7 @@ export default {
                 element.className = element.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
         },
         isDesktop() {
-            return window.innerWidth > 1024;
+            return window.innerWidth >= 992;
         },
         isSidebarVisible() {
             if (this.isDesktop()) {
@@ -199,7 +199,7 @@ export default {
             }
 
             return true;
-        },
+        }
     },
     computed: {
         containerClass() {
