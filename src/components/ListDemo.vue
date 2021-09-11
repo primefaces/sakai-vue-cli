@@ -36,22 +36,22 @@
 
 					<template #grid="slotProps">
 						<div class="col-12 md:col-4">
-							<div class="product-grid-item card">
-								<div class="product-grid-item-top">
-									<div>
-										<i class="pi pi-tag product-category-icon"></i>
-										<span class="product-category">{{slotProps.data.category}}</span>
+							<div class="card m-3 border-1 surface-border">
+								<div class="flex align-items-center justify-content-between">
+									<div class="flex align-items-center">
+										<i class="pi pi-tag mr-2"></i>
+										<span class="font-semibold">{{slotProps.data.category}}</span>
 									</div>
 									<span :class="'product-badge status-'+slotProps.data.inventoryStatus.toLowerCase()">{{slotProps.data.inventoryStatus}}</span>
 								</div>
-								<div class="product-grid-item-content">
-									<img :src="'images/product/' + slotProps.data.image" :alt="slotProps.data.name"/>
-									<div class="product-name">{{slotProps.data.name}}</div>
-									<div class="product-description">{{slotProps.data.description}}</div>
+								<div class="text-center">
+									<img :src="'images/product/' + slotProps.data.image" :alt="slotProps.data.name" class="w-9 shadow-2 my-3 mx-0"/>
+									<div class="text-2xl font-bold">{{slotProps.data.name}}</div>
+									<div class="mb-3">{{slotProps.data.description}}</div>
 									<Rating :modelValue="slotProps.data.rating" :readonly="true" :cancel="false"></Rating>
 								</div>
-								<div class="product-grid-item-bottom">
-									<span class="product-price">${{slotProps.data.price}}</span>
+								<div class="flex align-items-center justify-content-between">
+									<span class="text-2xl font-semibold">${{slotProps.data.price}}</span>
 									<Button icon="pi pi-shopping-cart" :disabled="slotProps.data.inventoryStatus === 'OUTOFSTOCK'"></Button>
 								</div>
 							</div>
@@ -235,33 +235,6 @@
 	&.status-lowstock {
 		background: #FEEDAF;
 		color: #8A5340;
-	}
-}
-
-::v-deep(.product-grid-item) {
-	margin: .5em;
-	border: 1px solid #dee2e6;
-
-	.product-grid-item-top,
-	.product-grid-item-bottom {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-
-	img {
-		width: 75%;
-		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-		margin: 2rem 0;
-	}
-
-	.product-grid-item-content {
-		text-align: center;
-	}
-
-	.product-price {
-		font-size: 1.5rem;
-		font-weight: 600;
 	}
 }
 
