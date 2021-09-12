@@ -1,4 +1,8 @@
- #  Sakai Admin Template for Vue            
+#  Sakai Admin Template for Vue  
+ 
+### Live Preview
+ 
+Visit [Sakai Vue](https://www.primefaces.org/sakai-vue) website for a live preview. 
  
 ### Getting Started
 Sakai is an application template for Vue based on the [Vue CLI](https://cli.vuejs.org/) that provides out-of-the-box standard
