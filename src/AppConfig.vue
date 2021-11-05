@@ -6,14 +6,14 @@
 		<Button class="p-button-danger layout-config-close p-button-rounded p-button-text" icon="pi pi-times" @click="hideConfigurator"></Button>
 
 		<div class="layout-config-content">
-			<h6 class="mt-0">Component Scale</h6>
+			<h5 class="mt-0">Component Scale</h5>
 			<div class="config-scale">
 				<Button icon="pi pi-minus" @click="decrementScale()" class="p-button-text" :disabled="scale === scales[0]"/>
 				<i class="pi pi-circle-on" v-for="s of scales" :class="{'scale-active': s === scale}" :key="s"/>
 				<Button icon="pi pi-plus"  @click="incrementScale()" class="p-button-text" :disabled="scale === scales[scales.length - 1]" />
 			</div>
 
-			<h6>Input Style</h6>
+			<h5>Input Style</h5>
 			<div class="p-formgroup-inline">
 				<div class="field-radiobutton">
 					<RadioButton id="input_outlined" name="inputstyle" value="outlined" :modelValue="$primevue.config.inputStyle" @change="changeInputStyle('outlined')" />
@@ -25,10 +25,10 @@
 				</div>
 			</div>
 
-			<h6>Ripple Effect</h6>
+			<h5>Ripple Effect</h5>
 			<InputSwitch :modelValue="rippleActive" @update:modelValue="changeRipple" />
 
-			<h6>Menu Type</h6>
+			<h5>Menu Type</h5>
 			<div class="p-formgroup-inline">
 				<div class="field-radiobutton">
 					<RadioButton id="static" name="layoutMode" value="static" v-model="d_layoutMode" @change="changeLayout($event, 'static')" />
@@ -40,7 +40,8 @@
 				</div>
 			</div>
 
-			<h5>Bootstrap</h5>
+			<h5>Themes</h5>
+			<h6>Bootstrap</h6>
 			<div class="grid free-themes">
 				<div class="col-3 text-center">
 					<button class="p-link" type="button" @click="changeTheme($event, 'bootstrap4-light-blue')">
@@ -68,7 +69,7 @@
 				</div>
 			</div>
 
-			<h5>Material Design</h5>
+			<h6>Material Design</h6>
 			<div class="grid free-themes">
 				<div class="col-3 text-center">
 					<button class="p-link" type="button" @click="changeTheme($event, 'md-light-indigo')">
@@ -96,7 +97,7 @@
 				</div>
 			</div>
 
-			<h5>Material Design Compact</h5>
+			<h6>Material Design Compact</h6>
 			<div class="grid free-themes">
 				<div class="col-3 text-center">
 					<button class="p-link" type="button" @click="changeTheme($event, 'mdc-light-indigo')">
@@ -124,7 +125,7 @@
 				</div>
 			</div>
 
-			<h5>Tailwind</h5>
+			<h6>Tailwind</h6>
 			<div class="grid free-themes">
 				<div class="col-3 text-center">
 					<button class="p-link" type="button" @click="changeTheme($event, 'tailwind-light')">
@@ -134,7 +135,7 @@
 				</div>
 			</div>
 
-			<h5>Fluent UI</h5>
+			<h6>Fluent UI</h6>
 			<div class="grid free-themes">
 				<div class="col-3 text-center">
 					<button class="p-link" type="button" @click="changeTheme($event, 'fluent-light')">
@@ -144,7 +145,7 @@
 				</div>
 			</div>
 
-			<h5>PrimeOne Design</h5>
+			<h6>PrimeOne Design</h6>
 			<div class="grid free-themes">
 				<div class="col-3 text-center">
 					<button class="p-link" type="button" @click="changeTheme($event, 'saga-blue')">
