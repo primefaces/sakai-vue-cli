@@ -101,7 +101,7 @@ router.beforeEach(function(to, from, next) {
 
 const app = createApp(App);
 
-app.config.globalProperties.$appState = reactive({ theme: 'saga-blue' });
+app.config.globalProperties.$appState = reactive({ theme: 'saga-blue', darkTheme: false });
 
 app.use(PrimeVue, { ripple: true, inputStyle: 'outlined' });
 app.use(ConfirmationService);

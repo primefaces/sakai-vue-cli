@@ -1,7 +1,7 @@
 <template>
 	<div class="layout-topbar">
 		<router-link to="/" class="layout-topbar-logo">
-			<img alt="Logo" :src="darkTheme ? 'images/logo-dark.svg' : 'images/logo-white.svg'" />
+			<img alt="Logo" :src="topbarImage()" />
 			<span>SAKAI</span>
 		</router-link>
 		<button class="p-link layout-menu-button layout-topbar-button" @click="onMenuToggle">
@@ -44,11 +44,14 @@ export default {
         },
 		onTopbarMenuToggle(event) {
             this.$emit('topbar-menu-toggle', event);
-        }
+        },
+		topbarImage() {
+			return this.$appState.darkTheme ? 'images/logo-white.svg' : 'images/logo-dark.svg';
+		}
     },
 	computed: {
 		darkTheme() {
-			return this.$appState.theme.startsWith('saga');
+			return this.$appState.darkTheme;
 		}
 	}
 }
