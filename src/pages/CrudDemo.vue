@@ -199,6 +199,7 @@ export default {
 	productService: null,
 	created() {
 		this.productService = new ProductService();
+		this.initFilters();
 	},
 	mounted() {
 		this.productService.getProducts().then(data => this.products = data);
@@ -281,7 +282,12 @@ export default {
 			this.deleteProductsDialog = false;
 			this.selectedProducts = null;
 			this.$toast.add({severity:'success', summary: 'Successful', detail: 'Products Deleted', life: 3000});
-		}
+		},
+    	initFilters() {
+			this.filters = {
+				global: { value: null, matchMode: "contains" },
+			};
+    	}
 	}
 }
 </script>
