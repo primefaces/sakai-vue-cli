@@ -57,8 +57,8 @@ npm run serve
 <pre v-code.script>
 <code>
 {
-    "primevue": "~3.7.1",
-    "primeicons": "~4.1.0",
+    "primevue": "~3.9.1",
+    "primeicons": "~5.0.0",
     "primeflex": "~3.0.0",
 }
 
