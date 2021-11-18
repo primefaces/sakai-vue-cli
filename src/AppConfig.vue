@@ -131,7 +131,51 @@
 				</div>
 			</div>
 
-			<h6>PrimeOne Design</h6>
+			<h6>PrimeOne Design 2022 -<Tag class="ml-2" value="NEW" rounded severity="success"></Tag></h6>
+			<div class="grid free-themes">
+				<div class="col-3 text-center">
+					<button class="p-link" type="button" @click="changeTheme($event, 'lara-light-indigo')">
+						<img src="images/themes/lara-light-indigo.png" alt="Lara Light Indigo" />
+					</button>
+				</div>
+				<div class="col-3 text-center">
+					<button class="p-link" type="button" @click="changeTheme($event, 'lara-light-blue')">
+						<img src="images/themes/lara-light-blue.png" alt="Lara Light Blue" />
+					</button>
+				</div>
+				<div class="col-3 text-center">
+					<button class="p-link" type="button" @click="changeTheme($event, 'lara-light-purple')">
+						<img src="images/themes/lara-light-purple.png" alt="Lara Light Purple" />
+					</button>
+				</div>
+				<div class="col-3 text-center">
+					<button class="p-link" type="button" @click="changeTheme($event, 'lara-light-teal')">
+						<img src="images/themes/lara-light-teal.png" alt="Lara Light Teal" />
+					</button>
+				</div>
+				<div class="col-3 text-center">
+					<button class="p-link" type="button" @click="changeTheme($event, 'lara-dark-indigo', true)">
+						<img src="images/themes/lara-dark-indigo.png" alt="Lara Dark Indigo" />
+					</button>
+				</div>
+				<div class="col-3 text-center">
+					<button class="p-link" type="button" @click="changeTheme($event, 'lara-dark-blue', true)">
+						<img src="images/themes/lara-dark-blue.png" alt="Lara Dark Blue" />
+					</button>
+				</div>
+				<div class="col-3 text-center">
+					<button class="p-link" type="button" @click="changeTheme($event, 'lara-dark-purple', true)">
+						<img src="images/themes/lara-dark-purple.png" alt="Lara Dark Purple" />
+					</button>
+				</div>
+				<div class="col-3 text-center">
+					<button class="p-link" type="button" @click="changeTheme($event, 'lara-dark-teal', true)">
+						<img src="images/themes/lara-dark-teal.png" alt="Lara Dark Teal" />
+					</button>
+				</div>
+			</div>
+
+			<h6>PrimeOne Design 2021</h6>
 			<div class="grid free-themes">
 				<div class="col-3 text-center">
 					<button class="p-link" type="button" @click="changeTheme($event, 'saga-blue')">
