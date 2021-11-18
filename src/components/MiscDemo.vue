@@ -132,15 +132,6 @@
                 <Chip label="Amy Elsner" image="images/avatar/amyelsner.png" class="mr-2 mb-2"></Chip>
                 <Chip label="Asiya Javayant" image="images/avatar/asiyajavayant.png" class="mr-2 mb-2"></Chip>
                 <Chip label="Onyama Limba" image="images/avatar/onyamalimba.png" class="mr-2 mb-2"></Chip>
-                <Chip label="Xuxue Feng" image="images/avatar/xuxuefeng.png" :removable="true" class="mb-2"></Chip>
-            </div>
-
-            <h5>Styling</h5>
-            <div class="flex align-items-center flex-column sm:flex-row">
-                <Chip label="Action" class="mr-2 mb-2 custom-chip"></Chip>
-                <Chip label="Comedy" class="mr-2 mb-2 custom-chip"></Chip>
-                <Chip label="Onyama Limba" image="images/avatar/onyamalimba.png" class="mr-2 mb-2 custom-chip"></Chip>
-                <Chip label="Xuxue Feng" image="images/avatar/xuxuefeng.png" :removable="true" class="mb-2 custom-chip"></Chip>
             </div>
         </div>
 

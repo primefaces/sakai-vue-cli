@@ -254,7 +254,7 @@
 			return {
 				active: false,
 				d_layoutMode: this.layoutMode,
-				scale: 16,
+				scale: 14,
 				scales: [12,13,14,15,16]
 			}
 		},
