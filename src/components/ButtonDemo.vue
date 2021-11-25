@@ -58,6 +58,17 @@
 				<SplitButton label="Save" icon="pi pi-check" :model="items" class="p-button-warning mr-2 mb-2"></SplitButton>
 				<SplitButton label="Save" icon="pi pi-check" :model="items" class="p-button-danger mr-2 mb-2"></SplitButton>
 			</div>
+
+			<div class="card">
+				<h5>Templating</h5>
+                <Button type="button" class="mr-2 mb-2 px-3">
+                    <img alt="logo" src="images/primevue-logo.svg" style="width: 1.5rem"/>
+                </Button>
+                <Button type="button" class="p-button-outlined p-button-success mr-2 mb-2">
+                    <img alt="logo" src="images/primevue-logo.svg" style="width: 1.5rem" />
+                    <span class="ml-2 text-bold">PrimeVue</span>
+                </Button>
+			</div>
 		</div>
 
 		<div class="col-12 md:col-6">
@@ -120,6 +131,14 @@
 				<Button icon="pi pi-heart" class="p-button-rounded p-button-help p-button-outlined mr-2 mb-2" />
 				<Button icon="pi pi-times" class="p-button-rounded p-button-danger p-button-outlined mr-2 mb-2" />
 			</div>
+
+			<div class="card">
+				<h5>Loading</h5>
+                <Button type="button" class="mr-2 mb-2" label="Search" icon="pi pi-search" :loading="loading[0]" @click="load(0)" />
+                <Button type="button" class="mr-2 mb-2" label="Search" icon="pi pi-search" iconPos="right" :loading="loading[1]" @click="load(1)"  />
+                <Button type="button" class="mr-2 mb-2" icon="pi pi-search" :loading="loading[2]" @click="load(2)" />
+                <Button type="button" class="mr-2 mb-2" label="Search" :loading="loading[3]" @click="load(3)" />
+			</div>
 		</div>
 	</div>
 </template>
@@ -144,7 +163,14 @@
 						label: 'Home',
 						icon: 'pi pi-home'
 					},
-				]
+				],
+				loading: [false, false, false]
+			}
+		},
+		methods: {
+			load(index) {
+				this.loading[index] = true;
+				setTimeout(() => this.loading[index] = false, 1000);
 			}
 		}
 	}
