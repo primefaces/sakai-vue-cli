@@ -4,7 +4,7 @@
 			<div class="card">
 				<h5>Toolbar</h5>
 				<Toolbar>
-					<template v-slot:left>
+					<template v-slot:start>
 						<Button label="New" icon="pi pi-plus" class="mr-2" />
 						<Button label="Open" icon="pi pi-folder-open" class="p-button-secondary mr-2" />
 
@@ -14,7 +14,7 @@
 						<Button icon="pi pi-trash" class="p-button-warning mr-2" />
 						<Button icon="pi pi-print" class="p-button-danger" />
 					</template>
-					<template v-slot:right>
+					<template v-slot:end>
 						<SplitButton label="Options" :model="toolbarItems"></SplitButton>
 					</template>
 				</Toolbar>
