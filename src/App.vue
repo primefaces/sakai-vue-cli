@@ -40,7 +40,7 @@ export default {
                     }]
                 },
 				{
-					label: 'UI Kit', icon: 'pi pi-fw pi-sitemap',
+					label: 'UI Components', icon: 'pi pi-fw pi-sitemap',
 					items: [
 						{label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/formlayout'},
 						{label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/input'},
@@ -59,12 +59,19 @@ export default {
 						{label: 'Misc', icon: 'pi pi-fw pi-circle-off', to: '/misc'},
 					]
 				},
+                {
+                    label: 'UI Blocks',
+                    items: [
+                        {label: 'Free Blocks', icon: 'pi pi-fw pi-eye', to: '/blocks'},
+                        {label: 'All Blocks', icon: 'pi pi-fw pi-globe', url: 'https://github.com/primeblocks-vue'}
+                    ]
+                },
 				{
 					label: 'Pages', icon: 'pi pi-fw pi-clone',
 					items: [
 						{label: 'Crud', icon: 'pi pi-fw pi-user-edit', to: '/crud'},
 						{label: 'Timeline', icon: 'pi pi-fw pi-calendar', to: '/timeline'},
-						{label: 'Empty', icon: 'pi pi-fw pi-circle-off', to: '/empty'}
+						{label: 'Empty', icon: 'pi pi-fw pi-circle-off', to: '/empty'},
 					]
 				},
                 {

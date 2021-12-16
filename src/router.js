@@ -119,6 +119,11 @@ const routes = [
         name: 'documentation',
         component: () => import('./components/Documentation.vue'),
     },
+    {
+        path: '/blocks',
+        name: 'blocks',
+        component: () => import('./components/BlocksDemo.vue')
+    }
 ];
 
 const router = createRouter({
