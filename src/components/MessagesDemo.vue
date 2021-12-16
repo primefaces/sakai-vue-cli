@@ -16,12 +16,12 @@
 			<div class="card">
 				<h5>Messages</h5>
 
-				<Button label="Success" @click="addSuccessMessage()" class="p-button-success mr-2"/>
-				<Button label="Info" @click="addInfoMessage()" class="p-button-info mr-2"/>
-				<Button label="Warn" @click="addWarnMessage()" class="p-button-warning mr-2"/>
-				<Button label="Error" @click="addErrorMessage()" class="p-button-danger mr-2"/>
+				<Button label="Success" @click="addMessage('success')" class="p-button-success mr-2"/>
+				<Button label="Info" @click="addMessage('info')" class="p-button-info mr-2"/>
+				<Button label="Warn" @click="addMessage('warn')" class="p-button-warning mr-2"/>
+				<Button label="Error" @click="addMessage('error')" class="p-button-danger mr-2"/>
 
-				<transition-group name="p-messages" tag="div">
+				<transition-group name="p-message" tag="div">
 					<Message v-for="msg of message" :severity="msg.severity" :key="msg.content">{{msg.content}}</Message>
 				</transition-group>
 			</div>
@@ -70,17 +70,19 @@
 			}
 		},
 		methods: {
-			addSuccessMessage() {
-				this.message = [{severity: 'success', content: 'Message Detail'}]
-			},
-			addInfoMessage() {
-				this.message = [{severity: 'info', content: 'Message Detail'}]
-			},
-			addWarnMessage() {
-				this.message = [{severity: 'warn', content: 'Message Detail'}]
-			},
-			addErrorMessage() {
-				this.message = [{severity: 'error', content: 'Message Detail'}]
+			addMessage(type) {
+				if(type === 'success') {
+					this.message = [{severity: 'success', detail: 'Success Message', content: 'Message sent', id: this.count++}]
+				}
+				else if(type === 'info') {
+					this.message = [{severity: 'info', detail: 'Info Message', content: 'PrimeVue rocks', id: this.count++}]
+				}
+				else if(type === 'warn') {
+					this.message = [{severity: 'warn', detail: 'Warn Message', content: 'There are unsaved changes', id: this.count++}]
+				}
+				else if(type === 'error') {
+					this.message = [{severity: 'error', detail: 'Error Message', content: 'Validation failed', id: this.count++}]
+				}
 			},
 			showSuccess() {
 				this.$toast.add({severity:'success', summary: 'Success Message', detail:'Message Detail', life: 3000});

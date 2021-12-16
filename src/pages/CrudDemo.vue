@@ -4,14 +4,14 @@
 			<div class="card">
 				<Toast/>
 				<Toolbar class="mb-4">
-					<template v-slot:left>
+					<template v-slot:start>
 						<div class="my-2">
 							<Button label="New" icon="pi pi-plus" class="p-button-success mr-2" @click="openNew" />
 							<Button label="Delete" icon="pi pi-trash" class="p-button-danger" @click="confirmDeleteSelected" :disabled="!selectedProducts || !selectedProducts.length" />
 						</div>
 					</template>
 
-					<template v-slot:right>
+					<template v-slot:end>
 						<FileUpload mode="basic" accept="image/*" :maxFileSize="1000000" label="Import" chooseLabel="Import" class="mr-2 inline-block" />
 						<Button label="Export" icon="pi pi-upload" class="p-button-help" @click="exportCSV($event)"  />
 					</template>
@@ -25,7 +25,7 @@
 							<h5 class="m-0">Manage Products</h5>
 							<span class="block mt-2 md:mt-0 p-input-icon-left">
                                 <i class="pi pi-search" />
-                                <InputText v-model="filters['global']" placeholder="Search..." />
+                                <InputText v-model="filters['global'].value" placeholder="Search..." />
                             </span>
 						</div>
 					</template>
@@ -176,6 +176,7 @@
 </template>
 
 <script>
+import {FilterMatchMode} from 'primevue/api';
 import ProductService from '../service/ProductService';
 
 export default {
@@ -199,6 +200,7 @@ export default {
 	productService: null,
 	created() {
 		this.productService = new ProductService();
+		this.initFilters();
 	},
 	mounted() {
 		this.productService.getProducts().then(data => this.products = data);
@@ -281,7 +283,12 @@ export default {
 			this.deleteProductsDialog = false;
 			this.selectedProducts = null;
 			this.$toast.add({severity:'success', summary: 'Successful', detail: 'Products Deleted', life: 3000});
-		}
+		},
+		initFilters() {
+            this.filters = {
+                'global': {value: null, matchMode: FilterMatchMode.CONTAINS},
+            }
+        }
 	}
 }
 </script>

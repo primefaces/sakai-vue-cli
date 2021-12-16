@@ -158,6 +158,9 @@
 						</div>
 					</template>
 				</MultiSelect>
+
+				<h5>TreeSelect</h5>
+				<TreeSelect v-model="selectedNode" :options="treeSelectNodes" placeholder="Select Item"></TreeSelect>
 			</div>
 
 			<div class="card">
@@ -217,6 +220,7 @@
 </template>
 <script>
 	import CountryService from '../service/CountryService';
+	import NodeService from '../service/NodeService';
 	export default {
 		data() {
 			return {
@@ -276,15 +280,20 @@
 				],
 				selectButtonValue2: null,
 				inputGroupValue: false,
-				knobValue: 20
+				knobValue: 20,
+				treeSelectNodes: null,
+				selectedNode: null,
 			}
 		},
 		countryService: null,
+		nodeService: null,
 		created() {
 			this.countryService = new CountryService();
+			this.nodeService = new NodeService();
 		},
 		mounted() {
 			this.countryService.getCountries().then(data => this.autoValue = data);
+			this.nodeService.getTreeNodes().then(data => this.treeSelectNodes = data);
 		},
 		methods: {
 			searchCountry(event) {
