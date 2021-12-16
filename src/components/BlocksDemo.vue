@@ -340,7 +340,7 @@
 
                 <div class="flex align-items-center justify-content-between mb-6">
                     <div class="flex align-items-center">
-                        <Checkbox id="rememberme1" :binary="true" v-model="checked1" class="mr-2"></Checkbox>
+                        <Checkbox id="rememberme1" :binary="true" v-model="checked" class="mr-2"></Checkbox>
                         <label for="rememberme1">Remember me</label>
                     </div>
                     <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">Forgot password?</a>
@@ -416,7 +416,6 @@ export default {
     name: 'Free',
     data() {
         return {
-            checked1: null,
             block1: `
 <div class="grid grid-nogutter surface-section text-800">
     <div class="col-12 md:col-6 p-6 text-center md:text-left flex align-items-center ">
@@ -743,7 +742,7 @@ export default {
 
         <div class="flex align-items-center justify-content-between mb-6">
             <div class="flex align-items-center">
-                <Checkbox id="rememberme1" :binary="true" v-model="checked1" class="mr-2"></Checkbox>
+                <Checkbox id="rememberme1" :binary="true" v-model="checked" class="mr-2"></Checkbox>
                 <label for="rememberme1">Remember me</label>
             </div>
             <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">Forgot password?</a>
