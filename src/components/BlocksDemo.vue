@@ -416,6 +416,7 @@ export default {
     name: 'Free',
     data() {
         return {
+            checked1: null,
             block1: `
 <div class="grid grid-nogutter surface-section text-800">
     <div class="col-12 md:col-6 p-6 text-center md:text-left flex align-items-center ">
