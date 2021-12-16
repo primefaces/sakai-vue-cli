@@ -1,8 +1,6 @@
-import axios from 'axios'
-
 export default class CountryService {
 
     getCountries() {
-        return axios.get('data/countries.json').then(res => res.data.data);
+        return fetch('data/countries.json').then(res => res.json()).then(d => d.data);
     }
 }

@@ -1,6 +1,6 @@
 {
 	"name": "sakai-vue",
-	"version": "3.2.0",
+	"version": "3.3.0-SNAPSHOT",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/primefaces/sakai-vue.git"
@@ -21,16 +21,15 @@
 		"babel-eslint": "^10.1.0",
 		"eslint": "^6.7.2",
 		"eslint-plugin-vue": "^7.0.0",
-		"node-sass": "^4.12.0",
+		"sass": "^1.45.0",
 		"sass-loader": "^8.0.2"
 	},
 	"dependencies": {
-		"axios": "0.19.0",
 		"chart.js": "3.3.2",
 		"core-js": "3.6.5",
-		"primeflex": "3.0.0",
-		"primeicons": "5.0.0",
-		"primevue": "3.9.1",
+		"primeflex": "^3.1.2",
+		"primeicons": "^5.0.0",
+		"primevue": "^3.10.0",
 		"prismjs": "1.9.0",
 		"vue": "3.2.9",
 		"vue-router": "^4.0.0-0"
