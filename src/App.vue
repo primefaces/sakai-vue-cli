@@ -63,7 +63,7 @@ export default {
                     label: 'UI Blocks',
                     items: [
                         {label: 'Free Blocks', icon: 'pi pi-fw pi-eye', to: '/blocks'},
-                        {label: 'All Blocks', icon: 'pi pi-fw pi-globe', url: 'https://github.com/primeblocks-vue'}
+                        {label: 'All Blocks', icon: 'pi pi-fw pi-globe', url: 'https://www.primefaces.org/primeblocks-vue'}
                     ]
                 },
 				{
