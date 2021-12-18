@@ -2,12 +2,12 @@
     <div class="grid">
         <div class="col-12">
             <div class="card docs">
-                <h4>Current Version</h4>
+                <h3>Current Version</h3>
                 <p>Vue 3 and PrimeVue 3</p>
 
                 <h5>Getting Started</h5>
-                <p>Sakai is an application template for Vue based on the <a href="https://cli.vuejs.org/">Vue CLI</a> that provides out-of-the-box standard
-                tooling for Vue projects. To get started, clone the <a href="https://github.com/primefaces/sakai-vue">repository</a> from GitHub and install the dependencies with npm or yarn.</p>
+                <p>Sakai is an application template for Vue based on the <a href="https://cli.vuejs.org/" class="font-medium">Vue CLI</a> that provides out-of-the-box standard
+                tooling for Vue projects. To get started, clone the <a href="https://github.com/primefaces/sakai-vue" class="font-medium">repository</a> from GitHub and install the dependencies with npm or yarn.</p>
 <pre v-code.script><code>
 npm install
 
@@ -91,62 +91,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-/* Code Highlight */
-::v-deep(pre[class*="language-"]) {
-    &:before, &:after {
-        display: none !important;
-    } 
-
-    code {
-        border-left: 6px solid var(--surface-border) !important;
-        box-shadow: none !important;
-        background: var(--surface-ground) !important;
-        margin: 1em 0;
-        color: var(--text-color);
-        font-size: 14px;
-    }
-
-    .token {
-        &.tag,
-        &.keyword {
-            color: #2196F3 !important;
-        }
-
-        &.attr-name,
-        &.attr-string {
-            color: #2196F3 !important;
-        }
-
-        &.attr-value {
-            color: #4CAF50 !important;
-        }
-
-        &.punctuation {
-            color: var(--text-color);
-        }
-
-        &.operator,
-        &.string {
-            background: transparent;
-        }
-    }
-}
-
-i:not([class~="pi"]) {
-    background-color: transparent;
-    color: #2196f3;
-    font-family: Monaco, courier, monospace;
-    font-style: normal;
-    font-size: 12px;
-    font-weight: 500;
-    padding: 0 4px;
-    letter-spacing: .5px;
-    font-weight: 600;
-    margin: 0 2px;
-    display: inline-flex;
-}
-
-a {
-    font-weight: 500;
-}
+@import '../assets/demo/documentation.scss';
 </style>

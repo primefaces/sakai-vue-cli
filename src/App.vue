@@ -66,6 +66,12 @@ export default {
                         {label: 'All Blocks', icon: 'pi pi-fw pi-globe', url: 'https://www.primefaces.org/primeblocks-vue'}
                     ]
                 },
+                {
+                    label: 'Icons',
+                    items: [
+                        {label: 'PrimeIcons', icon: 'pi pi-fw pi-prime', to: '/icons'}
+                    ]
+                },
 				{
 					label: 'Pages', icon: 'pi pi-fw pi-clone',
 					items: [
