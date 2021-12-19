@@ -137,6 +137,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '../assets/demo/documentation.scss';
+
 .icons-list {
     i {
         color: var(--text-color-secondary);

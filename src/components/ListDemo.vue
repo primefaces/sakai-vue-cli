@@ -14,20 +14,23 @@
 							</div>
 						</div>
 					</template>
-
 					<template #list="slotProps">
 						<div class="col-12">
-							<div class="product-list-item">
-								<img :src="'images/product/' + slotProps.data.image" :alt="slotProps.data.name"/>
-								<div class="product-list-detail">
-									<div class="product-name">{{slotProps.data.name}}</div>
-									<div class="product-description">{{slotProps.data.description}}</div>
-									<Rating :modelValue="slotProps.data.rating" :readonly="true" :cancel="false"></Rating>
-									<i class="pi pi-tag product-category-icon"></i><span class="product-category">{{slotProps.data.category}}</span>
+							<div class="flex flex-column md:flex-row align-items-center p-3 w-full">
+								<img :src="'images/product/' + slotProps.data.image" :alt="slotProps.data.name" class="my-4 md:my-0 w-9 md:w-10rem shadow-2 mr-5" />
+								<div class="flex-1 text-center md:text-left">
+									<div class="font-bold text-2xl">{{slotProps.data.name}}</div>
+									<div class="mb-3">{{slotProps.data.description}}</div>
+									<Rating :modelValue="slotProps.data.rating" :readonly="true" :cancel="false" class="mb-2"></Rating>
+									<div class="flex align-items-center">
+										<i class="pi pi-tag mr-2"></i>
+										<span class="font-semibold">{{slotProps.data.category}}</span>
+									</div>
+
 								</div>
-								<div class="product-list-action">
-									<span class="product-price">${{slotProps.data.price}}</span>
-									<Button icon="pi pi-shopping-cart" label="Add to Cart" :disabled="slotProps.data.inventoryStatus === 'OUTOFSTOCK'"></Button>
+								<div class="flex flex-row md:flex-column justify-content-between w-full md:w-auto align-items-center md:align-items-end mt-5 md:mt-0">
+									<span class="text-2xl font-semibold mb-2 align-self-center md:align-self-end">${{slotProps.data.price}}</span>
+									<Button icon="pi pi-shopping-cart" label="Add to Cart" :disabled="slotProps.data.inventoryStatus === 'OUTOFSTOCK'" class="mb-2"></Button>
 									<span :class="'product-badge status-'+slotProps.data.inventoryStatus.toLowerCase()">{{slotProps.data.inventoryStatus}}</span>
 								</div>
 							</div>
@@ -157,117 +160,5 @@
 </script>
 
 <style scoped lang="scss">
-.product-name {
-	font-size: 1.5rem;
-	font-weight: 700;
-}
-
-.product-description {
-	margin: 0 0 1rem 0;
-}
-
-.product-category-icon {
-	vertical-align: middle;
-	margin-right: .5rem;
-}
-
-.product-category {
-	font-weight: 600;
-	vertical-align: middle;
-}
-
-::v-deep(.product-list-item) {
-	display: flex;
-	align-items: center;
-	padding: 1rem;
-	width: 100%;
-
-	img {
-		width: 150px;
-		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-		margin-right: 2rem;
-	}
-
-	.product-list-detail {
-		flex: 1 1 0;
-	}
-
-	.p-rating {
-		margin: 0 0 .5rem 0;
-	}
-
-	.product-price {
-		font-size: 1.5rem;
-		font-weight: 600;
-		margin-bottom: .5rem;
-		align-self: flex-end;
-	}
-
-	.product-list-action {
-		display: flex;
-		flex-direction: column;
-	}
-
-	.p-button {
-		margin-bottom: .5rem;
-	}
-
-}
-
-.product-badge {
-	border-radius: 2px;
-	padding: .25em .5rem;
-	text-transform: uppercase;
-	font-weight: 700;
-	font-size: 12px;
-	letter-spacing: .3px;
-
-	&.status-instock {
-		background: #C8E6C9;
-		color: #256029;
-	}
-
-	&.status-outofstock {
-		background: #FFCDD2;
-		color: #C63737;
-	}
-
-	&.status-lowstock {
-		background: #FEEDAF;
-		color: #8A5340;
-	}
-}
-
-@media screen and (max-width: 576px) {
-	.product-list-item {
-		flex-direction: column;
-		align-items: center;
-
-		img {
-			width: 75%;
-			margin: 2rem 0;
-		}
-
-		.product-list-detail {
-			text-align: center;
-		}
-
-		.product-price {
-			align-self: center;
-		}
-
-		.product-list-action {
-			display: flex;
-			flex-direction: column;
-		}
-
-		.product-list-action {
-			margin-top: 2rem;
-			flex-direction: row;
-			justify-content: space-between;
-			align-items: center;
-			width: 100%;
-		}
-	}
-}
+@import '../assets/demo/badges.scss';
 </style>
