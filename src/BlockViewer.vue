@@ -65,12 +65,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
-::v-deep(.block-section) {
+.block-section {
     margin-bottom: 4rem;
     overflow: hidden;
 }
 
-::v-deep(.block-header) {
+.block-header {
     padding: 1rem 2rem;
     background-color: var(--surface-section);
     border-top-left-radius: 12px;
@@ -146,7 +146,7 @@ export default {
     }
 }
 
-::v-deep(.block-content) {
+.block-content {
     padding: 0;
     border:1px solid var(--surface-d);
     border-top: 0 none;
@@ -155,7 +155,7 @@ export default {
     overflow: hidden;
 }
 
-::v-deep(pre[class*="language-"]) {
+pre[class*="language-"] {
     margin: 0 !important;
 
     &:before, &:after {
@@ -199,7 +199,7 @@ export default {
 }
 
 @media screen and (max-width: 575px) {
-    ::v-deep(.block-header) {
+    .block-header {
         flex-direction: column;
         align-items: start;
 
