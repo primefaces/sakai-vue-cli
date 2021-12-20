@@ -77,7 +77,6 @@ npm run serve
 $fontSize:1rem;
 $borderRadius:12px;
 $transitionDuration:.2s;
-$maskBg:rgba(0, 0, 0, 0.4);
 
 </code></pre>
             </div>

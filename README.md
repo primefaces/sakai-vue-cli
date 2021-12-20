@@ -67,5 +67,4 @@ In case you'd like to customize the layout variables, open **_variables.scss** f
 $fontSize:1rem;
 $borderRadius:12px;
 $transitionDuration:.2s;
-$maskBg:rgba(0, 0, 0, 0.4);
 ```
