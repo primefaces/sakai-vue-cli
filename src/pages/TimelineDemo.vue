@@ -7,7 +7,7 @@
             <h5>Custom Timeline</h5>
             <Timeline :value="customEvents" align="alternate" class="customized-timeline">
                 <template #marker="slotProps">
-                <span class="custom-marker shadow-2" :style="{backgroundColor: slotProps.item.color}">
+                <span class="flex w-2rem h-2rem align-items-center justify-content-center text-white border-circle z-1 shadow-2" :style="{backgroundColor: slotProps.item.color}">
                     <i :class="slotProps.item.icon"></i>
                 </span>
                 </template>
@@ -20,7 +20,7 @@
                             {{slotProps.item.date}}
                         </template>
                         <template #content>
-                            <img v-if="slotProps.item.image" :src="'images/product/' + slotProps.item.image" :alt="slotProps.item.name" width="200" class="shadow-2" />
+                            <img v-if="slotProps.item.image" :src="'images/product/' + slotProps.item.image" :alt="slotProps.item.name" width="200" class="shadow-2 mb-3" />
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
                                 quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
                             <Button label="Read more" class="p-button-text"></Button>
@@ -84,27 +84,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.custom-marker {
-    display: flex;
-    width: 2rem;
-    height: 2rem;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    border-radius: 50%;
-    z-index: 1;
-}
-
-::v-deep(.p-button) {
-    min-width: 8em;
-}
-
-::v-deep(.p-timeline-event-content) {
-    line-height: 1;
-}
-::v-deep(.p-timeline-event-opposite) {
-    line-height: 1;
-}
 @media screen and (max-width: 960px) {
     ::v-deep(.customized-timeline) {
         .p-timeline-event:nth-child(even) {
@@ -114,9 +93,11 @@ export default {
                 text-align: left !important;
             }
         }
+
         .p-timeline-event-opposite {
             flex: 0;
         }
+
         .p-card {
             margin-top: 1rem;
         }
