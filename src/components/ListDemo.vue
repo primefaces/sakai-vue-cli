@@ -5,7 +5,7 @@
 				<h5>DataView</h5>
 				<DataView :value="dataviewValue" :layout="layout" :paginator="true" :rows="9" :sortOrder="sortOrder" :sortField="sortField">
 					<template #header>
-						<div class="grid nogutter">
+						<div class="grid grid-nogutter">
 							<div class="col-6 text-left">
 								<Dropdown v-model="sortKey" :options="sortOptions" optionLabel="label" placeholder="Sort By Price" @change="onSortChange($event)"/>
 							</div>
