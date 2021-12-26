@@ -11,8 +11,12 @@
 						Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 					</p>
 					<template #footer>
+<<<<<<< HEAD
 						<!-- <Button label="Dismiss" @click="close" icon="pi pi-check" class="p-button-secondary"/> -->
 						<Button label="Ok" icon="pi pi-check" class="p-button-outlined" />
+=======
+						<Button label="Ok" @click="close" icon="pi pi-check" class="p-button-outlined"/>
+>>>>>>> e7d3439f955b825c4ea656687d118784e96dbd8a
 					</template>
 				</Dialog>
 				<div class="grid">
