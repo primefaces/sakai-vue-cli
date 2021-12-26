@@ -1,5 +1,5 @@
 <template>
-	<div class="grid misc-layout">
+	<div class="grid">
     <div class="col-12">
         <div class="card">
             <h5>ProgressBar</h5>
