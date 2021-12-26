@@ -1,5 +1,5 @@
 <template>
-	<div class="grid crud-demo">
+	<div class="grid">
 		<div class="col-12">
 			<div class="card">
 				<Toast/>
@@ -31,43 +31,43 @@
 					</template>
 
 					<Column selectionMode="multiple" headerStyle="width: 3rem"></Column>
-					<Column field="code" header="Code" :sortable="true">
+					<Column field="code" header="Code" :sortable="true" headerStyle="width:14%; min-width:10rem;">
 						<template #body="slotProps">
 							<span class="p-column-title">Code</span>
 							{{slotProps.data.code}}
 						</template>
 					</Column>
-					<Column field="name" header="Name" :sortable="true">
+					<Column field="name" header="Name" :sortable="true" headerStyle="width:14%; min-width:10rem;">
 						<template #body="slotProps">
 							<span class="p-column-title">Name</span>
 							{{slotProps.data.name}}
 						</template>
 					</Column>
-					<Column header="Image">
+					<Column header="Image" headerStyle="width:14%; min-width:10rem;">
 						<template #body="slotProps">
 							<span class="p-column-title">Image</span>
 							<img :src="'images/product/' + slotProps.data.image" :alt="slotProps.data.image" class="shadow-2" width="100" />
 						</template>
 					</Column>
-					<Column field="price" header="Price" :sortable="true">
+					<Column field="price" header="Price" :sortable="true" headerStyle="width:14%; min-width:8rem;">
 						<template #body="slotProps">
 							<span class="p-column-title">Price</span>
 							{{formatCurrency(slotProps.data.price)}}
 						</template>
 					</Column>
-					<Column field="category" header="Category" :sortable="true">
+					<Column field="category" header="Category" :sortable="true" headerStyle="width:14%; min-width:10rem;">
 						<template #body="slotProps">
 							<span class="p-column-title">Category</span>
 							{{formatCurrency(slotProps.data.category)}}
 						</template>
 					</Column>
-					<Column field="rating" header="Reviews" :sortable="true">
+					<Column field="rating" header="Reviews" :sortable="true" headerStyle="width:14%; min-width:10rem;">
 						<template #body="slotProps">
 							<span class="p-column-title">Rating</span>
 							<Rating :modelValue="slotProps.data.rating" :readonly="true" :cancel="false" />
 						</template>
 					</Column>
-					<Column field="inventoryStatus" header="Status" :sortable="true">
+					<Column field="inventoryStatus" header="Status" :sortable="true" headerStyle="width:14%; min-width:10rem;">
 						<template #body="slotProps">
 							<span class="p-column-title">Status</span>
 							<span :class="'product-badge status-' + (slotProps.data.inventoryStatus ? slotProps.data.inventoryStatus.toLowerCase() : '')">{{slotProps.data.inventoryStatus}}</span>
@@ -76,7 +76,7 @@
 					<Column>
 						<template #body="slotProps">
 							<Button icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" @click="editProduct(slotProps.data)" />
-							<Button icon="pi pi-trash" class="p-button-rounded p-button-warning" @click="confirmDeleteProduct(slotProps.data)" />
+							<Button icon="pi pi-trash" class="p-button-rounded p-button-warning mt-2" @click="confirmDeleteProduct(slotProps.data)" />
 						</template>
 					</Column>
 				</DataTable>
