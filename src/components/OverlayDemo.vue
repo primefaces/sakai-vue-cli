@@ -1,5 +1,5 @@
 <template>
-	<div class="grid overlay-demo">
+	<div class="grid">
 		<div class="col-12 lg:col-6">
 			<div class="card p-fluid">
 				<h5>Dialog</h5>
@@ -32,14 +32,14 @@
 					<div class="col-6">
 						<Button type="button" label="DataTable" @click="toggleDataTable" class="p-button-success"/>
 						<OverlayPanel ref="op2" appendTo="body" :showCloseIcon="true" id="overlay_panel" style="width: 450px">
-							<DataTable :value="products" v-model:selection="selectedProduct" selectionMode="single" :paginator="true" :rows="5" @row-select="onProductSelect">
-								<Column field="name" header="Name" :sortable="true"></Column>
-								<Column header="Image">
+							<DataTable :value="products" v-model:selection="selectedProduct" selectionMode="single" :paginator="true" :rows="5" @row-select="onProductSelect" responsiveLayout="scroll">
+								<Column field="name" header="Name" :sortable="true" headerStyle="min-width:10rem;"></Column>
+								<Column header="Image" headerStyle="min-width:10rem;">
 									<template #body="slotProps">
 										<img :src="'images/product/' + slotProps.data.image" :alt="slotProps.data.image" width="100" class="shadow-2" />
 									</template>
 								</Column>
-								<Column field="price" header="Price" :sortable="true">
+								<Column field="price" header="Price" :sortable="true" headerStyle="min-width:8rem;">
 									<template #body="slotProps">
 										{{formatCurrency(slotProps.data.price)}}
 									</template>
