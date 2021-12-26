@@ -1,5 +1,5 @@
 <template>
-	<div class="grid messages-demo">
+	<div class="grid">
 		<div class="col-12 lg:col-6">
 			<div class="card">
 				<h5>Toast</h5>
