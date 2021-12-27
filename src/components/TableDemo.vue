@@ -259,7 +259,7 @@
                     <Column field="date" header="Date" style="min-width:200px"></Column>
                     <template #groupheader="slotProps">
 						<img :alt="slotProps.data.representative.name" :src="'images/avatar/' + slotProps.data.representative.image" width="32" style="vertical-align: middle" />
-                        <span class="image-text">{{slotProps.data.representative.name}}</span>
+                        <span class="image-text ml-2">{{slotProps.data.representative.name}}</span>
                     </template>
                     <template #groupfooter="slotProps">
                         <td style="text-align: right" class="text-bold pr-6">Total Customers: {{calculateCustomerTotal(slotProps.data.representative.name)}}</td>
@@ -373,4 +373,12 @@
 
 <style scoped lang="scss">
 @import '../assets/demo/badges.scss';
+
+::v-deep(.p-datatable-frozen-tbody) {
+    font-weight: bold;
+}
+
+::v-deep(.p-datatable-scrollable .p-frozen-column) {
+    font-weight: bold;
+}
 </style>
