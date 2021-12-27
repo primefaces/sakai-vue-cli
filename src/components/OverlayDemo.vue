@@ -14,11 +14,7 @@
 						<Button label="Ok" @click="close" icon="pi pi-check" class="p-button-outlined"/>
 					</template>
 				</Dialog>
-				<div class="grid">
-					<div class="col-12">
-						<Button label="Show" icon="pi pi-external-link" @click="open"/>
-					</div>
-				</div>
+				<Button label="Show" icon="pi pi-external-link" style="width: auto" @click="open"/>
 			</div>
 			<div class="card p-fluid">
 				<h5>Overlay Panel</h5>
@@ -54,7 +50,7 @@
 		<div class="col-12 lg:col-6">
 			<div class="card p-fluid">
 				<h5>Confirmation</h5>
-				<Button label="Delete" icon="pi pi-trash" class="p-button-danger" @click="openConfirmation" />
+				<Button label="Delete" icon="pi pi-trash" class="p-button-danger" style="width: auto" @click="openConfirmation" />
 				<Dialog header="Confirmation" v-model:visible="displayConfirmation" :style="{width: '350px'}" :modal="true">
 					<div class="flex align-items-center justify-content-center">
 						<i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem" />
