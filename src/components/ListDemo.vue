@@ -67,7 +67,7 @@
 		<div class="col-12 lg:col-8">
 			<div class="card">
 				<h5>PickList</h5>
-				<PickList v-model="picklistValue" dataKey="code">
+				<PickList v-model="picklistValue" listStyle="height:250px" dataKey="code">
 					<template #sourceheader>
 						From
 					</template>
@@ -84,7 +84,7 @@
 		<div class="col-12 lg:col-4">
 			<div class="card">
 				<h5>OrderList</h5>
-				<OrderList v-model="orderlistValue" listStyle="height:auto" dataKey="code" class="p-orderlist-responsive" :rows="10">
+				<OrderList v-model="orderlistValue" listStyle="height:250px" dataKey="code" :rows="10">
 					<template #header>
 						Cities
 					</template>
