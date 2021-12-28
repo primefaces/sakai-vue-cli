@@ -52,6 +52,7 @@ export default {
 						{label: 'Tree', icon: 'pi pi-fw pi-share-alt', to: '/tree'},
 						{label: 'Panel', icon: 'pi pi-fw pi-tablet', to: '/panel'},
 						{label: 'Overlay', icon: 'pi pi-fw pi-clone', to: '/overlay'},
+                        {label: "Media", icon: "pi pi-fw pi-image", to: "/media"},
 						{label: 'Menu', icon: 'pi pi-fw pi-bars', to: '/menu'},
 						{label: 'Message', icon: 'pi pi-fw pi-comment', to: '/messages'},
 						{label: 'File', icon: 'pi pi-fw pi-file', to: '/file'},

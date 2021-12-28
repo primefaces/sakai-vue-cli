@@ -58,6 +58,11 @@ const routes = [
         component: () => import('./components/OverlayDemo.vue')
     },
     {
+        path: '/media',
+        name: 'media',
+        component: () => import('./components/MediaDemo.vue')
+    },
+    {
         path: '/menu',
         component: () => import('./components/MenuDemo.vue'),
         children: [
