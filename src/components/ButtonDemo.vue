@@ -74,7 +74,7 @@
 		<div class="col-12 md:col-6">
 			<div class="card">
 				<h5>Icons</h5>
-				<Button icon="pi pi-star" class="mr-2 mb-2"></Button>
+				<Button icon="pi pi-star-fill" class="mr-2 mb-2"></Button>
 				<Button label="Bookmark" icon="pi pi-bookmark" class="mr-2 mb-2"></Button>
 				<Button label="Bookmark" icon="pi pi-bookmark" iconPos="right" class="mr-2 mb-2"></Button>
 			</div>
@@ -101,7 +101,7 @@
 
 			<div class="card">
 				<h5>Rounded Icons</h5>
-				<Button icon="pi pi-star" class="p-button-rounded mr-2 mb-2" />
+				<Button icon="pi pi-star-fill" class="p-button-rounded mr-2 mb-2" />
 				<Button icon="pi pi-bookmark" class="p-button-rounded p-button-secondary mr-2 mb-2" />
 				<Button icon="pi pi-check" class="p-button-rounded p-button-success mr-2 mb-2" />
 				<Button icon="pi pi-search" class="p-button-rounded p-button-info mr-2 mb-2" />
