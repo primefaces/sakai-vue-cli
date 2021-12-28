@@ -116,18 +116,5 @@ export default {
 
 <style lang="scss" scoped>
 @import '../assets/demo/badges.scss';
-
-.product-item {
-    .product-item-content {
-        border: 1px solid var(--surface-d);
-        border-radius: 3px;
-        margin: 0.3rem;
-        text-align: center;
-        padding: 2rem 0;
-    }
-    .product-image {
-        width: 50%;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    }
-}
+@import '../assets/demo/items.scss';
 </style> 
