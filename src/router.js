@@ -153,6 +153,11 @@ const routes = [
         path: '/notfound',
         name: 'notfound',
         component: () => import('./pages/NotFound.vue')
+    },
+    {
+        path: '/access',
+        name: 'access',
+        component: () => import('./pages/Access.vue')
     }
 ];
 

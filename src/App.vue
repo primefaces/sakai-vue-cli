@@ -83,6 +83,7 @@ export default {
                         {label: 'Login', icon: 'pi pi-fw pi-sign-in', to: '/login'},
                         {label: 'Error', icon: 'pi pi-fw pi-times-circle', to: '/error'},
                         {label: 'NotFound', icon: 'pi pi-fw pi-exclamation-circle', to: '/notfound'},
+                        {label: 'Access', icon: 'pi pi-fw pi-lock', to: '/access'},
 						{label: 'Empty', icon: 'pi pi-fw pi-circle-off', to: '/empty'},
 					]
 				},
