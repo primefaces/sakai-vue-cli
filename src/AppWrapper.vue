@@ -1,7 +1,8 @@
 <template>
     <Landing v-if="$route.path === '/landing'" @change-theme="changeTheme" />
     <Login v-else-if="$route.path === '/login'" @change-theme="changeTheme" />
-    <Error v-else-if="$route.path === '/error'" @change-theme="changeTheme" />
+    <Error v-else-if="$route.path === '/error'" />
+    <NotFound v-else-if="$route.path === '/notfound'" />
     <App v-else @change-theme="changeTheme" />
 </template>
 
@@ -11,6 +12,7 @@ import App from './App';
 import Landing from './pages/LandingDemo';
 import Login from './pages/Login';
 import Error from './pages/Error';
+import NotFound from './pages/NotFound';
 
 export default {
     methods: {
@@ -30,7 +32,8 @@ export default {
         App,
         Landing,
         Login,
-        Error
+        Error,
+        NotFound
     }
 }
 </script>
