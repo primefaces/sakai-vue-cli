@@ -52,7 +52,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .pi-eye {
     transform:scale(1.6);
     margin-right: 1rem;
