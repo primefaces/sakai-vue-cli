@@ -10,7 +10,7 @@
                         <div class="flex justify-content-center align-items-center bg-orange-500 border-circle" style="width:3.2rem; height:3.2rem;">
                             <i class="pi pi-fw pi-lock text-2xl text-50"></i>
                         </div>
-                        <h1 class="text-gray-900 font-bold text-4xl lg:text-5xl mb-2">Access Denied</h1>
+                        <h1 class="text-900 font-bold text-4xl lg:text-5xl mb-2">Access Denied</h1>
                         <span class="text-gray-600 text-center">You do not have the necesary permisions. Please contact admins.</span>
                         <img src="layout/images/asset-access.svg" alt="Access denied" class="mt-5" width="80%">
                         <div class="col-12 mt-5 text-center">
