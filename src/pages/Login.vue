@@ -36,13 +36,6 @@
 
 <script>
 export default {
-    emits: ['change-theme'],
-    mounted() {
-        this.$emit('change-theme', {theme: 'saga-blue', dark: false});
-    },
-    beforeUnmount() {
-        this.$emit('change-theme', {theme: 'lara-light-indigo', dark: false});
-    },
     data() {
         return {
             email: '',

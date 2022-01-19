@@ -1,6 +1,6 @@
 <template>
     <Landing v-if="$route.path === '/landing'" @change-theme="changeTheme" />
-    <Login v-else-if="$route.path === '/login'" @change-theme="changeTheme" />
+    <Login v-else-if="$route.path === '/login'" />
     <Error v-else-if="$route.path === '/error'" />
     <NotFound v-else-if="$route.path === '/notfound'" />
     <Access v-else-if="$route.path === '/access'" />
