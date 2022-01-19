@@ -176,7 +176,7 @@
 	<div class="col-12 xl:col-6">
 		<div class="card">
 			<h5>Sales Overview</h5>
-			<Chart type="line" :data="lineData" />
+			<Chart type="line" :data="lineData" :options="lineOptions" />
 		</div>
 		<div class="card">
 			<div class="flex align-items-center justify-content-between mb-4">
@@ -242,6 +242,7 @@
 </template>
 
 <script>
+import EventBus from '@/AppEventBus';
 import ProductService from '../service/ProductService';
 
 export default {
@@ -272,19 +273,100 @@ export default {
 			items: [
                 {label: 'Add New', icon: 'pi pi-fw pi-plus'},
                 {label: 'Remove', icon: 'pi pi-fw pi-minus'}
-            ]
+            ],
+			lineOptions: null,
 		}
 	},
 	productService: null,
-	created() {
-		this.productService = new ProductService();
-	},
+	themeChangeListener: null,
 	mounted() {
 		this.productService.getProductsSmall().then(data => this.products = data);
+
+		this.themeChangeListener = (event) => {
+            if (event.dark)
+                this.applyDarkTheme();
+            else
+                this.applyLightTheme();
+        };
+        EventBus.on('change-theme', this.themeChangeListener);
+
+		if (this.isDarkTheme()) {
+            this.applyDarkTheme();
+        }
+        else {
+            this.applyLightTheme();
+        }
+	},
+	beforeUnmount() {
+        EventBus.off('change-theme', this.themeChangeListener );
+    },
+	created() {
+		this.productService = new ProductService();
 	},
 	methods: {
 		formatCurrency(value) {
 			return value.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
+		},
+		isDarkTheme() {
+            return this.$appState.darkTheme === true;
+        },
+		applyLightTheme() {
+			this.lineOptions = {
+				plugins: {
+					legend: {
+						labels: {
+							color: '#495057'
+						}
+					}
+				},
+				scales: {
+					x: {
+						ticks: {
+							color: '#495057'
+						},
+						grid: {
+							color:  '#ebedef',
+						}
+					},
+					y: {
+						ticks: {
+							color: '#495057'
+						},
+						grid: {
+							color:  '#ebedef',
+						}
+					},
+				}
+			};
+		},
+		applyDarkTheme() {
+			this.lineOptions = {
+				plugins: {
+					legend: {
+						labels: {
+							color: '#ebedef'
+						}
+					}
+				},
+				scales: {
+					x: {
+						ticks: {
+							color: '#ebedef'
+						},
+						grid: {
+							color:  'rgba(160, 167, 181, .3)',
+						}
+					},
+					y: {
+						ticks: {
+							color: '#ebedef'
+						},
+						grid: {
+							color:  'rgba(160, 167, 181, .3)',
+						}
+					},
+				}
+			};
 		}
 	}
 }

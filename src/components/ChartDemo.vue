@@ -38,6 +38,7 @@
 
 <script>
 import EventBus from '@/AppEventBus';
+
 export default {
 	themeChangeListener: null,
 	mounted() {
