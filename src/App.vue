@@ -81,6 +81,7 @@ export default {
 						{label: 'Timeline', icon: 'pi pi-fw pi-calendar', to: '/timeline'},
                         {label: 'Landing', icon: 'pi pi-fw pi-globe', to: '/landing'},
                         {label: 'Login', icon: 'pi pi-fw pi-sign-in', to: '/login'},
+                        {label: 'Error', icon: 'pi pi-fw pi-times-circle', to: '/error'},
 						{label: 'Empty', icon: 'pi pi-fw pi-circle-off', to: '/empty'},
 					]
 				},

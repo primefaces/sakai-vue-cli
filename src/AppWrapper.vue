@@ -1,6 +1,7 @@
 <template>
     <Landing v-if="$route.path === '/landing'" @change-theme="changeTheme" />
     <Login v-else-if="$route.path === '/login'" @change-theme="changeTheme" />
+    <Error v-else-if="$route.path === '/error'" @change-theme="changeTheme" />
     <App v-else @change-theme="changeTheme" />
 </template>
 
@@ -9,6 +10,7 @@ import EventBus from './AppEventBus';
 import App from './App';
 import Landing from './pages/LandingDemo';
 import Login from './pages/Login';
+import Error from './pages/Error';
 
 export default {
     methods: {
@@ -27,7 +29,8 @@ export default {
     components: {
         App,
         Landing,
-        Login
+        Login,
+        Error
     }
 }
 </script>
