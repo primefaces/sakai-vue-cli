@@ -20,13 +20,13 @@
 </template>
 
 <script>
+import EventBus from './AppEventBus';
 import AppTopBar from './AppTopbar.vue';
 import AppMenu from './AppMenu.vue';
 import AppConfig from './AppConfig.vue';
 import AppFooter from './AppFooter.vue';
 
 export default {
-    emits: ['change-theme'],
     data() {
         return {
             layoutMode: 'static',
@@ -217,7 +217,15 @@ export default {
             return true;
         },
         changeTheme(event) {
-            this.$emit('change-theme', event);
+            let themeElement = document.getElementById('theme-link');
+            themeElement.setAttribute('href', themeElement.getAttribute('href').replace(this.$appState.theme, event.theme));
+            this.$appState.theme = event.theme;
+            this.$appState.darkTheme = event.dark;
+            EventBus.emit('change-theme', event);
+
+            if (event.theme.startsWith('md')) {
+                this.$primevue.config.ripple = true;
+            }
         }
     },
     computed: {
