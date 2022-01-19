@@ -32,8 +32,8 @@
                     </li>
                 </ul>
                 <div class="flex justify-content-between lg:block border-top-1 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0">
-                    <Button label="Login" class="p-button-text p-button-rounded border-none font-light line-height-2 text-blue-500 p-ripple" v-ripple></Button>
-                    <Button label="Register" class="p-button-rounded border-none ml-5 font-light line-height-2 bg-blue-500 p-ripple" v-ripple></Button>
+                    <Button label="Login" class="p-button-text p-button-rounded border-none font-light line-height-2 text-blue-500"></Button>
+                    <Button label="Register" class="p-button-rounded border-none ml-5 font-light line-height-2 bg-blue-500"></Button>
                 </div>
             </div>
         </div>
@@ -42,7 +42,7 @@
             <div class="mx-4 md:mx-8 mt-0 md:mt-4">
                 <h1 class="text-6xl font-bold text-gray-900 line-height-2"><span class="font-light block">Eu sem integer</span>eget magna fermentum</h1>
                 <p class="font-normal text-2xl line-height-3 md:mt-3 text-gray-700">Sed blandit libero volutpat sed cras. Fames ac turpis egestas integer. Placerat in egestas erat... </p>
-                <Button label="Get Started" class="p-button-rounded text-xl border-none mt-5 bg-blue-500 font-normal line-height-3 px-3 p-ripple" v-ripple></Button>
+                <Button label="Get Started" class="p-button-rounded text-xl border-none mt-5 bg-blue-500 font-normal line-height-3 px-3"></Button>
             </div>
             <img src="layout/images/screen-1.png" alt="" class="sm:mt-5 md:mt-0" style="right:10%;">
         </div>
@@ -223,7 +223,7 @@
                         <div class="my-5 text-center">
                             <span class="text-5xl font-bold mr-2 text-gray-900">$0</span>
                             <span class="text-gray-600">per month</span>
-                            <Button label="Get Started" class="block mx-auto mt-4 p-button-rounded border-none ml-3 font-light line-height-2 bg-blue-500 p-ripple" v-ripple></button>
+                            <Button label="Get Started" class="block mx-auto mt-4 p-button-rounded border-none ml-3 font-light line-height-2 bg-blue-500"></button>
                         </div>
                         <Divider class="w-full bg-surface-200"></Divider>
                         <ul class="my-5 list-none p-0 flex text-gray-900 flex-column">
@@ -254,7 +254,7 @@
                         <div class="my-5 text-center">
                             <span class="text-5xl font-bold mr-2 text-gray-900">$1</span>
                             <span class="text-gray-600">per month</span>
-                            <Button label="Try Free" class="block mx-auto mt-4 p-button-rounded border-none ml-3 font-light line-height-2 bg-blue-500 p-ripple" v-ripple></Button>
+                            <Button label="Try Free" class="block mx-auto mt-4 p-button-rounded border-none ml-3 font-light line-height-2 bg-blue-500"></Button>
                         </div>
                         <Divider class="w-full bg-surface-200"></Divider>
                         <ul class="my-5 list-none p-0 flex text-gray-900 flex-column">
@@ -285,7 +285,7 @@
                         <div class="my-5 text-center">
                             <span class="text-5xl font-bold mr-2 text-gray-900">$999</span>
                             <span class="text-gray-600">per month</span>
-                            <Button label="Get a Quote" class="block mx-auto mt-4 p-button-rounded border-none ml-3 font-light line-height-2 bg-blue-500 p-ripple" v-ripple></Button>
+                            <Button label="Get a Quote" class="block mx-auto mt-4 p-button-rounded border-none ml-3 font-light line-height-2 bg-blue-500"></Button>
                         </div>
                         <Divider class="w-full bg-surface-200"></Divider>
                         <ul class="my-5 list-none p-0 flex text-gray-900 flex-column">
