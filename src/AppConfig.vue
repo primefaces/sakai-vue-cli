@@ -326,14 +326,7 @@
 				document.documentElement.style.fontSize = this.scale + 'px';
 			},
 			changeTheme(event, theme, dark) {
-				let themeElement = document.getElementById('theme-link');
-				themeElement.setAttribute('href', themeElement.getAttribute('href').replace(this.$appState.theme, theme));
-				this.$appState.theme = theme;
-				this.$appState.darkTheme = dark;
-
-				if (theme.startsWith('md')) {
-					this.$primevue.config.ripple = true;
-				}
+				this.$emit('change-theme', {theme, dark});
 			}
 		},
 		computed: {

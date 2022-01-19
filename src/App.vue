@@ -12,7 +12,7 @@
             <AppFooter />
         </div>
 
-		<AppConfig :layoutMode="layoutMode" @layout-change="onLayoutChange" />
+		<AppConfig :layoutMode="layoutMode" @layout-change="onLayoutChange" @change-theme="changeTheme" />
         <transition name="layout-mask">
             <div class="layout-mask p-component-overlay" v-if="mobileMenuActive"></div>
         </transition>
@@ -24,6 +24,7 @@ import AppTopBar from './AppTopbar.vue';
 import AppMenu from './AppMenu.vue';
 import AppConfig from './AppConfig.vue';
 import AppFooter from './AppFooter.vue';
+import EventBus from './AppEventBus';
 
 export default {
     data() {
@@ -209,6 +210,17 @@ export default {
             }
 
             return true;
+        },
+        changeTheme(event) {
+            let themeElement = document.getElementById('theme-link');
+            themeElement.setAttribute('href', themeElement.getAttribute('href').replace(this.$appState.theme, event.theme));
+            this.$appState.theme = event.theme;
+            this.$appState.darkTheme = event.dark;
+            EventBus.emit('change-theme', event);
+
+            if (event.theme.startsWith('md')) {
+                this.$primevue.config.ripple = true;
+            }
         }
     },
     computed: {
@@ -220,8 +232,7 @@ export default {
                 'layout-overlay-sidebar-active': this.overlayMenuActive && this.layoutMode === 'overlay',
                 'layout-mobile-sidebar-active': this.mobileMenuActive,
 				'p-input-filled': this.$primevue.config.inputStyle === 'filled',
-				'p-ripple-disabled': this.$primevue.config.ripple === false,
-                'layout-theme-light': this.$appState.theme.startsWith('saga')
+				'p-ripple-disabled': this.$primevue.config.ripple === false
             }];
         },
         logo() {
