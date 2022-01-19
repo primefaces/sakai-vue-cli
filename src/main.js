@@ -7,7 +7,7 @@ import './assets/demo/flags/flags.css';
 
 import { createApp, reactive } from 'vue';
 import router from './router';
-import App from './App.vue';
+import AppWrapper from './AppWrapper.vue';
 import PrimeVue from 'primevue/config';
 import AutoComplete from 'primevue/autocomplete';
 import Accordion from 'primevue/accordion';
@@ -102,7 +102,7 @@ router.beforeEach(function(to, from, next) {
     next();
 });
 
-const app = createApp(App);
+const app = createApp(AppWrapper);
 
 app.config.globalProperties.$appState = reactive({ theme: 'lara-light-indigo', darkTheme: false });
 

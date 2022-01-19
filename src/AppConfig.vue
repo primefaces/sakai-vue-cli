@@ -44,12 +44,12 @@
 			<h6 class="mt-0">Bootstrap</h6>
 			<div class="grid free-themes">
 				<div class="col-3 text-center">
-					<button class="p-link" type="button" @click="changeTheme($event, 'bootstrap4-light-blue')">
+					<button class="p-link" type="button" @click="changeTheme($event, 'bootstrap4-light-blue', false)">
 						<img class="block" src="images/themes/bootstrap4-light-blue.svg" alt="Bootstrap Light Blue" />
 					</button>
 				</div>
 				<div class="col-3 text-center">
-					<button class="p-link" type="button" @click="changeTheme($event, 'bootstrap4-light-purple')">
+					<button class="p-link" type="button" @click="changeTheme($event, 'bootstrap4-light-purple', false)">
 						<img class="block" src="images/themes/bootstrap4-light-purple.svg" alt="Bootstrap Light Blue" />
 					</button>
 				</div>
@@ -68,12 +68,12 @@
 			<h6>Material Design</h6>
 			<div class="grid free-themes">
 				<div class="col-3 text-center">
-					<button class="p-link" type="button" @click="changeTheme($event, 'md-light-indigo')">
+					<button class="p-link" type="button" @click="changeTheme($event, 'md-light-indigo', false)">
 						<img class="block" src="images/themes/md-light-indigo.svg" alt="Material Light Indigo" />
 					</button>
 				</div>
 				<div class="col-3 text-center">
-					<button class="p-link" type="button" @click="changeTheme($event, 'md-light-deeppurple')">
+					<button class="p-link" type="button" @click="changeTheme($event, 'md-light-deeppurple', false)">
 						<img class="block" src="images/themes/md-light-deeppurple.svg" alt="Material Light Deep Purple" />
 					</button>
 				</div>
@@ -92,12 +92,12 @@
 			<h6>Material Design Compact</h6>
 			<div class="grid free-themes">
 				<div class="col-3 text-center">
-					<button class="p-link" type="button" @click="changeTheme($event, 'mdc-light-indigo')">
+					<button class="p-link" type="button" @click="changeTheme($event, 'mdc-light-indigo', false)">
 						<img class="block" src="images/themes/md-light-indigo.svg" alt="Material Compact Light Indigo"/>
 					</button>
 				</div>
 				<div class="col-3 text-center">
-					<button class="p-link" type="button" @click="changeTheme($event, 'mdc-light-deeppurple')">
+					<button class="p-link" type="button" @click="changeTheme($event, 'mdc-light-deeppurple', false)">
 						<img class="block" src="images/themes/md-light-deeppurple.svg" alt="Material Compact Deep Purple" />
 					</button>
 				</div>
@@ -116,7 +116,7 @@
 			<h6>Tailwind</h6>
 			<div class="grid free-themes">
 				<div class="col-3 text-center">
-					<button class="p-link" type="button" @click="changeTheme($event, 'tailwind-light')">
+					<button class="p-link" type="button" @click="changeTheme($event, 'tailwind-light', false)">
 						<img class="block" src="images/themes/tailwind-light.png" alt="Tailwind Light"/>
 					</button>
 				</div>
@@ -125,7 +125,7 @@
 			<h6>Fluent UI</h6>
 			<div class="grid free-themes">
 				<div class="col-3 text-center">
-					<button class="p-link" type="button" @click="changeTheme($event, 'fluent-light')">
+					<button class="p-link" type="button" @click="changeTheme($event, 'fluent-light', false)">
 						<img class="block" src="images/themes/fluent-light.png" alt="Fluent Light"/>
 					</button>
 				</div>
@@ -134,22 +134,22 @@
 			<h6>PrimeOne Design - 2022</h6>
 			<div class="grid free-themes">
 				<div class="col-3 text-center">
-					<button class="p-link" type="button" @click="changeTheme($event, 'lara-light-indigo')">
+					<button class="p-link" type="button" @click="changeTheme($event, 'lara-light-indigo', false)">
 						<img class="block" src="images/themes/lara-light-indigo.png" alt="Lara Light Indigo" />
 					</button>
 				</div>
 				<div class="col-3 text-center">
-					<button class="p-link" type="button" @click="changeTheme($event, 'lara-light-blue')">
+					<button class="p-link" type="button" @click="changeTheme($event, 'lara-light-blue', false)">
 						<img class="block" src="images/themes/lara-light-blue.png" alt="Lara Light Blue" />
 					</button>
 				</div>
 				<div class="col-3 text-center">
-					<button class="p-link" type="button" @click="changeTheme($event, 'lara-light-purple')">
+					<button class="p-link" type="button" @click="changeTheme($event, 'lara-light-purple', false)">
 						<img class="block" src="images/themes/lara-light-purple.png" alt="Lara Light Purple" />
 					</button>
 				</div>
 				<div class="col-3 text-center">
-					<button class="p-link" type="button" @click="changeTheme($event, 'lara-light-teal')">
+					<button class="p-link" type="button" @click="changeTheme($event, 'lara-light-teal', false)">
 						<img class="block" src="images/themes/lara-light-teal.png" alt="Lara Light Teal" />
 					</button>
 				</div>
@@ -178,22 +178,22 @@
 			<h6>PrimeOne Design - 2021</h6>
 			<div class="grid free-themes">
 				<div class="col-3 text-center">
-					<button class="p-link" type="button" @click="changeTheme($event, 'saga-blue')">
+					<button class="p-link" type="button" @click="changeTheme($event, 'saga-blue', false)">
 						<img class="block" src="images/themes/saga-blue.png" alt="Saga Blue" />
 					</button>
 				</div>
 				<div class="col-3 text-center">
-					<button class="p-link" type="button" @click="changeTheme($event, 'saga-green')">
+					<button class="p-link" type="button" @click="changeTheme($event, 'saga-green', false)">
 						<img class="block" src="images/themes/saga-green.png" alt="Saga Green" />
 					</button>
 				</div>
 				<div class="col-3 text-center">
-					<button class="p-link" type="button" @click="changeTheme($event, 'saga-orange')">
+					<button class="p-link" type="button" @click="changeTheme($event, 'saga-orange', false)">
 						<img class="block" src="images/themes/saga-orange.png" alt="Saga Orange" />
 					</button>
 				</div>
 				<div class="col-3 text-center">
-					<button class="p-link" type="button" @click="changeTheme($event, 'saga-purple')">
+					<button class="p-link" type="button" @click="changeTheme($event, 'saga-purple', false)">
 						<img class="block" src="images/themes/saga-purple.png" alt="Saga Purple" />
 					</button>
 				</div>

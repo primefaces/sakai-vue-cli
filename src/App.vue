@@ -24,9 +24,9 @@ import AppTopBar from './AppTopbar.vue';
 import AppMenu from './AppMenu.vue';
 import AppConfig from './AppConfig.vue';
 import AppFooter from './AppFooter.vue';
-import EventBus from './AppEventBus';
 
 export default {
+    emits: ['change-theme'],
     data() {
         return {
             layoutMode: 'static',
@@ -79,6 +79,7 @@ export default {
 					items: [
 						{label: 'Crud', icon: 'pi pi-fw pi-user-edit', to: '/crud'},
 						{label: 'Timeline', icon: 'pi pi-fw pi-calendar', to: '/timeline'},
+                        {label: 'Landing', icon: 'pi pi-fw pi-globe', to: '/landing'},
 						{label: 'Empty', icon: 'pi pi-fw pi-circle-off', to: '/empty'},
 					]
 				},
@@ -212,15 +213,7 @@ export default {
             return true;
         },
         changeTheme(event) {
-            let themeElement = document.getElementById('theme-link');
-            themeElement.setAttribute('href', themeElement.getAttribute('href').replace(this.$appState.theme, event.theme));
-            this.$appState.theme = event.theme;
-            this.$appState.darkTheme = event.dark;
-            EventBus.emit('change-theme', event);
-
-            if (event.theme.startsWith('md')) {
-                this.$primevue.config.ripple = true;
-            }
+            this.$emit('change-theme', event);
         }
     },
     computed: {

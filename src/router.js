@@ -133,6 +133,11 @@ const routes = [
         path: '/icons',
         name: 'icons',
         component: () => import('./components/IconsDemo.vue')
+    },
+    {
+        path: '/landing',
+        name: 'landing',
+        component: () => import('./pages/LandingDemo.vue')
     }
 ];
 
