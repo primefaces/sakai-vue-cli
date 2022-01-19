@@ -2,26 +2,26 @@
     <div class="surface-card flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
         <div class="grid justify-content-center p-2 lg:p-0" style="min-width:80%">
             <div class="col-12 mt-5 xl:mt-0 text-center">
-                <img src="assets/layout/images/logo-blue.svg" alt="Sakai logo" class="mb-5" style="width:81px; height:60px;">
+                <img src="layout/images/logo-blue.svg" alt="Sakai logo" class="mb-5" style="width:81px; height:60px;">
             </div>
             <div class="col-12 xl:col-6" style="border-radius:56px; padding:0.3rem; background: linear-gradient(180deg, rgba(33, 150, 243, 0.4) 10%, rgba(33, 150, 243, 0) 30%);">
                 <div class="surface-card h-full w-full m-0 py-7 px-4" style="border-radius:53px;">
                     <div class="text-center mb-5">
-                        <img src="assets/layout/images/avatar.png" alt="Image" height="50" class="mb-3">
+                        <img src="layout/images/avatar.png" alt="Image" height="50" class="mb-3">
                         <div class="text-900 text-3xl font-medium mb-3">Welcome, Isabel!</div>
                         <span class="text-600 font-medium">Sign in to continue</span>
                     </div>
                 
                     <div class="w-full md:w-10 mx-auto">
                         <label for="email1" class="block text-900 text-xl font-medium mb-2">Email</label>
-                        <InputText id="email1" type="text" class="w-full mb-3" style="padding:1rem;" />
+                        <InputText id="email1" v-model="email" type="text" class="w-full mb-3" style="padding:1rem;" />
                 
                         <label for="password1" class="block text-900 font-medium text-xl mb-2">Password</label>
-                        <p-password id="password1" [(ngModel)]="password" placeholder="Password" [toggleMask]="true" styleClass="w-full mb-3"></p-password>
+                        <Password id="password1" v-model="password" placeholder="Password" :toggleMask="true" class="w-full mb-3" inputClass="w-full" inputStyle="padding:1rem"></Password>
                 
                         <div class="flex align-items-center justify-content-between mb-5">
                             <div class="flex align-items-center">
-                                <p-checkbox id="rememberme1" [binary]="true" styleClass="mr-2"></p-checkbox>
+                                <Checkbox id="rememberme1" :binary="true" class="mr-2"></Checkbox>
                                 <label for="rememberme1">Remember me</label>
                             </div>
                             <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">Forgot password?</a>
@@ -33,3 +33,33 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    emits: ['change-theme'],
+    mounted() {
+        this.$emit('change-theme', {theme: 'saga-blue', dark: false});
+    },
+    beforeUnmount() {
+        this.$emit('change-theme', {theme: 'lara-light-indigo', dark: false});
+    },
+    data() {
+        return {
+            email: '',
+            password: ''
+        }
+    }
+}
+</script>
+
+<style>
+.pi-eye {
+    transform:scale(1.6);
+    margin-right: 1rem;
+}
+
+.pi-eye-slash {
+    transform:scale(1.6);
+    margin-right: 1rem;
+}
+</style>
