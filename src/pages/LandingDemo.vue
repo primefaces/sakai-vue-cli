@@ -185,7 +185,7 @@
                     <img src="layout/images/mockup.png" class="w-11" alt="mockup mobile">
                 </div>
 
-                <div class="col-12 md:col-6 my-auto flex flex-column md:align-items-end md:text-right ">
+                <div class="col-12 my-auto flex flex-column md:align-items-end md:text-right ">
                     <div class="flex align-items-center justify-content-center bg-purple-200" style="width:4.2rem; height:4.2rem; border-radius: 10px;">
                         <i class="pi pi-fw pi-mobile text-5xl text-purple-700"></i>
                     </div>
@@ -195,7 +195,7 @@
             </div>
 
             <div class="grid my-8 pt-2 md:pt-8">
-                <div class="col-12 md:col-6 my-auto flex flex-column align-items-start">
+                <div class="col-12 my-auto flex flex-column align-items-start">
                     <div class="flex align-items-center justify-content-center bg-yellow-200" style="width:4.2rem; height:4.2rem; border-radius:10px;">
                         <i class="pi pi-fw pi-desktop text-5xl text-yellow-700"></i>
                     </div>
