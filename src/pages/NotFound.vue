@@ -8,14 +8,14 @@
                 <div class="surface-card flex justify-content-center h-full w-full m-0 py-7 px-4" style="border-radius:53px;">
                     <div class="grid flex-column align-items-center">
                         <span class="text-blue-500 font-bold text-3xl">404</span>
-                        <h1 class="text-gray-900 font-bold text-3xl lg:text-5xl mb-2">Looks like you are lost</h1>
+                        <h1 class="text-900 font-bold text-3xl lg:text-5xl mb-2">Looks like you are lost</h1>
                         <span class="text-gray-600">Requested resource is not available.</span>
                         <div class="col-12 flex align-items-center py-5 mt-6 border-300 border-bottom-1">
                             <div class="flex justify-content-center align-items-center bg-cyan-400 border-round" style="height:3.5rem; width:3.5rem;">
                                 <i class="pi pi-fw pi-table text-50 text-2xl"></i>
                             </div>
                             <div class="ml-4">
-                                <p class="text-gray-900 lg:text-xl font-medium mb-0">Frequently Asked Questions</p>
+                                <p class="text-900 lg:text-xl font-medium mb-0">Frequently Asked Questions</p>
                                 <span class="text-gray-600 lg:text-xl">Ultricies mi quis hendrerit dolor.</span>
                             </div>
                         </div>
@@ -24,7 +24,7 @@
                                 <i class="pi pi-fw pi-question-circle text-50 text-2xl"></i>
                             </div>
                             <div class="ml-4">
-                                <p class="text-gray-900 lg:text-xl font-medium mb-0">Solution Center</p>
+                                <p class="text-900 lg:text-xl font-medium mb-0">Solution Center</p>
                                 <span class="text-gray-600 lg:text-xl">Phasellus faucibus scelerisque eleifend.</span>
                             </div>
                         </div>
@@ -33,7 +33,7 @@
                                 <i class="pi pi-fw pi-unlock text-50 text-2xl"></i>
                             </div>
                             <div class="ml-4">
-                                <p class="text-gray-900 lg:text-xl font-medium mb-0">Permission Manager</p>
+                                <p class="text-900 lg:text-xl font-medium mb-0">Permission Manager</p>
                                 <span class="text-gray-600 lg:text-xl">Accumsan in nisl nisi scelerisque</span>
                             </div>
                         </div>
