@@ -62,16 +62,17 @@ export default {
 					]
 				},
                 {
-                    label: 'UI Blocks',
+                    label: 'PrimeBlocks',
                     items: [
                         {label: 'Free Blocks', icon: 'pi pi-fw pi-eye', to: '/blocks', badge: "NEW"},
                         {label: 'All Blocks', icon: 'pi pi-fw pi-globe', url: 'https://www.primefaces.org/primeblocks-vue', target: '_blank'}
                     ]
                 },
                 {
-                    label: 'Icons',
+                    label: 'Utilities',
                     items: [
-                        {label: 'PrimeIcons', icon: 'pi pi-fw pi-prime', to: '/icons'}
+                        {label: 'PrimeIcons', icon: 'pi pi-fw pi-prime', to: '/icons'},
+                        {label: 'PrimeFlex', icon: 'pi pi-fw pi-desktop', url: 'https://www.primefaces.org/primeflex/', target: '_blank'},
                     ]
                 },
 				{
