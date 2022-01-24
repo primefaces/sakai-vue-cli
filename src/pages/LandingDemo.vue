@@ -2,7 +2,7 @@
     <div class="surface-card overflow-hidden">
         <div class="py-4 px-4 mx-0 md:mx-6 lg:mx-8 lg:px-8 flex align-items-center justify-content-between relative lg:static">
             <a class="flex align-items-center">
-                <img src="layout/images/logo-blue.svg" alt="Sakai Logo" height="50" class="mr-0 lg:mr-2"><span class="text-gray-900 font-medium text-2xl line-height-3 mr-8">SAKAI</span>
+                <img :src="'layout/images/logo-' + logoColor + '.svg'" alt="Sakai Logo" height="50" class="mr-0 lg:mr-2"><span class="text-900 font-medium text-2xl line-height-3 mr-8">SAKAI</span>
             </a>
             <a class="cursor-pointer block lg:hidden text-700 p-ripple" v-ripple
                 v-styleclass="{ selector: '@next', enterClass: 'hidden', leaveToClass: 'hidden', hideOnOutsideClick: true }">
@@ -11,29 +11,29 @@
             <div class="align-items-center flex-grow-1 justify-content-between hidden lg:flex absolute lg:static w-full surface-overlay left-0 px-6 lg:px-0 z-2" style="top:92%">
                 <ul class="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row cursor-pointer">
                     <li>
-                        <a class="flex m-0 md:ml-5 px-0 py-3 text-gray-900 font-medium line-height-3 p-ripple" v-ripple>
+                        <a class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3 p-ripple" v-ripple>
                             <span>Home</span>
                         </a>
                     </li>
                     <li>
-                        <a class="flex m-0 md:ml-5 px-0 py-3 text-gray-900 font-medium line-height-3 p-ripple" v-ripple>
+                        <a class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3 p-ripple" v-ripple>
                             <span>Features</span>
                         </a>
                     </li>
                     <li>
-                        <a class="flex m-0 md:ml-5 px-0 py-3 text-gray-900 font-medium line-height-3 p-ripple" v-ripple>
+                        <a class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3 p-ripple" v-ripple>
                             <span>Pricing</span>
                         </a>
                     </li>
                     <li>
-                        <a class="flex m-0 md:ml-5 px-0 py-3 text-gray-900 font-medium line-height-3 p-ripple" v-ripple>
+                        <a class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3 p-ripple" v-ripple>
                             <span>Contact</span>
                         </a>
                     </li>
                 </ul>
                 <div class="flex justify-content-between lg:block border-top-1 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0">
                     <Button label="Login" class="p-button-text p-button-rounded border-none font-light line-height-2 text-blue-500"></Button>
-                    <Button label="Register" class="p-button-rounded border-none ml-5 font-light line-height-2 bg-blue-500"></Button>
+                    <Button label="Register" class="p-button-rounded border-none ml-5 font-light text-white line-height-2 bg-blue-500"></Button>
                 </div>
             </div>
         </div>
@@ -42,7 +42,7 @@
             <div class="mx-4 md:mx-8 mt-0 md:mt-4">
                 <h1 class="text-6xl font-bold text-gray-900 line-height-2"><span class="font-light block">Eu sem integer</span>eget magna fermentum</h1>
                 <p class="font-normal text-2xl line-height-3 md:mt-3 text-gray-700">Sed blandit libero volutpat sed cras. Fames ac turpis egestas integer. Placerat in egestas erat... </p>
-                <Button label="Get Started" class="p-button-rounded text-xl border-none mt-5 bg-blue-500 font-normal line-height-3 px-3"></Button>
+                <Button label="Get Started" class="p-button-rounded text-xl border-none mt-5 bg-blue-500 font-normal text-white line-height-3 px-3"></Button>
             </div>
             <img src="layout/images/screen-1.png" alt="" class="sm:mt-5 md:mt-0" style="right:10%;">
         </div>
@@ -50,8 +50,8 @@
         <div class="py-4 px-4 lg:px-8 mt-5 mx-0 lg:mx-8">
             <div class="grid justify-content-center">
                 <div class="col-12 text-center mt-8 mb-4">
-                    <h2 class="text-gray-900 font-normal mb-2">Marvelous Features</h2>
-                    <span class="text-gray-600 text-2xl">Placerat in egestas erat...</span>
+                    <h2 class="text-900 font-normal mb-2">Marvelous Features</h2>
+                    <span class="text-600 text-2xl">Placerat in egestas erat...</span>
                 </div>
 
                 <div class="col-12 md:col-12 lg:col-4 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
@@ -60,8 +60,8 @@
                             <div class="flex align-items-center justify-content-center bg-yellow-200 mb-3" style="width:3.5rem;height:3.5rem; border-radius:10px;">
                                 <i class="pi pi-fw pi-users text-2xl text-yellow-700"></i>
                             </div>
-                            <h5 class="mb-2 text-gray-900">Easy to Use</h5>
-                            <span class="text-gray-600">Posuere morbi leo urna molestie.</span>
+                            <h5 class="mb-2 text-900">Easy to Use</h5>
+                            <span class="text-600">Posuere morbi leo urna molestie.</span>
                         </div>
                     </div>
                 </div>
@@ -72,8 +72,8 @@
                             <div class="flex align-items-center justify-content-center bg-cyan-200 mb-3" style="width:3.5rem;height:3.5rem; border-radius:10px;">
                                 <i class="pi pi-fw pi-palette text-2xl text-cyan-700"></i>
                             </div>
-                            <h5 class="mb-2 text-gray-900">Fresh Design</h5>
-                            <span class="text-gray-600">Semper risus in hendrerit.</span>
+                            <h5 class="mb-2 text-900">Fresh Design</h5>
+                            <span class="text-600">Semper risus in hendrerit.</span>
                         </div>
                     </div>
                 </div>
@@ -84,8 +84,8 @@
                             <div class="flex align-items-center justify-content-center bg-indigo-200" style="width:3.5rem;height:3.5rem; border-radius:10px;">
                                 <i class="pi pi-fw pi-map text-2xl text-indigo-700"></i>
                             </div>
-                            <h5 class="mb-2 text-gray-900">Well Documented</h5>
-                            <span class="text-gray-600">Non arcu risus quis varius quam quisque.</span>
+                            <h5 class="mb-2 text-900">Well Documented</h5>
+                            <span class="text-600">Non arcu risus quis varius quam quisque.</span>
                         </div>
                     </div>
                 </div>
@@ -96,8 +96,8 @@
                             <div class="flex align-items-center justify-content-center bg-bluegray-200 mb-3" style="width:3.5rem;height:3.5rem; border-radius:10px;">
                                 <i class="pi pi-fw pi-id-card text-2xl text-bluegray-700"></i>
                             </div>
-                            <h5 class="mb-2 text-gray-900">Responsive Layout</h5>
-                            <span class="text-gray-600">Nulla malesuada pellentesque elit.</span>
+                            <h5 class="mb-2 text-900">Responsive Layout</h5>
+                            <span class="text-600">Nulla malesuada pellentesque elit.</span>
                         </div>
                     </div>
                 </div>
@@ -108,8 +108,8 @@
                             <div class="flex align-items-center justify-content-center bg-orange-200 mb-3" style="width:3.5rem;height:3.5rem; border-radius:10px;">
                                 <i class="pi pi-fw pi-star text-2xl text-orange-700"></i>
                             </div>
-                            <h5 class="mb-2 text-gray-900">Clean Code</h5>
-                            <span class="text-gray-600">Condimentum lacinia quis vel eros.</span>
+                            <h5 class="mb-2 text-900">Clean Code</h5>
+                            <span class="text-600">Condimentum lacinia quis vel eros.</span>
                         </div>
                     </div>
                 </div>
@@ -120,8 +120,8 @@
                             <div class="flex align-items-center justify-content-center bg-pink-200 mb-3" style="width:3.5rem;height:3.5rem; border-radius:10px;">
                                 <i class="pi pi-fw pi-moon text-2xl text-pink-700"></i>
                             </div>
-                            <h5 class="mb-2 text-gray-900">Dark Mode</h5>
-                            <span class="text-gray-600">Convallis tellus id interdum velit laoreet.</span>
+                            <h5 class="mb-2 text-900">Dark Mode</h5>
+                            <span class="text-600">Convallis tellus id interdum velit laoreet.</span>
                         </div>
                     </div>
                 </div>
@@ -132,8 +132,8 @@
                             <div class="flex align-items-center justify-content-center bg-teal-200 mb-3" style="width:3.5rem;height:3.5rem; border-radius:10px;">
                                 <i class="pi pi-fw pi-shopping-cart text-2xl text-teal-700"></i>
                             </div>
-                            <h5 class="mb-2 text-gray-900">Ready to Use</h5>
-                            <span class="text-gray-600">Mauris sit amet massa vitae.</span>
+                            <h5 class="mb-2 text-900">Ready to Use</h5>
+                            <span class="text-600">Mauris sit amet massa vitae.</span>
                         </div>
                     </div>
                 </div>
@@ -144,8 +144,8 @@
                             <div class="flex align-items-center justify-content-center bg-blue-200 mb-3" style="width:3.5rem;height:3.5rem; border-radius:10px;">
                                 <i class="pi pi-fw pi-globe text-2xl text-blue-700"></i>
                             </div>
-                            <h5 class="mb-2 text-gray-900">Modern Practices</h5>
-                            <span class="text-gray-600">Elementum nibh tellus molestie nunc non.</span>
+                            <h5 class="mb-2 text-900">Modern Practices</h5>
+                            <span class="text-600">Elementum nibh tellus molestie nunc non.</span>
                         </div>
                     </div>
                 </div>
@@ -156,8 +156,8 @@
                             <div class="flex align-items-center justify-content-center bg-purple-200 mb-3" style="width:3.5rem;height:3.5rem; border-radius:10px;">
                                 <i class="pi pi-fw pi-eye text-2xl text-purple-700"></i>
                             </div>
-                            <h5 class="mb-2 text-gray-900">Privacy</h5>
-                            <span class="text-gray-600">Neque egestas congue quisque.</span>
+                            <h5 class="mb-2 text-900">Privacy</h5>
+                            <span class="text-600">Neque egestas congue quisque.</span>
                         </div>
                     </div>
                 </div>
@@ -176,31 +176,31 @@
             
         <div class="py-4 px-4 lg:px-8 mx-0 my-6 lg:mx-8">
             <div class="text-center">
-                <h2 class="text-gray-900 font-normal mb-2">Powerful Everywhere</h2>
-                <span class="text-gray-600 text-2xl">Amet consectetur adipiscing elit...</span>
+                <h2 class="text-900 font-normal mb-2">Powerful Everywhere</h2>
+                <span class="text-600 text-2xl">Amet consectetur adipiscing elit...</span>
             </div>
 
             <div class="grid mt-8 pb-2 md:pb-8">
-                <div class="flex justify-content-center col-12 lg:col-6 bg-purple-100 p-0 flex-order-1 md:flex-order-0" style="border-radius:8px;">
+                <div class="flex justify-content-center col-12 lg:col-6 bg-purple-100 p-0 flex-order-1 lg:flex-order-0" style="border-radius:8px;">
                     <img src="layout/images/mockup.png" class="w-11" alt="mockup mobile">
                 </div>
 
-                <div class="col-12 my-auto flex flex-column md:align-items-end md:text-right ">
+                <div class="col-12 lg:col-6 my-auto flex flex-column md:align-items-end md:text-right ">
                     <div class="flex align-items-center justify-content-center bg-purple-200" style="width:4.2rem; height:4.2rem; border-radius: 10px;">
                         <i class="pi pi-fw pi-mobile text-5xl text-purple-700"></i>
                     </div>
-                    <h2 class="line-height-1 text-gray-900 text-4xl font-normal">Congue Quisque Egestas</h2>
-                    <span class="text-gray-700 text-2xl line-height-3 ml-0 md:ml-2" style="max-width:650px;">Lectus arcu bibendum at varius vel pharetra vel turpis nunc. Eget aliquet nibh praesent tristique magna sit amet purus gravida. Sit amet mattis vulputate enim nulla aliquet.</span>
+                    <h2 class="line-height-1 text-900 text-4xl font-normal">Congue Quisque Egestas</h2>
+                    <span class="text-700 text-2xl line-height-3 ml-0 md:ml-2" style="max-width:650px;">Lectus arcu bibendum at varius vel pharetra vel turpis nunc. Eget aliquet nibh praesent tristique magna sit amet purus gravida. Sit amet mattis vulputate enim nulla aliquet.</span>
                 </div>
             </div>
 
             <div class="grid my-8 pt-2 md:pt-8">
-                <div class="col-12 my-auto flex flex-column align-items-start">
+                <div class="col-12 lg:col-6 my-auto flex flex-column align-items-start">
                     <div class="flex align-items-center justify-content-center bg-yellow-200" style="width:4.2rem; height:4.2rem; border-radius:10px;">
                         <i class="pi pi-fw pi-desktop text-5xl text-yellow-700"></i>
                     </div>
-                    <h2 class="line-height-1 text-gray-900 text-4xl font-normal">Celerisque Eu Ultrices</h2>
-                    <span class="text-gray-700 text-2xl line-height-3 mr-0 md:mr-2" style="max-width:650px;">Adipiscing commodo elit at imperdiet dui. Viverra nibh cras pulvinar mattis nunc sed blandit libero. Suspendisse in est ante in. Mauris pharetra et ultrices neque ornare aenean euismod elementum nisi.</span>
+                    <h2 class="line-height-1 text-900 text-4xl font-normal">Celerisque Eu Ultrices</h2>
+                    <span class="text-700 text-2xl line-height-3 mr-0 md:mr-2" style="max-width:650px;">Adipiscing commodo elit at imperdiet dui. Viverra nibh cras pulvinar mattis nunc sed blandit libero. Suspendisse in est ante in. Mauris pharetra et ultrices neque ornare aenean euismod elementum nisi.</span>
                 </div>
 
                 <div class="flex justify-content-end flex-order-1 sm:flex-order-2 col-12 lg:col-6 bg-yellow-100 p-0" style="border-radius:8px;">
@@ -211,22 +211,22 @@
 
         <div class="py-4 px-4 lg:px-8 my-2 md:my-4">
             <div class="text-center">
-                <h2 class="text-gray-900 font-normal mb-2">Matchless Pricing</h2>
-                <span class="text-gray-600 text-2xl">Amet consectetur adipiscing elit...</span>
+                <h2 class="text-900 font-normal mb-2">Matchless Pricing</h2>
+                <span class="text-600 text-2xl">Amet consectetur adipiscing elit...</span>
             </div>
 
             <div class="grid justify-content-between mt-8 md:mt-0">
                 <div class="col-12 lg:col-4 p-0 md:p-3">
                     <div class="p-3 flex flex-column border-200" style="border:2px solid; border-radius:10px;">
-                        <h3 class="text-gray-900 text-center">Free</h3>
+                        <h3 class="text-900 text-center">Free</h3>
                         <img src="layout/images/free.png" class="w-10 h-10 mx-auto" alt="">
                         <div class="my-5 text-center">
-                            <span class="text-5xl font-bold mr-2 text-gray-900">$0</span>
-                            <span class="text-gray-600">per month</span>
-                            <Button label="Get Started" class="block mx-auto mt-4 p-button-rounded border-none ml-3 font-light line-height-2 bg-blue-500"></button>
+                            <span class="text-5xl font-bold mr-2 text-900">$0</span>
+                            <span class="text-600">per month</span>
+                            <Button label="Get Started" class="block mx-auto mt-4 p-button-rounded border-none ml-3 font-light text-white line-height-2 bg-blue-500"></button>
                         </div>
                         <Divider class="w-full bg-surface-200"></Divider>
-                        <ul class="my-5 list-none p-0 flex text-gray-900 flex-column">
+                        <ul class="my-5 list-none p-0 flex text-900 flex-column">
                             <li class="py-2">
                                 <i class="pi pi-fw pi-check text-xl text-cyan-500 mr-2"></i>
                                 <span class="text-xl line-height-3">Responsive Layout</span>
@@ -249,15 +249,15 @@
                 
                 <div class="col-12 lg:col-4 p-0 md:p-3 mt-4 md:mt-0">
                     <div class="p-3 flex flex-column border-200" style="border:2px solid; border-radius:10px;">
-                        <h3 class="text-gray-900 text-center">Startup</h3>
+                        <h3 class="text-900 text-center">Startup</h3>
                         <img src="layout/images/free.png" class="w-10 h-10 mx-auto" alt="">
                         <div class="my-5 text-center">
-                            <span class="text-5xl font-bold mr-2 text-gray-900">$1</span>
-                            <span class="text-gray-600">per month</span>
-                            <Button label="Try Free" class="block mx-auto mt-4 p-button-rounded border-none ml-3 font-light line-height-2 bg-blue-500"></Button>
+                            <span class="text-5xl font-bold mr-2 text-900">$1</span>
+                            <span class="text-600">per month</span>
+                            <Button label="Try Free" class="block mx-auto mt-4 p-button-rounded border-none ml-3 font-light text-white line-height-2 bg-blue-500"></Button>
                         </div>
                         <Divider class="w-full bg-surface-200"></Divider>
-                        <ul class="my-5 list-none p-0 flex text-gray-900 flex-column">
+                        <ul class="my-5 list-none p-0 flex text-900 flex-column">
                             <li class="py-2">
                                 <i class="pi pi-fw pi-check text-xl text-cyan-500 mr-2"></i>
                                 <span class="text-xl line-height-3">Responsive Layout</span>
@@ -280,15 +280,15 @@
                 
                 <div class="col-12 lg:col-4 p-0 md:p-3 mt-4 md:mt-0">
                     <div class="p-3 flex flex-column border-cyan-200" style="border:2px solid; border-radius:10px;">
-                        <h3 class="text-gray-900 text-center">Free</h3>
+                        <h3 class="text-900 text-center">Free</h3>
                         <img src="layout/images/free.png" class="w-10 h-10 mx-auto" alt="">
                         <div class="my-5 text-center">
-                            <span class="text-5xl font-bold mr-2 text-gray-900">$999</span>
-                            <span class="text-gray-600">per month</span>
-                            <Button label="Get a Quote" class="block mx-auto mt-4 p-button-rounded border-none ml-3 font-light line-height-2 bg-blue-500"></Button>
+                            <span class="text-5xl font-bold mr-2 text-900">$999</span>
+                            <span class="text-600">per month</span>
+                            <Button label="Get a Quote" class="block mx-auto mt-4 p-button-rounded border-none ml-3 font-light text-white line-height-2 bg-blue-500"></Button>
                         </div>
                         <Divider class="w-full bg-surface-200"></Divider>
-                        <ul class="my-5 list-none p-0 flex text-gray-900 flex-column">
+                        <ul class="my-5 list-none p-0 flex text-900 flex-column">
                             <li class="py-2">
                                 <i class="pi pi-fw pi-check text-xl text-cyan-500 mr-2"></i>
                                 <span class="text-xl line-height-3">Responsive Layout</span>
@@ -315,42 +315,42 @@
             <div class="grid justify-content-between">
                 <div class="col-12 md:col-2" style="margin-top:-1.5rem;">
                     <div class="flex flex-wrap align-items-center justify-content-center md:justify-content-start md:mb-0 mb-3">
-                        <img src="layout/images/logo-blue.svg" alt="footer sections" width="50" height="50" class="mr-2">
-                        <h4 class="font-medium text-3xl text-gray-900">SAKAI</h4>
+                        <img :src="'layout/images/logo-' + logoColor + '.svg'" alt="footer sections" width="50" height="50" class="mr-2">
+                        <h4 class="font-medium text-3xl text-900">SAKAI</h4>
                     </div>
                 </div>
 
                 <div class="col-12 md:col-7">
                     <div class="grid text-center md:text-left">
                         <div class="col-12 md:col-3">
-                            <h4 class="font-medium text-2xl line-height-3 mb-3 text-gray-900">Company</h4>
-                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-gray-700">About Us</a>
-                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-gray-700">News</a>
-                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-gray-700">Investor Relations</a>
-                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-gray-700">Careers</a>
-                            <a class="line-height-3 text-xl block cursor-pointer text-gray-700">Media Kit</a>
+                            <h4 class="font-medium text-2xl line-height-3 mb-3 text-900">Company</h4>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">About Us</a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">News</a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Investor Relations</a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Careers</a>
+                            <a class="line-height-3 text-xl block cursor-pointer text-700">Media Kit</a>
                         </div>
                         
                         <div class="col-12 md:col-3 mt-4 md:mt-0">
-                            <h4 class="font-medium text-2xl line-height-3 mb-3 text-gray-900">Resources</h4>
-                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-gray-700">Get Started</a>
-                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-gray-700">Learn</a>
-                            <a class="line-height-3 text-xl block cursor-pointer text-gray-700">Case Studies</a>
+                            <h4 class="font-medium text-2xl line-height-3 mb-3 text-900">Resources</h4>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Get Started</a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Learn</a>
+                            <a class="line-height-3 text-xl block cursor-pointer text-700">Case Studies</a>
                         </div>
         
                         <div class="col-12 md:col-3 mt-4 md:mt-0">
-                            <h4 class="font-medium text-2xl line-height-3 mb-3 text-gray-900">Community</h4>
-                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-gray-700">Discord</a>
-                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-gray-700">Events<img src="layout/images/new-badge.svg" class="ml-2"/></a>
-                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-gray-700">FAQ</a>
-                            <a class="line-height-3 text-xl block cursor-pointer text-gray-700">Blog</a>
+                            <h4 class="font-medium text-2xl line-height-3 mb-3 text-900">Community</h4>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Discord</a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Events<img src="layout/images/new-badge.svg" class="ml-2"/></a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">FAQ</a>
+                            <a class="line-height-3 text-xl block cursor-pointer text-700">Blog</a>
                         </div>
         
                         <div class="col-12 md:col-3 mt-4 md:mt-0">
-                            <h4 class="font-medium text-2xl line-height-3 mb-3 text-gray-900">Legal</h4>
-                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-gray-700">Brand Policy</a>
-                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-gray-700">Privacy Policy</a>
-                            <a class="line-height-3 text-xl block cursor-pointer text-gray-700">Terms of Service</a>
+                            <h4 class="font-medium text-2xl line-height-3 mb-3 text-900">Legal</h4>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Brand Policy</a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Privacy Policy</a>
+                            <a class="line-height-3 text-xl block cursor-pointer text-700">Terms of Service</a>
                         </div>
                     </div>
                 </div>
@@ -362,11 +362,11 @@
 <script>
 export default {
     emits: ['change-theme'],
-    mounted() {
-        this.$emit('change-theme', {theme: 'saga-blue', dark: false});
-    },
-    beforeUnmount() {
-        this.$emit('change-theme', {theme: 'lara-light-indigo', dark: false});
+    computed: {
+        logoColor() {
+            if (this.$appState.darkTheme) return 'white';
+            return 'dark';
+        }
     }
 }
 </script>
