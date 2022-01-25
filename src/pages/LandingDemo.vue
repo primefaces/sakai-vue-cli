@@ -361,7 +361,6 @@
 
 <script>
 export default {
-    emits: ['change-theme'],
     methods: {
         smoothScroll(id){
             document.querySelector(id).scrollIntoView({
