@@ -15,7 +15,9 @@
                                 <i class="pi pi-fw pi-table text-50 text-2xl"></i>
                             </div>
                             <div class="ml-4">
-                                <p class="text-900 lg:text-xl font-medium mb-0">Frequently Asked Questions</p>
+                                <router-link to="/">
+                                    <p class="text-900 lg:text-xl font-medium mb-0">Frequently Asked Questions</p>
+                                </router-link>
                                 <span class="text-gray-600 lg:text-xl">Ultricies mi quis hendrerit dolor.</span>
                             </div>
                         </div>
@@ -24,7 +26,9 @@
                                 <i class="pi pi-fw pi-question-circle text-50 text-2xl"></i>
                             </div>
                             <div class="ml-4">
-                                <p class="text-900 lg:text-xl font-medium mb-0">Solution Center</p>
+                                <rouer-link to="/">
+                                    <p class="text-900 lg:text-xl font-medium mb-0">Solution Center</p>
+                                </rouer-link>
                                 <span class="text-gray-600 lg:text-xl">Phasellus faucibus scelerisque eleifend.</span>
                             </div>
                         </div>
@@ -33,7 +37,9 @@
                                 <i class="pi pi-fw pi-unlock text-50 text-2xl"></i>
                             </div>
                             <div class="ml-4">
-                                <p class="text-900 lg:text-xl font-medium mb-0">Permission Manager</p>
+                                <router-link to="/">
+                                    <p class="text-900 lg:text-xl font-medium mb-0">Permission Manager</p>
+                                </router-link>
                                 <span class="text-gray-600 lg:text-xl">Accumsan in nisl nisi scelerisque</span>
                             </div>
                         </div>
