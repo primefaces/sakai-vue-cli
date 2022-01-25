@@ -217,7 +217,7 @@
 
             <div class="grid justify-content-between mt-8 md:mt-0">
                 <div class="col-12 lg:col-4 p-0 md:p-3">
-                    <div class="p-3 flex flex-column border-200" style="border:2px solid; border-radius:10px;">
+                    <div class="p-3 flex flex-column border-200 hover:border-cyan-200" style="border:2px solid; border-radius:10px;">
                         <h3 class="text-900 text-center">Free</h3>
                         <img src="layout/images/asset-tier-1.svg" class="w-10 h-10 mx-auto" alt="">
                         <div class="my-5 text-center">
@@ -248,7 +248,7 @@
                 </div>
                 
                 <div class="col-12 lg:col-4 p-0 md:p-3 mt-4 md:mt-0">
-                    <div class="p-3 flex flex-column border-200" style="border:2px solid; border-radius:10px;">
+                    <div class="p-3 flex flex-column border-200 hover:border-cyan-200" style="border:2px solid; border-radius:10px;">
                         <h3 class="text-900 text-center">Startup</h3>
                         <img src="layout/images/asset-tier-2.svg" class="w-10 h-10 mx-auto" alt="">
                         <div class="my-5 text-center">
@@ -279,7 +279,7 @@
                 </div>
                 
                 <div class="col-12 lg:col-4 p-0 md:p-3 mt-4 md:mt-0">
-                    <div class="p-3 flex flex-column border-cyan-200" style="border:2px solid; border-radius:10px;">
+                    <div class="p-3 flex flex-column border-200 hover:border-cyan-200" style="border:2px solid; border-radius:10px;">
                         <h3 class="text-900 text-center">Enterprice</h3>
                         <img src="layout/images/asset-tier-3.svg" class="w-10 h-10 mx-auto" alt="">
                         <div class="my-5 text-center">
