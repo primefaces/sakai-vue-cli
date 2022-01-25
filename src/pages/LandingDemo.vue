@@ -11,22 +11,27 @@
             <div class="align-items-center flex-grow-1 justify-content-between hidden lg:flex absolute lg:static w-full left-0 px-6 lg:px-0 z-2" style="top:92%">
                 <ul class="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row cursor-pointer">
                     <li>
-                        <a class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3 p-ripple" v-ripple>
+                        <a @click="smoothScroll('#hero')" class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3 p-ripple" v-ripple>
                             <span>Home</span>
                         </a>
                     </li>
                     <li>
-                        <a class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3 p-ripple" v-ripple>
+                        <a @click="smoothScroll('#features')" class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3 p-ripple" v-ripple>
                             <span>Features</span>
                         </a>
                     </li>
                     <li>
-                        <a class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3 p-ripple" v-ripple>
+                        <a @click="smoothScroll('#highlight')" class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3 p-ripple" v-ripple>
+                            <span>Highlight</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a @click="smoothScroll('#pricing')" class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3 p-ripple" v-ripple>
                             <span>Pricing</span>
                         </a>
                     </li>
                     <li>
-                        <a class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3 p-ripple" v-ripple>
+                        <a @click="smoothScroll('#contact')" class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3 p-ripple" v-ripple>
                             <span>Contact</span>
                         </a>
                     </li>
@@ -47,7 +52,7 @@
             <img src="layout/images/screen-1.png" alt="" class="sm:mt-5 md:mt-0" style="right:10%;">
         </div>
         
-        <div class="py-4 px-4 lg:px-8 mt-5 mx-0 lg:mx-8">
+        <div class="py-4 px-4 lg:px-8 mt-5 mx-0 lg:mx-8" id="features">
             <div class="grid justify-content-center">
                 <div class="col-12 text-center mt-8 mb-4">
                     <h2 class="text-900 font-normal mb-2">Marvelous Features</h2>
@@ -174,7 +179,7 @@
             </div>
         </div>
             
-        <div class="py-4 px-4 lg:px-8 mx-0 my-6 lg:mx-8">
+        <div class="py-4 px-4 lg:px-8 mx-0 my-6 lg:mx-8" id="highlight">
             <div class="text-center">
                 <h2 class="text-900 font-normal mb-2">Powerful Everywhere</h2>
                 <span class="text-600 text-2xl">Amet consectetur adipiscing elit...</span>
@@ -209,7 +214,7 @@
             </div>
         </div>
 
-        <div class="py-4 px-4 lg:px-8 my-2 md:my-4">
+        <div class="py-4 px-4 lg:px-8 my-2 md:my-4" id="pricing">
             <div class="text-center">
                 <h2 class="text-900 font-normal mb-2">Matchless Pricing</h2>
                 <span class="text-600 text-2xl">Amet consectetur adipiscing elit...</span>
@@ -311,7 +316,7 @@
         </div> 
         </div>
 
-        <div class="py-4 px-4 mx-0 mt-8 lg:mx-8">
+        <div class="py-4 px-4 mx-0 mt-8 lg:mx-8" id="contact">
             <div class="grid justify-content-between">
                 <div class="col-12 md:col-2" style="margin-top:-1.5rem;">
                     <div class="flex flex-wrap align-items-center justify-content-center md:justify-content-start md:mb-0 mb-3">
@@ -362,6 +367,13 @@
 <script>
 export default {
     emits: ['change-theme'],
+    methods: {
+        smoothScroll(id){
+            document.querySelector(id).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    },
     computed: {
         logoColor() {
             if (this.$appState.darkTheme) return 'white';
