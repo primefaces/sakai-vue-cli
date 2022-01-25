@@ -1,5 +1,5 @@
 <template>
-    <div class="surface-ground overflow-hidden">
+    <div class="bg-white overflow-hidden">
         <div class="py-4 px-4 mx-0 md:mx-6 lg:mx-8 lg:px-8 flex align-items-center justify-content-between relative lg:static">
             <router-link to="/" class="flex align-items-center">
                 <img :src="'layout/images/logo-' + logoColor + '.svg'" alt="Sakai Logo" height="50" class="mr-0 lg:mr-2"><span class="text-900 font-medium text-2xl line-height-3 mr-8">SAKAI</span>
@@ -8,7 +8,7 @@
                 v-styleclass="{ selector: '@next', enterClass: 'hidden', leaveToClass: 'hidden', hideOnOutsideClick: true }">
                 <i class="pi pi-bars text-4xl"></i>
             </a>
-            <div class="align-items-center flex-grow-1 surface-ground justify-content-between hidden lg:flex absolute lg:static w-full left-0 px-6 lg:px-0 z-2" style="top:92%">
+            <div class="bg-white align-items-center flex-grow-1 justify-content-between hidden lg:flex absolute lg:static w-full left-0 px-6 lg:px-0 z-2" style="top:92%">
                 <ul class="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row cursor-pointer">
                     <li>
                         <a @click="smoothScroll('#hero')" class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3 p-ripple" v-ripple>
