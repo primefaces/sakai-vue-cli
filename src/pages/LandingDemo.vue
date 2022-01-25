@@ -204,7 +204,7 @@
                 </div>
 
                 <div class="flex justify-content-end flex-order-1 sm:flex-order-2 col-12 lg:col-6 bg-yellow-100 p-0" style="border-radius:8px;">
-                    <img src="layout/images/mockup-dekstop.png" class="w-11 pt-4" alt="mockup">
+                    <img src="layout/images/mockup-desktop.png" class="w-11 pt-4" alt="mockup">
                 </div>
             </div>
         </div>
