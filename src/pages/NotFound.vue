@@ -26,9 +26,9 @@
                                 <i class="pi pi-fw pi-question-circle text-50 text-2xl"></i>
                             </div>
                             <div class="ml-4">
-                                <rouer-link to="/">
+                                <router-link to="/">
                                     <p class="text-900 lg:text-xl font-medium mb-0">Solution Center</p>
-                                </rouer-link>
+                                </router-link>
                                 <span class="text-gray-600 lg:text-xl">Phasellus faucibus scelerisque eleifend.</span>
                             </div>
                         </div>
