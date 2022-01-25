@@ -1,11 +1,11 @@
 <template>
-    <div class="surface-card flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
+    <div class="surface-50 flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
         <div class="grid justify-content-center p-2 lg:p-0" style="min-width:80%">
             <div class="col-12 mt-5 xl:mt-0 text-center">
                 <img :src="'layout/images/logo-' + logoColor + '.svg'" alt="Sakai logo" class="mb-5" style="width:81px; height:60px;">
             </div>
             <div class="col-12 xl:col-6" style="border-radius:56px; padding:0.3rem; background: linear-gradient(180deg, var(--primary-color) 10%, rgba(33, 150, 243, 0) 30%);">
-                <div class="surface-card h-full w-full m-0 py-7 px-4" style="border-radius:53px;">
+                <div class="surface-section h-full w-full m-0 py-7 px-4" style="border-radius:53px;">
                     <div class="text-center mb-5">
                         <img src="layout/images/avatar.png" alt="Image" height="50" class="mb-3">
                         <div class="text-900 text-3xl font-medium mb-3">Welcome, Isabel!</div>
