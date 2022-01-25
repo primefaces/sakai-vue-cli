@@ -382,7 +382,7 @@ export default {
     #hero{
         -webkit-clip-path: ellipse(150% 87% at 93% 13%);
         clip-path: ellipse(150% 87% at 93% 13%);
-        height: 430px;
+        height: 530px;
     }
 }
 
