@@ -243,6 +243,8 @@
 </template>
 
 <script>
+import EventBus from './AppEventBus';
+
 	export default {
 		props: {
 			layoutMode: {
@@ -258,6 +260,8 @@
 				scales: [12,13,14,15,16]
 			}
 		},
+		outsideClickListener: null,
+		themeChangeListener: null,
 		watch: {
 			$route() {
 				if (this.active) {
@@ -269,7 +273,16 @@
 				this.d_layoutMode = newValue;
 			}
 		},
-		outsideClickListener: null,
+		beforeUnmount() {
+			EventBus.off('theme-change', this.themeChangeListener);
+		},
+		mounted() {
+			this.themeChangeListener = () => {
+				this.applyScale();
+			};
+
+			EventBus.on('theme-change', this.themeChangeListener);
+		},
 		methods: {
 			toggleConfigurator(event) {
 				this.active = !this.active;
@@ -326,7 +339,8 @@
 				document.documentElement.style.fontSize = this.scale + 'px';
 			},
 			changeTheme(event, theme, dark) {
-				this.$emit('change-theme', {theme, dark});
+				EventBus.emit('theme-change', { theme: theme, dark: dark });
+				event.preventDefault();
 			}
 		},
 		computed: {

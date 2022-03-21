@@ -1,42 +1,35 @@
 <template>
-    <Landing v-if="$route.path === '/landing'" @change-theme="changeTheme" />
-    <Login v-else-if="$route.path === '/login'" />
-    <Error v-else-if="$route.path === '/error'" />
-    <NotFound v-else-if="$route.path === '/notfound'" />
-    <Access v-else-if="$route.path === '/access'" />
-    <App v-else @change-theme="changeTheme" />
+    <router-view></router-view>
 </template>
 
 <script>
 import EventBus from './AppEventBus';
-import App from './App';
-import Landing from './pages/LandingDemo';
-import Login from './pages/Login';
-import Error from './pages/Error';
-import NotFound from './pages/NotFound';
-import Access from './pages/Access';
 
 export default {
-    methods: {
-        changeTheme(event) {
-            let themeElement = document.getElementById('theme-link');
-            themeElement.setAttribute('href', themeElement.getAttribute('href').replace(this.$appState.theme, event.theme));
+    themeChangeListener: null,
+    mounted() {
+        this.themeChangeListener = (event) => {
+            const elementId = 'theme-link';
+            const linkElement = document.getElementById(elementId);
+            const cloneLinkElement = linkElement.cloneNode(true);
+            const newThemeUrl = linkElement.getAttribute('href').replace(this.$appState.theme, event.theme);
+
+            cloneLinkElement.setAttribute('id', elementId + '-clone');
+            cloneLinkElement.setAttribute('href', newThemeUrl);
+            cloneLinkElement.addEventListener('load', () => {
+                linkElement.remove();
+                cloneLinkElement.setAttribute('id', elementId);
+            });
+            linkElement.parentNode.insertBefore(cloneLinkElement, linkElement.nextSibling);
+        
             this.$appState.theme = event.theme;
             this.$appState.darkTheme = event.dark;
-            EventBus.emit('change-theme', event);
+        };
 
-            if (event.theme.startsWith('md')) {
-                this.$primevue.config.ripple = true;
-            }
-        }
+        EventBus.on('theme-change', this.themeChangeListener);
     },
-    components: {
-        App,
-        Landing,
-        Login,
-        Error,
-        NotFound,
-        Access
+    beforeUnmount() {
+        EventBus.off('theme-change', this.themeChangeListener);
     }
 }
 </script>
