@@ -50,9 +50,9 @@ Dependencies of Sakai are listed below and needs to be added to package.json.
 
 ```json
 {
-    "primevue": "~3.7.1",
-    "primeicons": "~4.1.0",
-    "primeflex": "~3.0.0",
+    "primevue": "~3.12.2",
+    "primeicons": "~5.0.0",
+    "primeflex": "~3.1.2",
 }
 ```
 
