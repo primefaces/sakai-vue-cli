@@ -12,10 +12,9 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^3.0.0-alpha.1",
-    "vite": "^3.0.0-alpha.9",
-    "sass": "^1.45.0",
-    "sass-loader": "^8.0.2"
+    "@vitejs/plugin-vue": "^2.3.3",
+    "vite": "^2.9.12",
+    "sass": "^1.52.3"
   },
   "dependencies": {
     "chart.js": "3.3.2",
@@ -26,5 +25,8 @@
     "prismjs": "1.9.0",
     "vue": "^3.2.36",
     "vue-router": "^4.0.15"
+  },
+  "imports": {
+    "#src/*": "./src/*"
   }
 }
