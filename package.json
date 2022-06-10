@@ -13,8 +13,8 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",
-    "vite": "^2.9.12",
-    "sass": "^1.52.3"
+    "sass": "^1.52.3",
+    "vite": "^2.9.12"
   },
   "dependencies": {
     "chart.js": "3.3.2",
@@ -22,7 +22,7 @@
     "primeflex": "^3.1.2",
     "primeicons": "^5.0.0",
     "primevue": "^3.12.6",
-    "prismjs": "1.9.0",
+    "prismjs": "^1.28.0",
     "vue": "^3.2.36",
     "vue-router": "^4.0.15"
   },
