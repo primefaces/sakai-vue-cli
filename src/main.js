@@ -1,6 +1,7 @@
 import 'primevue/resources/primevue.min.css';
 import 'primeflex/primeflex.css';
 import 'primeicons/primeicons.css';
+import 'primevue/resources/themes/lara-light-indigo/theme.css';
 import 'prismjs/themes/prism-coy.css';
 import './assets/styles/layout.scss';
 import './assets/demo/flags/flags.css';
@@ -67,7 +68,7 @@ import Rating from 'primevue/rating';
 import RadioButton from 'primevue/radiobutton';
 import Ripple from 'primevue/ripple';
 import SelectButton from 'primevue/selectbutton';
-import ScrollPanel from 'primevue/scrollpanel'
+import ScrollPanel from 'primevue/scrollpanel';
 import ScrollTop from 'primevue/scrolltop';
 import Slider from 'primevue/slider';
 import Sidebar from 'primevue/sidebar';
@@ -95,16 +96,19 @@ import TreeTable from 'primevue/treetable';
 import TriStateCheckbox from 'primevue/tristatecheckbox';
 
 import CodeHighlight from './AppCodeHighlight';
-import BlockViewer from './BlockViewer';
+import BlockViewer from './BlockViewer.vue';
 
-router.beforeEach(function(to, from, next) {
-    window.scrollTo(0, 0);
-    next();
+router.beforeEach(function (to, from, next) {
+  window.scrollTo(0, 0);
+  next();
 });
 
 const app = createApp(AppWrapper);
 
-app.config.globalProperties.$appState = reactive({ theme: 'lara-light-indigo', darkTheme: false });
+app.config.globalProperties.$appState = reactive({
+  theme: 'lara-light-indigo',
+  darkTheme: false
+});
 
 app.use(PrimeVue, { ripple: true, inputStyle: 'outlined' });
 app.use(ConfirmationService);

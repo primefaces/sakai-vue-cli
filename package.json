@@ -1,37 +1,32 @@
 {
-	"name": "sakai-vue",
-	"version": "3.4.2-SNAPSHOT",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/primefaces/sakai-vue.git"
-	},
-	"license": "MIT",
-	"scripts": {
-		"serve": "vue-cli-service serve",
-		"build": "vue-cli-service build",
-		"lint": "vue-cli-service lint",
-		"test:unit": "vue-cli-service test:unit"
-	},
-	"devDependencies": {
-		"@vue/cli-plugin-babel": "~4.5.0",
-		"@vue/cli-plugin-eslint": "~4.5.0",
-		"@vue/cli-plugin-router": "~4.5.0",
-		"@vue/cli-service": "~4.5.0",
-		"@vue/compiler-sfc": "^3.0.0",
-		"babel-eslint": "^10.1.0",
-		"eslint": "^6.7.2",
-		"eslint-plugin-vue": "^7.0.0",
-		"sass": "^1.45.0",
-		"sass-loader": "^8.0.2"
-	},
-	"dependencies": {
-		"chart.js": "3.3.2",
-		"core-js": "^3.6.5",
-		"primeflex": "^3.1.2",
-		"primeicons": "^5.0.0",
-		"primevue": "^3.12.2",
-		"prismjs": "1.9.0",
-		"vue": "3.2.9",
-		"vue-router": "^4.0.0-0"
-	}
+  "name": "sakai-vue",
+  "version": "3.4.2-SNAPSHOT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/primefaces/sakai-vue.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.3.3",
+    "sass": "^1.52.3",
+    "vite": "^2.9.12"
+  },
+  "dependencies": {
+    "chart.js": "3.3.2",
+    "core-js": "^3.6.5",
+    "primeflex": "^3.1.2",
+    "primeicons": "^5.0.0",
+    "primevue": "^3.12.6",
+    "prismjs": "^1.28.0",
+    "vue": "^3.2.36",
+    "vue-router": "^4.0.15"
+  },
+  "imports": {
+    "#src/*": "./src/*"
+  }
 }
