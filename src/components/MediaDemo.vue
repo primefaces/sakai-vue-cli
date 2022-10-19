@@ -47,7 +47,7 @@
             <div class="card">
                 <h5>Image</h5>
                 <div class="flex justify-content-center">
-                    <Image src="images/galleria/galleria11.jpg" alt="Image" width="250" preview />
+                    <Image src="/images/galleria/galleria11.jpg" alt="Image" width="250" preview />
                 </div>
             </div>
         </div>
@@ -117,4 +117,4 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/demo/badges.scss';
 @import '../assets/demo/items.scss';
-</style> 
+</style>

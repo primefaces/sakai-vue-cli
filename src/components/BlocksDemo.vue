@@ -7,13 +7,13 @@
                         <span class="block text-6xl font-bold mb-1">Create the screens your</span>
                         <div class="text-6xl text-primary font-bold mb-3">your visitors deserve to see</div>
                         <p class="mt-0 mb-4 text-700 line-height-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        
+
                         <Button label="Learn More" type="button" class="mr-3 p-button-raised"></Button>
                         <Button label="Live Demo" type="button" class="p-button-outlined"></Button>
                     </section>
                 </div>
                 <div class="col-12 md:col-6 overflow-hidden">
-                    <img src="images/blocks/hero/hero-1.png" alt="Image" class="md:ml-auto block md:h-full" style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)">
+                    <img src="/images/blocks/hero/hero-1.png" alt="Image" class="md:ml-auto block md:h-full" style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)">
                 </div>
             </div>
         </BlockViewer>
@@ -322,10 +322,10 @@
             </div>
         </BlockViewer>
 
-        <BlockViewer header="Sign-In" :code="block8" containerClass="surface-ground px-4 py-8 md:px-6 lg:px-8 flex align-items-center justify-content-center">      
+        <BlockViewer header="Sign-In" :code="block8" containerClass="surface-ground px-4 py-8 md:px-6 lg:px-8 flex align-items-center justify-content-center">
         <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
             <div class="text-center mb-5">
-                <img src="images/blocks/logos/hyper.svg" alt="Image" height="50" class="mb-3">
+                <img src="/images/blocks/logos/hyper.svg" alt="Image" height="50" class="mb-3">
                 <div class="text-900 text-3xl font-medium mb-3">Welcome Back</div>
                 <span class="text-600 font-medium line-height-3">Don't have an account?</span>
                 <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">Create today!</a>
@@ -401,7 +401,7 @@
         </div>
         </BlockViewer>
 
-        <BlockViewer header="Card" :code="block10" containerClass="px-4 py-8 md:px-6 lg:px-8">        
+        <BlockViewer header="Card" :code="block10" containerClass="px-4 py-8 md:px-6 lg:px-8">
         <div class="surface-card p-4 shadow-2 border-round">
             <div class="text-3xl font-medium text-900 mb-3">Card Title</div>
             <div class="font-medium text-500 mb-3">Vivamus id nisl interdum, blandit augue sit amet, eleifend mi.</div>
@@ -423,13 +423,13 @@ export default {
             <span class="block text-6xl font-bold mb-1">Create the screens your</span>
             <div class="text-6xl text-primary font-bold mb-3">your visitors deserve to see</div>
             <p class="mt-0 mb-4 text-700 line-height-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            
+
             <Button label="Learn More" type="button" class="mr-3 p-button-raised"></Button>
             <Button label="Live Demo" type="button" class="p-button-outlined"></Button>
         </section>
     </div>
     <div class="col-12 md:col-6 overflow-hidden">
-        <img src="images/blocks/hero/hero-1.png" alt="Image" class="md:ml-auto block md:h-full" style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)">
+        <img src="/images/blocks/hero/hero-1.png" alt="Image" class="md:ml-auto block md:h-full" style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)">
     </div>
 </div>`,
             block2: `
@@ -727,7 +727,7 @@ export default {
             block8: `
 <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
     <div class="text-center mb-5">
-        <img src="images/blocks/logos/hyper.svg" alt="Image" height="50" class="mb-3">
+        <img src="/images/blocks/logos/hyper.svg" alt="Image" height="50" class="mb-3">
         <div class="text-900 text-3xl font-medium mb-3">Welcome Back</div>
         <span class="text-600 font-medium line-height-3">Don't have an account?</span>
         <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">Create today!</a>

@@ -44,9 +44,9 @@
                 <p class="font-normal text-2xl line-height-3 md:mt-3 text-gray-700">Sed blandit libero volutpat sed cras. Fames ac turpis egestas integer. Placerat in egestas erat... </p>
                 <Button label="Get Started" class="p-button-rounded text-xl border-none mt-5 bg-blue-500 font-normal text-white line-height-3 px-3"></Button>
             </div>
-            <img src="layout/images/screen-1.png" class="bottom-0" alt="hero screen" style="right:10%;">
+            <img src="/layout/images/screen-1.png" class="bottom-0" alt="hero screen" style="right:10%;">
         </div>
-        
+
         <div class="py-4 px-4 lg:px-8 mt-5 mx-0 lg:mx-8" id="features">
             <div class="grid justify-content-center">
                 <div class="col-12 text-center mt-8 mb-4">
@@ -65,7 +65,7 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="col-12 md:col-12 lg:col-4 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
                     <div style="height:160px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(145,226,237,0.2),rgba(251, 199, 145, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2), rgba(172, 180, 223, 0.2));">
                         <div class="p-3 surface-card h-full" style="border-radius:8px;">
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="col-12 md:col-12 lg:col-4 p-0 lg:pb-5 mt-4 lg:mt-0">
                     <div style="height:160px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(145, 226, 237, 0.2), rgba(172, 180, 223, 0.2)), linear-gradient(180deg, rgba(172, 180, 223, 0.2), rgba(246, 158, 188, 0.2));">
                         <div class="p-3 surface-card h-full" style="border-radius:8px;">
@@ -89,7 +89,7 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="col-12 md:col-12 lg:col-4 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
                     <div style="height:160px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(187, 199, 205, 0.2),rgba(251, 199, 145, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2),rgba(145, 210, 204, 0.2));">
                         <div class="p-3 surface-card h-full" style="border-radius:8px;">
@@ -101,7 +101,7 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="col-12 md:col-12 lg:col-4 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
                     <div style="height:160px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(187, 199, 205, 0.2),rgba(246, 158, 188, 0.2)), linear-gradient(180deg, rgba(145, 226, 237, 0.2),rgba(160, 210, 250, 0.2));">
                         <div class="p-3 surface-card h-full" style="border-radius:8px;">
@@ -113,7 +113,7 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="col-12 md:col-12 lg:col-4 p-0 lg:pb-5 mt-4 lg:mt-0">
                     <div style="height:160px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(251, 199, 145, 0.2), rgba(246, 158, 188, 0.2)), linear-gradient(180deg, rgba(172, 180, 223, 0.2), rgba(212, 162, 221, 0.2));">
                         <div class="p-3 surface-card h-full" style="border-radius:8px;">
@@ -125,7 +125,7 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="col-12 md:col-12 lg:col-4 p-0 lg:pr-5 mt-4 lg:mt-0">
                     <div style="height:160px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(145, 210, 204, 0.2), rgba(160, 210, 250, 0.2)), linear-gradient(180deg, rgba(187, 199, 205, 0.2), rgba(145, 210, 204, 0.2));">
                         <div class="p-3 surface-card h-full" style="border-radius:8px;">
@@ -137,7 +137,7 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="col-12 md:col-12 lg:col-4 p-0 lg:pr-5 mt-4 lg:mt-0">
                     <div style="height:160px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(145, 210, 204, 0.2), rgba(212, 162, 221, 0.2)), linear-gradient(180deg, rgba(251, 199, 145, 0.2), rgba(160, 210, 250, 0.2));">
                         <div class="p-3 surface-card h-full" style="border-radius:8px;">
@@ -149,7 +149,7 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="col-12 md:col-12 lg:col-4 p-0 lg-4 mt-4 lg:mt-0">
                     <div style="height:160px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(160, 210, 250, 0.2), rgba(212, 162, 221, 0.2)), linear-gradient(180deg, rgba(246, 158, 188, 0.2), rgba(212, 162, 221, 0.2));">
                         <div class="p-3 surface-card h-full" style="border-radius:8px;">
@@ -167,13 +167,13 @@
                         <h3 class="text-gray-900 mb-2">Joséphine Miller</h3>
                         <span class="text-gray-600 text-2xl">Peak Interactive</span>
                         <p class="text-gray-900 sm:line-height-2 md:line-height-4 text-2xl mt-4" style="max-width:800px;">“Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.”</p>
-                        <img src="layout/images/peak-logo.svg" class="mt-4" alt="">
+                        <img src="/layout/images/peak-logo.svg" class="mt-4" alt="">
 
                     </div>
                 </div>
             </div>
         </div>
-            
+
         <div class="py-4 px-4 lg:px-8 mx-0 my-6 lg:mx-8" id="highlight">
             <div class="text-center">
                 <h2 class="text-900 font-normal mb-2">Powerful Everywhere</h2>
@@ -182,7 +182,7 @@
 
             <div class="grid mt-8 pb-2 md:pb-8">
                 <div class="flex justify-content-center col-12 lg:col-6 bg-purple-100 p-0 flex-order-1 lg:flex-order-0" style="border-radius:8px;">
-                    <img src="layout/images/mockup.png" class="w-11" alt="mockup mobile">
+                    <img src="/layout/images/mockup.png" class="w-11" alt="mockup mobile">
                 </div>
 
                 <div class="col-12 lg:col-6 my-auto flex flex-column lg:align-items-end lg:text-right align-items-center text-center ">
@@ -204,7 +204,7 @@
                 </div>
 
                 <div class="flex justify-content-end flex-order-1 sm:flex-order-2 col-12 lg:col-6 bg-yellow-100 p-0" style="border-radius:8px;">
-                    <img src="layout/images/mockup-desktop.png" class="w-11 pt-4" alt="mockup">
+                    <img src="/layout/images/mockup-desktop.png" class="w-11 pt-4" alt="mockup">
                 </div>
             </div>
         </div>
@@ -219,7 +219,7 @@
                 <div class="col-12 lg:col-4 p-0 md:p-3">
                     <div class="p-3 flex flex-column border-200 hover:border-cyan-200" style="border:2px solid; border-radius:10px;">
                         <h3 class="text-900 text-center">Free</h3>
-                        <img src="layout/images/asset-tier-1.svg" class="w-10 h-10 mx-auto" alt="">
+                        <img src="/layout/images/asset-tier-1.svg" class="w-10 h-10 mx-auto" alt="">
                         <div class="my-5 text-center">
                             <span class="text-5xl font-bold mr-2 text-900">$0</span>
                             <span class="text-600">per month</span>
@@ -246,11 +246,11 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="col-12 lg:col-4 p-0 md:p-3 mt-4 md:mt-0">
                     <div class="p-3 flex flex-column border-200 hover:border-cyan-200" style="border:2px solid; border-radius:10px;">
                         <h3 class="text-900 text-center">Startup</h3>
-                        <img src="layout/images/asset-tier-2.svg" class="w-10 h-10 mx-auto" alt="">
+                        <img src="/layout/images/asset-tier-2.svg" class="w-10 h-10 mx-auto" alt="">
                         <div class="my-5 text-center">
                             <span class="text-5xl font-bold mr-2 text-900">$1</span>
                             <span class="text-600">per month</span>
@@ -277,11 +277,11 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="col-12 lg:col-4 p-0 md:p-3 mt-4 md:mt-0">
                     <div class="p-3 flex flex-column border-200 hover:border-cyan-200" style="border:2px solid; border-radius:10px;">
                         <h3 class="text-900 text-center">Enterprice</h3>
-                        <img src="layout/images/asset-tier-3.svg" class="w-10 h-10 mx-auto" alt="">
+                        <img src="/layout/images/asset-tier-3.svg" class="w-10 h-10 mx-auto" alt="">
                         <div class="my-5 text-center">
                             <span class="text-5xl font-bold mr-2 text-900">$999</span>
                             <span class="text-600">per month</span>
@@ -308,7 +308,7 @@
                         </ul>
                     </div>
                 </div>
-        </div> 
+        </div>
         </div>
 
         <div class="py-4 px-4 mx-0 mt-8 lg:mx-8" id="contact">
@@ -330,22 +330,22 @@
                             <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Careers</a>
                             <a class="line-height-3 text-xl block cursor-pointer text-700">Media Kit</a>
                         </div>
-                        
+
                         <div class="col-12 md:col-3 mt-4 md:mt-0">
                             <h4 class="font-medium text-2xl line-height-3 mb-3 text-900">Resources</h4>
                             <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Get Started</a>
                             <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Learn</a>
                             <a class="line-height-3 text-xl block cursor-pointer text-700">Case Studies</a>
                         </div>
-        
+
                         <div class="col-12 md:col-3 mt-4 md:mt-0">
                             <h4 class="font-medium text-2xl line-height-3 mb-3 text-900">Community</h4>
                             <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Discord</a>
-                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Events<img src="layout/images/new-badge.svg" class="ml-2"/></a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Events<img src="/layout/images/new-badge.svg" class="ml-2"/></a>
                             <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">FAQ</a>
                             <a class="line-height-3 text-xl block cursor-pointer text-700">Blog</a>
                         </div>
-        
+
                         <div class="col-12 md:col-3 mt-4 md:mt-0">
                             <h4 class="font-medium text-2xl line-height-3 mb-3 text-900">Legal</h4>
                             <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Brand Policy</a>
@@ -397,7 +397,7 @@ export default {
         position: absolute;
     }
 
-    #hero > div > p { 
+    #hero > div > p {
         max-width: 450px;
     }
 }

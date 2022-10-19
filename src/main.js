@@ -95,9 +95,9 @@ import TreeTable from 'primevue/treetable';
 import TriStateCheckbox from 'primevue/tristatecheckbox';
 
 import CodeHighlight from './AppCodeHighlight';
-import BlockViewer from './BlockViewer';
+import BlockViewer from './BlockViewer.vue';
 
-router.beforeEach(function(to, from, next) {
+router.beforeEach(function (to, from, next) {
     window.scrollTo(0, 0);
     next();
 });

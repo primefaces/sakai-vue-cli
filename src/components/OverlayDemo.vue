@@ -22,7 +22,7 @@
 					<div class="col-6">
 						<Button type="button" label="Image" @click="toggle" class="p-button-success"/>
 						<OverlayPanel ref="op" appendTo="body" :showCloseIcon="true">
-							<img src="images/nature/nature9.jpg" alt="Nature 9" />
+							<img src="/images/nature/nature9.jpg" alt="Nature 9" />
 						</OverlayPanel>
 					</div>
 					<div class="col-6">
